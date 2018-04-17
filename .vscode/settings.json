@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "avutil.h": "c",
+        "log.h": "c",
+        "attributes.h": "c",
+        "version.h": "c",
+        "avassert.h": "c",
+        "common.h": "c",
+        "mem.h": "c",
+        "intreadwrite.h": "c",
+        "limits.h": "c",
+        "avconfig.h": "c",
+        "samplefmt.h": "c",
+        "internal.h": "c",
+        "timer.h": "c",
+        "dynarray.h": "c",
+        "mem_internal.h": "c",
+        "error.h": "c",
+        "mathematics.h": "c",
+        "rational.c": "cpp",
+        "array": "cpp",
+        "cpu.h": "c"
+    }
+}

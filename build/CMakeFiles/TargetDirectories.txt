@@ -1,0 +1,2 @@
+/home/lonerr/Documents/workspace/vscode/ffmpeg/build/CMakeFiles/rebuild_cache.dir
+/home/lonerr/Documents/workspace/vscode/ffmpeg/build/CMakeFiles/edit_cache.dir

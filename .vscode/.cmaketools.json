@@ -1,0 +1,28 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/home/lonerr/Documents/workspace/vscode/ffmpeg/build",
+            "name": "ffmpeg",
+            "sourceDirectory": "/home/lonerr/Documents/workspace/vscode/ffmpeg",
+            "targets": []
+          }
+        ]
+      }
+    ],
+    "cookie": "0.7498541377139509",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}
