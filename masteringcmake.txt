@@ -1,0 +1,17 @@
+If you have ever maintained the build and installation process for a software package, you will
+be interested in CMake. CMake is an open source bui1d manager for software projects that
+allows developers to specify build parameters in a simp1e portable text fi1e format. This file is
+then used by CMahe to generate project files for native build tools including Integrated
+Development environments such as Microsoft Visual Studio or Apple's Xcode, as well as
+UNIX, Linux, NMake, and Bor1and style Makefiles. CMake hand1es the difficult aspects of
+building software such as cross platform builds, system introspection, and user customized
+builds, in a simp1e manner that allows users to easily tailor bui1ds for complex hardware and
+software systems.
+
+For any project, and especially cross platform projects, there is a need for a unified build
+system. Many projects today ship with both a UNIX Makefile (or Makefile.in) and a
+Microsoft Visual Studio workspace. This requires that developers constantly try to keep both
+build systems up to date and consistent with each other. To target additional bui1d systems
+such as Borland or Xcode requires even more custom copies of these files, creating an even
+bigger problem. This problem is compounded if you try to support optional components, such
+as including JPEG support if libJpeg is available on the system. CMake solves this by
