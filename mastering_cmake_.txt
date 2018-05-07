@@ -429,59 +429,27 @@ Windows and Xcode developers are accustomed.
 
 4 Why CMake?
 
-While autoconf supports user speciﬁed options, it does not support dependent options where
-one option depends on some other property or selection. For example, in CMake you could
-have a user option to enable multithreading be dependent on ﬁrst determining if the user’s
-system has multithreading support. CMake provides an interactive user interface, making it
-easy for the user to see what options are available and how to set them.
+While autoconf supports user speciﬁed options, it does not support dependent options where one option depends on some other property or selection. For example, in CMake you could have a user option to enable multithreading be dependent on ﬁrst determining if the user’s system has multithreading support. CMake provides an interactive user interface, making it easy for the user to see what options are available and how to set them.
 
-For UNIX users, CMake also provides automated dependency generation that is not done
-directly by autoconf. CMake’s simple input format is also easier to read and maintain than a
-combination of Makeﬁle.in and conﬁgurein ﬁles. The ability of CMake to remember and
-chain library dependency information has no equivalent in autoconf/automake.
+For UNIX users, CMake also provides automated dependency generation that is not done directly by autoconf. CMake’s simple input format is also easier to read and maintain than a combination of Makeﬁle.in and conﬁgurein ﬁles. The ability of CMake to remember and chain library dependency information has no equivalent in autoconf/automake.
 
 1.3 Why Not Use JAM, qmake, SCons, or ANT?
 
-Other tools such as ANT, qmake, SCons, and JAM have taken different approaches to solving
-these problems and they have helped us to shape CMake. Of the four, qmake, is the most
-similar to CMake although it lacks much of the system interrogation that CMake provides.
-Qmake‘s input format is more closely related to a traditional Makeﬁle. ANT, JAM and SCons
-are also cross-platform although they do not support generating native project ﬁles. They do
-break away from the traditional Makeﬁle oriented input with ANT using XML, JAM using its
-own language, and SCons using Python. A number of these tools run the compiler directly, as
-opposed to letting the system’s build process perform that task. Many of these tools require
-other tools such as Python or Java to be installed before they will work.
+Other tools such as ANT, qmake, SCons, and JAM have taken different approaches to solving these problems and they have helped us to shape CMake. Of the four, qmake, is the most similar to CMake although it lacks much of the system interrogation that CMake provides. Qmake‘s input format more is closely related to a traditional Makeﬁle. ANT, JAM and SCons are also cross-platform although they do not support generating native project ﬁles. They do
+break away from the traditional Makeﬁle oriented input with ANT using XML, JAM using its own language, and SCons using Python. A number of these tools run the compiler directly, as opposed to letting the system’s build process perform that task. Many of these tools require other tools such as Python or Java to be installed before they will work.
 
 1.4 Why Not Script It Yourself?
 
-Some projects use existing scripting languages such as Perl or Python to conﬁgure build
-processes. Although similar functionality can be achieved with systems like this, over-use of
-tools can make the build process more of an Easter egg hunt than a simple—to-use build
-system. When building your software package users are forced to ﬁnd and install version
-4.3.2 of this, and 3.2.4 of that, before they can even start the build process. To avoid that
-problem, it was decided that CMake would require no more tools than the software it was
-being used to build would require. At a minimum using CMake requires a C compiler, that
-compiler's native build tools, and a CMake executable. CMake was written in C++, requires
-only a C++ compiler to build and precompiled binaries are available for most systems.
-Scripting it yourself also typically means you will not be generating native Xcode or Visual
-Studio workspaces, making Mac and Windows builds limited.
+Some projects use existing scripting languages such as Perl or Python to conﬁgure build processes. Although similar functionality can be achieved with systems like this, over-use of tools can make the build process more of an Easter egg hunt than a simple—to-use build system. When building your software package users are forced to ﬁnd and install version 4.3.2 of this, and 3.2.4 of that, before they can even start the build process. To avoid that
+problem, it was decided that CMake would require no more tools than the software it was being used to build would require. At a minimum using CMake requires a C compiler, that compiler's native build tools, and a CMake executable. CMake was written in C++, requires only a C++ compiler to build and precompiled binaries are available for most systems. Scripting it yourself also typically means you will not be generating native Xcode or Visual Studio workspaces, making Mac and Windows builds limited.
 
 On What Platforms Does CMake Run? 5
 
 1.5 On What Platforms Does CMake Run?
 
-CMake runs on a wide variety of platforms including Microsoft Windows, Apple Mac OS X,
-and most UNIX or UNIX-like platforms. At the time of the writing of this book CMake was
-tested nightly on the following platforms: Windows 98/2000/XP/Vista/7, AIX, HPUX, IRIX,
-Linux, Mac OS X, Solaris, OSF, QNX, CYGWIN, MinGW, and FreeBSD. You can check
-www.cmake.org for a current list of tested platforms.
+CMake runs on a wide variety of platforms including Microsoft Windows, Apple Mac OS X, and most UNIX or UNIX-like platforms. At the time of the writing of this book CMake was tested nightly on the following platforms: Windows 98/2000/XP/Vista/7, AIX, HPUX, IRIX, Linux, Mac OS X, Solaris, OSF, QNX, CYGWIN, MinGW, and FreeBSD. You can check www.cmake.org for a current list of tested platforms.
 
-Likewise, CMake supports most common compilers. It supports the GNU compiler on all
-CMake supported platforms. Other tested compilers include Visual Studio 6 through 10, Intel
-C, SGI CC, Mips Pro, Borland, Sun CC and HP aCC. CMake should work for most UNIX-
-style compilers out of the box. If the compiler takes arguments in a strange way, then see the
-section Porting CMake to New Platform on page 241 for information on how to customize
-CMake for a new compiler.
+Likewise, CMake supports most common compilers. It supports the GNU compiler on all CMake supported platforms. Other tested compilers include Visual Studio 6 through 10, Intel C, SGI CC, Mips Pro, Borland, Sun CC and HP aCC. CMake should work for most UNIX-style compilers out of the box. If the compiler takes arguments in a strange way, then see the section Porting CMake to New Platform on page 241 for information on how to customize CMake for a new compiler.
 
  
 
@@ -493,30 +461,16 @@ Getting Started
 
 2.1 Getting and Installing CMake on Your Computer
 
-Before using CMake you will need to install or build the CMake binaries on your system. On
-many systems you may ﬁnd that CMake is already installed, or is available for install with the
-standard package manager tool for the system. Cygwin, Debian, FreeBSD, Mac OS X Fink,
-and many others all have CMake distributions. If your system does not have a CMake
-package, you can ﬁnd CMake precompiled for most common architectures at
-www.cmake.org. If you do not ﬁnd binaries for your system precompiled, then you can build
-CMake from source. To build CMake you will need a modern C++ compiler.
+Before using CMake you will need to install or build the CMake binaries on your system. On many systems you may ﬁnd that CMake is already installed, or is available for install with the standard package manager tool for the system. Cygwin, Debian, FreeBSD, Mac OS X Fink, and many others all have CMake distributions. If your system does not have a CMake package, you can ﬁnd CMake precompiled for most common architectures at
+www.cmake.org. If you do not ﬁnd binaries for your system precompiled, then you can build CMake from source. To build CMake you will need a modern C++ compiler.
 
 UNIX and Mac Binary Installations
 
-If your system provides CMake as one of its standard packages, follow your system’s package
-installation instructions. If your system does not have CMake, or has an out of date version of
-CMake, you can download precompiled binaries from www.cmake.org. The binaries from
-www.cmake.org come in the form of a compressed tar ﬁle. The tar ﬁle contains a README
-ﬁle and an enclosed tar ﬁle. The README ﬁle contains a manifest of the ﬁles contained in
-the enclosed tar ﬁle, and some instructions. To install, simply extract the enclosed tar ﬁle into
-a destination directory (typically /usr/local). However, it can be any directory, and does
-not require root privileges for installation.
+If your system provides CMake as one of its standard packages, follow your system’s package installation instructions. If your system does not have CMake, or has an out of date version of CMake, you can download precompiled binaries from www.cmake.org. The binaries from www.cmake.org come in the form of a compressed tar ﬁle. The tar ﬁle contains a README ﬁle and an enclosed tar ﬁle. The README ﬁle contains a manifest of the ﬁles contained in the enclosed tar ﬁle, and some instructions. To install, simply extract the enclosed tar ﬁle into a destination directory (typically /usr/local). However, it can be any directory, and does not require root privileges for installation.
 
 Windows Binary Installation
 
-For Windows CMake has a NullSoﬁ install ﬁle available for download from www.cmake.org.
-To install this ﬁle, simply run the executable on the windows machine on which you want to
-install CMake. You will be able to run CMake from the Start Menu after it is installed.
+For Windows CMake has a NullSoﬁ install ﬁle available for download from www.cmake.org. To install this ﬁle, simply run the executable on the windows machine on which you want to install CMake. You will be able to run CMake from the Start Menu after it is installed.
 
 8 Gettinq Started
 
@@ -524,27 +478,15 @@ install CMake. You will be able to run CMake from the Start Menu after it is ins
 
 2.2 Building CMake Yourself
 
-If binaries are not available for your system, or if binaries are not available for the version of
-CMake you wish to use, you can build CMake from the source code. You can obtain the
-CMake source code by following the instructions at www.cmake.org. Once you have the
-source code it can be built in two different ways. If you have a version of CMake on your
-system you can use it to build other versions of CMake. Generally the current development
-version of CMake can always be built from the previous release of CMake. This is how new
-versions of CMake are built on most Windows systems.
+If binaries are not available for your system, or if binaries are not available for the version of CMake you wish to use, you can build CMake from the source code. You can obtain the CMake source code by following the instructions at www.cmake.org. Once you have the source code it can be built in two different ways. If you have a version of CMake on your system you can use it to build other versions of CMake. Generally the current development version of CMake can always be built from the previous release of CMake. This is how new versions of CMake are built on most Windows systems.
 
-The second way to build CMake is by running its bootstrap build script. To do this you
-change directory into your CMake source directory and type
+The second way to build CMake is by running its bootstrap build script. To do this you change directory into your CMake source directory and type
 
 ./bootstrap
 make
 make install
 
-The make install step is optional since CMake can run directly from the build directory if
-desired. On UNIX, if you are not using the GNU C++ compiler, you need to tell the bootstrap
-script which compiler you want to use. This is done by setting the environment variable CXX
-before running bootstrap. If you need to use any special ﬂags with your compiler, set the
-CXXFLAGS environment variable. For example, on the SGI with the 7.3X compiler, you would
-build CMake like this:
+The make install step is optional since CMake can run directly from the build directory if desired. On UNIX, if you are not using the GNU C++ compiler, you need to tell the bootstrap script which compiler you want to use. This is done by setting the environment variable CXX before running bootstrap. If you need to use any special ﬂags with your compiler, set the CXXFLAGS environment variable. For example, on the SGI with the 7.3X compiler, you would build CMake like this:
 
 Cd CMake
 
@@ -555,54 +497,27 @@ make install
 
 2.3 Basic CMake Usage and Syntax
 
-Using CMake is simple. The build process is controlled by creating one or more CMakeLists
-ﬁles (actually CMakeLists.txt but this guide will leave off the extension in most cases) in each
-of the directories that make up a project. The CMakeLists ﬁles should contain the project
-description in CMake's simple language. The language is expressed as a series of commands.
-Each command is evaluated in the order that it appears in the CMakeLists ﬁle. The commands
-have the form
-
-command (args...)
+Using CMake is simple. The build process is controlled by creating one or more CMakeLists ﬁles (actually CMakeLists.txt but this guide will leave off the extension in most cases) in each of the directories that make up a project. The CMakeLists ﬁles should contain the project description in CMake's simple language. The language is expressed as a series of commands. Each command is evaluated in the order that it appears in the CMakeLists ﬁle. The commands have the form command (args...)
 
 Hello World for CMake 9
 
  
 
-where command is the name of the command, and args is a white—space separated list of
-arguments. (Arguments with embedded white-space should be double quoted.) CMake is case
-insensitive to command names as of version 2.2. So where you see command you could use
-COMMAND or Command instead. Older versions of CMake only accepted uppercase commands.
+where command is the name of the command, and args is a white—space separated list of arguments. (Arguments with embedded white-space should be double quoted.) CMake is case insensitive to command names as of version 2.2. So where you see command you could use COMMAND or Command instead. Older versions of CMake only accepted uppercase commands.
 
-CMake supports simple variables that can be either strings or lists of strings. Variables are
-referenced using a ${VAR} syntax. Multiple arguments can be grouped together into a list
-using the set command. All other commands expand the lists as if they had been passed into
-the command with white-space separation. For example, set (Foo a b c) will result in
-setting the variable Foo to a b c, and if Foo is passed into another command
-command ($ { Foo} ) it would be equivalent to command (a b c) . Ifyou want to pass a list of
-arguments to a command as if it were a single argument simply double quote it. For example
-command ( "$ {Foo} ") would be invoked passing only one argument equivalent to command(
-"a b c" L
+CMake supports simple variables that can be either strings or lists of strings. Variables are referenced using a ${VAR} syntax. Multiple arguments can be grouped together into a list using the set command. All other commands expand the lists as if they had been passed into the command with white-space separation. For example, set (Foo a b c) will result in setting the variable Foo to a b c, and if Foo is passed into another command command ($ {Foo} ) it would be equivalent to command (a b c) . Ifyou want to pass a list of arguments to a command as if it were a single argument simply double quote it. For example command ( "$ {Foo} ") would be invoked passing only one argument equivalent to command(
+"a b c" ).
 
-System environment variables and Windows registry values can be accessed directly in
-CMake. To access system environment variables the syntax $ENV{VAR} is used. CMake can
-also reference registry entries in many commands using a syntax of the form
-[HKEYiCURRENTiUSER\\Software\\pathl\\path2;key], where the paths are built
-from the registry tree and key.
+System environment variables and Windows registry values can be accessed directly in CMake. To access system environment variables the syntax $ENV{VAR} is used. CMake can also reference registry entries in many commands using a syntax of the form [HKEYiCURRENTiUSER\\Software\\pathl\\path2;key], where the paths are built from the registry tree and key.
 
 2.4 Hello World for CMake
 
-For starters let us consider the simplest possible CMakeLists ﬁle. To compile an executable
-from one source ﬁle the CMakeLists ﬁle would contain two lines:
+For starters let us consider the simplest possible CMakeLists ﬁle. To compile an executable from one source ﬁle the CMakeLists ﬁle would contain two lines:
 
 project (Hello)
 addﬂexecutable (Hello Hello.c)
 
-To build the Hello executable you follow the process described in Running CMake (See
-section 2.5) to generate the Makeﬁles or Microsoft project ﬁles. The project command
-indicates what the name of the resulting workspace should be and the addiexecutable
-command adds an executable target to the build process. That’s all there is to it for this simple
-example. If your project requires a few ﬁles it is also quite easy, just modify the
-addﬁexecutable line as shown below.
+To build the Hello executable you follow the process described in Running CMake (See section 2.5) to generate the Makeﬁles or Microsoft project ﬁles. The project command indicates what the name of the resulting workspace should be and the addiexecutable command adds executable an target to the build process. That’s all there is to it for this simple example. If your project requires a few ﬁles it is also quite easy, just modify the addﬁexecutable line as shown below.
 
 addiexecutable (Hello Hello.c File2.c File3.c File4.c)
 
