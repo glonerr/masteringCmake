@@ -812,23 +812,9 @@ Key Concepts
 
 This chapter provides an introduction to CMake's key concepts. As you start working with CMake you will run into a variety of concepts such as targets, generators, and commands. In CMake these concepts are implemented as C++ classes and are referenced in many of CMake's commands. Understanding these concepts will provide you with the working knowledge you need to create effective CMakeLists ﬁles.
 
-Before going into detail about CMake’s classes it is worth understanding their basic
-relationships. At the lowest level there are source files. These correspond to typical C or C++
-source code files. Source files are combined into targets. A target is typically an executable or
-library. A directory represents a directory in the source tree and typically has a CMakeLists
-file and one or more targets associated with it. Every directory has a local generator that is
-responsible for generating the Makeﬁles or project ﬁles for that directory. All of the local
-generators share a common global generator that oversees the build process. Finally, the
-global generator is created and driven by the cmake class itself.
+Before going into detail about CMake’s classes it is worth understanding their basic relationships. At the lowest level there are source files. These correspond to typical C or C++ source code files. Source files are combined into targets. A target is typically an executable or library. A directory represents a directory in the source tree and typically has a CMakeLists file and one or more targets associated with it. Every directory has a local generator that is responsible for generating the Makeﬁles or project ﬁles for that directory. All of the local generators share a common global generator that oversees the build process. Finally, the global generator is created and driven by the cmake class itself.
 
-Figure 4 shows the basic class structure of CMake. We will now consider CMake's concepts
-in a bit more detail. CMake's execution begins by creating an instance of the cmake class and
-passing the command line arguments to it. This class manages the overall conﬁguration
-process and holds information that is global to the build process such as the cache values. One
-of the ﬁrst things the cmake class does is to create the correct global generator based on the
-user's selection of what generator to use (such as Visual Studio 10, Borland Makeﬁles, or
-UNIX Makefiles). At this point the cmake class passes control to the global generator it
-created by invoking the conﬁgure and generate methods.
+Figure 4 shows the basic class structure of CMake. We will now consider CMake's concepts in a bit more detail. CMake's execution begins by creating an instance of the cmake class and passing the command line arguments to it. This class manages the overall conﬁguration process and holds information that is global to the build process such as the cache values. One of the ﬁrst things the cmake class does is to create the correct global generator based on the user's selection of what generator to use (such as Visual Studio 10, Borland Makeﬁles, or UNIX Makefiles). At this point the cmake class passes control to the global generator it created by invoking the conﬁgure and generate methods.
 
 22
 
@@ -932,51 +918,13 @@ Main Structures 23
 
  
 
-The global generator is responsible for managing the conﬁguration and generation of all of
-the Makeﬁles (or project ﬁles) for a project. In practice most of the work is actually done by
-local generators which are created by the global generator One local generator is created for
-each directory of the project that is processed. So while a project will have only one global
-generator it may have many local generators. For example, under Visual Studio 7 the global
-generator creates a solution ﬁle for the entire project while the local generators create a
-project ﬁle for each target in their directory.
+The global generator is responsible for managing the conﬁguration and generation of all of the Makeﬁles (or project ﬁles) for a project. In practice most of the work is actually done by local generators which are created by the global generator One local generator is created for each directory of the project that is processed. So while a project will have only one global generator it may have many local generators. For example, under Visual Studio 7 the global generator creates a solution ﬁle for the entire project while the local generators create a project ﬁle for each target in their directory.
 
-In the case of the "Unix Makeﬁles" generator, the local generators create most of the
-Makeﬁles and the global generator simply orchestrates the process and creates the main top-
-level Makeﬁle. Implementation details vary widely among generators. The Visual Studio 6
-generators make use of .dsp and .dsw ﬁle templates and perform variable replacements on
-them. The generators for Visual Studio 7 and later directly generate the XML output without
-using any ﬁle templates. The Makeﬁle generators including UNIX, NMake, Borland, etc use a
-set of rule templates and replacements to generate their Makeﬁles.
+In the case of the "Unix Makeﬁles" generator, the local generators create most of the Makeﬁles and the global generator simply orchestrates the process and creates the main top-level Makeﬁle. Implementation details vary widely among generators. The Visual Studio 6 generators make use of .dsp and .dsw ﬁle templates and perform variable replacements on them. The generators for Visual Studio 7 and later directly generate the XML output without using any ﬁle templates. The Makeﬁle generators including UNIX, NMake, Borland, etc use a set of rule templates and replacements to generate their Makeﬁles.
 
- 
+Each local generator has an instance of the class cmMakeﬁle, cmMakeﬁle is where the results of parsing the CMakeLists ﬁles are stored. Speciﬁcally, for each directory in a project there will be a single cmMakeﬁle instance which is why the cmMakeﬁle class is often referred to as the directory. This is clearer for build systems that do not use Makeﬁles. That instance will hold all of the information from parsing that directory's CMakeLists ﬁle (see Figure 5). One way to think of the cmMakeﬁle class is as a structure that starts out initialized with a few variables from its parent directory, and is then ﬁlled in as the CMakeLists ﬁle is processed. Reading in the CMakeLists ﬁle is simply a matter of CMake executing the commands it ﬁnds in the order it encounters them.
 
- 
-
-Figure 5 — Sample Directory Tree
-
-Each local generator has an instance of the class cmMakeﬁle, cmMakeﬁle is where the results
-of parsing the CMakeLists ﬁles are stored. Speciﬁcally, for each directory in a project there
-will be a single cmMakeﬁle instance which is why the cmMakeﬁle class is often referred to as
-the directory. This is clearer for build systems that do not use Makeﬁles. That instance will
-hold all of the information from parsing that directory's CMakeLists ﬁle (see Figure 5). One
-way to think of the cmMakeﬁle class is as a structure that starts out initialized with a few
-variables from its parent directory, and is then ﬁlled in as the CMakeLists ﬁle is processed.
-Reading in the CMakeLists ﬁle is simply a matter of CMake executing the commands it ﬁnds
-in the order it encounters them.
-
-Each command in CMake is implemented as a separate C++ class, and has two main parts.
-The ﬁrst part of a command is the InitialPass method. The lnitialPass method receives the
-arguments and the cmMakef ile instance for the directory currently being processed, and then
-
-24 Key Concepts
-
-performs its operations. In the case of the set command, it processes its arguments and if the
-arguments are correct it calls a method on the cmMa kefile to set the variable. The results of
-the command are always stored in the cmMakefile instance. Information is never stored in a
-command. The last part of a command is the FinalPass. The FinalPass of a command is
-executed after all commands (for the entire CMake project) have had their InitialPass
-invoked. Most commands do not have a FinalPass, but in some rare cases a command must do
-something with global information that may not be available during the initial pass.
+Each command in CMake is implemented as a separate C++ class, and has two main parts. The ﬁrst part of a command is the InitialPass method. The lnitialPass method receives the arguments and the cmMakef ile instance for the directory currently being processed, and then performs its operations. In the case of the set command, it processes its arguments and if the arguments are correct it calls a method on the cmMa kefile to set the variable. The results of the command are always stored in the cmMakefile instance. Information is never stored in a command. The last part of a command is the FinalPass. The FinalPass of a command is executed after all commands (for the entire CMake project) have had their InitialPass invoked. Most commands do not have a FinalPass, but in some rare cases a command must do something with global information that may not be available during the initial pass.
 
 Once all of the CMakeLists ﬁles have been processed the generators use the information
 collected into the cmMakefile instances to produce the appropriate ﬁles for the target build
