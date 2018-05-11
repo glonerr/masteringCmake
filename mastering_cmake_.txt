@@ -926,37 +926,17 @@ Each local generator has an instance of the class cmMakeﬁle, cmMakeﬁle is wh
 
 Each command in CMake is implemented as a separate C++ class, and has two main parts. The ﬁrst part of a command is the InitialPass method. The lnitialPass method receives the arguments and the cmMakef ile instance for the directory currently being processed, and then performs its operations. In the case of the set command, it processes its arguments and if the arguments are correct it calls a method on the cmMa kefile to set the variable. The results of the command are always stored in the cmMakefile instance. Information is never stored in a command. The last part of a command is the FinalPass. The FinalPass of a command is executed after all commands (for the entire CMake project) have had their InitialPass invoked. Most commands do not have a FinalPass, but in some rare cases a command must do something with global information that may not be available during the initial pass.
 
-Once all of the CMakeLists ﬁles have been processed the generators use the information
-collected into the cmMakefile instances to produce the appropriate ﬁles for the target build
-system (such as Makeﬁles).
+Once all of the CMakeLists ﬁles have been processed the generators use the information collected into the cmMakefile instances to produce the appropriate ﬁles for the target build system (such as Makeﬁles).
 
 3.2 Targets
 
-Now that we have discussed the overall process of CMake, let us consider some of the key
-items stored in the cmMakefile instance. Probably the most important item is targets.
-Targets represent executables, libraries, and utilities built by CMake. Every addil ibrary,
-adol‘executable, and add_custom_target command creates a target. For example, the
-following command will create a target named foo that is a static library, with fool . c and
-f002 . c as source ﬁles.
+Now that we have discussed the overall process of CMake, let us consider some of the key items stored in the cmMakefile instance. Probably the most important item is targets. Targets represent executables, libraries, and utilities built by CMake. Every addil ibrary, adol‘executable, and add_custom_target command creates a target. For example, the following command will create a target named foo that is a static library, with foo1.c and foo2.c as source ﬁles.
 
 addilibrary (foo STATIC fool.c fooZ.c)
 
-The name foo is now available for use as a library name everywhere else in the project, and
-CMake will know how to expand the name into the library when needed. Libraries can be
-declared to be of a particular type such as STATIC, SHARED, MODULE, or left undeclared.
-STAT TC indicates that the library must be built as a static library. Likewise SHARED indicates
-it must be built as a shared library. MODULE indicates that the library must be created so that it
-can be dynamically loaded into an executable. On many operating systems this is the same as
-SHARED, but on other systems such as Mac OS X it is different. If none of these options are
-speciﬁed this indicates that the library could be built as either shared or static. In that case
-CMake uses the setting of the variable BU ILDpSHAREDiLIBS to determine if the library
-should be SHARED or STATIC. If it is not set, then CMake defaults to building static libraries.
+The name foo is now available for use as a library name everywhere else in the project, and CMake will know how to expand the name into the library when needed. Libraries can be declared to be of a particular type such as STATIC, SHARED, MODULE, or left undeclared. STATIC indicates that the library must be built as a static library. Likewise SHARED indicates it must be built as a shared library. MODULE indicates that the library must be created so that it can be dynamically loaded into an executable. On many operating systems this is the same as SHARED, but on other systems such as Mac OS X it is different. If none of these options are speciﬁed this indicates that the library could be built as either shared or static. In that case CMake uses the setting of the variable BU ILDpSHAREDiLIBS to determine if the library should be SHARED or STATIC. If it is not set, then CMake defaults to building static libraries.
 
-Likewise executables have some options. By default an executable will be a traditional
-console application that has a main (int argc, const char*argv[] ). If WTN32 is
-speciﬁed after the executable name then the executable will be compiled as a MS Windows
-executable and the operating system will call WinMain instead of main at startup. W TN 32 has
-no effect on non—Windows systems.
+Likewise executables have some options. By default an executable will be a traditional console application that has a main (int argc, const char*argv[] ). If WTN32 is speciﬁed after the executable name then the executable will be compiled as a MS Windows executable and the operating system will call WinMain instead of main at startup. WIN32 has no effect on non-Windows systems.
 
 In addition to storing their type, targets also keep track of general properties. These properties
 can be set and retrieved using the setitarget_properties and get’target_property
