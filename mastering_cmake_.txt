@@ -1,4 +1,4 @@
- 
+q 
 
 Contents
 
@@ -938,23 +938,9 @@ The name foo is now available for use as a library name everywhere else in the p
 
 Likewise executables have some options. By default an executable will be a traditional console application that has a main (int argc, const char*argv[] ). If WTN32 is speciﬁed after the executable name then the executable will be compiled as a MS Windows executable and the operating system will call WinMain instead of main at startup. WIN32 has no effect on non-Windows systems.
 
-In addition to storing their type, targets also keep track of general properties. These properties
-can be set and retrieved using the setitarget_properties and get’target_property
+In addition to storing their type, targets also keep track of general properties. These properties can be set and retrieved using the setitarget_properties and get’target_property commands, or the more general set_property and getiproperty commands. The most commonly used property is LINK_FLAGS, which is used to specify link ﬂags for a speciﬁc target. Targets store a list of libraries that they link against which are set using the targetilinkilibraries command. Names passed into this command can be libraries, full paths to libraries, or the name of a library from an add_l ibrary command. They also store the link directories to use when linking, the install location for the target, and custom commands to execute after linking.
 
-Source Files 25
-
-commands, or the more general set_property and getiproperty commands. The most
-commonly used property is LINK_FLAGS, which is used to specify link ﬂags for a speciﬁc
-target. Targets store a list of libraries that they link against which are set using the
-targetilinkilibraries command. Names passed into this command can be libraries, full
-paths to libraries, or the name of a library from an add_l ibrary command. They also store
-the link directories to use when linking, the install location for the target, and custom
-commands to execute after linking.
-
-For each library CMake creates, it keeps track of all the libraries on which that library
-depends. Since static libraries do not link to the libraries on which they depend, it is important
-for CMake to keep track of the libraries so they can be speciﬁed on the link line of the
-executable being created. For example,
+For each library CMake creates, it keeps track of all the libraries on which that library depends. Since static libraries do not link to the libraries on which they depend, it is important for CMake to keep track of the libraries so they can be speciﬁed on the link line of the executable being created. For example,
 
 add‘library (foo foo.cxx)
 target‘linkﬁlibraries (foo bar)
@@ -962,99 +948,55 @@ target‘linkﬁlibraries (foo bar)
 addiexecutable (foobar foobar.cxx)
 target_link_libraries (foobar foo)
 
-This will link the libraries foo and bar into the executable foobar even, although only foo was
-explicitly linked into foobar. With shared or DLL builds this linking is not always needed, but
-the extra linkage is harmless. For static builds this is required. Since the foo library uses
-symbols from the bar library, foobar will most likely also need bar since it uses foo.
+This will link the libraries foo and bar into the executable foobar even, although only foo was explicitly linked into foobar. With shared or DLL builds this linking is not always needed, but the extra linkage is harmless. For static builds this is required. Since the foo library uses symbols from the bar library, foobar will most likely also need bar since it uses foo.
 
 3.3 Source Files
 
-The source ﬁle structure is in many ways similar to a target. It stores the ﬁlename, extension,
-and a number of general properties related to a source ﬁle. Like targets you can set and get
-Iﬂopmﬁesuﬂngset_sourceifilesipropertiesandgetgsourceifileiproperty,0r
-the more generic versions. The most common properties include:
+The source ﬁle structure is in many ways similar to a target. It stores the ﬁlename, extension, and a number of general properties related to a source ﬁle. Like targets you can set and get properties using set_source_files_properties and get_source_file_property, or the more generic versions. The most common properties include:
 
 COMPILE_FLAGS
 
-Compile ﬂags speciﬁc to this source ﬁle. These can include source speciﬁc eD and ,
-I ﬂags.
+Compile ﬂags speciﬁc to this source ﬁle. These can include source speciﬁc eD and , I ﬂags.
 
 GENERATED
 
-The GENERATED property indicates that the source ﬁle is generated as part of the
-build process. In this case CMake will treat it differently for computation of
-dependencies because the source ﬁle may not exist when CMake is ﬁrst run.
-
-26 Key Concepts
-
- 
+The GENERATED property indicates that the source ﬁle is generated as part of the build process. In this case CMake will treat it differently for computation of dependencies because the source ﬁle may not exist when CMake is ﬁrst run.
 
 OBJECT_DEPENDS
 
-Adds additional ﬁles on which this source ﬁle should depend. CMake automatically
-performs dependency analysis to determine the usual C, C++ and Fortran
-dependencies, This parameter is used rarely in cases where there is an
-unconventional dependency or the source ﬁles do not exist at dependency analysis
-time.
+Adds additional ﬁles on which this source ﬁle should depend. CMake automatically performs dependency analysis to determine the usual C, C++ and Fortran dependencies, This parameter is used rarely in cases where there is an unconventional dependency or the source ﬁles do not exist at dependency analysis time.
 
 ABSTRACT
 WRAP_EXCLUDE
 
-CMake doesn't directly use these properties. Some loaded commands and extensions
-to CMake look at these properties to determine how and when to wrap a C++ class
-into languages such as Tcl, Python, etc.
+CMake doesn't directly use these properties. Some loaded commands and extensions to CMake look at these properties to determine how and when to wrap a C++ class into languages such as Tcl, Python, etc.
 
 3.4 Directories, Generators, Tests, and Properties
 
-in addition to targets and source ﬁles you may ﬁnd yourself occasionally working with other
-classes such as directories, generators, and tests. Normally such interactions take the shape of
-setting or getting properties from these objects. All of these Classes have properties associated
-with them, as do source ﬁles and targets. A property is a key—value pair attached to a speciﬁc
-object such as a target. The most generic way to access properties is through the
-setgproperty and getip roperty commands. These commands allow you to set or get a
-property from any class in CMake that has properties. Some of the properties for targets and
-source ﬁles have already been covered. Some useful properties for a directory include:
+in addition to targets and source ﬁles you may ﬁnd yourself occasionally working with other classes such as directories, generators, and tests. Normally such interactions take the shape of setting or getting properties from these objects. All of these Classes have properties associated with them, as do source ﬁles and targets. A property is a key—value pair attached to a speciﬁc object such as a target. The most generic way to access properties is through the setgproperty and getip roperty commands. These commands allow you to set or get a property from any class in CMake that has properties. Some of the properties for targets and source ﬁles have already been covered. Some useful properties for a directory include:
 
 ADDITIONAL_MAKE_CLEAN_FILES
 
-This property speciﬁes a list of additional ﬁles that will be cleaned as a part of the
-"make clean" stage. By default CMake will clean up any generated ﬁles that it knows
-about, but your build process may use other tools that leave ﬁles behind. This
-property can be set to a list of those ﬁles so that they also will be properly cleaned
-
-up.
+This property speciﬁes a list of additional ﬁles that will be cleaned as a part of the "make clean" stage. By default CMake will clean up any generated ﬁles that it knows about, but your build process may use other tools that leave ﬁles behind. This property can be set to a list of those ﬁles so that they also will be properly cleaned up.
 
 EXCLUDE_FROM_ALL
-This property indicates if all the targets in this directory and all sub directories
-should be excluded from the default build target. Ifit is not, then with a Makeﬁle for
-example typing make will cause these targets to be built as well. The same concept
-applies to the default build of other generators.
+This property indicates if all the targets in this directory and all sub directories should be excluded from the default build target. Ifit is not, then with a Makeﬁle for example typing make will cause these targets to be built as well. The same concept applies to the default build of other generators.
 
 LISTFILE_STACK
 
-This property is mainly useful when trying to debug errors in your CMake scripts. It
-returns a list of what list ﬁles are currently being processed, in order. So if one
-CMakeLists ﬁle does an include command then that is effectively pushing the
-included CMakeLists ﬁle onto the stack.
+This property is mainly useful when trying to debug errors in your CMake scripts. It returns a list of what list ﬁles are currently being processed, in order. So if one CMakeLists ﬁle does an include command then that is effectively pushing the included CMakeLists ﬁle onto the stack.
 
 Variables and Cache Entries 27
 
  
 
-A full list of properties supported in CMake can be obtained by running cmake with the e
-he lp—property—l'ist option. The generators and directories are automatically created for
-you as CMake processes your source tree.
+A full list of properties supported in CMake can be obtained by running cmake with the --help—property—list option. The generators and directories are automatically created for you as CMake processes your source tree.
 
 3.5 Variables and Cache Entries
 
-CMakeLists files use variables much like any programming language. Variables are used to
-store values for later use, and can be a single value such as "ON" or "OFF", or they can
-lepNECHtalBtsudIaS(/usr/include /home/foo/include /usr/local/includet
-A number of useful variables are automatically deﬁned by CMake and are discussed in
-Appendix A - Variables.
+CMakeLists files use variables much like any programming language. Variables are used to store values for later use, and can be a single value such as "ON" or "OFF", or they can represent a list such as(/usr/include /home/foo/include /usr/local/include). A number of useful variables are automatically deﬁned by CMake and are discussed in Appendix A - Variables.
 
-Variables in CMake are referenced using a ${VARIABLE} notation, and they are deﬁned in
-the order of execution of the set commands. Consider the following example:
+Variables in CMake are referenced using a ${VARIABLE} notation, and they are deﬁned in the order of execution of the set commands. Consider the following example:
 
 # FOO is undefined
 
@@ -1076,12 +1018,7 @@ set (FOO 3)
 
 endif ($lFOO} LESS 2)
 
-Clearly the if statement is true, which means that the body of the if statement will be
-executed. That will set the variable FOO to 2, and so when the else statement is encountered
-FOO will have a value of 2. Normally in CMake the new value of FOO would be used, but the
-else statement is a rare exception to the rule and always refers back to the value of the
-variable when the if statement was executed. So in this case the body of the else clause will
-not be executed. To further understand the scope of variables consider this example:
+Clearly the if statement is true, which means that the body of the if statement will be executed. That will set the variable FOO to 2, and so when the else statement is encountered FOO will have a value of 2. Normally in CMake the new value of FOO would be used, but the else statement is a rare exception to the rule and always refers back to the value of the variable when the if statement was executed. So in this case the body of the else clause will not be executed. To further understand the scope of variables consider this example:
 
 28 Kgy Concepts
 
@@ -1128,10 +1065,7 @@ set (test 1)
 _foo()
 message (${test}) # test will still be 1 here
 
-In some cases you might want a function or subdirectory to set a variable in its parent’s scope.
-This is one way for CMake to return a value from a function, and it can be done by using the
-PARENT #SCOPE option with the set command. We can modify the prior example so that the
-function foo changes the value of test in its parent’s scope as follows:
+In some cases you might want a function or subdirectory to set a variable in its parent’s scope. This is one way for CMake to return a value from a function, and it can be done by using the PARENT #SCOPE option with the set command. We can modify the prior example so that the function foo changes the value of test in its parent’s scope as follows:
 
 Variables and Cache Entries 29
 
@@ -1150,8 +1084,7 @@ set (test 1)
 ‘ foo()
 message (${testl) it test will now be 2 here
 
-Variables can also represent a list of values. In these cases when the variable is expanded it
-will be expanded into multiple values. Consider the following example:
+Variables can also represent a list of values. In these cases when the variable is expanded it will be expanded into multiple values. Consider the following example:
 
 # set a list of items
 set (items/torbuy apple orange pear beer)
