@@ -1095,21 +1095,11 @@ foreach (item ${itemsitoibuy})
 message ( "Don’t forget to buy one ${item}" )
 endforeach ()
 
-In some cases you might want to allow the user building your project to set a variable from
-the CMake user interface. In that case the variable must be a cache entry. Whenever CMake is
-run it produces a cache file in the directory where the binary ﬁles are to be written. The values
-ofthis cache file are displayed by the CMake user interface. There are a few purposes of this
-cache. The first is to store the user's selections and choices, so that if they should run CMake
-again they will not need to reenter that information. For example, the option command
-creates a Boolean variable and stores it in the cache.
+In some cases you might want to allow the user building your project to set a variable from the CMake user interface. In that case the variable must be a cache entry. Whenever CMake is run it produces a cache file in the directory where the binary ﬁles are to be written. The values ofthis cache file are displayed by the CMake user interface. There are a few purposes of this cache. The first is to store the user's selections and choices, so that if they should run CMake again they will not need to reenter that information. For example, the option command creates a Boolean variable and stores it in the cache.
 
 option (USEiJPEG "Do you want to use the jpeg library")
 
-The above line would create a variable called USEiJ PEG and put it into the cache. That way
-the user can set that variable from the user interface and its value will remain in case the user
-should run CMake again in the future. To create a variable in the cache you can use
-commands like option, findifile, or you can use the standard set command with the
-CACHE option.
+The above line would create a variable called USEiJ PEG and put it into the cache. That way the user can set that variable from the user interface and its value will remain in case the user should run CMake again in the future. To create a variable in the cache you can use commands like option, findifile, or you can use the standard set command with the CACHE option.
 
 set (USEiJPEG ON CACHE BOOL "include jpeg support?")
 
