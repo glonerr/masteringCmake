@@ -1103,38 +1103,13 @@ The above line would create a variable called USEiJ PEG and put it into the cach
 
 set (USEiJPEG ON CACHE BOOL "include jpeg support?")
 
-When you use the cache option you must also provide the type of the variable and a
-documentation string. The type of the variable is used by the GUI to control how that variable
+When you use the cache option you must also provide the type of the variable and a documentation string. The type of the variable is used by the GUI to control how that variable is set and displayed. Variable types include BOOL, PATH, FILEPATH, and STRING. The documentation string is used by the GUI to provide online help.
 
-30 Key Concepts
+The other purpose of the cache is to store key variables that are expensive to determine. These variables may not be Visible or adjustable by the user. Typically these values are system dependent variables such as CMAKE_WORDS_BIGENDIAN, which require CMake to compile and run a program to determine their value. Once these values have been determined, they are stored in the cache to avoid having to recompute them every time CMake is run. Generally CMake tries to limit these variables to properties that should never change (such as the byte order of the machine you are on). If you signiﬁcantly change your computer, either by changing the operating system, or switching to a different compiler, you will need to delete the cache ﬁle (and probably all of your binary tree's object ﬁles, libraries, and executables).
 
-is set and displayed. Variable types include BOOL, PATH, FILEPATH, and STRING. The
-documentation string is used by the GUI to provide online help.
+Variables that are in the cache also have a property indicating if they are advanced or not. By default when a CMake GUI is run (such as ccmake or cmake—gui) the advanced cache entries are not displayed. This is so that the user can focus on the cache entries that they should consider changing. The advanced cache entries are other options that the user can modify, but typically will not. It is not unusual for a large software project to have ﬁfty or more options, and the advanced property lets a software project divide them into key options for most users and advanced options for advanced users. Depending on the project there may not be any non-advanced cache entries. To make a cache entry advanced the mark‘as_advanced command is used with the name of the variable (a.k.a. cache entry) to make advanced.
 
-The other purpose of the cache is to store key variables that are expensive to determine. These
-variables may not be Visible or adjustable by the user. Typically these values are system
-dependent variables such as CMAKEVWORDSiBIGENDIAN, which require CMake to compile
-and run a program to determine their value. Once these values have been determined, they are
-stored in the cache to avoid having to recompute them every time CMake is run. Generally
-CMake tries to limit these variables to properties that should never change (such as the byte
-order of the machine you are on). If you signiﬁcantly change your computer, either by
-changing the operating system, or switching to a different compiler, you will need to delete
-the cache ﬁle (and probably all of your binary tree's object ﬁles, libraries, and executables).
-
-Variables that are in the cache also have a property indicating if they are advanced or not. By
-default when a CMake GUI is run (such as ccmake or cmake—gui) the advanced cache entries
-are not displayed. This is so that the user can focus on the cache entries that they should
-consider changing. The advanced cache entries are other options that the user can modify, but
-typically will not. It is not unusual for a large software project to have ﬁfty or more options,
-and the advanced property lets a software project divide them into key options for most users
-and advanced options for advanced users. Depending on the project there may not be any non-
-advanced cache entries. To make a cache entry advanced the mark‘as_advanced command
-is used with the name of the variable (a.k.a. cache entry) to make advanced.
-
-In some cases you might want to restrict a cache entry to a limited set ofpredeﬁned options.
-You can do this by setting the STRINGS property on the cache entry. The following
-CMakeLists code illustrates this by creating a property named CRY PTOBACKEN D as usual, and
-then setting the STRINGS property on it to a set of three options.
+In some cases you might want to restrict a cache entry to a limited set of predeﬁned options. You can do this by setting the STRINGS property on the cache entry. The following CMakeLists code illustrates this by creating a property named CRY PTOBACKEN D as usual, and then setting the STRINGS property on it to a set of three options.
 
 set (CRYPTOBACKEND "OpenSSL" CACHE STRING
 "Select a cryptography backend")
