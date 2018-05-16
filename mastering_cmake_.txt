@@ -1116,8 +1116,7 @@ set (CRYPTOBACKEND "OpenSSL" CACHE STRING
 setiproperty (CACHE CRYPTOBACKEND PROPERTY STRINGS
 "OpenSSL" "LibTomCrypt" "LibDES")
 
-When cmake-gui is run and the user selects the CRYPTOBACKEND cache entry, they will be
-presented with a pulldown to select which option they want, as shown in Figure 6.
+When cmake-gui is run and the user selects the CRYPTOBACKEND cache entry, they will be presented with a pulldown to select which option they want, as shown in Figure 6.
 
 Variables and Cache Entries 31
 
@@ -1164,12 +1163,7 @@ C on f i gur 111g done
 
 Figure 6 — Cache Value Options in cmake-gui
 
-A few ﬁnal points should be made concerning variables and their interaction with the cache.
-If a variable is in the cache, it can still be overridden in a CMakeLists ﬁle using the set
-command without the CACHE option. Cache values are checked only if the variable is not
-found in the current cmMakefile instance before CMakeLists ﬁle processing begins. The
-set command will set the variable for processing the current CMakeLists ﬁle (and
-subdirectories as usual) without changing the value in the cache.
+A few ﬁnal points should be made concerning variables and their interaction with the cache. If a variable is in the cache, it can still be overridden in a CMakeLists ﬁle using the set command without the CACHE option. Cache values are checked only if the variable is not found in the current cmMakefile instance before CMakeLists ﬁle processing begins. The set command will set the variable for processing the current CMakeLists ﬁle (and subdirectories as usual) without changing the value in the cache.
 
 # assume that FOO is set to ON in the cache
 
@@ -1177,55 +1171,23 @@ set (FOO OFF)
 # sets foo to OFF for processing this CMakeLists file
 # and subdirectories; the value in the cache stays ON
 
-Once a variable is in the cache, its ”cache" value cannot normally be modiﬁed from a
-CMakeLists ﬁle. The reasoning behind this is that once CMake has put the variable into the
-cache with its initial value, the user may then modify that value from the GUI. If the next
-invocation of CMake overwrote their change back to the set value, the user would never be
-able to make a change that CMake wouldn’t overwrite. So a set (FOO ON CACHE BOOL
-"cloc") command will typically only do something when the cache doesn‘t have the variable
-in it. Once the variable is in the cache, that command will have no effect.
+Once a variable is in the cache, its ”cache" value cannot normally be modiﬁed from a CMakeLists ﬁle. The reasoning behind this is that once CMake has put the variable into the cache with its initial value, the user may then modify that value from the GUI. If the next invocation of CMake overwrote their change back to the set value, the user would never be able to make a change that CMake wouldn’t overwrite. So a set (FOO ON CACHE BOOL "cloc") command will typically only do something when the cache doesn‘t have the variable in it. Once the variable is in the cache, that command will have no effect.
 
 32 Key Concepts
 
  
 
-In the rare event that you really want to change a cached variable's value you can use the
-FORCE option in combination with the CACHE option to the set command. The FORCE option
-will cause the set command to override and change the cache value ofa variable.
+In the rare event that you really want to change a cached variable's value you can use the FORCE option in combination with the CACHE option to the set command. The FORCE option will cause the set command to override and change the cache value ofa variable.
 
 3.6 Build Configurations
 
-Build conﬁgurations allow a project to be built in different ways for debug, optimized, or any
+Build conﬁgurations allow a project to be built in different ways for debug, optimized, or any other special set of ﬂags. CMake supports, by default, Debug, Release, MinSizeRel, and RelWithDeblnfo conﬁgurations. Debug has the basic debug ﬂags turned on. Release has the basic optimizations turned on. MinSizeRel has the ﬂags that produce the smallest object code, but not necessarily the fastest code. RelWithDebInfo builds an optimized build with debug information as well.
 
-other special set of ﬂags. CMake supports, by default, Debug, Release, MinSizeRel, and
-RelWithDeblnfo conﬁgurations. Debug has the basic debug ﬂags turned on. Release has the
-basic optimizations turned on. MinSizeRel has the ﬂags that produce the smallest object code,
-but not necessarily the fastest code. RelWithDebInfo builds an optimized build with debug
-information as well.
+CMake handles the conﬁgurations in slightly different ways depending on what generator is being used. The conventions of the native build system are followed when possible. This means that conﬁgurations impact the build in different ways when using Makeﬁles versus using Visual Studio project ﬁles.
 
-CMake handles the conﬁgurations in slightly different ways depending on what generator is
-being used. The conventions of the native build system are followed when possible. This
-means that conﬁgurations impact the build in different ways when using Makeﬁles versus
-using Visual Studio project ﬁles.
+The Visual Studio IDE supports the notion of Build Conﬁgurations. A default project in Visual Studio usually has Debug and Release conﬁgurations. From the IDE you can select build Debug, and the ﬁles will be built with Debug ﬂags. The IDE puts all of the binary ﬁles into directories with the name of the active conﬁguration. This brings about an extra complexity for projects that build programs that need to be run as part of the build process from custom commands. See the CMAKE_CEG_INTDIR variable and the custom commands section for more information about how to handle this issue. The variable CMAKE_CONFIGURATION_TYPES is used to tell CMake which conﬁgurations to put in the workspace.
 
-The Visual Studio IDE supports the notion of Build Conﬁgurations. A default project in
-Visual Studio usually has Debug and Release conﬁgurations. From the IDE you can select
-build Debug, and the ﬁles will be built with Debug ﬂags. The IDE puts all of the binary ﬁles
-into directories with the name of the active conﬁguration. This brings about an extra
-complexity for projects that build programs that need to be run as part of the build process
-from custom commands. See the CMAKE_CEG_INTDIR variable and the custom commands
-section for more information about how to handle this issue. The variable
-CMAKE_CONFIGURATION_TYPES is used to tell CMake which conﬁgurations to put in the
-workspace.
-
-With Makeﬁle based generators, only one conﬁguration can be active at the time CMake is
-run, and it is speciﬁed by the CMAKEWBUILDHTYPE variable. if the variable is empty then no
-ﬂags are added to the build. If the variable is set to the name of a conﬁguration, then the
-appropriate variables and rules (such as CMAKEWCXX>FLAGS_<COnfigName>) are added to
-the compile lines. Makeﬁles do not use special conﬁguration subdirectories for object ﬁles.
-To build both debug and release trees, the user is expected to create multiple build directories
-using the out of source build feature of CMake, and to set the CMAKEiBUILDiTYPE to the
-desired selection for each build. For example,
+With Makeﬁle based generators, only one conﬁguration can be active at the time CMake is run, and it is speciﬁed by the CMAKEWBUILDHTYPE variable. if the variable is empty then no ﬂags are added to the build. If the variable is set to the name of a conﬁguration, then the appropriate variables and rules (such as CMAKEWCXX>FLAGS_<COnfigName>) are added to the compile lines. Makeﬁles do not use special conﬁguration subdirectories for object ﬁles. To build both debug and release trees, the user is expected to create multiple build directories using the out of source build feature of CMake, and to set the CMAKEiBUILDiTYPE to the desired selection for each build. For example,
 
 it With source code in the directory MyProject
 
@@ -1241,36 +1203,11 @@ CMake Syntax 33
 
 Writing CMakeLists Files
 
-This chapter will cover the basics of writing effective CMakeLists ﬁles for your software. It
-will cover all of the basic commands and issues you will need to handle most projects. It will
-also discuss how to convert existing UNIX or Windows projects into CMakeLists ﬁles. While
-CMake can handle extremely complex projects, for most projects you will ﬁnd this chapter’s
-contents will tell you all you need to know. CMake is driven by the CMakeLists.txt ﬁles
-written for a software project. The CMakeLists ﬁles determine everything from what options
-to put into the cache, to what source ﬁles to compile. ln addition to discussing how to write a
-CMakeLists ﬁle this chapter will also cover how to make them robust and maintainable. The
-basic syntax of a CMakeLists.txt ﬁle and key concepts of CMake have already been discussed
-in chapters 2 and 3. This chapter will expand on those concepts and introduce a few new ones.
+This chapter will cover the basics of writing effective CMakeLists ﬁles for your software. It will cover all of the basic commands and issues you will need to handle most projects. It will also discuss how to convert existing UNIX or Windows projects into CMakeLists ﬁles. While CMake can handle extremely complex projects, for most projects you will ﬁnd this chapter’s contents will tell you all you need to know. CMake is driven by the CMakeLists.txt ﬁles written for a software project. The CMakeLists ﬁles determine everything from what options to put into the cache, to what source ﬁles to compile. ln addition to discussing how to write a CMakeLists ﬁle this chapter will also cover how to make them robust and maintainable. The basic syntax of a CMakeLists.txt ﬁle and key concepts of CMake have already been discussed in chapters 2 and 3. This chapter will expand on those concepts and introduce a few new ones.
 
 4.1 CMake Syntax
 
-CMakeLists ﬁles follow a simple syntax consisting of comments, commands, and white
-space. A comment is indicated using the # character and runs from that character until the end
-of the line. A command consists of the command name, opening parenthesis, white space
-separated arguments and a closing parenthesis. All white space (spaces, line feeds, tabs) are
-ignored except to separate arguments. Anything within a set of double quotes is treated as one
-argument as is typical for most languages. The backslash can be used to escape characters
-preventing the normal interpretation of them. The subsequent examples in this chapter will
-help to clear up some of these syntactic issues. You might wonder why CMake decided to
-have its own language instead of using an existing one such as Python, Java, or Tcl. The main
-reason is that we did not want to make CMake require an additional tool to run. By requiring
-one of these other languages all users of CMake would be required to have that language
-installed, and potentially a speciﬁc version of that language. This is on top of the language
-
-34 Writinq CMakeLists Files
-
-extensions that would be required to do some of the CMake work, for both performance and
-capability reasons.
+CMakeLists ﬁles follow a simple syntax consisting of comments, commands, and white space. A comment is indicated using the # character and runs from that character until the end of the line. A command consists of the command name, opening parenthesis, white space separated arguments and a closing parenthesis. All white space (spaces, line feeds, tabs) are ignored except to separate arguments. Anything within a set of double quotes is treated as one argument as is typical for most languages. The backslash can be used to escape characters preventing the normal interpretation of them. The subsequent examples in this chapter will help to clear up some of these syntactic issues. You might wonder why CMake decided to have its own language instead of using an existing one such as Python, Java, or Tcl. The main reason is that we did not want to make CMake require an additional tool to run. By requiring one of these other languages all users of CMake would be required to have that language installed, and potentially a speciﬁc version of that language. This is on top of the language extensions that would be required to do some of the CMake work, for both performance and capability reasons.
 
 4.2 Basic Commands
 
