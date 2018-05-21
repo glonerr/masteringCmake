@@ -1232,35 +1232,21 @@ that a project with a number of examples could use this feature to generate the 
 each example with one run of CMake, but not have the examples built as part of the normal
 build process.
 
-The set command is probably one of the most used commands since it is used for deﬁning
-and modifying variables and lists. Complimenting the set command are the remove and
-separate_arguments commands. The remove command can be used to remove a value
-from a variable list, while the separatemarguments command can be used to take a single
-variable value (as opposed to a list) and break it into a list based on spaces.
+The set command is probably one of the most used commands since it is used for deﬁning and modifying variables and lists. Complimenting the set command are the remove and separate_arguments commands. The remove command can be used to remove a value from a variable list, while the separatemarguments command can be used to take a single variable value (as opposed to a list) and break it into a list based on spaces.
 
-The addiexecutable and add‘library commands are the main commands for deﬁning
-what libraries and executables to build, and what source ﬁles comprise them. For Visual
-Studio projects the source ﬁles will show up in the IDE as usual, but any header ﬁles the
-project uses will not be there. To have the header ﬁles show up as well you simply add them
-to the list of source ﬁles for the executable or library. This can be done for all generators. Any
-generators that do not use the header ﬁles directly (such as Makeﬁle based generators) will
-simply ignore them.
+The add_executable and add_library commands are the main commands for deﬁning what libraries and executables to build, and what source ﬁles comprise them. For Visual Studio projects the source ﬁles will show up in the IDE as usual, but any header ﬁles the project uses will not be there. To have the header ﬁles show up as well you simply add them to the list of source ﬁles for the executable or library. This can be done for all generators. Any generators that do not use the header ﬁles directly (such as Makeﬁle based generators) will simply ignore them.
 
 Flow Control 35
 
 4.3 Flow Control
 
-In many ways writing a CMakeLists ﬁle is like a writing a program in a simple language.
-Like most languages CMake provides ﬂow control structures to help you along your way.
-CMake provides three ﬂow control structures;
+In many ways writing a CMakeLists ﬁle is like a writing a program in a simple language. Like most languages CMake provides ﬂow control structures to help you along your way. CMake provides three ﬂow control structures;
 
 0 conditional statements (e.g. if)
 - looping constructs (e.g. foreach and while)
 0 procedure deﬁnitions (e.g. macro and function)
 
-First we will consider the if command. In many ways the if command in CMake isjust like
-the if command in any other language. It evaluates its expression and based on that either
-executes the code in its body or optionally the code in the else clause. For example:
+First we will consider the if command. In many ways the if command in CMake isjust like the if command in any other language. It evaluates its expression and based on that either executes the code in its body or optionally the code in the else clause. For example:
 
 if (FOO)
 
@@ -1270,9 +1256,7 @@ else (FOO)
 # do something else
 endif (FOO)
 
-One difference you might notice is that the conditional of the if statement is repeated in the
-else and endif clauses. This is optional and in this book you will see examples of both
-styles. You could just as well choose to write:
+One difference you might notice is that the conditional of the if statement is repeated in the else and endif clauses. This is optional and in this book you will see examples of both styles. You could just as well choose to write:
 
 if (FOO)
 
@@ -1282,9 +1266,7 @@ else ()
 # do something else
 endif 0
 
-When you include conditionals in the else and endif clause they are used to provide
-additional error checking. As such they must exactly match the original conditional of the if
-statement. The following code would not work:
+When you include conditionals in the else and endif clause they are used to provide additional error checking. As such they must exactly match the original conditional of the if statement. The following code would not work:
 
 set (FOO l)
 
@@ -1295,15 +1277,9 @@ endif (l)
 
 36 Writinq CMakeLists Files
 
-Fortunately CMake provides verbose error messages in the case where an if statement is not
-properly matched with an endif. This should help you to track down any problems with
-matching conditionals. Providing the conditionals on the else and endif commands also has
-the added beneﬁt of helping to document your CMakeLists ﬁle. With a long if statement it
-can be easy to lose track of what if statement the endif is closing. if statements can be
-nested to any depth, and any command can be used inside of an i f or else clause.
+Fortunately CMake provides verbose error messages in the case where an if statement is not properly matched with an endif. This should help you to track down any problems with matching conditionals. Providing the conditionals on the else and endif commands also has the added beneﬁt of helping to document your CMakeLists ﬁle. With a long if statement it can be easy to lose track of what if statement the endif is closing. if statements can be nested to any depth, and any command can be used inside of an i f or else clause.
 
-As with many other languages, CMake supports elseif so that you can sequentially test for
-multiple conditions. For example:
+As with many other languages, CMake supports elseif so that you can sequentially test for multiple conditions. For example:
 
 if (MSVCSO)
 
@@ -1316,9 +1292,7 @@ elseif (APPLE)
 # do something else
 endif ()
 
-The if command has a limited set of operations that you can use. It does not support general
-purpose C style expressions such as $ {FOO} & & $ { BAR} I l s { FUBAR}, instead it supports
-a limited subset of expressions that should work for most cases. Speciﬁcally if supports:
+The if command has a limited set of operations that you can use. It does not support general purpose C style expressions such as $ {FOO} & & $ { BAR} I l s { FUBAR}, instead it supports a limited subset of expressions that should work for most cases. Speciﬁcally if supports:
 if (variable)
 
 True ifthe variable‘s value is not empty, 0, FALSE, OFF, or NOTFOUND.
@@ -1361,12 +1335,7 @@ if (string MATCHES regex)
 
 True if the given string or variable's value matches the given regular expression.
 
-Options such as EQUAL, LESS, and GREATER are available for numeric comparisons.
-STRLESS, STREQUAL, and STRGREATER can be used for lexicographic comparisons.
-VERSION_LESS, VERSION_EQUAL, and VERSIONiGREATER can be used to compare versions
-of the form major [ .minor[ .patch [ . tweak] ] 1. Similar to C and C++ these expressions
-can be combined to create more powerful conditionals. For example consider the following
-conditionals:
+Options such as EQUAL, LESS, and GREATER are available for numeric comparisons. STRLESS, STREQUAL, and STRGREATER can be used for lexicographic comparisons. VERSION_LESS, VERSION_EQUAL, and VERSIONiGREATER can be used to compare versions of the form major [ .minor[ .patch [ . tweak] ] 1. Similar to C and C++ these expressions can be combined to create more powerful conditionals. For example consider the following conditionals:
 
 if ((1 LESS 2) AND (3 LESS 4))
 message ("sequence of numbers")
@@ -1388,10 +1357,6 @@ if (EXISTS ${PROJECTiSOURCEiDIR}/Help.txt AND COMMAND IF)
 message ("Help exists")
 endif (EXISTS $lPROJECTiSOURCEiDIR}/Help.txt AND COMMAND IF)
 
-38 WrithQ CMakeLists Files
-
- 
-
 set (fooba 0)
 
 if (NOT DEFINED foobar)
@@ -1402,25 +1367,13 @@ if (NOT DEFINED fooba)
 message ("fooba not defined")
 endif (NOT DEFINED fooba)
 
-In compound if statements there is an order of precedence that specifies the order that the
-operations will be evaluated. For example, in the statement below, the NOT will be evaluated
-ﬁrst then the AND, not the other way around. Thus the statement will be false and the message
-never printed. Had the AND been evaluated ﬁrst the statement would be true.
+In compound if statements there is an order of precedence that specifies the order that the operations will be evaluated. For example, in the statement below, the NOT will be evaluated ﬁrst then the AND, not the other way around. Thus the statement will be false and the message never printed. Had the AND been evaluated ﬁrst the statement would be true.
 
 if (NOT 0 AND 0)
 message ("This line is never executed")
 endif (NOT 0 AND O)
 
-CMake deﬁnes the order of operations such that parenthetical groups are evaluated ﬁrst, then
-EXISTS, COMMAND, DEFINED and similar preﬁx operators are evaluated, then any EQUAL,
-LESS, GREATER, STREQUAL, STRLESS, STRGREATER, and MATCHES operators. The NOT
-operators are evaluated next, and ﬁnally the AND and OR expressions will be evaluated. With
-operations that have the same level of precedence, such as AND and OR, they will be evaluated
-from left to right. Once all of the expressions have been evaluated the ﬁnal result will be
-tested to see if it is true or false. CMake considers any of the following values to be true: ON,
-I, YES, TRUE, Y. The following values are all considered to be false: OFF, 0, NO, FALSE, N,
-NOTEOUND, *—NOTFOUND, IGNORE. This test is case insensitive so true, True, and TRUE are
-all treated the same.
+CMake deﬁnes the order of operations such that parenthetical groups are evaluated ﬁrst, then EXISTS, COMMAND, DEFINED and similar preﬁx operators are evaluated, then any EQUAL, LESS, GREATER, STREQUAL, STRLESS, STRGREATER, and MATCHES operators. The NOT operators are evaluated next, and ﬁnally the AND and OR expressions will be evaluated. With operations that have the same level of precedence, such as AND and OR, they will be evaluated from left to right. Once all of the expressions have been evaluated the ﬁnal result will be tested to see if it is true or false. CMake considers any of the following values to be true: ON, I, YES, TRUE, Y. The following values are all considered to be false: OFF, 0, NO, FALSE, N, NOTEOUND, *—NOTFOUND, IGNORE. This test is case insensitive so true, True, and TRUE are all treated the same.
 
 Now let us consider the other ﬂow control commands. The foreach, while, macro, and
 function commands are the best way to reduce the size of your CMakeLists ﬁles and keep
