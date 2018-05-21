@@ -1373,13 +1373,9 @@ if (NOT 0 AND 0)
 message ("This line is never executed")
 endif (NOT 0 AND O)
 
-CMake deﬁnes the order of operations such that parenthetical groups are evaluated ﬁrst, then EXISTS, COMMAND, DEFINED and similar preﬁx operators are evaluated, then any EQUAL, LESS, GREATER, STREQUAL, STRLESS, STRGREATER, and MATCHES operators. The NOT operators are evaluated next, and ﬁnally the AND and OR expressions will be evaluated. With operations that have the same level of precedence, such as AND and OR, they will be evaluated from left to right. Once all of the expressions have been evaluated the ﬁnal result will be tested to see if it is true or false. CMake considers any of the following values to be true: ON, I, YES, TRUE, Y. The following values are all considered to be false: OFF, 0, NO, FALSE, N, NOTEOUND, *—NOTFOUND, IGNORE. This test is case insensitive so true, True, and TRUE are all treated the same.
+CMake deﬁnes the order of operations such that parenthetical groups are evaluated ﬁrst, then EXISTS, COMMAND, DEFINED and similar preﬁx operators are evaluated, then any EQUAL, LESS, GREATER, STREQUAL, STRLESS, STRGREATER, and MATCHES operators. The NOT operators are evaluated next, and ﬁnally the AND and OR expressions will be evaluated. With operations that have the same level of precedence, such as AND and OR, they will be evaluated from left to right. Once all of the expressions have been evaluated the ﬁnal result will be tested to see if it is true or false. CMake considers any of the following values to be true: ON, I, YES, TRUE, Y. The following values are all considered to be false: OFF, 0, NO, FALSE, N, NOTEOUND, *-NOTFOUND, IGNORE. This test is case insensitive so true, True, and TRUE are all treated the same.
 
-Now let us consider the other ﬂow control commands. The foreach, while, macro, and
-function commands are the best way to reduce the size of your CMakeLists ﬁles and keep
-them maintainable. The foreach command enables you to execute a group of CMake
-commands repeatedly on the members of a list. Consider the following example adapted from
-VTK:
+Now let us consider the other ﬂow control commands. The foreach, while, macro, and function commands are the best way to reduce the size of your CMakeLists ﬁles and keep them maintainable. The foreach command enables you to execute a group of CMake commands repeatedly on the members of a list. Consider the following example adapted from VTK:
 
 foreach (tfile
 TestAnisotropicDiffusion2D
@@ -1400,29 +1396,15 @@ ${VTKgSOURCE_DIR}/Tests/${tflle}.tcl
 )
 endforeach ( tfile )
 
-The ﬁrst argument of the f o reach command is the name of the variable that will take on a
-different value with each iteration of the loop. The remaining arguments are the list of values
-over which to loop. In this example the body of the foreach loop is just one CMake
-command, add_test. In the body ofthe foreach loop any time the loop variable (tfile in
-this example) is referenced it will be replaced with the current value from the list. In the ﬁrst
-iteration, occurrences of $ { tfile} will be replaced with TestAnisotropicDiffusionZD.
-In the next iteration, $ { tfile} will be replaced with TestButterworthLowPass. The
-f o reach loop will continue to loop until all of the arguments have been processed.
+The ﬁrst argument of the f o reach command is the name of the variable that will take on a different value with each iteration of the loop. The remaining arguments are the list of values over which to loop. In this example the body of the foreach loop is just one CMake command, add_test. In the body ofthe foreach loop any time the loop variable (tfile in this example) is referenced it will be replaced with the current value from the list. In the ﬁrst iteration, occurrences of $ { tfile} will be replaced with TestAnisotropicDiffusionZD. In the next iteration, $ { tfile} will be replaced with TestButterworthLowPass. The foreach loop will continue to loop until all of the arguments have been processed.
 
-It is worth mentioning that f oreach loops can be nested and that the loop variable is replaced
-prior to any other variable expansion. This means that in the body of a foreach loop you
-can construct variable names using the loop variable. In the code below the loop variable
-tfile is expanded, and then concatenated with _TEST*RESULT. That new variable name is
-then expanded and tested to see if it matches FAILED.
+It is worth mentioning that foreach loops can be nested and that the loop variable is replaced prior to any other variable expansion. This means that in the body of a foreach loop you can construct variable names using the loop variable. In the code below the loop variable tfile is expanded, and then concatenated with _TEST*RESULT. That new variable name is then expanded and tested to see if it matches FAILED.
 
 if ($i${tfile}lﬂTEST#RESULT} MATCHES FAILED)
 message ("Test ${tfile} failed.")
 endif 0
 
-The while command provides for looping based on a test condition. The format for the test
-expression in the while command is the same as that for the if command described earlier.
-Consider the following example, which is used by CTest. Note that CTest updates the value of
-CTESTfELAPSEDﬁTIME internally.
+The while command provides for looping based on a test condition. The format for the test expression in the while command is the same as that for the if command described earlier. Consider the following example, which is used by CTest. Note that CTest updates the value of CTEST_ELAPSED_TIME internally.
 
 #####################################################
 
@@ -1439,46 +1421,28 @@ ctestirun_script ( "dashlicmakeivs7lcontinuous.cmake" )
 
 endwhile ()
 
-The foreach and while commands allow you to handle repetitive tasks that occur in
-sequence, whereas the macro and function commands support repetitive tasks that may be
-scattered throughout your CMakeLists ﬁles. Once a macro or function is deﬁned it can be
-used by any CMakeLists ﬁles processed after its deﬁnition.
+The foreach and while commands allow you to handle repetitive tasks that occur in sequence, whereas the macro and function commands support repetitive tasks that may be scattered throughout your CMakeLists ﬁles. Once a macro or function is deﬁned it can be used by any CMakeLists ﬁles processed after its deﬁnition.
 
-A function in CMake is very much like a function in C or C++. You can pass arguments into
-it, and the arguments passed in become variables within the function. Likewise some standard
-variables such as ARGC, ARGV, ARGN, and ARGVO, ARGVi, etc are deﬁned. Within a function
-you are in a new variable scope, much like when you drop into a subdirectory using the
-addisubdirectory command you are in a new variable scope. All the variables that were
-deﬁned when the function was called are still deﬁned, but any changes to variables or new
-variables only exist within the function. When the function returns those variables will go
-away. Put more simply, when you invoke a function a new variable scope is pushed and when
+A function in CMake is very much like a function in C or C++. You can pass arguments into it, and the arguments passed in become variables within the function. Likewise some standard variables such as ARGC, ARGV, ARGN, and ARGVO, ARGVi, etc are deﬁned. Within a function you are in a new variable scope, much like when you drop into a subdirectory using the add_subdirectory command you are in a new variable scope. All the variables that were deﬁned when the function was called are still deﬁned, but any changes to variables or new variables only exist within the function. When the function returns those variables will go away. Put more simply, when you invoke a function a new variable scope is pushed and when
 it returns that variable scope is popped.
 
-The ﬁrst argument is the name of the function to deﬁne. All additional arguments are formal
-parameters to the function.
+The ﬁrst argument is the name of the function to deﬁne. All additional arguments are formal parameters to the function.
 
-function(DetermineTime itime)
+function(DetermineTime _time)
 # pass the result up to whatever invoked this
-set (${rtime} “1:23:45” PARENTfSCOPE)
+set (${_time} “1:23:45” PARENT_SCOPE)
 endfunction()
 
 # now use the function we just defined
-DetermineTime( currentVtime )
+DetermineTime( current_time )
 
-if( DEFINED currentitime )
-message(STATUS "The time is now: ${Curretitime}")
-endifﬂ
+if( DEFINED current_time )
+message(STATUS "The time is now: ${current_time}")
+endif()
 
-Note that in this example itime is used to pass the name of the return variable. The set
-command is invoked with the value ofitime, which in this example will be Currentitime.
-Finally the set command uses the PARENTiSCOPE option to set that variable in the parent’s
-scope instead of the local scope.
+Note that in this example itime is used to pass the name of the return variable. The set command is invoked with the value ofitime, which in this example will be Currentitime. Finally the set command uses the PARENTiSCOPE option to set that variable in the parent’s scope instead of the local scope.
 
-Macros are deﬁned and called in the same manner as ﬁanctions. The main differences are that
-a macro does not push and pop a new variable scope, and the arguments to a macro are not
-treated as variables but are string replaced prior to execution. This is very much like the
-differences between a macro and a function in C or C++. The ﬁrst argument is the name of
-the macro to create. All additional arguments are formal parameters to the macro[.
+Macros are deﬁned and called in the same manner as ﬁanctions. The main differences are that a macro does not push and pop a new variable scope, and the arguments to a macro are not treated as variables but are string replaced prior to execution. This is very much like the differences between a macro and a function in C or C++. The ﬁrst argument is the name of the macro to create. All additional arguments are formal parameters to the macro[.
 
 How/Connol 41
 
@@ -1494,14 +1458,7 @@ endmacro (assert)
 findilibrary (FOOiLIB foo /usr/local/lib)
 assert ( ${FOOiLIB) "Unable to find library foo" )
 
-The simple example above creates a macro called assert. The macro is deﬁned to take two
-arguments. The ﬁrst argument is a value to test and the second argument is a comment to print
-out if the test fails. The body of the macro is a simple if command with a message
-command inside of it. The macro body ends when the endmacro command is found. The
-macro can be invoked simply by using its name as if it were a command. In the above
-example if FOOiLIB was not found a message would be displayed indicating the error
-
-condition.
+The simple example above creates a macro called assert. The macro is deﬁned to take two arguments. The ﬁrst argument is a value to test and the second argument is a comment to print out if the test fails. The body of the macro is a simple if command with a message command inside of it. The macro body ends when the endmacro command is found. The macro can be invoked simply by using its name as if it were a command. In the above example if FOOiLIB was not found a message would be displayed indicating the error condition.
 
 The macro command also supports deﬁning macros that take variable argument lists. This
 can be useful if you want to deﬁne a macro that has optional arguments or multiple signatures.
