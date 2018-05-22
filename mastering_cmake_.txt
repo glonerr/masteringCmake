@@ -1460,12 +1460,7 @@ assert ( ${FOOiLIB) "Unable to find library foo" )
 
 The simple example above creates a macro called assert. The macro is deﬁned to take two arguments. The ﬁrst argument is a value to test and the second argument is a comment to print out if the test fails. The body of the macro is a simple if command with a message command inside of it. The macro body ends when the endmacro command is found. The macro can be invoked simply by using its name as if it were a command. In the above example if FOOiLIB was not found a message would be displayed indicating the error condition.
 
-The macro command also supports deﬁning macros that take variable argument lists. This
-can be useful if you want to deﬁne a macro that has optional arguments or multiple signatures.
-Variable arguments can be referenced using ARGC and ARGVO, ARGVT, etc., instead of the
-formal parameters. ARGVO represents the ﬁrst argument to the macro, ARGVl represents the
-next, and so forth. You can even use a mixture of formal arguments and variable arguments,
-as shown in the example below.
+The macro command also supports deﬁning macros that take variable argument lists. This can be useful if you want to deﬁne a macro that has optional arguments or multiple signatures. Variable arguments can be referenced using ARGC and ARGVO, ARGVT, etc., instead of the formal parameters. ARGVO represents the ﬁrst argument to the macro, ARGVl represents the next, and so forth. You can even use a mixture of formal arguments and variable arguments, as shown in the example below.
 
 # define a macro that takes at least two arguments
 # (the formal arguments) plus an optional third argument
@@ -1489,27 +1484,13 @@ it use the macro
 findplibrary (FOOiLIB foo /usr/local/lib)
 assert ( ${FOOiLIB} "Unable to find library foo" )
 
-In this example the two required arguments are TEST and COMMENT. These required
-arguments can be referenced by name, as they are in this example, or they can be referenced
-‘using ARGVO and ARGVT. If you want to process the arguments as a list you can use the ARGV
-and ARGN variables. ARGV (as opposed to ARGVO, ARGVl, etc) is a list of all the arguments to
-the macro, while ARGN is a list of all the arguments after the formal arguments. Inside your
-macro you can use the f oreach command to iterate over ARGV or ARGN as desired.
+In this example the two required arguments are TEST and COMMENT. These required arguments can be referenced by name, as they are in this example, or they can be referenced ‘using ARGVO and ARGVT. If you want to process the arguments as a list you can use the ARGV and ARGN variables. ARGV (as opposed to ARGVO, ARGVl, etc) is a list of all the arguments to the macro, while ARGN is a list of all the arguments after the formal arguments. Inside your macro you can use the f oreach command to iterate over ARGV or ARGN as desired.
 
-CMake has two commands for interrupting the processing flow. The break command will
-break out ofa foreach or while loop before it would normally end. The return command
-will return from a function or listﬁle before the function or listfile has reached its end.
+CMake has two commands for interrupting the processing flow. The break command will break out ofa foreach or while loop before it would normally end. The return command will return from a function or listﬁle before the function or listfile has reached its end.
 
 4.4 Regular Expressions
 
-A few CMake commands, such as if and string, make use of regular expressions, or can
-take a regular expression as an argument. In its simplest form, a regular—expression is a
-sequence of characters used to search for exact character matches. However, many times the
-exact sequence to be found is not known, or only a match at the beginning or end of a string is
-desired. Since there are several different conventions for specifying regular expressions
-CMake’s standard is described below. The description is based on the open source regular
-expression class from Texas Instruments, which is used by CMake for parsing regular
-expressions.
+A few CMake commands, such as if and string, make use of regular expressions, or can take a regular expression as an argument. In its simplest form, a regular—expression is a sequence of characters used to search for exact character matches. However, many times the exact sequence to be found is not known, or only a match at the beginning or end of a string is desired. Since there are several different conventions for specifying regular expressions CMake’s standard is described below. The description is based on the open source regular expression class from Texas Instruments, which is used by CMake for parsing regular expressions.
 
 Regular expressions can be speciﬁed by using combinations of standard alphanumeric
 characters and the following regular expression meta-characters:
