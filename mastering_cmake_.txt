@@ -1492,86 +1492,54 @@ CMake has two commands for interrupting the processing flow. The break command w
 
 A few CMake commands, such as if and string, make use of regular expressions, or can take a regular expression as an argument. In its simplest form, a regular—expression is a sequence of characters used to search for exact character matches. However, many times the exact sequence to be found is not known, or only a match at the beginning or end of a string is desired. Since there are several different conventions for specifying regular expressions CMake’s standard is described below. The description is based on the open source regular expression class from Texas Instruments, which is used by CMake for parsing regular expressions.
 
-Regular expressions can be speciﬁed by using combinations of standard alphanumeric
-characters and the following regular expression meta-characters:
+Regular expressions can be speciﬁed by using combinations of standard alphanumeric characters and the following regular expression meta characters:
 
 A Matches at beginning of a line or string.
 $ Matches at end of a line or string.
 Matches any single character other than a newline.
 [ ] Matches any character(s) inside the brackets.
 [A ] Matches any character(s) not inside the brackets.
-
 [-] Matches any character in range on either side of a dash.
-
 Matches preceding pattern zero or more times.
-
-Rggular Expressions 43
-
- 
-
 + Matches preceding pattern one or more times.
 ? Matches preceding pattern zero or once only.
 0 Saves a matched expression and uses it in a later replacement.
 
 ( I ) Matches either the left or right side of the bar.
 
-Note that more than one of these meta-characters can be used in a single regular expression in
-order to create complex search patterns. For example, the pattern [Aabl—9] indicates to match
-H 97
-
-any character sequence that does not begin with the characters a or “b" or numbers in the
+Note that more than one of these meta-characters can be used in a single regular expression in order to create complex search patterns. For example, the pattern [^ab1-9] indicates to match any character sequence that does not begin with the characters a or “b" or numbers in the
 series one through nine. The following examples may help clarify regular expression usage:
 
-0 The regular expression ”Ahello" matches a "hello" only at the beginning of a search
-string. It would match "hello there", but not ”hi,\nhello there".
+0 The regular expression ”Ahello" matches a "hello" only at the beginning of a search string. It would match "hello there", but not ”hi,\nhello there".
 
-I The regular expression "long$" matches a "long" only at the end of a search string. It
-would match "so long", but not "long ago".
+I The regular expression "long$" matches a "long" only at the end of a search string. It would match "so long", but not "long ago".
 
-0 The regular expression "t..t..g” will match anything that has a "t”, then any two
-H H
+0 The regular expression "t..t..g” will match anything that has a "t”, then any two H H
 
 characters, another "t", any two characters, and then a g . It would match "testing" or
 "test again", but would not match "toasting".
 
-o The regular expression "[l-9ab]" matches any number one through nine, and the
-characters "a" and "b". It would match "hello 1" or "begin", but would not match "no-
-match”.
+o The regular expression "[l-9ab]" matches any number one through nine, and the characters "a" and "b". It would match "hello 1" or "begin", but would not match "no-match".
 
-0 The regular expression "[Al—9ab]" matches any character that is not a number one
-through nine, or an "a" or "b”. It would NOT match "lab2" or "b2345a", but would
-match "no—match".
+0 The regular expression "[^1-9ab]" matches any character that is not a number one through nine, or an "a" or "b". It would NOT match "lab2" or "b2345a", but would match "no-match".
 
 o The regular expression "br* " matches something that begins with a "b", is followed by
 zero or more "r"s, and ends in a space. It would match "brrrrr " and "b ", but would not
 match "brrh ".
 
-o The regular expression "br+ " matches something that begins with a "b", is followed by
-one or more "r"s, and ends in a space. It would match "brrrrr ", and "br ", but would not
-match "b " or "brrh ".
+o The regular expression "br+ " matches something that begins with a "b", is followed by one or more "r"s, and ends in a space. It would match "brrrrr ", and "br ", but would not match "b " or "brrh ".
 
-o The regular expression "br? " matches something that begins with a "b", is followed by
-zero or one "r"s, and ends in a space. It would match "br ”, and "b ”, but would not
-match "brrrr " or "brrh ".
+o The regular expression "br? " matches something that begins with a "b", is followed by zero or one "r"s, and ends in a space. It would match "br ”, and "b ”, but would not match "brrrr " or "brrh ".
 
-o The regular expression "(..p)b" matches something ending with pb and beginning with
-Whatever the two characters before the ﬁrst p encountered in the line were. It would ﬁnd
-"repb" in "rep drepaqrepb". The regular expression "(..p)a" would find "repa qrepb” in
-"rep drepa qrepb"
+o The regular expression "(..p)b" matches something ending with pb and beginning with Whatever the two characters before the ﬁrst p encountered in the line were. It would ﬁnd "repb" in "rep drepaqrepb". The regular expression "(..p)a" would find "repa qrepb” in "rep drepa qrepb"
 
 44 Writinq CMakeLists Files
 
-0 The regular expression "d(..p)" matches something ending with p, beginning with d, and
-having two characters in between that are the same as the two characters before the first
-p encountered in the line. It would match "drepa qrepb" in "rep drepa qrepb".
+0 The regular expression "d(..p)" matches something ending with p, beginning with d, and having two characters in between that are the same as the two characters before the first p encountered in the line. It would match "drepa qrepb" in "rep drepa qrepb".
 
 4.5 Checking Versions of CMake
 
-CMake is an evolving program and as new versions are released, new features or commands
-may be introduced. As a result, there may be instances where you might want to use a
-command that is in a current version of CMake but not in previous versions. There are a
-couple of ways to handle this. One option is to use the if command to check whether a new
-command exists. For example:
+CMake is an evolving program and as new versions are released, new features or commands may be introduced. As a result, there may be instances where you might want to use a command that is in a current version of CMake but not in previous versions. There are a couple of ways to handle this. One option is to use the if command to check whether a new command exists. For example:
 
 # test if the command exists
 
@@ -1580,9 +1548,7 @@ if (COMMAND someinewicommand)
 someinewicommand ( ARGS...)
 endif (COMMAND some‘newvcommand)
 
-The above approach should work in most cases, but if you need more information you can test
-against the actual version of CMake that is being run by evaluating the CMAKEJ/ERSION
-variables, as in the following example:
+The above approach should work in most cases, but if you need more information you can test against the actual version of CMake that is being run by evaluating the CMAKE_VERSION variables, as in the following example:
 
 # look for newer versions of CMake
 
@@ -1590,62 +1556,39 @@ if ($ { CMAKEAVERSION} VERSIONiGREATER l . 6 . l)
 # do something special here
 endif 0
 
-When writing your CMakeLists files you might decide that you do not want to support old
-versions of CMake. To do this you can place the following command at the top of your
-CMakeLists file:
+When writing your CMakeLists files you might decide that you do not want to support old versions of CMake. To do this you can place the following command at the top of your CMakeLists file:
 
 cmake_minimum_required (VERSION 2.2)
 
-This indicates that the person running CMake on your project must have at least CMake
-version 2.2. If they are running an older version of CMake then an error message will be
-displayed telling them that the project requires at least the speciﬁed version of CMake.
+This indicates that the person running CMake on your project must have at least CMake version 2.2. If they are running an older version of CMake then an error message will be displayed telling them that the project requires at least the speciﬁed version of CMake.
 
 Using Modules 45
 
-Finally, in some cases a new release of CMake might come out that no longer supports some
-commands you were using (although we try to avoid this). In these cases you can use CMake
-policies, as discussed in section 4.7.
+Finally, in some cases a new release of CMake might come out that no longer supports some commands you were using (although we try to avoid this). In these cases you can use CMake policies, as discussed in section 4.7.
 
 4.6 Using Modules
 
-Code reuse is a valuable technique in software development and CMake has been designed to
-support it. Allowing CMakeLists ﬁles to make use of reusable modules enables the entire
-CMake community to share reusable sections of code. For CMake these sections of code are
-called modules and can be found in the Modules subdirectory of your CMake installation.
-Modules are simply sections of CMake commands put into a ﬁle. They can then be included
-into other CMakeLists ﬁles using the include command. For example, the following
-commands will include the FindTCL module from CMake and then add the Tcl library to the
-target FOO.
+Code reuse is a valuable technique in software development and CMake has been designed to support it. Allowing CMakeLists ﬁles to make use of reusable modules enables the entire CMake community to share reusable sections of code. For CMake these sections of code are called modules and can be found in the Modules subdirectory of your CMake installation. Modules are simply sections of CMake commands put into a ﬁle. They can then be included into other CMakeLists ﬁles using the include command. For example, the following commands will include the FindTCL module from CMake and then add the Tcl library to the target FOO.
 
 include (FindTCL)
 
 target_linkilibraries (FOO ${TCL_LTBRARY})
 
-A module’s location can be speciﬁed using the full path to the module ﬁle, or by letting
-CMake ﬁnd the module by itself. CMake will look for modules in the directories speciﬁed by
-CMAKEiMODULE#PATH and if it cannot ﬁnd it there, it will look in the Modules subdirectory
-of CMake. This way projects can override modules that CMake provides, to customize them
-for their needs. Modules can be broken into a few main categories:
+A module’s location can be speciﬁed using the full path to the module ﬁle, or by letting CMake ﬁnd the module by itself. CMake will look for modules in the directories speciﬁed by CMAKEiMODULE#PATH and if it cannot ﬁnd it there, it will look in the Modules subdirectory of CMake. This way projects can override modules that CMake provides, to customize them for their needs. Modules can be broken into a few main categories:
 
 Find Modules
 
-These modules determine the location of software elements such as header ﬁles or
-libraries.
+These modules determine the location of software elements such as header ﬁles or libraries.
 
 System lntrospection Modules
 
-These modules test the system for properties such as the size of a ﬂoat, support for
-ANSI C++ streams, etc.
+These modules test the system for properties such as the size of a ﬂoat, support for ANSI C++ streams, etc.
 
 Utility Modules
 
-These modules provide added functionality such as support for situations where one
-CMake project depends on another and other convenience routines.
+These modules provide added functionality such as support for situations where one CMake project depends on another and other convenience routines.
 
-Now let us consider these three types of modules in more detail. CMake includes a large
-number of Find modules. The purpose of a Find module is to locate software elements such as
-header or library ﬁles. Ifthey cannot be found then they provide a cache entry so that the user
-can set the required properties. Consider the following module that ﬁnds the PNG library.
+Now let us consider these three types of modules in more detail. CMake includes a large number of Find modules. The purpose of a Find module is to locate software elements such as header or library ﬁles. Ifthey cannot be found then they provide a cache entry so that the user can set the required properties. Consider the following module that ﬁnds the PNG library.
 
 46
 
