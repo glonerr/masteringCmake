@@ -1665,81 +1665,35 @@ endif 0
 
 ‘endif ()
 
-The top of the module clearly documents what the module will do and what variables it will
-set. Next it includes another module, the FindZLIB module, that determines if the ZLib
-library is installed. Next, if ZLib is found, the find_path command is used to locate the
-PNG include ﬁles. The ﬁrst argument is the name of the variable to store the result in, the
-second argument is the name of the header ﬁle to look for, the remaining arguments are paths
-to search for the header ﬁle. If it is not found in the system path then the variable is set to
-PNG_PNG_INCLUDE‘DIR—NOTFOUND, allowing the user to set it.
+The top of the module clearly documents what the module will do and what variables it will set. Next it includes another module, the FindZLIB module, that determines if the ZLib library is installed. Next, if ZLib is found, the find_path command is used to locate the PNG include ﬁles. The ﬁrst argument is the name of the variable to store the result in, the second argument is the name of the header ﬁle to look for, the remaining arguments are paths to search for the header ﬁle. If it is not found in the system path then the variable is set to PNG_PNG_INCLUDE_DIR—NOTFOUND, allowing the user to set it.
 
-Note that the paths to search for the PNG library can include hard coded directories, registry
-entries, and directories made up of other CMake variables. The next command ﬁnds the actual
-PNG library using the f ind_l ibrary command. This command performs additional checks
-to ﬁnd a proper library name, such as adding "lib" in front of the name and ".so" at the end of
-the name on Linux systems.
+Note that the paths to search for the PNG library can include hard coded directories, registry entries, and directories made up of other CMake variables. The next command ﬁnds the actual PNG library using the f ind_l ibrary command. This command performs additional checks to ﬁnd a proper library name, such as adding "lib" in front of the name and ".so" at the end of the name on Linux systems.
 
-After the ﬁnd calls, some CMake variables are set that developers using FindPNG can use in
-their projects (such as the include paths, and library name). Finally PN G_FOUN D is set
-correctly, which lets developers know that the PNG library was properly found.
+After the ﬁnd calls, some CMake variables are set that developers using FindPNG can use in their projects (such as the include paths, and library name). Finally PNG_FOUND is set correctly, which lets developers know that the PNG library was properly found.
 
-This structure is fairly common to all Find modules in CMake. Usually they are fairly short,
-but in some cases, such as FindOpenGL they can be a few pages long. They are normally
-independent of other modules, but there is no restriction on the use of other modules.
+This structure is fairly common to all Find modules in CMake. Usually they are fairly short, but in some cases, such as FindOpenGL they can be a few pages long. They are normally ndependent of other modules, but there is no restriction on the use of other modules.
 
-System introspection modules provide information about the target platform or compiler.
-Many of these modules have names preﬁxed with Test or Check, such as TestBigEndian
-and CheckTypeSize. Many of the system introspection modules actually try to compile code
-in order to determine the correct result. In these cases the source code is usually named the
-same as the module, but with a .c or .cxx extension. System introspection modules are
-covered in more detail in chapter 5.
+System introspection modules provide information about the target platform or compiler. Many of these modules have names preﬁxed with Test or Check, such as TestBigEndian and CheckTypeSize. Many of the system introspection modules actually try to compile code in order to determine the correct result. In these cases the source code is usually named the same as the module, but with a .c or .cxx extension. System introspection modules are covered in more detail in chapter 5.
 
-CMake includes a few Utility modules to help make using CMake a little easier.
-CMakeExportBuildSettings and CMakeImportBuildSettings provide tools to help
-verify that two C++ projects are compiled with the same compiler and key ﬂags. The
-CMakePrintSystemIn format ion module prints out a number ofkey CMake settings to aid
-in debugging.
+CMake includes a few Utility modules to help make using CMake a little easier. CMakeExportBuildSettings and CMakeImportBuildSettings provide tools to help verify that two C++ projects are compiled with the same compiler and key ﬂags. The CMakePrintSystemIn format ion module prints out a number ofkey CMake settings to aid in debugging.
 
 48 Writinq CMakeLists Files
 
 Using CMake with SWIG
 
-One example of how modules can be used is to look at wrapping your C/C++ code in another
-language using SWIG. SWIG (Simpliﬁed Wrapper and Interface Generator) www.swig.org is
-a tool that reads annotated C/C++ header ﬁles, and creates wrapper code (glue code) in order
-to make the corresponding C/C++ libraries available to other programming languages such as
-Tcl, Python, or Java. CMake supports SWIG with the f ind_package command. Although
-SWIG can be used from CMake using custom commands, the SWIG package provides
-several macros that make building SWIG projects with CMake simpler. To use the SWIG
-macros, ﬁrst you must call the findﬁpackage command with the name SWIG. Then you
-need to include the ﬁle referenced by the variable SWIGiU SE_FI LE. This will deﬁne several
-macros and set up CMake to easily build SWIG based projects.
+One example of how modules can be used is to look at wrapping your C/C++ code in another language using SWIG. SWIG (Simpliﬁed Wrapper and Interface Generator) www.swig.org is a tool that reads annotated C/C++ header ﬁles, and creates wrapper code (glue code) in order to make the corresponding C/C++ libraries available to other programming languages such as Tcl, Python, or Java. CMake supports SWIG with the find_package command. Although SWIG can be used from CMake using custom commands, the SWIG package provides several macros that make building SWIG projects with CMake simpler. To use the SWIG macros, ﬁrst you must call the findﬁpackage command with the name SWIG. Then you need to include the ﬁle referenced by the variable SWIGiU SE_FI LE. This will deﬁne several macros and set up CMake to easily build SWIG based projects.
 
-Two very useful macros are SWIGiADDiMODULE and SWIG_LINK‘LIBRARIES.
-SWIGiADDJ/IODULE works much like the add_l ibrary command in CMake. The command
-is invoked like this:
+Two very useful macros are SWIGiADDiMODULE and SWIG_LINK_LIBRARIES. SWIGiADDJ/IODULE works much like the add_l ibrary command in CMake. The command is invoked like this:
 
 SWIG_ADDAMODULE (module_name language sourcel source2 m sourceN)
 
-The ﬁrst argument is the name of the module to create. The next argument is the target
-language SWIG is producing a wrapper for. The rest of the arguments consist of a list of
-source ﬁles used to create the shared module. The big difference is that SWIG . i interface
-ﬁles can be used directly as sources. The macro will create the correct custom commands to
-run SWIG, and generate the C or C++ wrapper code from the SWIG interface ﬁles. The
-sources can also be regular C or C++ ﬁles that need to be compiled in with the wrappers.
+The ﬁrst argument is the name of the module to create. The next argument is the target language SWIG is producing a wrapper for. The rest of the arguments consist of a list of source ﬁles used to create the shared module. The big difference is that SWIG . i interface ﬁles can be used directly as sources. The macro will create the correct custom commands to run SWIG, and generate the C or C++ wrapper code from the SWIG interface ﬁles. The sources can also be regular C or C++ ﬁles that need to be compiled in with the wrappers.
 
-The SWIGALINK_LIBRARIES macro is used to link support libraries to the module. This
-macro is used because depending on the language being wrapped by SWIG, the name of the
-module may be different. The actual name of the module is stored in a variable called
-SWIG_MODULE_${name}_REAL_NAME where $ {name} is the name passed into the
-SWIG_ADD7MODULE macro. For example, SWIG_ADD_MODULE (foo tcl foo.i) would
-create a variable called SWIG_MODULE_fOO_REAL_NAME which would contain the name of
-the actual module created.
+The SWIGALINK_LIBRARIES macro is used to link support libraries to the module. This macro is used because depending on the language being wrapped by SWIG, the name of the module may be different. The actual name of the module is stored in a variable called SWIG_MODULE_${name}_REAL_NAME where $ {name} is the name passed into the SWIG_ADD_MODULE macro. For example, SWIG_ADD_MODULE (foo tcl foo.i) would create a variable called SWIG_MODULE_fOO_REAL_NAME which would contain the name of the actual module created.
 
-Now consider the following example that uses the SWIG example found in SWIG under
-Examples/python/Class.
+Now consider the following example that uses the SWIG example found in SWIG under Examples/python/Class.
 
-'# Find SWIG and include the use swig file
+# Find SWIG and include the use swig file
 find_package (SWIG REQUIRED)
 include (${SWIG_USE7FILE})
 
@@ -1764,24 +1718,11 @@ PROPERTIES SWIGiFLAGS "—includeall")
 _SWIGiADDiMODULE (example python example.i example.cxx)
 SWIGﬁLINK_LIBRARIES (example ${PYTHON7LIBRARIES})
 
-This example ﬁrst uses f indﬁpackage to locate SWIG. Next it includes the
-SWIG_USE_FILE deﬁning the SWIG CMake macros. Then it ﬁnds the Python libraries and
-sets up CMake to build with the Python library. Notice that the SWIG input ﬁle examplei is
-used like any other source ﬁle in CMake, and properties are set on the ﬁle telling SWIG that
-the ﬁle is C++ and that the SWIG ﬂag —inc1udeall should be used when running SWIG on that
-source ﬁle. The module is created by telling SWIG the name of the module, the target
-language and the list of source ﬁles. Finally, the Python libraries are linked to the module.
+This example ﬁrst uses f indﬁpackage to locate SWIG. Next it includes the SWIG_USE_FILE deﬁning the SWIG CMake macros. Then it ﬁnds the Python libraries and sets up CMake to build with the Python library. Notice that the SWIG input ﬁle examplei is used like any other source ﬁle in CMake, and properties are set on the ﬁle telling SWIG that the ﬁle is C++ and that the SWIG ﬂag —inc1udeall should be used when running SWIG on that source ﬁle. The module is created by telling SWIG the name of the module, the target language and the list of source ﬁles. Finally, the Python libraries are linked to the module.
 
 Using CMake with Qt
 
-Projects using the popular widget toolkit Qt from Nokia, qt.nokia.com, can be built with
-CMake. CMake supports multiple versions of Qt, including versions 3 and 4. The ﬁrst step is
-to tell CMake what version(s) of Qt to look for. Many Qt applications are designed to work
-with Qt3 or Qt4, but not both. If your application is designed for Qt4 then you can use the
-Finth4 module, for Qt3 you should use the Finth3 module. If your project can work with
-either version of Qt then you can use the generic F inth module. All of the modules provide
-helpful tools for building Qt projects. The following is a simple example of building a project
-that uses Qt4.
+Projects using the popular widget toolkit Qt from Nokia, qt.nokia.com, can be built with CMake. CMake supports multiple versions of Qt, including versions 3 and 4. The ﬁrst step is to tell CMake what version(s) of Qt to look for. Many Qt applications are designed to work with Qt3 or Qt4, but not both. If your application is designed for Qt4 then you can use the Finth4 module, for Qt3 you should use the Finth3 module. If your project can work with either version of Qt then you can use the generic F inth module. All of the modules provide helpful tools for building Qt projects. The following is a simple example of building a project that uses Qt4.
 
 find>package ( Qt4 )
 
@@ -1808,10 +1749,7 @@ target_link_libraries (thrapping myqtlib)
 
 Using CMake with FLTK
 
-CMake also supports the The Fast Light Toolkit (FLTK) with special FLTK CMake
-commands. The FLTK_WRAP_UI command is used to run the ﬂtk ﬂuid program on a .ﬂ ﬁle
-and produce a C++ source ﬁle as part of the build. The following example shows how to use
-FLTK with CMake.
+CMake also supports the The Fast Light Toolkit (FLTK) with special FLTK CMake commands. The FLTK_WRAP_UI command is used to run the ﬂtk ﬂuid program on a .ﬂ ﬁle and produce a C++ source ﬁle as part of the build. The following example shows how to use FLTK with CMake.
 
 find_package (FLTK)
 . if (FLTKiFOUND)
@@ -1824,11 +1762,7 @@ endif (FLTK_FOUND)
 
 4.7 Policies
 
-For various reasons, sometimes a new feature or change is made to CMake that is not ﬁllly
-backwards compatible with older versions of CMake. This can create problems when
-someone tries to use an old CMakeLists ﬁle with a new version of CMake. To help both end
-users and developers through such issues, we have introduced policies. Policies are a
-mechanism in CMake to help improve backwards compatibility and track compatibility issues
+For various reasons, sometimes a new feature or change is made to CMake that is not ﬁllly backwards compatible with older versions of CMake. This can create problems when someone tries to use an old CMakeLists ﬁle with a new version of CMake. To help both end users and developers through such issues, we have introduced policies. Policies are a mechanism in CMake to help improve backwards compatibility and track compatibility issues
 between different versions of CMake.
 
 Design Goals
