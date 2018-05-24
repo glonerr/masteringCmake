@@ -1776,54 +1776,26 @@ project authors.
 
 Policies 51
 
-2. Correctness of new interfaces or bugs ﬁxes in old interfaces should not be inhibited by
-compatibility requirements. Any reduction in correctness of the latest interface is not fair
-on new projects.
+2. Correctness of new interfaces or bugs ﬁxes in old interfaces should not be inhibited by compatibility requirements. Any reduction in correctness of the latest interface is not fair on new projects.
 
-3. Every change made to CMake that may require changes to a project’s CMakeLists ﬁles
-should be documented.
+3. Every change made to CMake that may require changes to a project’s CMakeLists ﬁles should be documented.
 
-0 Each change should also have a unique identiﬁer that can be referenced by warning
-and error messages.
+0 Each change should also have a unique identiﬁer that can be referenced by warning and error messages.
 
-0 The new behavior is enabled only when the project has somehow indicated it is
-supported.
+0 The new behavior is enabled only when the project has somehow indicated it is supported.
 
-4. We must be able to eventually remove code that implements compatibility with ancient
-CMake versions.
+4. We must be able to eventually remove code that implements compatibility with ancient CMake versions.
 
-0 Such removal is necessary to keep the code clean and to allow for internal
-refactoring.
+0 Such removal is necessary to keep the code clean and to allow for internal refactoring.
 
-0 After such removal, attempts to build projects written for ancient versions must fail
-with an informative message.
+0 After such removal, attempts to build projects written for ancient versions must fail with an informative message.
 
-All policies in CMake are assigned a name of the form CMPNNNN where NNNN is an integer
-value. Policies typically support both an old behavior that preserves compatibility with earlier
-versions of CMake, and a new behavior that is considered correct and preferred for use by
-new projects. Every policy has documentation detailing the motivation for the change, and the
-old and new behaviors
+All policies in CMake are assigned a name of the form CMPNNNN where NNNN is an integer value. Policies typically support both an old behavior that preserves compatibility with earlier versions of CMake, and a new behavior that is considered correct and preferred for use by new projects. Every policy has documentation detailing the motivation for the change, and the old and new behaviors Projects may conﬁgure the setting of each policy to request old or new behavior. When CMake encounters user code that may be affected by a particular policy it checks to see whether the project has set the policy. If the policy has been set (to OLD or NEW) then CMake follows the behavior speciﬁed. If the policy has not been set then the old behavior is used, but a warning is issued telling the project author to set the policy.
 
-Setting Policies
-
-Projects may conﬁgure the setting of each policy to request old or new behavior. When
-CMake encounters user code that may be affected by a particular policy it checks to see
-whether the project has set the policy. If the policy has been set (to OLD or NEW) then
-CMake follows the behavior speciﬁed. If the policy has not been set then the old behavior is
-used, but a warning is issued telling the project author to set the policy.
-
-There are a couple ways to set the behavior of a policy. The quickest way is to set all policies
-to a version corresponding to the release version of CMake for which the project was written.
-Setting the policy version requests the new behavior for all policies introduced in the
-corresponding version of CMake or earlier. Policies introduced in later versions are marked as
-not set in order to produce proper warning messages. The policy version is set using the
-cmake_policy command's VERSION signature. For example, the code
-
-cmake_policy (VERSION 2. 6)
-
-will request the new behavior for all policies introduced in CMake 2.6 or earlier. The
-cmake_minimum_required command will also set the policy version, which is convenient
-for use at the top of projects. A project should typically begin with the lines
+There are a couple ways to set the behavior of a policy. The quickest way is to set all policies to a version corresponding to the release version of CMake for which the project was written. Setting the policy version requests the new behavior for all policies introduced in the
+corresponding version of CMake or earlier. Policies introduced in later versions are marked as not set in order to produce proper warning messages. The policy version is set using the cmake_policy command's VERSION signature. For example, the code 
+	cmake_policy(VERSION 2.6)
+will request the new behavior for all policies introduced in CMake 2.6 or earlier. The cmake_minimum_required command will also set the policy version, which is convenient for use at the top of projects. A project should typically begin with the lines
 
 52 Writinq CMakeLists Files
 
@@ -1831,35 +1803,18 @@ jcmake_minimum_required (VERSION 2.6)
 lproject (MyProject)
 .# ...code using CMake 2.6 policies
 
-Of course one should replace "2.6" with whatever version of CMake you are currently writing
-to. You can also set each policy individually if you wish. This is sometimes helpful for project
-authors who want to incrementally convert their projects to use the new behavior, or silence
-warnings about dependence on old behavior. The cmakeﬁpolicy command's SET option
-may be used to explicitly request old or new behavior for a particular policy.
+Of course one should replace "2.6" with whatever version of CMake you are currently writing to. You can also set each policy individually if you wish. This is sometimes helpful for project authors who want to incrementally convert their projects to use the new behavior, or silence warnings about dependence on old behavior. The cmakeﬁpolicy command's SET option may be used to explicitly request old or new behavior for a particular policy.
 
-For example, CMake 2.6 introduced policy CMPO 002, which requires all logical target names
-to be globally unique (duplicate target names previously worked in some cases by accident
-but were not diagnosed). Projects using duplicate target names and working accidentally will
-receive warnings referencing the policy. The warnings may be silenced by the code
+For example, CMake 2.6 introduced policy CMPO 002, which requires all logical target names to be globally unique (duplicate target names previously worked in some cases by accident but were not diagnosed). Projects using duplicate target names and working accidentally will receive warnings referencing the policy. The warnings may be silenced by the code
 
 icmake_policy (SET CMPOOOZ OLD)
-which explicitly tells CMake to use the old behavior for the policy (silently accept duplicate
-target names). Another option is to use the code
+which explicitly tells CMake to use the old behavior for the policy (silently accept duplicate target names). Another option is to use the code
 
 ,cmake’policy (SET CMPOOOZ NEW)
 
-to explicitly tell CMake to use new behavior and produce an error when a duplicate target is
-created. Once this is added to the project it will not build until the author removes any
-duplicate target names.
+to explicitly tell CMake to use new behavior and produce an error when a duplicate target is created. Once this is added to the project it will not build until the author removes any duplicate target names.
 
-When a new version of CMake is released that introduces new policies it will still build old
-projects, because by default they do not request NEW behavior for any of the new policies.
-When starting a new project one should always specify the most recent release of CMake to
-be supported as the policy version level. This will make sure that the project is written to
-work using policies from that version of CMake and not using any old behavior. If no policy
-version is set CMake will warn and assume a policy version of 2.4. This allows existing
-projects that do not specify cmake_minimum_required to build as they would have with
-CMake 2.4.
+When a new version of CMake is released that introduces new policies it will still build old projects, because by default they do not request NEW behavior for any of the new policies. When starting a new project one should always specify the most recent release of CMake to be supported as the policy version level. This will make sure that the project is written to work using policies from that version of CMake and not using any old behavior. If no policy version is set CMake will warn and assume a policy version of 2.4. This allows existing projects that do not specify cmake_minimum_required to build as they would have with CMake 2.4.
 
 The Policy Stack
 
@@ -2067,8 +2022,7 @@ Linking Libraries 57
 
 4.8 Linking Libraries
 
-In CMake 2.6 and later a new approach to generating link lines for targets has been
-implemented. Consider these libraries:
+In CMake 2.6 and later a new approach to generating link lines for targets has been implemented. Consider these libraries:
 
 ~/path/to/libfoo.a
 ,/path/to/libfoo.so
@@ -2076,25 +2030,18 @@ implemented. Consider these libraries:
 Previously if someone wrote
 {target;linkflibrariés (myexe /path/to/libfoofa)
 CMake would generate this code to link it:
--L/path/tor—Wl,sttat c elfoo -Wl,—denamic
+-L/path/tor—Wl,sttat c elfoo -Wl,-Bdenamic
 
-This worked most of the time, but some platforms (such as Mac OS X) do not support the —
-Bstatic or equivalent ﬂag. This made it impossible to link to the static version of a library
-without creating a symlink in another directory and using that one instead. Now CMake will
-generate this code:
+This worked most of the time, but some platforms (such as Mac OS X) do not support the — Bstatic or equivalent ﬂag. This made it impossible to link to the static version of a library without creating a symlink in another directory and using that one instead. Now CMake will generate this code:
 
 . /path/to/libfoo.a
 
-This guarantees that the correct library is chosen. However there are some caveats to keep in
-mind. In the past a project could write this (incorrect) code, and it would work by accident:
+This guarantees that the correct library is chosen. However there are some caveats to keep in mind. In the past a project could write this (incorrect) code, and it would work by accident:
 
 add_executable (myexe myexe.c)
 target_link_libraries (myexe /path/to/libA.so B)
 
-where "B" is meant to link "/path/to/libB.so". This code is incorrect because it asks
-CMake to link to B but does not provide the proper linker search path for it. It used to work by
-accident because the —L/path/ to would get added as part of the implementation of linking
-to A. The correct code would be either
+where "B" is meant to link "/path/to/libB.so". This code is incorrect because it asks CMake to link to B but does not provide the proper linker search path for it. It used to work by accident because the —L/path/ to would get added as part of the implementation of linking to A. The correct code would be either
 
 Llinkgdirectories (/path/to)
 fadd_executable (myexe myexe.c)
@@ -2108,16 +2055,12 @@ target_link_libraries (myexe /path/to/libA.so /path/to/libB.so)
 
 Linking to System Libraries
 
-System libraries on UNIX—like systems are typically provided in /usr/ lib or / lib. These
-directories are considered implicit linker search paths because linkers automatically search
-these locations, even without a ﬂag like -L/ us r/ lib. Consider the code
+System libraries on UNIX—like systems are typically provided in /usr/ lib or / lib. These directories are considered implicit linker search paths because linkers automatically search these locations, even without a ﬂag like -L/ us r/ lib. Consider the code
 
 find_library (M_LIB m)
 targetglink_libraries (myexe ${M_LIB})
 
-Typically the find_library command would ﬁnd the math library /usr/lib/libm.so,
-but some platforms provide multiple versions of libraries correesponding to different
-architectures. For example, on an IRIX machine one might ﬁnd the libraries
+Typically the find_library command would ﬁnd the math library /usr/lib/libm.so, but some platforms provide multiple versions of libraries correesponding to different architectures. For example, on an IRIX machine one might ﬁnd the libraries
 
 L/usr/lib/libm.so (ELF O32)
 
@@ -2129,15 +2072,11 @@ On a Solaris machine one might ﬁnd
 /usr/lib/libm.so (sparcv8 architecture)
 /usr/lib/sparcv9/libm.so (sparcv9 architecture)
 
-Unfortunately, findﬁlibrary may not know about all of the architecture—speciﬁc system
-search paths used by the linker. In fact, when it ﬁnds /usr/ lib/ libm. so, it may be ﬁnding
-a library with the incorrect architecture. If the link computation were to produce the line
+Unfortunately, findﬁlibrary may not know about all of the architecture—speciﬁc system search paths used by the linker. In fact, when it ﬁnds /usr/ lib/ libm. so, it may be ﬁnding a library with the incorrect architecture. If the link computation were to produce the line
 
 /usr/lib/libm.so
 
-the linker might complain if /usr/lib/libm. so does not match the architecture it wants.
-One solution to this problem is for the link computation to recognize that the library is in a
-system directory and ask the linker to search for the library. It could produce the link line
+the linker might complain if /usr/lib/libm.so does not match the architecture it wants. One solution to this problem is for the link computation to recognize that the library is in a system directory and ask the linker to search for the library. It could produce the link line
 
 —lm ...
 
@@ -2145,10 +2084,7 @@ Shared Libraries and Loadable Modules 59
 
  
 
-and the linker would search through its architecture-speciﬁc implicit link directories to ﬁnd
-the correct library. Unfortunately, this solution suffers from the original problem of
-distinguishing between static and shared versions. In order to ask the linker to ﬁnd a static
-system library with the correct architecture it must produce the link line
+and the linker would search through its architecture-speciﬁc implicit link directories to ﬁnd the correct library. Unfortunately, this solution suffers from the original problem of distinguishing between static and shared versions. In order to ask the linker to ﬁnd a static system library with the correct architecture it must produce the link line
 
 . —Wl,-Bstatic —lm ... —Wl,—Bshared ...
 
