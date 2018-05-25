@@ -2088,124 +2088,38 @@ and the linker would search through its architecture-speciﬁc implicit link dir
 
 . —Wl,-Bstatic —lm ... —Wl,—Bshared ...
 
-Since not all platforms support such ﬂags CMake compromises. Libraries that are not in
-implicit system locations are linked by passing the full library path to the linker. Libraries that
-are in implicit system locations (such as / us r/ lib) are linked by passing the —1 option if a
-ﬂag like —Bstatic is available, and by passing the full library path to the linker otherwise.
+Since not all platforms support such ﬂags CMake compromises. Libraries that are not in implicit system locations are linked by passing the full library path to the linker. Libraries that are in implicit system locations (such as /usr/lib) are linked by passing the —1 option if a ﬂag like -Bstatic is available, and by passing the full library path to the linker otherwise.
 
 Specifying Optimized or Debug Libraries with a Target
 
-On Windows platforms it is often required to link debug libraries with debug libraries, and
-optimized libraries with optimized libraries. CMake helps satisfy this requirement with the
-target_linkilibraries command, which accepts an optional ﬂag that is debug or
-optimized. So, if a library is preceded with either debug or optimized, then that library will
-only be linked in with the like conﬁguration type. For example:
+On Windows platforms it is often required to link debug libraries with debug libraries, and optimized libraries with optimized libraries. CMake helps satisfy this requirement with the target_linkilibraries command, which accepts an optional ﬂag that is debug or optimized. So, if a library is preceded with either debug or optimized, then that library will only be linked in with the like conﬁguration type. For example:
 
 1 add_executable (foo foo.c)
 ‘target‘link_libraries (foo debug libdebug optimized libopt)
 
-In this case foo will be linked against libdebug if a debug build was selected, or against libopt
-if an optimized build was selected.
+In this case foo will be linked against libdebug if a debug build was selected, or against libopt if an optimized build was selected.
 
 4.9 Shared Libraries and Loadable Modules
 
-Shared libraries and loadable modules are very powerﬁil tools for software developers. They
-can be used to create extension modules or plugins for off-the—shelf software, and can be used
-to decrease the compile/link/run cycles for C and C++ programs. However, despite years of
-use, the cross platform creation of shared libraries and modules remains a black art
-understood by only a few developers. CMake has the ability to aid developers in the creation
-of shared libraries and modules. CMake lmows the correct tools and ﬂags to use in order to
-produce the shared libraries for most modern operating systems that support them.
-Unfortunately, CMake cannot do all the work, and developers must sometimes alter source
-code and understand the basic concepts and common pitfalls associated with shared libraries
-before they can be used effectively. This section will describe many of the issues required to
-take advantage of shared libraries and loadable modules.
+Shared libraries and loadable modules are very powerﬁil tools for software developers. They can be used to create extension modules or plugins for off-the—shelf software, and can be used to decrease the compile/link/run cycles for C and C++ programs. However, despite years of
+use, the cross platform creation of shared libraries and modules remains a black art understood by only a few developers. CMake has the ability to aid developers in the creation of shared libraries and modules. CMake lmows the correct tools and ﬂags to use in order to produce the shared libraries for most modern operating systems that support them. Unfortunately, CMake cannot do all the work, and developers must sometimes alter source code and understand the basic concepts and common pitfalls associated with shared libraries before they can be used effectively. This section will describe many of the issues required to take advantage of shared libraries and loadable modules.
 
-A shared library should be thought of more like an executable than a static library, and on
-most systems actually requires executable permissions to be set on the shared library ﬁle. This
+A shared library should be thought of more like an executable than a static library, and on most systems actually requires executable permissions to be set on the shared library ﬁle. This means that shared libraries can link to other shared libraries when they are created in the same way as an executable. Unlike a static library where the atomic unit is the object ﬁle, for shared libraries, the entire library is the atomic unit. This can cause some unexpected linker errors when converting from static to shared libraries. If an object ﬁle is part of a static library, but the executable linking to the library does not use any of the symbols in that object ﬁle, then the ﬁle is simply excluded from the ﬁnal linked executable. With shared libraries, all the object ﬁles that make up the library and all of the dependencies that they require come as one unit. For example, suppose you had a library with an object ﬁle deﬁning the ﬁinction DisplayOnXWindow() which required the X11 library. If you linked an executable to that library, but did not call the DisplayOnXWindow() function, the static library version would not require X1 1, but the shared library version would require the X11 library. This is because a shared library has to be taken as one unit, and a static library is only an archive of object ﬁles from which linkers can choose which objects are needed. This means that static linked executables can be smaller, as they only contain the object code actually used.
 
-60 Writing CMakeLists Files
+Another difference between shared and static libraries is library order. With static libraries the order on the link line can make a difference. This is because most linkers only use the symbols that are needed in a single pass over all the given libraries. So, the library order should go from the library that uses the most other libraries to the library that uses no other libraries. CMake will preserve and remember the order of libraries and library dependencies of a project. This means that each library in a project should use the target_link_libraries command to specify all of the libraries that it directly depends on. The libraries will be linked with each other for shared builds, but not static builds.
+However, the link information is used in static builds when executables are linked. An executable that only links library libA will get libA plus libB and libC as long as libA’s dependency on libB and libC was properly speciﬁed using target_link_libraries(libA libB libC).
 
-means that shared libraries can link to other shared libraries when they are created in the same
-way as an executable. Unlike a static library where the atomic unit is the object ﬁle, for shared
-libraries, the entire library is the atomic unit. This can cause some unexpected linker errors
-when converting from static to shared libraries. If an object ﬁle is part of a static library, but
-the executable linking to the library does not use any of the symbols in that object ﬁle, then
-the ﬁle is simply excluded from the ﬁnal linked executable. With shared libraries, all the
-object ﬁles that make up the library and all of the dependencies that they require come as one
-unit. For example, suppose you had a library with an object ﬁle deﬁning the ﬁinction
-Di splayOnXWindow( ) which required the X11 library. If you linked an executable to that
-library, but did not call the Di splayOnXWindow () function, the static library version would
-not require X1 1, but the shared library version would require the X11 library. This is because
-a shared library has to be taken as one unit, and a static library is only an archive of object
-ﬁles from which linkers can choose which objects are needed. This means that static linked
-executables can be smaller, as they only contain the object code actually used.
+At this point, one might wonder why shared libraries would be preferred over static libraries. There are several reasons. First, shared libraries can decrease the compile/link/run cycle time. This is because the linker does not have to do as much work when linking to shared libraries because there are fewer decisions to be made about which object ﬁles to keep. Also, often times, the executable does not even need to be re-linked aﬁer the shared library is rebuilt. So, developers can work on a library compiling and linking only the small part of the program that is currently being developed, and then re—run the executable after each build of the shared library. Also, if a library is used by many different executables on a system, then there only needs to be one copy of the library on disk, and often in memory too.
 
-Another difference between shared and static libraries is library order. With static libraries the
-order on the link line can make a difference. This is because most linkers only use the
-symbols that are needed in a single pass over all the given libraries. So, the library order
-should go from the library that uses the most other libraries to the library that uses no other
-libraries. CMake will preserve and remember the order of libraries and library dependencies
-of a project. This means that each library in a project should use the
-target‘linkvlibraries command to specify all of the libraries that it directly depends
-on. The libraries will be linked with each other for shared builds, but not static builds.
-However, the link information is used in static builds when executables are linked. An
-executable that only links library libA will get libA plus libB and libC as long as libA’s
-dependency on libB and libC was properly speciﬁed using targetAliniﬁlibraries
-(libA libB libC).
+In addition to the concept of a software library, shared libraries can also be used on many systems as run time loadable modules. This means that a program can at run time, load and execute object code that was not part of the original software. This allows developers to create software that is both open and closed. (For more information see Object Oriented Soﬁware Construction by Bertrand Meyer.) Closed software is soﬁware that cannot be modiﬁed. It has been through a testing cycle and can be certiﬁed to perform speciﬁc tasks with regression tests. However, a seemingly opposite goal is sought after by developers of object oriented software. This is the concept of Open software that can be extended by future developers. This can be done via inheritance and polymorphism with object systems. Shared libraries that can be loaded at run time, allow for these seemingly opposing goals to be achieved in the same software package. Many common applications support the idea of plugins. The most
+common of these applications is the web browser. Internet Explorer uses plugins to support video over the web and 3D visualization. In addition to plugins, loadable factories can be used to replace C++ objects at run time, as is done in VTK.
 
-At this point, one might wonder why shared libraries would be preferred over static libraries.
-There are several reasons. First, shared libraries can decrease the compile/link/run cycle time.
-This is because the linker does not have to do as much work when linking to shared libraries
-because there are fewer decisions to be made about which object ﬁles to keep. Also, often
-times, the executable does not even need to be re-linked aﬁer the shared library is rebuilt. So,
-developers can work on a library compiling and linking only the small part of the program
-that is currently being developed, and then re—run the executable after each build of the shared
-library. Also, if a library is used by many different executables on a system, then there only
-needs to be one copy of the library on disk, and often in memory too.
-
-In addition to the concept of a software library, shared libraries can also be used on many
-systems as run time loadable modules. This means that a program can at run time, load and
-execute object code that was not part of the original software. This allows developers to create
-software that is both open and closed. (For more information see Object Oriented Soﬁware
-Construction by Bertrand Meyer.) Closed software is soﬁware that cannot be modiﬁed. It has
-been through a testing cycle and can be certiﬁed to perform speciﬁc tasks with regression
-
-Shared Libraries and Loadable Modules 61
-
-tests. However, a seemingly opposite goal is sought after by developers of object oriented
-software. This is the concept of Open software that can be extended by future developers.
-This can be done via inheritance and polymorphism with object systems. Shared libraries that
-can be loaded at run time, allow for these seemingly opposing goals to be achieved in the
-same software package. Many common applications support the idea of plugins. The most
-common of these applications is the web browser. Internet Explorer uses plugins to support
-video over the web and 3D visualization. In addition to plugins, loadable factories can be used
-to replace C++ objects at run time, as is done in VTK.
-
-Once it is decided that shared libraries or loadable modules are the right choice for a
-particular project, there are a few issues that developers need to be aware of. The ﬁrst
-question that must be answered is which symbols are exported by the shared library? This
-may sound like a simple question, but the answer is different from platform to platform. On
-many, but not all UNIX systems, the default behavior is to export all the symbols much like a
-static library. However, on Windows systems, developers must explicitly tell the linker and
-compiler which symbols are to be exported and imported from shared libraries. This is often a
-big problem for UNIX developers moving to Windows. There are two ways to tell the
-compiler/linker which symbols to export/import on Windows. The most common approach is
-to decorate the code with a MicrosoftTM C/C++ language extension. An alternative is to create
-an extra ﬁle called a .def ﬁle. This ﬁle is a simple ASCII ﬁle containing the names of all the
+Once it is decided that shared libraries or loadable modules are the right choice for a particular project, there are a few issues that developers need to be aware of. The ﬁrst question that must be answered is which symbols are exported by the shared library? This may sound like a simple question, but the answer is different from platform to platform. On many, but not all UNIX systems, the default behavior is to export all the symbols much like a static library. However, on Windows systems, developers must explicitly tell the linker and compiler which symbols are to be exported and imported from shared libraries. This is often a big problem for UNIX developers moving to Windows. There are two ways to tell the compiler/linker which symbols to export/import on Windows. The most common approach is to decorate the code with a MicrosoftTM C/C++ language extension. An alternative is to create an extra ﬁle called a .def ﬁle. This ﬁle is a simple ASCII ﬁle containing the names of all the
 symbols to be exported from a library.
 
-The MicrosoftTM extension uses the ﬁdeclspec directive. If a symbol has ~declspec (
-dllexport ) hlﬁontofﬁ,ﬁ\NﬂlbeeXp0ﬁed,andifithas_~declspec( dllimport ) R
-will be imported. Since the same ﬁle may be shared during the creation and use of a library, it
-must be both exported and imported in the same source ﬁle. This can only be done with the
-preprocessor. The developer can create a macro called LIBRARY_EXPORT that is deﬁned to
-dl lexport when building the library and dllimport when using the library. CMake helps
-this process by automatically deﬁning $ { LIBNAME LEXPORTS when building a DLL
-(dynamic link library, aka. a shared library) on Windows.
+The MicrosoftTM extension uses the ﬁdeclspec directive. If a symbol has ~declspec (dllexport) hlﬁontofﬁ,ﬁ\NﬂlbeeXp0ﬁed,andifithas_~declspec( dllimport ) R will be imported. Since the same ﬁle may be shared during the creation and use of a library, it must be both exported and imported in the same source ﬁle. This can only be done with the preprocessor. The developer can create a macro called LIBRARY_EXPORT that is deﬁned to dl lexport when building the library and dllimport when using the library. CMake helps this process by automatically deﬁning $ { LIBNAME LEXPORTS when building a DLL (dynamic link library, aka. a shared library) on Windows.
 
-The following code snippet is from the VTK library vtkCommon, and is included by all ﬁles
-in the vtkCommon library:
+The following code snippet is from the VTK library vtkCommon, and is included by all ﬁles in the vtkCommon library:
 
 \ #if defined(WIN32)
 
@@ -2220,10 +2134,7 @@ in the vtkCommon library:
 
 62 Writinq CMakeLists Files
 
-The example checks for Windows and checks the vtkCommon_EXPORTs macro provided by
-CMake. So, on UNIX VTK_COMMON_EXPORT is deﬁned to nothing, and on Windows during
-the building of vtkCommon.dll it is deﬁned as wdeclspec (dllexport) , and when the ﬁle
-is being used by another ﬁle, it is deﬁned to _declspec (dllimport).
+The example checks for Windows and checks the vtkCommon_EXPORTs macro provided by CMake. So, on UNIX VTK_COMMON_EXPORT is deﬁned to nothing, and on Windows during the building of vtkCommon.dll it is deﬁned as wdeclspec (dllexport) , and when the ﬁle is being used by another ﬁle, it is deﬁned to _declspec (dllimport).
 
 The second approach requires a .def ﬁle to specify the symbols to be exported. This ﬁle could
 be created by hand, but for a large and changing C++ library that could be time consuming
