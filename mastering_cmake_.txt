@@ -2136,13 +2136,7 @@ The following code snippet is from the VTK library vtkCommon, and is included by
 
 The example checks for Windows and checks the vtkCommon_EXPORTs macro provided by CMake. So, on UNIX VTK_COMMON_EXPORT is deﬁned to nothing, and on Windows during the building of vtkCommon.dll it is deﬁned as wdeclspec (dllexport) , and when the ﬁle is being used by another ﬁle, it is deﬁned to _declspec (dllimport).
 
-The second approach requires a .def ﬁle to specify the symbols to be exported. This ﬁle could
-be created by hand, but for a large and changing C++ library that could be time consuming
-and error prone. CMake’s custom commands can be used to run a pre-link program that will
-create a .def ﬁle from the compiled object ﬁles automatically. In the following example, a
-Perl script called makedef .pl is used, the script runs the DUMPBIN program on the .obj ﬁles
-and extracts all of the exportable symbols and writes a .def ﬁle with the correct exports for all
-the symbols in the library mylib.
+The second approach requires a .def ﬁle to specify the symbols to be exported. This ﬁle could be created by hand, but for a large and changing C++ library that could be time consuming and error prone. CMake’s custom commands can be used to run a pre-link program that will create a .def ﬁle from the compiled object ﬁles automatically. In the following example, a Perl script called makedef .pl is used, the script runs the DUMPBIN program on the .obj ﬁles and extracts all of the exportable symbols and writes a .def ﬁle with the correct exports for all the symbols in the library mylib.
 
 ————CMakeLists.txt —————
 
