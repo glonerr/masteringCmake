@@ -2138,89 +2138,76 @@ The example checks for Windows and checks the vtkCommon_EXPORTs macro provided b
 
 The second approach requires a .def ﬁle to specify the symbols to be exported. This ﬁle could be created by hand, but for a large and changing C++ library that could be time consuming and error prone. CMake’s custom commands can be used to run a pre-link program that will create a .def ﬁle from the compiled object ﬁles automatically. In the following example, a Perl script called makedef .pl is used, the script runs the DUMPBIN program on the .obj ﬁles and extracts all of the exportable symbols and writes a .def ﬁle with the correct exports for all the symbols in the library mylib.
 
-————CMakeLists.txt —————
+----CMakeLists.txt-----
 
-cmake_minimumgrequired (VERSION 2.6)
+cmake_minimum_required (VERSION 2.6)
 project (myexe)
 
-_set (SOURCES mylib.cxx mylib2.cxx)
+set (SOURCES mylib.cxx mylib2.cxx)
 
-_# create a list of all the object files
+# create a list of all the object files
 string (REGEX REPLACE "\\.CXX" ".obj" OBJECTS "${SOURCES}“)
 
 # create a shared library with the .def file
-addﬁlibrary (mylib SHARED ${SOURCES}
-${CMAKEiCURRENTWBINARY_DIR}/mylib.def
-)
-L# set the .def file as generated
-set_sourcegfiles~properties (
-' $ { CMAKE‘CURRENTgBINARYgDIR} /myl ib. de f
-PROPERTIES GENERATED l
-)
+add_library (mylib SHARED ${SOURCES}
+	${CMAKEiCURRENTWBINARY_DIR}/mylib.def
+	)
+# set the .def file as generated
+set_sourcegfiles_properties (
+	${CMAKE_CURRENT_BINARY_DIR}/mylib.def
+	PROPERTIES GENERATED 1
+	)
 
-§# create an executable
+# create an executable
 add_executable (myexe myexe.cxx)
 
 # link the executable to the dll
-target_link_libraries(myexe mylib)
+target_link_libraries (myexe mylib)
 
-‘#convert to windows slashes
+#convert to windows slashes
 
-Iset (OUTDIR
-$ { CMAKE_CURRENT_BINARY_DIR} / $ { CMAKEWCFG_INTDIR}
-)
-
-Shared Libraries and Loadable Modules 63
+set (OUTDIR
+	${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}
+	)
 
 string (REGEX REPLACE "/" "\\\\" OUTDIR ${OUTDIR})
 
 # create a custom pre link command that runs
 # a perl script to create a .def file using dumpbin
 add_custom_command (
-TARGET myl ib PREiL INK
-COMMAND perl
-ARGS S {CMAKE#CURRENT750URCE7DIR} /makedef . pl
-${CMAKE_CURRENT_BINARYADIR}\\mylib.def mylib
-${OUTDIR} ${OBJECTS}
-COMMENT "Create .def file"
-)
+	TARGET mylib PRE_LINK
+	COMMAND perl
+	ARGS ${CMAKE#CURRENT750URCE7DIR}/makedef.pl
+	${CMAKE_CURRENT_BINARYADIR}\\mylib.def mylib
+	${OUTDIR} ${OBJECTS}
+	COMMENT "Create .def file"
+	)
 
-:———myexe.cxx————
+---myexe.cxx----
 #include <iostream>
 #include "mylib.h"
 int main()
-
 {
+	std::cout << myTen() << "\n";
 
-‘ std::cout << myTen() << "\n";
+	std::cout << myEight() << "\n";
 
-std::cout << myEight() << "\n";
-
-r———mylib.cxx--
+---mylib.cxx--
 int myTen()
 {
-
-return 10;
-
-- ——mylib2.cxx———
+	return 10;
+}
+--mylib2.cxx---
 int myEight()
-} {
-
-return 8;
-
+{
+	return 8;
+}
 64 WritingCMakeLists Files
 
-There is a signiﬁcant difference between Windows and most UNIX systems with respect to
-the requirements of symbols. DLLs on Windows are required to be fully resolved, this means
-that they must link every symbol at creation. UNIX systems allow shared libraries to get
-symbols from the executable or other shared libraries at run time. On UNIX systems that
-support this feature, CMake will compile with the ﬂags that allow executable symbols to be
-used by shared libraries. This small difference can cause large problems. A common, but hard
-to track down bug with DLLs happens with C++ template classes and static members. Two
-DLLs can end up with separate copies of what is supposed to be a single global static member
-of a class. There are also problems with the approach taken on most UNIX systems. The start
-up time for large applications with many symbols can be long since much of the linking is
-deferred to run time.
+There is a signiﬁcant difference between Windows and most UNIX systems with respect to the requirements of symbols. DLLs on Windows are required to be fully resolved, this means that they must link every symbol at creation. UNIX systems allow shared libraries to get
+symbols from the executable or other shared libraries at run time. On UNIX systems that support this feature, CMake will compile with the ﬂags that allow executable symbols to be used by shared libraries. This small difference can cause large problems. A common, but hard
+to track down bug with DLLs happens with C++ template classes and static members. Two DLLs can end up with separate copies of what is supposed to be a single global static member of a class. There are also problems with the approach taken on most UNIX systems. The start
+up time for large applications with many symbols can be long since much of the linking is deferred to run time.
 
 Another common pitfall occurs with C++ global objects. These objects require that
 constructors must be called before they can be used. The main that links or loads C++ shared
