@@ -2209,59 +2209,19 @@ symbols from the executable or other shared libraries at run time. On UNIX syste
 to track down bug with DLLs happens with C++ template classes and static members. Two DLLs can end up with separate copies of what is supposed to be a single global static member of a class. There are also problems with the approach taken on most UNIX systems. The start
 up time for large applications with many symbols can be long since much of the linking is deferred to run time.
 
-Another common pitfall occurs with C++ global objects. These objects require that
-constructors must be called before they can be used. The main that links or loads C++ shared
-libraries MUST be linked with the C++ compiler, or globals like cout may not be initialized
-before they are used, causing strange crashes at start up time.
+Another common pitfall occurs with C++ global objects. These objects require that constructors must be called before they can be used. The main that links or loads C++ shared libraries MUST be linked with the C++ compiler, or globals like cout may not be initialized before they are used, causing strange crashes at start up time.
 
-Since executables that link to shared libraries must be able to ﬁnd the libraries at run time,
-special environment variables and linker ﬂags must be used. There are tools that can be used
-to show which libraries an executable is actually using. On many UNIX systems there is a
-tool called ldd (otool —L on Mac OS X) that shows which libraries are used by an
-executable. On Windows, a program called depends can be used to ﬁnd the same type of
-information. On many UNIX systems there are also environment variables like
-LD_LIBRARY_PATH that tell the program where to ﬁnd the libraries at run time. Where
-supported CMake will add run time library path information into the linked executables, so
-that LDﬁLIBRARY_PATH is not required. This feature can be turned off by setting the cache
-entry CMAKE_SKIP_RPATH to false. This may be desirable for installed software that should
-not be looking in the build tree for shared libraries. On Windows there is only one PATH
-environment variable that is used for both DLLs and ﬁnding executables.
+Since executables that link to shared libraries must be able to ﬁnd the libraries at run time, special environment variables and linker ﬂags must be used. There are tools that can be used to show which libraries an executable is actually using. On many UNIX systems there is a tool called ldd (otool —L on Mac OS X) that shows which libraries are used by an executable. On Windows, a program called depends can be used to ﬁnd the same type of information. On many UNIX systems there are also environment variables like LD_LIBRARY_PATH that tell the program where to ﬁnd the libraries at run time. Where supported CMake will add run time library path information into the linked executables, so that LDﬁLIBRARY_PATH is not required. This feature can be turned off by setting the cache entry CMAKE_SKIP_RPATH to false. This may be desirable for installed software that should not be looking in the build tree for shared libraries. On Windows there is only one PATH environment variable that is used for both DLLs and ﬁnding executables.
 
 4.10 Shared Library Versioning
 
-When an executable is linked to a shared library, it is important that the copy of the shared
-library loaded at runtime matches that expected by the executable. On some UNIX systems, a
-shared library has an associated "soname" intended to solve this problem. When an executable
-links against the library, its soname is copied into the executable. At runtime, the dynamic
-linker uses this name from the executable to search for the library.
+When an executable is linked to a shared library, it is important that the copy of the shared library loaded at runtime matches that expected by the executable. On some UNIX systems, a shared library has an associated "soname" intended to solve this problem. When an executable links against the library, its soname is copied into the executable. At runtime, the dynamic linker uses this name from the executable to search for the library.
 
-Consider a hypothetical shared library "foo" providing a few C functions that implement some
-functionality. The interface to foo is called an Application Programming Interface (API). If
-the implementation of these C functions changes in a new version of foo, but the API remains
-the same, then executables linked against foo will still run correctly. When the API changes,
+Consider a hypothetical shared library "foo" providing a few C functions that implement some functionality. The interface to foo is called an Application Programming Interface (API). If the implementation of these C functions changes in a new version of foo, but the API remains the same, then executables linked against foo will still run correctly. When the API changes, old executables will no longer run with a new copy of foo, so a new API version number must be associated with foo.
 
-Shared Library Versioninq 65
+This can be implemented by creating the original version of foo with a soname and ﬁle name such as libfoo.so.l. A symbolic link such as libfoo.so -> libfoo.so.l will allow standard linkers to work with the library and create executables. The new version of foo can be called libfoo.so.2 and the symbolic link updated so that new executables use the new library. When an old executable runs, the dynamic linker will look for libfoo.so.l, ﬁnd the old copy of the library, and run correctly. When a new executable runs, the dynamic linker will look for libfoo.so.2 and correctly load the new version.
 
-old executables will no longer run with a new copy of foo, so a new API version number must
-be associated with foo.
-
-This can be implemented by creating the original version of foo with a soname and ﬁle name
-such as libfoo.so.l. A symbolic link such as libfoo.so -> libfoo.so.l will allow standard
-linkers to work with the library and create executables. The new version of foo can be called
-libfoo.so.2 and the symbolic link updated so that new executables use the new library. When
-an old executable runs, the dynamic linker will look for libfoo.so.l, ﬁnd the old copy of the
-library, and run correctly. When a new executable runs, the dynamic linker will look for
-libfoo.so.2 and correctly load the new version.
-
-This scheme can be expanded to handle the case of changes to foo that do not modify the API.
-We introduce a second set of version numbers that is totally independent of the ﬁrst. This new
-set corresponds to the software version providing foo. For example, some larger project may
-have introduced the existence of library foo starting in version 3.4. In this case, the ﬁle name
-for foo might be libfoo.so.3.4, but the soname would still be libfoo.so.l because the API for
-foo is still on its ﬁrst version. A symbolic link from libfoo.so.l -> libfoo.so.3.4 will allow
-executables linked against the library to run. When a bug is ﬁxed in the software without
-changing the API to foo, then the new library ﬁle name might be libfoo.so.3.5, and the
-symbolic link can be updated to allow existing executables to run.
+This scheme can be expanded to handle the case of changes to foo that do not modify the API. We introduce a second set of version numbers that is totally independent of the ﬁrst. This new set corresponds to the software version providing foo. For example, some larger project may have introduced the existence of library foo starting in version 3.4. In this case, the ﬁle name for foo might be libfoo.so.3.4, but the soname would still be libfoo.so.l because the API for foo is still on its ﬁrst version. A symbolic link from libfoo.so.l -> libfoo.so.3.4 will allow executables linked against the library to run. When a bug is ﬁxed in the software without changing the API to foo, then the new library ﬁle name might be libfoo.so.3.5, and the symbolic link can be updated to allow existing executables to run.
 
 CMake supports this soname-based version number encoding on platforms supporting soname
 natively. A target property for the shared library named "VERSION" speciﬁes the version
