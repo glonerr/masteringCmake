@@ -2223,14 +2223,7 @@ This can be implemented by creating the original version of foo with a soname an
 
 This scheme can be expanded to handle the case of changes to foo that do not modify the API. We introduce a second set of version numbers that is totally independent of the ﬁrst. This new set corresponds to the software version providing foo. For example, some larger project may have introduced the existence of library foo starting in version 3.4. In this case, the ﬁle name for foo might be libfoo.so.3.4, but the soname would still be libfoo.so.l because the API for foo is still on its ﬁrst version. A symbolic link from libfoo.so.l -> libfoo.so.3.4 will allow executables linked against the library to run. When a bug is ﬁxed in the software without changing the API to foo, then the new library ﬁle name might be libfoo.so.3.5, and the symbolic link can be updated to allow existing executables to run.
 
-CMake supports this soname-based version number encoding on platforms supporting soname
-natively. A target property for the shared library named "VERSION" speciﬁes the version
-number used to create the ﬁle name for the library. This version should correspond to that of
-the software package providing foo. On Windows the VERSION property is used to set the
-binary image number, using majorminor format. Another target property named
-"SOVERSION" speciﬁes the version number used to create the soname for the library. This
-version should correspond to the API version number for foo. These target properties are
-ignored on platforms where CMake does not support this scheme.
+CMake supports this soname-based version number encoding on platforms supporting soname natively. A target property for the shared library named "VERSION" speciﬁes the version number used to create the ﬁle name for the library. This version should correspond to that of the software package providing foo. On Windows the VERSION property is used to set the binary image number, using majorminor format. Another target property named "SOVERSION" speciﬁes the version number used to create the soname for the library. This version should correspond to the API version number for foo. These target properties are ignored on platforms where CMake does not support this scheme.
 
 The following CMake code conﬁgures the version numbers of the shared library foo:
 
