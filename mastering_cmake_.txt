@@ -2232,11 +2232,10 @@ set_target_properties (foo PROPERTIES VERSION 1.2 SOVERSION 4)
 This results in the following library and symbolic links:
 
 libfoo.so.l.2
-alibfoo.so.4 —> libfoo.so.l.2
-libfoo.so —> libfoo.so.4
+libfoo.so.4 -> libfoo.so.l.2
+libfoo.so -> libfoo.so.4
 
-If only one of the two properties is speciﬁed, the other defaults to its value automatically. For
-example, the code
+If only one of the two properties is speciﬁed, the other defaults to its value automatically. For example, the code
 
 66 Writinq CMakeLists Files
 
@@ -2244,23 +2243,15 @@ setﬂtarget_properties (foo PROPERTIES VERSION 1.2)
 
 results in the following shared library and symbolic link:
 
-libfoo.so.l.2
-ilibfoo.so ~> libfoo.so.l.2
+libfoo.so.1.2
+libfoo.so -> libfoo.so.1.2
 
-CMake makes no attempt to enforce sensible version numbers. It is up to the programmer to
-utilize this feature in a productive manner.
+CMake makes no attempt to enforce sensible version numbers. It is up to the programmer to utilize this feature in a productive manner.
 
 4.11 Installing Files
 
-Software is typically installed into a directory separate from the source and build trees. This
-allows it to be distributed in a clean form and isolates users from the details of the build
-process. CMake provides the install command to specify how a project is to be installed.
-This command is invoked by a project in the CMakeLists ﬁle and tells CMake how to
-generate installation scripts. The scripts are executed at install time to perform the actual
-installation of ﬁles. For Makeﬁle generators (UNIX, NMake, Borland, MinGW, etc), the user
-simply runs "make install" (or “nmake install”) and the make tool will invoke
-CMake's installation module. With GUI based systems (Visual Studio, Xcode, etc.) the user
-simply builds the target called INSTALL.
+Software is typically installed into a directory separate from the source and build trees. This allows it to be distributed in a clean form and isolates users from the details of the build process. CMake provides the install command to specify how a project is to be installed. This command is invoked by a project in the CMakeLists ﬁle and tells CMake how to generate installation scripts. The scripts are executed at install time to perform the actual installation of ﬁles. For Makeﬁle generators (UNIX, NMake, Borland, MinGW, etc), the user
+simply runs "make install" (or “nmake install”) and the make tool will invoke CMake's installation module. With GUI based systems (Visual Studio, Xcode, etc.) the user simply builds the target called INSTALL.
 
 Each call to the install command deﬁnes some installation rules. Within one CMakeLists
 ﬁle (source directory) these rules will be evaluated in the order in which the corresponding
