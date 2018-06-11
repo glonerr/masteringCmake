@@ -2276,11 +2276,7 @@ Specify a user-provided CMake script ﬁle to be executed during installation. T
 install (CODE . . .)
 Specify user-provided CMake code to be executed during the installation. This is similar to install (SCRIPT) but the code is provided inline in the call as a string.
 
-The TARGETS, FILES, PROGRAMS, DIRECTORY signatures are all meant to create install rules
-for ﬁles. The targets, ﬁles, or directories to be installed are listed immediately after the
-signature name argument. Additional details can be speciﬁed using keyword arguments
-followed by corresponding values. Keyword arguments provided by most of the signatures are
-as follows.
+The TARGETS, FILES, PROGRAMS, DIRECTORY signatures are all meant to create install rules for ﬁles. The targets, ﬁles, or directories to be installed are listed immediately after the signature name argument. Additional details can be speciﬁed using keyword arguments followed by corresponding values. Keyword arguments provided by most of the signatures are as follows.
 
 DESTINATION
 
