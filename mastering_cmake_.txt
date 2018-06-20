@@ -2280,62 +2280,29 @@ The TARGETS, FILES, PROGRAMS, DIRECTORY signatures are all meant to create insta
 
 DESTINATION
 
-Speciﬁes the location in which the installation rule will place ﬁles. This argument
-must be followed by a directory path indicating the location. If the directory is
-speciﬁed as a full path it will be evaluated at install time as an absolute path. If the
-directory is speciﬁed as a relative path it will be evaluated at install time relative to
-the installation preﬁx. The preﬁx may be set by the user through the cache variable
-CMAKE_INSTALL_PREEIX. A platform-speciﬁc default is provided by CMake:
-“/usr/local” on UNIX and “<SystemDrive>/ Program Files/<ProjectName>”
-on Windows, where SystemDrive is something like “C:” and ProjectName is the
-name given to the top-most PROJECT command.
+Speciﬁes the location in which the installation rule will place ﬁles. This argument must be followed by a directory path indicating the location. If the directory is speciﬁed as a full path it will be evaluated at install time as an absolute path. If the
+directory is speciﬁed as a relative path it will be evaluated at install time relative to the installation preﬁx. The preﬁx may be set by the user through the cache variable CMAKE_INSTALL_PREEIX. A platform-speciﬁc default is provided by CMake:
+“/usr/local” on UNIX and “<SystemDrive>/ Program Files/<ProjectName>” on Windows, where SystemDrive is something like “C:” and ProjectName is the name given to the top-most PROJECT command.
 
 PERMISSIONS
 
-Speciﬁes ﬁle permissions to be set on the installed ﬁles. This option is needed only
-to override the default permissions selected by a particular INSTALL command
-signature. Valid permissions are OWNER_READ, OWNER_WRITE, OWNER_EXECUTE,
-GROUP_READ, GROUP_WRITE, GROUP_EXECUTE, WORLD_READ, WORLD_WRITE,
-WORLD_EXECUTE, SETUID, and SETGID. Some platforms do not support all of these
-permissions, on such platforms those permission names are ignored.
+Speciﬁes ﬁle permissions to be set on the installed ﬁles. This option is needed only to override the default permissions selected by a particular INSTALL command signature. Valid permissions are OWNER_READ, OWNER_WRITE, OWNER_EXECUTE, GROUP_READ, GROUP_WRITE, GROUP_EXECUTE, WORLD_READ, WORLD_WRITE, WORLD_EXECUTE, SETUID, and SETGID. Some platforms do not support all of these permissions, on such platforms those permission names are ignored.
 
 CONFIGURATIONS
 
-Speciﬁes a list of build conﬁgurations for which an installation rule applies (Debug,
-Release, etc). For Makeﬁle generators the build conﬁguration is speciﬁed by the
-CMAKEVBUILDiTYPE cache variable. For Visual Studio and Xcode generators the
-conﬁguration is selected when the INSTALL target is built. An installation rule will
-
-68 Writing CMakeLists Files
-
-be evaluated only if the current install conﬁguration matches an entry in the list
-provided to this argument. Conﬁguration name comparison is case-insensitive.
+Speciﬁes a list of build conﬁgurations for which an installation rule applies (Debug, Release, etc). For Makeﬁle generators the build conﬁguration is speciﬁed by the CMAKEVBUILDiTYPE cache variable. For Visual Studio and Xcode generators the conﬁguration is selected when the INSTALL target is built. An installation rule will be evaluated only if the current install conﬁguration matches an entry in the list provided to this argument. Conﬁguration name comparison is case-insensitive.
 
 COMPONENT
 
-Speciﬁes the installation component for which the installation rule applies. Some
-projects divide their installations into multiple components for separate packaging.
-For example, a project may deﬁne a “Runtime” component that contains the ﬁles
-needed to run a tool, a “Development” component containing the ﬁles needed to
-build extensions to the tool, and a “Documentation” component containing the
-manual pages and other help ﬁles. The project may then package each component
-separately for distribution by installing only one component at a time. By default all
-components are installed. Component-speciﬁc installation is an advanced feature
-intended for use by package maintainers. It requires manual invocation of the
-installation scripts with an argument deﬁning the COMPONENT variable to name the
-desired component. Note that component names are not deﬁned by CMake. Each
-project may deﬁne its own set of components.
+Speciﬁes the installation component for which the installation rule applies. Some projects divide their installations into multiple components for separate packaging. For example, a project may deﬁne a “Runtime” component that contains the ﬁles needed to run a tool, a “Development” component containing the ﬁles needed to build extensions to the tool, and a “Documentation” component containing the manual pages and other help ﬁles. The project may then package each component separately for distribution by installing only one component at a time. By default all components are installed. Component-speciﬁc installation is an advanced feature intended for use by package maintainers. It requires manual invocation of the installation scripts with an argument deﬁning the COMPONENT variable to name the desired component. Note that component names are not deﬁned by CMake. Each project may deﬁne its own set of components.
 
 OPTIONAL
 
-Speciﬁes that it is not an error if the input ﬁle to be installed does not exist. If the
-input ﬁle exists it will be installed as requested. If it does not exist it will be silently
-not installed.
+Speciﬁes that it is not an error if the input ﬁle to be installed does not exist. If the input ﬁle exists it will be installed as requested. If it does not exist it will be silently not installed.
 
-Projects typically install some of the library and executable ﬁles created during their build
-process. The install command provides the TARGETS signature for this purpose:
+Projects typically install some of the library and executable ﬁles created during their build process. The install command provides the TARGETS signature for this purpose:
 
-~install (TARGETS targets...
+install (TARGETS targets...
 [ [ARCHIVE l LIBRARY | RUNTIME [ FRAMEWORK [ BUNDLE |
 
 PRIVATEAHEADER | PUBLICAHEADER l RESOURCE]
@@ -2352,18 +2319,9 @@ PRIVATEAHEADER | PUBLICAHEADER l RESOURCE]
 [NAMELINK/ONLYlNAMELINK/SKIP]
 l l. . . l )
 
-The TARGETS keyword is immediately followed by a list of the targets created using
-add_executable or add_library to be installed. One or more ﬁles corresponding to each
-target will be installed.
+The TARGETS keyword is immediately followed by a list of the targets created using add_executable or add_library to be installed. One or more ﬁles corresponding to each target will be installed.
 
-Files installed with this signature may be divided into three categories: ARCHIVE, LIBRARY,
-and RUNTTME. These categories are designed to group target ﬁles by typical installation
-
-Installing Files 69
-
-destination. The corresponding keyword arguments are optional, but if present specify that
-other arguments following them apply only to target ﬁles of that type. Target ﬁles are
-categorized as follows:
+Files installed with this signature may be divided into three categories: ARCHIVE, LIBRARY, and RUNTTME. These categories are designed to group target ﬁles by typical installation destination. The corresponding keyword arguments are optional, but if present specify that other arguments following them apply only to target ﬁles of that type. Target ﬁles are categorized as follows:
 
 executables - RUNTIME
 
