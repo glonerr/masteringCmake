@@ -19,6 +19,11 @@
         "mathematics.h": "c",
         "rational.c": "cpp",
         "array": "cpp",
-        "cpu.h": "c"
-    }
+        "cpu.h": "c",
+        "bswap.h": "c",
+        "adler32.h": "c",
+        "cstddef": "cpp",
+        "config.h": "c"
+    },
+    "C_Cpp.configurationWarnings": "Disabled"
 }

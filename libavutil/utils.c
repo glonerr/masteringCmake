@@ -1,11 +1,35 @@
+/*
+ * This file is part of FFmpeg.
+ *
+ * FFmpeg is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * FFmpeg is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with FFmpeg; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+
 #include "config.h"
 #include "avutil.h"
 #include "avassert.h"
 #include "samplefmt.h"
 #include "internal.h"
 
+/**
+ * @file
+ * various utility functions
+ */
 
-#include "ffversion.h"
+#include "libavutil/ffversion.h"
+const char av_util_ffversion[] = "FFmpeg version " FFMPEG_VERSION;
+
 const char *av_version_info(void)
 {
     return FFMPEG_VERSION;
@@ -25,14 +49,12 @@ unsigned avutil_version(void)
 
     av_assert0(((size_t)-1) > 0); // C guarantees this but if false on a platform we care about revert at least b284e1ffe343d6697fb950d1ee517bafda8a9844
 
-    if (av_sat_dadd32(1, 2) != 5)
-    {
+    if (av_sat_dadd32(1, 2) != 5) {
         av_log(NULL, AV_LOG_FATAL, "Libavutil has been built with a broken binutils, please upgrade binutils and rebuild\n");
         abort();
     }
 
-    if (llrint(1LL << 60) != 1LL << 60)
-    {
+    if (llrint(1LL<<60) != 1LL<<60) {
         av_log(NULL, AV_LOG_ERROR, "Libavutil has been linked to a broken llrint()\n");
     }
 
@@ -123,7 +145,6 @@ AVRational av_get_time_base_q(void)
 {
     return (AVRational){1, AV_TIME_BASE};
 }
-
 
 void av_assert0_fpu(void) {
 #if HAVE_MMX_INLINE

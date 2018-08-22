@@ -2967,36 +2967,19 @@ Chapter 5
 
 System Inspection
 
-This chapter will describe how you can use CMake to inspect the environment of the system
-on which the software is being built. This is a critical factor in creating cross-platform
-applications or libraries. It covers how to ﬁnd and use system and user installed header ﬁles
-and libraries. It also covers some of the more advanced features of CMake including the
-tryicompile and tryirun commands. These commands are extremely powerful tools for
-determining the capabilities of the system and compiler that is hosting your software. This
-chapter also describes how to generate conﬁgured ﬁles and how to cross compile with
-CMake. Finally, the steps required to enable a project for the f ind_package command are
-covered, explaining how to create a <Package>Config . cmake ﬁle and other required ﬁles.
+This chapter will describe how you can use CMake to inspect the environment of the system on which the software is being built. This is a critical factor in creating cross-platform applications or libraries. It covers how to ﬁnd and use system and user installed header ﬁles
+and libraries. It also covers some of the more advanced features of CMake including the tryicompile and tryirun commands. These commands are extremely powerful tools for determining the capabilities of the system and compiler that is hosting your software. This
+chapter also describes how to generate conﬁgured ﬁles and how to cross compile with CMake. Finally, the steps required to enable a project for the f ind_package command are covered, explaining how to create a <Package>Config . cmake ﬁle and other required ﬁles.
 
 5.1 Using Header Files and Libraries
 
-Many C and C++ programs depend on external libraries. However, when it comes to the
-practical aspects of compiling and linking a project, taking advantage of existing libraries can
-be difﬁcult for both developers and users. Problems usually show up as soon as the software
-is built on a system other than that on which it was developed. Assumptions regarding where
-libraries and header ﬁles are located become obvious when they are not installed in the same
-place on the new computer and the build system is unable to ﬁnd them. CMake has many
-features to aid developers in the integration of external software libraries into a project.
+Many C and C++ programs depend on external libraries. However, when it comes to the practical aspects of compiling and linking a project, taking advantage of existing libraries can be difﬁcult for both developers and users. Problems usually show up as soon as the software is built on a system other than that on which it was developed. Assumptions regarding where
+libraries and header ﬁles are located become obvious when they are not installed in the same place on the new computer and the build system is unable to ﬁnd them. CMake has many features to aid developers in the integration of external software libraries into a project.
 
-The CMake commands that are most relevant to this type of integration are the f ind_f 1 le,
-find_library, find_path, find_program, and find_package commands. For most C
-and C++ libraries, a combination of find_library and findﬁpath will be enough to
+The CMake commands that are most relevant to this type of integration are the f ind_f 1 le, find_library, find_path, find_program, and find_package commands. For most C and C++ libraries, a combination of find_library and findﬁpath will be enough to
 compile and link with an installed library. f ind_library can be used to locate, or allow a
 
-86 System Inspection
-
-user to locate a library, and find_path can be used to ﬁnd the path to a representative
-include ﬁle from the project. For example, if you wanted to link to the tiff library, you could
-use the following commands in your CMakeLists.txt ﬁle:
+user to locate a library, and find_path can be used to ﬁnd the path to a representative include ﬁle from the project. For example, if you wanted to link to the tiff library, you could use the following commands in your CMakeLists.txt ﬁle:
 
 ;# find libtiff, looking in some standard places
 find_library (TIFF_LIBRARY
@@ -3015,15 +2998,9 @@ gaddﬁexecutable (mytiff mytiff.c )
 
 _targetﬁlinkwlibraries (myprogram ${TIFF_LIBRARY})
 
-The ﬁrst command used is f ind_library which in this case will look for a library with the
-name tiff or tiff2. The find_library command only requires the library’s base name
-without any platform speciﬁc preﬁxes or sufﬁxes, such as lib and .dll. The appropriate
-preﬁxes and sufﬁxes for the system running CMake will be added to the library name
-automatically when CMake attempts to ﬁnd it. All the FIND_* commands will look in the
-PATH environment variable. In addition, the commands allow the speciﬁcation of additional
-search paths as arguments listed after the PATHS marker argument. As well as supporting
-standard paths, windows registry entries and environment variables can be used to construct
-search paths. The syntax for registry entries is the following:
+The ﬁrst command used is find_library which in this case will look for a library with the name tiff or tiff2. The find_library command only requires the library’s base name without any platform speciﬁc preﬁxes or sufﬁxes, such as lib and .dll. The appropriate
+preﬁxes and sufﬁxes for the system running CMake will be added to the library name automatically when CMake attempts to ﬁnd it. All the FIND_* commands will look in the PATH environment variable. In addition, the commands allow the speciﬁcation of additional
+search paths as arguments listed after the PATHS marker argument. As well as supporting standard paths, windows registry entries and environment variables can be used to construct search paths. The syntax for registry entries is the following:
 
 [HKEY_CURRENT_USER\\Software\\Kitware\\Path;Buildl]
 
