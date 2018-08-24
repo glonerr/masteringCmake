@@ -31,6 +31,6 @@ int main(int argc, char **argv)
     //     return 1;
 
     void* b = av_malloc(10);
-    printf("teset");
+    printf("测试");
     return 1;
 }
