@@ -67,8 +67,8 @@
     "code-runner.executorMap": {
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-        "cpp": "cd $dir && g++ $fileName $dir/libavutil/adler32.c -I. -Ilibavutil -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "c": "cd $dir && gcc -DHAVE_AV_CONFIG_H $fileName $dir/libavutil/mem.c $dir/libavutil/log.c $dir/libavutil/bprint.c -I. -Ilibavutil -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName $dir/libavutil/adler32.c $dir/libavutil/aes.c -I. -Ilibavutil -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "php": "php",
         "python": "python -u",
