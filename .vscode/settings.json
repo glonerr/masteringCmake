@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.mak": "makefile",
+        "*.make": "makefile",
         "avutil.h": "c",
         "log.h": "c",
         "attributes.h": "c",
@@ -61,7 +63,10 @@
         "type_traits": "cpp",
         "tuple": "cpp",
         "typeinfo": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "aes_ctr.h": "c",
+        "time.h": "c",
+        "stdint.h": "c"
     },
     "C_Cpp.configurationWarnings": "Disabled",
     "code-runner.executorMap": {
