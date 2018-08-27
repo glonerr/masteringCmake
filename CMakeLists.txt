@@ -925,9 +925,12 @@ set(mmx_external_deps x86asm)
 set(mmx_inline_deps inline_asm x86)
 set(mmx_suggest mmx_external mmx_inline)
 
+set(src main.c)
+
 add_subdirectory(libavutil)
 
-# foreach(s ${HAVE_LIST})
-#     message(${s})
-# endforeach()
-# add_suffix(_external "${ARCH_EXT_LIST}")
+include_directories(./ ./libavutil)
+
+add_executable(main ${src})
+
+target_link_libraries(avutil)
