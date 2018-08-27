@@ -31,6 +31,10 @@ int main(int argc, char **argv)
     //     return 1;
 
     void* b = av_malloc(10);
-    printf("测试");
+    int* cp = av_malloc(sizeof(int));
+    *cp = 3;
+    printf("0x%x,0x%x,%d",b,cp,*cp);
+    av_free(b);
+    printf("0x%x,0x%x,%d",b,cp,*cp);
     return 1;
 }
