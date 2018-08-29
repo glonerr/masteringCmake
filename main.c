@@ -1,13 +1,18 @@
-#include "libavutil/mem.h"
-#include "libavutil/timer.h"
-#include "libavutil/log.h"
-#include "libavutil/adler32.h"
-#include "libavutil/random_seed.c"
+// #include "libavutil/mem.h"
+// #include "libavutil/timer.h"
+// #include "libavutil/log.h"
+// #include "libavutil/adler32.h"
+// #include "libavutil/random_seed.c"
 #include <stdio.h>
+
+#define N 256
+#define F 2
 
 #define LEN 7001
 
 static volatile int checksum;
+
+// typedef uint32_t (*random_seed_ptr_t)(void);
 
 int main(int argc, char **argv)
 {
@@ -38,35 +43,40 @@ int main(int argc, char **argv)
     // if (!b)
     //     return 1;
 
-    void *b = av_malloc(10);
-    // int* cp = av_malloc(sizeof(int));
-    // *cp = 3;
-    // printf("0x%x,0x%x,%d",b,cp,*cp);
-    av_free(b);
-    // printf("0x%x,0x%x,%d",b,cp,*cp);
+    // void *b = av_malloc(10);
+    // // int* cp = av_malloc(sizeof(int));
+    // // *cp = 3;
+    // // printf("0x%x,0x%x,%d",b,cp,*cp);
+    // av_free(b);
+    // // printf("0x%x,0x%x,%d",b,cp,*cp);
 
-    int i;
-    uint8_t data[LEN];
+    // av_log(NULL, AV_LOG_DEBUG, "%X (expected 50E6E508)\n", checksum);
+    checksum == 0x50e6e508 ? 0 : 1;
 
-    av_log_set_level(AV_LOG_DEBUG);
+    int i, j, rsf, retry;
+    int a = 0;
+    int b = 0;
+    // uint32_t seeds[N];
+    // // random_seed_ptr_t random_seed[F] = {av_get_random_seed, get_generic_seed};
 
-    for (i = 0; i < LEN; i++)
-        data[i] = ((i * i) >> 3) + 123 * i;
+    // for (rsf=0; rsf<F; ++rsf){
+    //     for (retry=0; retry<3; retry++){
+    //         for (i=0; i<N; i++){
+    //             // seeds[i] = random_seed[rsf]();
+    //             for (j=0; j<i; j++)
+    //                 if (seeds[j] == seeds[i])
+    //                     goto retry;
+    //         }
+    //         printf("seeds OK\n");
+    //         break;
+    //         retry:;
+    //     }
+    //     if (retry >= 3) {
+    //         printf("rsf %d: FAIL at %d with %X\n ", rsf, j, seeds[j]);
+    //         return 1;
+    //     }
+    // }
 
-    if (argc > 1 && !strcmp(argv[1], "-t"))
-    {
-        for (i = 0; i < 1000; i++)
-        {
-            START_TIMER;
-            checksum = av_adler32_update(1, data, LEN);
-            STOP_TIMER("adler");
-        }
-    }
-    else
-    {
-        checksum = av_adler32_update(1, data, LEN);
-    }
-
-    av_log(NULL, AV_LOG_DEBUG, "%X (expected 50E6E508)\n", checksum);
-    return checksum == 0x50e6e508 ? 0 : 1;
+    printf("test");
+    return 1;
 }

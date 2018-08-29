@@ -925,12 +925,16 @@ set(mmx_external_deps x86asm)
 set(mmx_inline_deps inline_asm x86)
 set(mmx_suggest mmx_external mmx_inline)
 
-add_subdirectory(libavutil)
+# add_subdirectory(libavutil)
 
-include_directories(./ ./libavutil)
+# include_directories(./ ./libavutil)
 
 set(src main.c)
 
+# Android 5.0 以上需要在此处设置 PIE
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIE")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie")
+
 add_executable(main ${src})
 
-target_link_libraries(main avutil)
+# target_link_libraries(main avutil)

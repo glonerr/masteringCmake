@@ -66,7 +66,8 @@
         "utility": "cpp",
         "aes_ctr.h": "c",
         "time.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "stdio.h": "c"
     },
     "C_Cpp.configurationWarnings": "Disabled",
     "code-runner.executorMap": {

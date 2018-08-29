@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "java Debug (Launch)",
+            "name": "java debug",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
@@ -15,7 +15,7 @@
             "args": ""
         },
         {
-            "name": "(gdb) Launch",
+            "name": "gdb debug remote",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/main",
@@ -25,13 +25,61 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
+            "miDebuggerServerAddress": "localhost:9091",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
-        }
+            ],
+            "preLaunchTask": "build"
+        },
+        {
+            "name": "lldb debug local",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true,
+                }
+            ],
+            // "preLaunchTask": "build"
+        },
+        {
+            "name": "lldb debug remote-linux",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main", // Local path.
+            "initCommands": [
+                "platform select remote-linux",
+                "platform connect connect://127.0.0.1:1234"
+            ],
+            "preLaunchTask": "start_lldb_server_remote_linux",
+            "postDebugTask": "stop_lldb_server_remote_linux",
+        },
+        {
+            "name": "lldb debug remote-android",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/main", // Local path.
+            "initCommands": [
+                "platform select remote-android",
+                "platform connect unix-abstract-connect:///data/local/tmp/debug.sock",
+            ],
+            "exitCommands":[
+                "exit",
+            ],
+            "preLaunchTask": "start_lldb_server_remote_android",
+            // "postDebugTask": "stop_lldb_server_remote_android",
+        },
     ]
 }

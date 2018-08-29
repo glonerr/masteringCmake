@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start_lldb_server_remote_android",
+      "type": "shell",
+      "dependsOn": "build",
+      // "command": "sh",
+      // "args": ["${workspaceFolder}/script/start_lldb_server_remote_android.sh"],
+      "isBackground": true,
+    },
+    {
+      "label": "stop_lldb_server_remote_android",
+      "type": "shell",
+      "dependsOn": "build",
+      "command": "echo stop_lldb_server_remote_android ",
+      "args": [
+        // "platform",
+        // "--listen",
+        // "127.0.0.1:1234",
+        // "--server"
+      ],
+      "isBackground": true
+    },
+    {
+      "label": "start_lldb_server_remote_linux",
+      "type": "shell",
+      "dependsOn": "build",
+      "command": "lldb-server",
+      "args": ["platform", "--listen", "*:1234", "--server"],
+      "isBackground": true
+    },
+    {
+      "label": "stop_lldb_server_remote_linux",
+      "type": "shell",
+      "dependsOn": "build",
+      "command": "echo stopstop",
+      "args": [
+        // "platform",
+        // "--listen",
+        // "127.0.0.1:1234",
+        // "--server"
+      ],
+      "isBackground": true
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "cd build && cmake -DCMAKE_TOOLCHAIN_FILE=/home/lonerr/Tools/worktools/android/android-ndk-r16b/build/cmake/android.toolchain.cmake -DCMAKE_MAKE_PROGRAM=/home/lonerr/Tools/worktools/android/android-ndk-r16b/prebuilt/linux-x86_64/bin/make -DCMAKE_SYSTEM_VERSION=16 ../ && cmake --build .",
+      "args": []
+    }
+  ]
+}
