@@ -47,7 +47,7 @@
     {
       "label": "build_android",
       "type": "shell",
-      "command": "cd build && cmake -DANDROID=true ../ && cmake --build .",
+      "command": "cd build && rm -rf * && cmake -DANDROID=true ../ && cmake --build .",
       "args": [],
     }
   ]

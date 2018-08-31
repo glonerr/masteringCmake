@@ -79,7 +79,7 @@
                 "exit",
             ],
             "preLaunchTask": "build_android",
-            "postDebugTask": "stop_lldb_server_remote_android",
+            // "postDebugTask": "stop_lldb_server_remote_android",
         },
     ]
 }

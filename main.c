@@ -77,6 +77,6 @@ int main(int argc, char **argv)
     //     }
     // }
 
-    printf("test");
+    printf("test\n");
     return 1;
 }
