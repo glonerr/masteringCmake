@@ -52,7 +52,7 @@
                     "ignoreFailures": true,
                 }
             ],
-            // "preLaunchTask": "build"
+            "preLaunchTask": "build"
         },
         {
             "name": "lldb debug remote-linux",
@@ -64,7 +64,7 @@
                 "platform connect connect://127.0.0.1:1234"
             ],
             "preLaunchTask": "start_lldb_server_remote_linux",
-            "postDebugTask": "stop_lldb_server_remote_linux",
+            // "postDebugTask": "stop_lldb_server_remote_linux",
         },
         {
             "name": "lldb debug remote-android",
@@ -73,13 +73,13 @@
             "program": "${workspaceFolder}/build/main", // Local path.
             "initCommands": [
                 "platform select remote-android",
-                "platform connect unix-abstract-connect:///data/local/tmp/debug.sock",
+                "platform connect unix-abstract-connect:///data/local/tmp/lldb/tmp/debug.sock",
             ],
             "exitCommands":[
                 "exit",
             ],
-            "preLaunchTask": "start_lldb_server_remote_android",
-            // "postDebugTask": "stop_lldb_server_remote_android",
+            "preLaunchTask": "build_android",
+            "postDebugTask": "stop_lldb_server_remote_android",
         },
     ]
 }

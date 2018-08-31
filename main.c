@@ -1,7 +1,7 @@
 // #include "libavutil/mem.h"
 // #include "libavutil/timer.h"
 // #include "libavutil/log.h"
-// #include "libavutil/adler32.h"
+#include "libavutil/adler32.h"
 // #include "libavutil/random_seed.c"
 #include <stdio.h>
 
