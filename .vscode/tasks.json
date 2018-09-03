@@ -20,7 +20,7 @@
     {
       "label": "start_lldb_server_remote_linux",
       "type": "shell",
-      "dependsOn": "build",
+      "dependsOn": "build_linux",
       "command": "lldb-server",
       "args": ["platform", "--listen", "*:1234", "--server"],
       "isBackground": true
@@ -28,26 +28,19 @@
     {
       "label": "stop_lldb_server_remote_linux",
       "type": "shell",
-      "dependsOn": "build",
-      "command": "echo stopstop",
-      "args": [
-        // "platform",
-        // "--listen",
-        // "127.0.0.1:1234",
-        // "--server"
-      ],
+      "command": "pkill lldb-server",
       "isBackground": true
     },
     {
-      "label": "build",
+      "label": "build_linux",
       "type": "shell",
-      "command": "cd build && cmake -DCMAKE_BUILD_TYPE=Debug ../ && cmake --build .",
+      "command": "rm -rf build && cmake -DCMAKE_BUILD_TYPE=Debug . -Bbuild && cd build && cmake --build .",
       "args": []
     },
     {
       "label": "build_android",
       "type": "shell",
-      "command": "cd build && rm -rf * && cmake -DANDROID=true ../ && cmake --build .",
+      "command": "rm -rf build && cmake -DANDROID=true -DCMAKE_BUILD_TYPE=Debug . -Bbuild && cd build && cmake --build .",
       "args": [],
     }
   ]
