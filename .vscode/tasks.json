@@ -34,7 +34,8 @@
         "*:1234",
         "--server"
       ],
-      "isBackground": true
+      "isBackground": true,
+      "problemMatcher": []
     },
     {
       "label": "stop_lldb_server_remote_linux",
@@ -46,7 +47,8 @@
       "label": "build_linux",
       "type": "shell",
       "command": "rm -rf build && cmake -DCMAKE_BUILD_TYPE=Debug . -Bbuild && cd build && cmake --build .",
-      "args": []
+      "args": [],
+      "problemMatcher": []
     },
     {
       "label": "push_shared_object_android",
@@ -60,7 +62,8 @@
       "label": "build_android",
       "type": "shell",
       "command": "rm -rf build && cmake -DANDROID=true -DCMAKE_BUILD_TYPE=Debug . -Bbuild && cd build && cmake --build .",
-      "args": []
+      "args": [],
+      "problemMatcher": []
     }
   ]
 }
