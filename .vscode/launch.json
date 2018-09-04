@@ -74,12 +74,14 @@
             "initCommands": [
                 "platform select remote-android",
                 "platform connect unix-abstract-connect:///data/local/tmp/lldb/tmp/debug.sock",
-                "env LD_LIBRARY_PATH=/data/local/tmp/lldb/tmp",
             ],
+            "env": {
+                "LD_LIBRARY_PATH":"/data/local/tmp/lldb/tmp"
+            },
             "exitCommands":[
                 "exit",
             ],
-            "preLaunchTask": "build_android",
+            "preLaunchTask": "push_shared_object_android",
             // "postDebugTask": "stop_lldb_server_remote_android",
         },
     ]

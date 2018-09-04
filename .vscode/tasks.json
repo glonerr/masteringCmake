@@ -6,23 +6,34 @@
       "type": "shell",
       "linux": {
         "command": "sh",
-        "args": ["${workspaceFolder}/script/start_lldb_server_remote_android.sh"],
+        "args": [
+          "${workspaceFolder}/script/start_lldb_server_remote_android.sh"
+        ]
       },
-      "isBackground": true
+      "isBackground": true,
+      "problemMatcher": []
     },
     {
       "label": "stop_lldb_server_remote_android",
       "type": "shell",
       "command": "sh",
-      "args": ["${workspaceFolder}/script/stop_lldb_server_remote_android.sh"],
-      "isBackground": true
+      "args": [
+        "${workspaceFolder}/script/stop_lldb_server_remote_android.sh"
+      ],
+      "isBackground": true,
+      "problemMatcher": []
     },
     {
       "label": "start_lldb_server_remote_linux",
       "type": "shell",
       "dependsOn": "build_linux",
       "command": "lldb-server",
-      "args": ["platform", "--listen", "*:1234", "--server"],
+      "args": [
+        "platform",
+        "--listen",
+        "*:1234",
+        "--server"
+      ],
       "isBackground": true
     },
     {
@@ -38,10 +49,18 @@
       "args": []
     },
     {
+      "label": "push_shared_object_android",
+      "type": "shell",
+      "dependsOn": "build_android",
+      "command": "adb push build/libavutil/libavutil.so /data/local/tmp/lldb/tmp",
+      "args": [],
+      "problemMatcher": []
+    },
+    {
       "label": "build_android",
       "type": "shell",
       "command": "rm -rf build && cmake -DANDROID=true -DCMAKE_BUILD_TYPE=Debug . -Bbuild && cd build && cmake --build .",
-      "args": [],
+      "args": []
     }
   ]
 }

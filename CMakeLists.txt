@@ -2,14 +2,14 @@ cmake_minimum_required(VERSION 3.2)
 # set(ANDROID true)
 if(ANDROID)
     # for cmake 3.7
-    set(CMAKE_SYSTEM_NAME Android)
-    set(CMAKE_SYSTEM_VERSION 21) # API level
-    set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
-    set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r16b/)
+    # set(CMAKE_SYSTEM_NAME Android)
+    # set(CMAKE_SYSTEM_VERSION 21) # API level
+    # set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
+    # set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r16b/)
 
     # for cmake 3.2
-    # set(ANDROID_ABI arm64-v8a)
-    # set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r16b/build/cmake/android.toolchain.cmake)
+    set(ANDROID_ABI arm64-v8a)
+    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r16b/build/cmake/android.toolchain.cmake)
 
     # Android 5.0 以上需要在此处设置 PIE
     # set(ANDROID_PIE ON)
