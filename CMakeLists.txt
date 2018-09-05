@@ -21,7 +21,19 @@ add_definitions(-DHAVE_AV_CONFIG_H)
 
 project(ffmpeg)
 
-configure_file(config.h.in ../config.bak.h)
+set(ARCH_LIST aarch64 alpha arm avr32 avr32_ap avr32_uc bfin ia64 m68k mips mips64 parisc ppc ppc64 s390 sh4 sparc sparc64 tilegx tilepro tomi x86 x86_32 x86_64)
+
+foreach(item ${ARCH_LIST})
+    message(STATUS ${item})
+endforeach(item ${ARCH_LIST})
+
+function(print_list list)
+    message("src_list = " ${list} List(LENGTH,list))
+endfunction(print_list list)
+
+print_list(${ARCH_LIST})
+
+configure_file(config.h.in ../config.h)
 
 add_subdirectory(libavutil)
 

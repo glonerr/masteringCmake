@@ -115,4 +115,5 @@
     "nim": "nim compile --verbosity:0 --hints:off --run"
   },
   "explorer.autoReveal": false,
+  "editor.wordWrap": "on",
 }
