@@ -68,7 +68,9 @@
     "time.h": "c",
     "stdint.h": "c",
     "stdio.h": "c",
-    "math.h": "c"
+    "math.h": "c",
+    "random_seed.h": "c",
+    "aes.h": "c"
   },
   "C_Cpp.configurationWarnings": "Disabled",
   "code-runner.executorMap": {

@@ -1,6 +1,6 @@
 project(libavutil)
 
-set(src adler32.c)
+set(src adler32.c log.c bprint.c mem.c)
 
 include_directories(./ ../)
 

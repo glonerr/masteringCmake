@@ -17,7 +17,11 @@ if(ANDROID)
     # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie")
 endif(ANDROID)
 
+add_definitions(-DHAVE_AV_CONFIG_H)
+
 project(ffmpeg)
+
+configure_file(config.h.in ../config.bak.h)
 
 add_subdirectory(libavutil)
 
