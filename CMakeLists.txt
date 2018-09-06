@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 # set(ANDROID true)
+set(arch x86_64)
 if(ANDROID)
     # for cmake 3.7
     # set(CMAKE_SYSTEM_NAME Android)
@@ -10,6 +11,7 @@ if(ANDROID)
     # for cmake 3.2
     set(ANDROID_ABI arm64-v8a)
     set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r16b/build/cmake/android.toolchain.cmake)
+    set(arch aarch64)
 
     # Android 5.0 以上需要在此处设置 PIE
     # set(ANDROID_PIE ON)
@@ -23,15 +25,41 @@ project(ffmpeg)
 
 set(ARCH_LIST aarch64 alpha arm avr32 avr32_ap avr32_uc bfin ia64 m68k mips mips64 parisc ppc ppc64 s390 sh4 sparc sparc64 tilegx tilepro tomi x86 x86_32 x86_64)
 
-foreach(item ${ARCH_LIST})
-    message(STATUS ${item})
-endforeach(item ${ARCH_LIST})
-
 function(print_list list)
-    message("src_list = " ${list} List(LENGTH,list))
+    foreach(item ${list})
+        message(STATUS ${item})
+    endforeach(item ${list})
 endfunction(print_list list)
 
-print_list(${ARCH_LIST})
+function(set_arch arch arch_list)
+    foreach(item ${arch_list})
+        if(${arch} STREQUAL ${item})
+            string(TOUPPER "ARCH_${item}" ARCH)
+            enable("${ARCH}")
+        else(${arch} STREQUAL ${item})
+            string(TOUPPER "ARCH_${item}" ARCH)
+            disable("${ARCH}")
+        endif(${arch} STREQUAL ${item})
+    endforeach(item ${list})
+endfunction(set_arch arch)
+
+function(enable item)
+    set(${item} 1 CACHE BOOL "")
+endfunction(enable)
+
+function(enable_all item list)
+    set(${item} 1 CACHE BOOL "")
+endfunction(enable)
+
+function(disable item)
+    set(${item} 0 CACHE Bool "")
+endfunction(disable item)
+
+function(disable_all item list)
+    set(${item} 0 CACHE Bool "")
+endfunction(disable item)
+
+set_arch(${arch} "${ARCH_LIST}")
 
 configure_file(config.h.in ../config.h)
 

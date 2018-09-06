@@ -14,30 +14,30 @@
 #define SLIBSUF ".so"
 #define HAVE_MMX2 HAVE_MMXEXT
 #define SWS_MAX_FILTER_SIZE 256
-#cmakedefine ARCH_AARCH64 
-#cmakedefine ARCH_ALPHA 0
-#cmakedefine ARCH_ARM 0
-#cmakedefine ARCH_AVR32 0
-#cmakedefine ARCH_AVR32_AP 0
-#cmakedefine ARCH_AVR32_UC 0
-#cmakedefine ARCH_BFIN 0
-#cmakedefine ARCH_IA64 0
-#cmakedefine ARCH_M68K 0
-#cmakedefine ARCH_MIPS 0
-#cmakedefine ARCH_MIPS64 0
-#cmakedefine ARCH_PARISC 0
-#cmakedefine ARCH_PPC 0
-#cmakedefine ARCH_PPC64 0
-#cmakedefine ARCH_S390 0
-#cmakedefine ARCH_SH4 0
-#cmakedefine ARCH_SPARC 0
-#cmakedefine ARCH_SPARC64 0
-#cmakedefine ARCH_TILEGX 0
-#cmakedefine ARCH_TILEPRO 0
-#cmakedefine ARCH_TOMI 0
-#cmakedefine ARCH_X86 0
-#cmakedefine ARCH_X86_32 0
-#cmakedefine ARCH_X86_64 0
+#cmakedefine01 ARCH_AARCH64
+#cmakedefine01 ARCH_ALPHA
+#cmakedefine01 ARCH_ARM 
+#cmakedefine01 ARCH_AVR32
+#cmakedefine01 ARCH_AVR32_AP
+#cmakedefine01 ARCH_AVR32_UC 
+#cmakedefine01 ARCH_BFIN 
+#cmakedefine01 ARCH_IA64 
+#cmakedefine01 ARCH_M68K 
+#cmakedefine01 ARCH_MIPS 
+#cmakedefine01 ARCH_MIPS64 
+#cmakedefine01 ARCH_PARISC 
+#cmakedefine01 ARCH_PPC 
+#cmakedefine01 ARCH_PPC64 
+#cmakedefine01 ARCH_S390 
+#cmakedefine01 ARCH_SH4 
+#cmakedefine01 ARCH_SPARC 
+#cmakedefine01 ARCH_SPARC64 
+#cmakedefine01 ARCH_TILEGX 
+#cmakedefine01 ARCH_TILEPRO 
+#cmakedefine01 ARCH_TOMI 
+#cmakedefine01 ARCH_X86 
+#cmakedefine01 ARCH_X86_32 
+#cmakedefine01 ARCH_X86_64 
 #define HAVE_ARMV5TE 0
 #define HAVE_ARMV6 0
 #define HAVE_ARMV6T2 0

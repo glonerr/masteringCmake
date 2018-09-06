@@ -2,3 +2,4 @@ build/**
 config.bak.h
 Main.class
 main
+tmp/**
