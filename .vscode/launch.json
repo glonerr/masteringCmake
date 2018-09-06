@@ -15,7 +15,7 @@
             "args": ""
         },
         {
-            "name": "gdb debug remote",
+            "name": "gdb remote",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/main",
@@ -36,7 +36,7 @@
             "preLaunchTask": "build_linux"
         },
         {
-            "name": "lldb debug local-linux",
+            "name": "local-linux",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/main",
@@ -55,7 +55,7 @@
             "preLaunchTask": "build_linux"
         },
         {
-            "name": "lldb debug remote-linux",
+            "name": "remote-linux",
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/main", // Local path.
@@ -67,7 +67,7 @@
             "postDebugTask": "stop_lldb_server_remote_linux",
         },
         {
-            "name": "lldb debug remote-android",
+            "name": "remote-android",
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/main", // Local path.
