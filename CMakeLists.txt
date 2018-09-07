@@ -49,31 +49,6 @@ message("ARCH_EXT_LIST_X86:" ${ARCH_EXT_LIST_X86})
 message("ARCH_EXT_LIST:" ${ARCH_EXT_LIST})
 message("ARCH_FEATURES:" ${ARCH_FEATURES})
 
-list(LENGTH ARCH_EXT_LIST_X86 length)
-message(${length})
-
-function(enable item)
-    set(${item} 1 CACHE BOOL "")
-endfunction(enable)
-
-function(enable_all list)
-    foreach(item ${list})
-        string(TOUPPER "ARCH_${item}" ARCH)
-        enable("${ARCH}")
-    endforeach(item ${list})
-endfunction(enable_all list)
-
-function(disable item)
-    set(${item} 0 CACHE Bool "")
-endfunction(disable item)
-
-function(disable_all list)
-    foreach(item ${list})
-        string(TOUPPER "ARCH_${item}" ARCH)
-        disable("${ARCH}")
-    endforeach(item ${list})
-endfunction(disable_all list)
-
 # init all arch variables with 0
 foreach(item ${ARCH_LIST})
     string(TOUPPER "ARCH_${item}" ARCH)
