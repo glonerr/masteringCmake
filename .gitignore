@@ -1,5 +1,8 @@
 build/**
+ffbuild/**
 config.bak.h
 Main.class
 main
 tmp/**
+config.h
+doc/config.texi

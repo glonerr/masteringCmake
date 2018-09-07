@@ -49,7 +49,7 @@ endfunction(enable)
 
 function(enable_all item list)
     set(${item} 1 CACHE BOOL "")
-endfunction(enable)
+endfunction(enable_all)
 
 function(disable item)
     set(${item} 0 CACHE Bool "")
@@ -57,7 +57,7 @@ endfunction(disable item)
 
 function(disable_all item list)
     set(${item} 0 CACHE Bool "")
-endfunction(disable item)
+endfunction(disable_all item)
 
 set_arch(${arch} "${ARCH_LIST}")
 
