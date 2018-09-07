@@ -23,7 +23,8 @@ static int call_log_format_line2(const char *fmt, char *buffer, int buffer_size,
 
 int main(int argc, char **argv)
 {
-     int i;
+    // test log
+    int i;
     av_log_set_level(AV_LOG_DEBUG);
     for (use_color=0; use_color<=256; use_color = 255*use_color+1) {
         av_log(NULL, AV_LOG_FATAL, "use_color: %d\n", use_color);
@@ -55,6 +56,8 @@ int main(int argc, char **argv)
         }
     }
     return 0;
+
+    // test adler32
     // int i;
     // uint8_t data[LEN];
 

@@ -76,7 +76,7 @@ add_subdirectory(libavutil)
 
 include_directories(./ ./libavutil)
 
-set(src main.c)
+set(src libavutil/tests/aes_ctr.c)
 
 add_executable(main ${src})
 
