@@ -24,6 +24,34 @@ project(ffmpeg)
 
 set(ARCH_LIST aarch64 alpha arm avr32 avr32_ap avr32_uc bfin ia64 m68k mips mips64 parisc ppc ppc64 s390 sh4 sparc sparc64 tilegx tilepro tomi x86 x86_32 x86_64)
 
+set(ARCH_EXT_LIST_ARM armv5te armv6 armv6t2 armv8 neon vfp vfpv3 setend)
+
+set(ARCH_EXT_LIST_MIPS mipsfpu mips32r2 mips32r5 mips64r2 mips32r6 mips64r6 mipsdsp mipsdspr2 msa)
+
+set(ARCH_EXT_LIST_LOONGSON loongson2 loongson3 mmi)
+
+set(ARCH_EXT_LIST_X86_SIMD aesni amd3dnow amd3dnowext avx avx2 avx512 fma3 fma4 mmx mmxext sse sse2 sse3 sse4 sse42 ssse3 xop)
+
+set(ARCH_EXT_LIST_PPC altivec dcbzl ldbrx power8 ppc4xx vsx)
+
+set(ARCH_EXT_LIST_X86 ${ARCH_EXT_LIST_X86_SIMD} cpunop i686)
+
+set(ARCH_EXT_LIST ${ARCH_EXT_LIST_ARM} ${ARCH_EXT_LIST_PPC} ${ARCH_EXT_LIST_X86} ${ARCH_EXT_LIST_MIPS} ${ARCH_EXT_LIST_LOONGSON})
+
+set(ARCH_FEATURES aligned_stack fast_64bit fast_clz fast_cmov local_aligned simd_align_16 simd_align_32 simd_align_64)
+
+message("ARCH_EXT_LIST_ARM:" ${ARCH_EXT_LIST_ARM})
+message("ARCH_EXT_LIST_MIPS:" ${ARCH_EXT_LIST_MIPS})
+message("ARCH_EXT_LIST_LOONGSON:" ${ARCH_EXT_LIST_LOONGSON})
+message("ARCH_EXT_LIST_X86_SIMD:" ${ARCH_EXT_LIST_X86_SIMD})
+message("ARCH_EXT_LIST_PPC:" ${ARCH_EXT_LIST_PPC})
+message("ARCH_EXT_LIST_X86:" ${ARCH_EXT_LIST_X86})
+message("ARCH_EXT_LIST:" ${ARCH_EXT_LIST})
+message("ARCH_FEATURES:" ${ARCH_FEATURES})
+
+list(LENGTH ARCH_EXT_LIST_X86 length)
+message(${length})
+
 function(enable item)
     set(${item} 1 CACHE BOOL "")
 endfunction(enable)
