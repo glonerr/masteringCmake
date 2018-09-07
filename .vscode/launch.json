@@ -84,5 +84,20 @@
             "preLaunchTask": "push_shared_object_android",
             // "postDebugTask": "stop_lldb_server_remote_android",
         },
+        {
+            "name": "Bash-Debug",
+            "type": "bashdb",
+            "request": "launch",
+            "program": "${file}",
+            "windows": {
+                "bashPath": "C:\\Windows\\sysnative\\bash.exe"
+            },
+            "linux": {
+                "bashPath": "bash"
+            },
+            "osx": {
+                "bashPath": "bash"
+            }
+        },
     ]
 }
