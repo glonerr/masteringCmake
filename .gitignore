@@ -1,7 +1,7 @@
 build/**
 ffbuild/**
 config.bak.h
-Main.class
+*.class
 main
 tmp/**
 config.h

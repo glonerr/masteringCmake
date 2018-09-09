@@ -14,6 +14,8 @@
 // import javax.crypto.spec.SecretKeySpec;
 import java.lang.String;
 import java.lang.Integer;
+import java.util.Arrays;
+import java.util.HashMap;
 
 class Main {
     // private static final String AES = "AES";
@@ -110,7 +112,7 @@ class Main {
     public static void main(String[] args) {
         // Checksum sum = new Adler32();
         // String content = "this is a encryt testjjjjjjjjjjj";
-        // String password = "lonerrrr19810909";
+        // String password = "lonerrrr19810909";    
         // sum.update(1);
         // System.out.println(sum.getValue());
         // byte[] res = encrypt(content, password);
@@ -124,5 +126,8 @@ class Main {
         String a = "abcd";
         String b = "abc";
         System.out.println("abcde");
+        System.out.println(Arrays.toString(new Solution().twoSum(new int[]{2,7,11,15}, 9)));
+        System.out.println(new Solution().threeSum01(new int[]{-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0}));
+        System.out.println(new Solution().threeSum01(new int[]{0,0,0,0}));
     }
 }
