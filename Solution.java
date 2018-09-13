@@ -1,6 +1,10 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
 
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -39,12 +43,12 @@ public class Solution {
                     }
                     i++;
                     j--;
-                } else if(target > nums[i] + nums[j]){
+                } else if (target > nums[i] + nums[j]) {
                     i++;
-                } else{
+                } else {
                     j--;
                 }
-                
+
             }
         }
         return res;
@@ -69,5 +73,44 @@ public class Solution {
             }
         }
         return res;
+    }
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int carry = 0;
+        ListNode head = null;
+        ListNode tail = null;
+        while (l1 != null || l2 != null || carry > 0) {
+            int res = (carry + (l1 == null ? 0 : l1.val) + (l2 == null ? 0 : l2.val));
+            int val = res % 10;
+            carry = res / 10;
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
+            if (tail == null) {
+                head = tail = new ListNode(val);
+            } else {
+                tail.next = new ListNode(val);
+                tail = tail.next;
+            }
+        }
+        return head;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        char[] cs = s.toCharArray();
+        int max = 0;
+        int start = 0;
+        for (int i = 1; i < cs.length; i++) {
+            for (int j = start; j < i; j++) {
+                // System.out.printf("start:%d,j:%d,max:%d,i:%d,string:%s,cs[i]:%c,cs[j]:%c\n",start,j,max,i,s,cs[i],cs[j]);
+                if (cs[j] == cs[i]) {
+                    max = Math.max(max, i - start);
+                    // System.out.printf("start:%d,end:%d,max:%d,i:%d\n",start,j,max,i);
+                    start = j+1;
+                    break;
+                }
+            }
+        }
+        max = Math.max(max, cs.length - start);
+        return max;
     }
 }

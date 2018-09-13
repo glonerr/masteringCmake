@@ -123,11 +123,11 @@ class Main {
         // System.out.println(idEncrypt);
         // String idDecrypt = decrypt(idEncrypt);
         // System.out.println(idDecrypt);
-        String a = "abcd";
-        String b = "abc";
+        // String a = "abcd";
+        // String b = "abc";
         System.out.println("abcde");
         System.out.println(Arrays.toString(new Solution().twoSum(new int[]{2,7,11,15}, 9)));
         System.out.println(new Solution().threeSum01(new int[]{-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0}));
-        System.out.println(new Solution().threeSum01(new int[]{0,0,0,0}));
+        System.out.println(new Solution().lengthOfLongestSubstring("abcabcbb"));
     }
 }
