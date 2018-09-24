@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.TreeMap;
 
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -105,7 +107,7 @@ public class Solution {
                 if (cs[j] == cs[i]) {
                     max = Math.max(max, i - start);
                     // System.out.printf("start:%d,end:%d,max:%d,i:%d\n",start,j,max,i);
-                    start = j+1;
+                    start = j + 1;
                     break;
                 }
             }
@@ -113,4 +115,27 @@ public class Solution {
         max = Math.max(max, cs.length - start);
         return max;
     }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        if (nums1.length > nums2.length) {
+            int[] tmp = nums2;
+            nums2 = nums1;
+            nums1 = tmp;
+        }
+        for (int i = 0; i < nums1.length; i++) {
+            // if(nums1[i])
+        }
+        return 0;
+    }
+
+    public string longestPalindrome(String s) {
+        char[] cs = s.toCharArray();
+        int maxEven = 0;
+        int maxOdd = 0;
+        for (int i = 1; i < cs.length; i++) {
+            
+        }
+        return null;
+    }
+
 }
