@@ -136,32 +136,32 @@ avutil/fast:
 	$(MAKE) -f libavutil/CMakeFiles/avutil.dir/build.make libavutil/CMakeFiles/avutil.dir/build
 .PHONY : avutil/fast
 
-main.o: main.c.o
+libavutil/tests/parseutils.o: libavutil/tests/parseutils.c.o
 
-.PHONY : main.o
+.PHONY : libavutil/tests/parseutils.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.o
-.PHONY : main.c.o
+libavutil/tests/parseutils.c.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/libavutil/tests/parseutils.c.o
+.PHONY : libavutil/tests/parseutils.c.o
 
-main.i: main.c.i
+libavutil/tests/parseutils.i: libavutil/tests/parseutils.c.i
 
-.PHONY : main.i
+.PHONY : libavutil/tests/parseutils.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.i
-.PHONY : main.c.i
+libavutil/tests/parseutils.c.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/libavutil/tests/parseutils.c.i
+.PHONY : libavutil/tests/parseutils.c.i
 
-main.s: main.c.s
+libavutil/tests/parseutils.s: libavutil/tests/parseutils.c.s
 
-.PHONY : main.s
+.PHONY : libavutil/tests/parseutils.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.c.s
-.PHONY : main.c.s
+libavutil/tests/parseutils.c.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/libavutil/tests/parseutils.c.s
+.PHONY : libavutil/tests/parseutils.c.s
 
 # Help Target
 help:
@@ -173,9 +173,9 @@ help:
 	@echo "... main"
 	@echo "... edit_cache"
 	@echo "... avutil"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... libavutil/tests/parseutils.o"
+	@echo "... libavutil/tests/parseutils.i"
+	@echo "... libavutil/tests/parseutils.s"
 .PHONY : help
 
 

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.3)
 # set(ANDROID true)
 if(ANDROID)
+    message("android build")
     # for cmake 3.7
     # set(CMAKE_SYSTEM_NAME Android)
     # set(CMAKE_SYSTEM_VERSION 21) # API level
@@ -40,14 +41,14 @@ set(ARCH_EXT_LIST ${ARCH_EXT_LIST_ARM} ${ARCH_EXT_LIST_PPC} ${ARCH_EXT_LIST_X86}
 
 set(ARCH_FEATURES aligned_stack fast_64bit fast_clz fast_cmov local_aligned simd_align_16 simd_align_32 simd_align_64)
 
-message("ARCH_EXT_LIST_ARM:" ${ARCH_EXT_LIST_ARM})
-message("ARCH_EXT_LIST_MIPS:" ${ARCH_EXT_LIST_MIPS})
-message("ARCH_EXT_LIST_LOONGSON:" ${ARCH_EXT_LIST_LOONGSON})
-message("ARCH_EXT_LIST_X86_SIMD:" ${ARCH_EXT_LIST_X86_SIMD})
-message("ARCH_EXT_LIST_PPC:" ${ARCH_EXT_LIST_PPC})
-message("ARCH_EXT_LIST_X86:" ${ARCH_EXT_LIST_X86})
-message("ARCH_EXT_LIST:" ${ARCH_EXT_LIST})
-message("ARCH_FEATURES:" ${ARCH_FEATURES})
+# message("ARCH_EXT_LIST_ARM:" ${ARCH_EXT_LIST_ARM})
+# message("ARCH_EXT_LIST_MIPS:" ${ARCH_EXT_LIST_MIPS})
+# message("ARCH_EXT_LIST_LOONGSON:" ${ARCH_EXT_LIST_LOONGSON})
+# message("ARCH_EXT_LIST_X86_SIMD:" ${ARCH_EXT_LIST_X86_SIMD})
+# message("ARCH_EXT_LIST_PPC:" ${ARCH_EXT_LIST_PPC})
+# message("ARCH_EXT_LIST_X86:" ${ARCH_EXT_LIST_X86})
+# message("ARCH_EXT_LIST:" ${ARCH_EXT_LIST})
+# message("ARCH_FEATURES:" ${ARCH_FEATURES})
 
 # init all arch variables with 0
 foreach(item ${ARCH_LIST})
@@ -74,9 +75,9 @@ configure_file(config.h.in ../config.h)
 
 add_subdirectory(libavutil)
 
-include_directories(./ ./libavutil)
+include_directories(./)
 
-set(src libavutil/tests/aes_ctr.c)
+set(src libavutil/tests/parseutils.c)
 
 add_executable(main ${src})
 
