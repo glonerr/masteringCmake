@@ -6,12 +6,13 @@ if(ANDROID)
     # set(CMAKE_SYSTEM_NAME Android)
     # set(CMAKE_SYSTEM_VERSION 21) # API level
     # set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
-    # set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r16b/)
+    # set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r17c/)
 
     # for cmake 3.2
     set(ANDROID_ABI arm64-v8a)
-    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r16b/build/cmake/android.toolchain.cmake)
+    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
     set(arch aarch64)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-to-int-cast -Wstrict-prototypes -Wempty-body -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wno-pointer-sign")
 
     # Android 5.0 以上需要在此处设置 PIE
     # set(ANDROID_PIE ON)
