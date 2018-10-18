@@ -20,6 +20,8 @@ if(ANDROID)
     # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fPIE -pie")
 endif(ANDROID)
 
+project(ffmpeg)
+
 function(add_suffix suf list rslt_list)
     foreach(item ${list})
         list(APPEND rslt_list "${item}${suf}")
@@ -64,8 +66,6 @@ function(print list)
 endfunction()
 
 add_definitions(-DHAVE_AV_CONFIG_H)
-
-project(ffmpeg)
 
 set(AVCODEC_COMPONENTS bsfs decoders encoders hwaccels parsers)
 
@@ -1363,10 +1363,32 @@ set(set_default sws_max_filter_size)
 enable("${EXTRALIBS_LIST}")
 
 # Avoid external, non-system, libraries getting enabled by dependency resolution
-disable("${EXTERNAL_LIBRARY_LIST}" "${HWACCEL_LIBRARY_LIST}")
+disable("${EXTERNAL_LIBRARY_LIST}")
+disable("${HWACCEL_LIBRARY_LIST}")
 
-print("${EXTERNAL_LIBRARY_LIST}")
-print("${HWACCEL_LIBRARY_LIST}")
+# build settings
+set(SHFLAGS "-shared -Wl,-soname,$$(@F)")
+set(LIBPREF lib)
+set(LIBSUF .a)
+set(FULLNAME ${NAME}${BUILDSUF})
+set(LIBNAME ${LIBPREF}${FULLNAME}${LIBSUF})
+set(SLIBPREF lib)
+set(SLIBSUF .so)
+set(SLIBNAME ${SLIBPREF}${FULLNAME}${SLIBSUF})
+set(SLIBNAME_WITH_VERSION ${SLIBNAME}.${LIBVERSION})
+set(SLIBNAME_WITH_MAJOR ${SLIBNAME}.${LIBMAJOR})
+set(LIB_INSTALL_EXTRA_CMD "${${RANLIB}} ${LIBDIR}/${LIBNAME}")
+set(SLIB_INSTALL_NAME ${SLIBNAME_WITH_VERSION})
+set(SLIB_INSTALL_LINKS "${SLIBNAME_WITH_MAJOR} ${SLIBNAME}")
+set(VERSION_SCRIPT_POSTPROCESS_CMD cat)
+
+set(asflags_filter echo)
+set(cflags_filter echo)
+set(ldflags_filter echo)
+
+# lost 3656-3679
+
+
 
 # message("ARCH_EXT_LIST_MIPS:" ${ARCH_EXT_LIST_MIPS})
 # message("ARCH_EXT_LIST_LOONGSON:" ${ARCH_EXT_LIST_LOONGSON})

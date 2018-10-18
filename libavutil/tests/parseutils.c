@@ -26,7 +26,7 @@
 #include "libavutil/log.h"
 #include "libavutil/rational.h"
 
-static uint32_t randomv = MKTAG('L','A','V','U');
+static uint32_t randomv = MKTAG('L', 'A', 'V', 'U');
 
 static uint32_t av_get_random_seed_deterministic(void)
 {
@@ -64,9 +64,10 @@ static void test_av_parse_video_rate(void)
         " -21332.2324   ",
     };
 
-    for (i = 0; i < FF_ARRAY_ELEMS(rates); i++) {
+    for (i = 0; i < FF_ARRAY_ELEMS(rates); i++)
+    {
         int ret;
-        AVRational q = { 0, 0 };
+        AVRational q = {0, 0};
         ret = av_parse_video_rate(&q, rates[i]);
         printf("'%s' -> %d/%d %s\n",
                rates[i], q.num, q.den, ret ? "ERROR" : "OK");
@@ -118,7 +119,8 @@ static void test_av_parse_color(void)
 
     av_log_set_level(AV_LOG_DEBUG);
 
-    for (i = 0;  i < FF_ARRAY_ELEMS(color_names); i++) {
+    for (i = 0; i < FF_ARRAY_ELEMS(color_names); i++)
+    {
         if (av_parse_color(rgba, color_names[i], -1, NULL) >= 0)
             printf("%s -> R(%d) G(%d) B(%d) A(%d)\n",
                    color_names[i], rgba[0], rgba[1], rgba[2], rgba[3]);
@@ -130,34 +132,39 @@ static void test_av_parse_color(void)
 static void test_av_small_strptime(void)
 {
     int i;
-    struct tm tm = { 0 };
-    struct fmt_timespec_entry {
+    struct tm tm = {0};
+    struct fmt_timespec_entry
+    {
         const char *fmt, *timespec;
     } fmt_timespec_entries[] = {
-        { "%Y-%m-%d",                    "2012-12-21" },
-        { "%Y - %m - %d",                "2012-12-21" },
-        { "%Y-%m-%d %H:%M:%S",           "2012-12-21 20:12:21" },
-        { "  %Y - %m - %d %H : %M : %S", "   2012 - 12 -  21   20 : 12 : 21" },
-        { "  %Y - %b - %d %H : %M : %S", "   2012 - nOV -  21   20 : 12 : 21" },
-        { "  %Y - %B - %d %H : %M : %S", "   2012 - nOVemBeR -  21   20 : 12 : 21" },
-        { "  %Y - %B%d %H : %M : %S", "   2012 - may21   20 : 12 : 21" },
-        { "  %Y - %B%d %H : %M : %S", "   2012 - mby21   20 : 12 : 21" },
-        { "  %Y - %B - %d %H : %M : %S", "   2012 - JunE -  21   20 : 12 : 21" },
-        { "  %Y - %B - %d %H : %M : %S", "   2012 - Jane -  21   20 : 12 : 21" },
-        { "  %Y - %B - %d %H : %M : %S", "   2012 - January -  21   20 : 12 : 21" },
+        {"%Y-%m-%d", "2012-12-21"},
+        {"%Y - %m - %d", "2012-12-21"},
+        {"%Y-%m-%d %H:%M:%S", "2012-12-21 20:12:21"},
+        {"  %Y - %m - %d %H : %M : %S", "   2012 - 12 -  21   20 : 12 : 21"},
+        {"  %Y - %b - %d %H : %M : %S", "   2012 - nOV -  21   20 : 12 : 21"},
+        {"  %Y - %B - %d %H : %M : %S", "   2012 - nOVemBeR -  21   20 : 12 : 21"},
+        {"  %Y - %B%d %H : %M : %S", "   2012 - may21   20 : 12 : 21"},
+        {"  %Y - %B%d %H : %M : %S", "   2012 - mby21   20 : 12 : 21"},
+        {"  %Y - %B - %d %H : %M : %S", "   2012 - JunE -  21   20 : 12 : 21"},
+        {"  %Y - %B - %d %H : %M : %S", "   2012 - Jane -  21   20 : 12 : 21"},
+        {"  %Y - %B - %d %H : %M : %S", "   2012 - January -  21   20 : 12 : 21"},
     };
 
     av_log_set_level(AV_LOG_DEBUG);
-    for (i = 0;  i < FF_ARRAY_ELEMS(fmt_timespec_entries); i++) {
+    for (i = 0; i < FF_ARRAY_ELEMS(fmt_timespec_entries); i++)
+    {
         char *p;
         struct fmt_timespec_entry *e = &fmt_timespec_entries[i];
         printf("fmt:'%s' spec:'%s' -> ", e->fmt, e->timespec);
         p = av_small_strptime(e->timespec, e->fmt, &tm);
-        if (p) {
+        if (p)
+        {
             printf("%04d-%02d-%2d %02d:%02d:%02d\n",
-                   1900+tm.tm_year, tm.tm_mon+1, tm.tm_mday,
+                   1900 + tm.tm_year, tm.tm_mon + 1, tm.tm_mday,
                    tm.tm_hour, tm.tm_min, tm.tm_sec);
-        } else {
+        }
+        else
+        {
             printf("error\n");
         }
     }
@@ -170,7 +177,7 @@ static void test_av_parse_time(void)
     time_t tvi;
     struct tm *tm;
     static char tzstr[] = "TZ=CET-1";
-    static const char * const time_string[] = {
+    static const char *const time_string[] = {
         "now",
         "12:35:46",
         "2000-12-20 0:02:47.5z",
@@ -179,7 +186,7 @@ static void test_av_parse_time(void)
         "2000-12-12 1:35:46+05:30",
         "2002-12-12 22:30:40-02",
     };
-    static const char * const duration_string[] = {
+    static const char *const duration_string[] = {
         "2:34:56.79",
         "-1:23:45.67",
         "42.1729",
@@ -190,25 +197,33 @@ static void test_av_parse_time(void)
     av_log_set_level(AV_LOG_DEBUG);
     putenv(tzstr);
     printf("(now is 2012-03-17 09:14:13.2 +0100, local time is UTC+1)\n");
-    for (i = 0;  i < FF_ARRAY_ELEMS(time_string); i++) {
+    for (i = 0; i < FF_ARRAY_ELEMS(time_string); i++)
+    {
         printf("%-24s -> ", time_string[i]);
-        if (av_parse_time(&tv, time_string[i], 0)) {
+        if (av_parse_time(&tv, time_string[i], 0))
+        {
             printf("error\n");
-        } else {
+        }
+        else
+        {
             tvi = tv / 1000000;
             tm = gmtime(&tvi);
-            printf("%14"PRIi64".%06d = %04d-%02d-%02dT%02d:%02d:%02dZ\n",
+            printf("%14" PRIi64 ".%06d = %04d-%02d-%02dT%02d:%02d:%02dZ\n",
                    tv / 1000000, (int)(tv % 1000000),
                    tm->tm_year + 1900, tm->tm_mon + 1, tm->tm_mday,
                    tm->tm_hour, tm->tm_min, tm->tm_sec);
         }
     }
-    for (i = 0;  i < FF_ARRAY_ELEMS(duration_string); i++) {
+    for (i = 0; i < FF_ARRAY_ELEMS(duration_string); i++)
+    {
         printf("%-24s -> ", duration_string[i]);
-        if (av_parse_time(&tv, duration_string[i], 1)) {
+        if (av_parse_time(&tv, duration_string[i], 1))
+        {
             printf("error\n");
-        } else {
-            printf("%+21"PRIi64"\n", tv);
+        }
+        else
+        {
+            printf("%+21" PRIi64 "\n", tv);
         }
     }
 }
@@ -219,11 +234,12 @@ static void test_av_get_known_color_name(void)
     const uint8_t *rgba;
     const char *color;
 
-    for (i = 0; i < FF_ARRAY_ELEMS(color_table); ++i) {
+    for (i = 0; i < FF_ARRAY_ELEMS(color_table); ++i)
+    {
         color = av_get_known_color_name(i, &rgba);
         if (color)
             printf("%s -> R(%d) G(%d) B(%d) A(%d)\n",
-                    color, rgba[0], rgba[1], rgba[2], rgba[3]);
+                   color, rgba[0], rgba[1], rgba[2], rgba[3]);
         else
             printf("Color ID: %d not found\n", i);
     }
@@ -236,7 +252,8 @@ static void test_av_find_info_tag(void)
     char buff[16];
     int i;
 
-    for (i = 0; i < FF_ARRAY_ELEMS(tags); ++i) {
+    for (i = 0; i < FF_ARRAY_ELEMS(tags); ++i)
+    {
         if (av_find_info_tag(buff, sizeof(buff), tags[i], args))
             printf("%d. %s found: %s\n", i, tags[i], buff);
         else
