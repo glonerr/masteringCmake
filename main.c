@@ -1,5 +1,6 @@
 // #include "libavutil/log.c"
 #include "libavutil/adler32.h"
+#include "libavutil/cpu.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -64,14 +65,19 @@ int main(int argc, char **argv)
     for (i = 0; i < LEN; i++)
         data[i] = ((i * i) >> 3) + 123 * i;
 
-    if (argc > 1 && !strcmp(argv[1], "-t")) {
-        for (i = 0; i < 1000; i++) {
+    if (argc > 1 && !strcmp(argv[1], "-t"))
+    {
+        for (i = 0; i < 1000; i++)
+        {
             checksum = av_adler32_update(1, data, LEN);
         }
-    } else {
+    }
+    else
+    {
         checksum = av_adler32_update(1, data, LEN);
     }
 
     printf("%X (expected 50E6E508)\n", checksum);
+    printf("av_cpu_max_align:%d 0x%X\n", av_cpu_max_align(), av_get_cpu_flags());
     return checksum == 0x50e6e508 ? 0 : 1;
 }

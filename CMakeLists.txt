@@ -1426,8 +1426,8 @@ add_subdirectory(libavutil)
 
 include_directories(./)
 
-set(src libavutil/tests/parseutils.c)
+set(src main.c)
 
-# add_executable(main ${src})
+add_executable(main ${src})
 
-# target_link_libraries(main avutil)
+target_link_libraries(main avutil)
