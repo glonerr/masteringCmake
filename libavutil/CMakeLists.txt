@@ -8,4 +8,4 @@ include_directories(../)
 
 add_library(avutil SHARED ${src})
 
-set_target_properties("avutil" PROPERTIES COMPILE_FLAGS "-fno-integrated-as")
+# set_target_properties("avutil" PROPERTIES COMPILE_FLAGS "-fno-integrated-as")
