@@ -1,0 +1,7 @@
+project(avutil_test)
+set(test_files adler32 aes aes_ctr audio_fifo avstring base64 blowfish bprint cast5 camellia color_utils cpu crc des dict display encryption_info error eval file fifo hash hmac hwdevice integer imgutils lfg lls log md5 murmur3 opt pca parseutils pixdesc pixelutils pixfmt_best random_seed rational ripemd sha sha512 softfloat tree twofish utf8 xtea tea)
+make_directory(libavutil/tests)
+foreach(test_file ${test_files})
+    add_executable(${test_file} ${test_file}.c)
+    target_link_libraries(${test_file} avutil)
+endforeach()

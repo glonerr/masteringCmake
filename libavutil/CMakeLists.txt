@@ -1,11 +1,24 @@
 project(avutil)
 
-set(src adler32.c aes.c aes_ctr.c audio_fifo.c avstring.c base64.c blowfish.c bprint.c buffer.c cast5.c camellia.c channel_layout.c color_utils.c cpu.c crc.c des.c dict.c display.c downmix_info.c encryption_info.c error.c eval.c fifo.c file.c file_open.c float_dsp.c fixed_dsp.c frame.c hash.c hmac.c hwcontext.c imgutils.c integer.c intmath.c lfg.c lls.c log.c log2_tab.c mathematics.c mastering_display_metadata.c md5.c mem.c murmur3.c opt.c parseutils.c pixdesc.c pixelutils.c random_seed.c rational.c reverse.c rc4.c ripemd.c samplefmt.c sha.c sha512.c slicethread.c spherical.c stereo3d.c threadmessage.c time.c timecode.c tree.c twofish.c utils.c xga_font_data.c xtea.c tea.c ${arch}/cpu.c ${arch}/float_dsp_init.c ${arch}/float_dsp_neon.S)
+set(src adler32.c aes.c aes_ctr.c audio_fifo.c avstring.c base64.c blowfish.c bprint.c buffer.c cast5.c camellia.c channel_layout.c color_utils.c cpu.c crc.c des.c dict.c display.c downmix_info.c encryption_info.c error.c eval.c fifo.c file.c file_open.c float_dsp.c fixed_dsp.c frame.c hash.c hmac.c hwcontext.c imgutils.c integer.c intmath.c lfg.c lls.c log.c log2_tab.c mathematics.c mastering_display_metadata.c md5.c mem.c murmur3.c opt.c parseutils.c pixdesc.c pixelutils.c random_seed.c rational.c reverse.c rc4.c ripemd.c samplefmt.c sha.c sha512.c slicethread.c spherical.c stereo3d.c threadmessage.c time.c timecode.c tree.c twofish.c utils.c xga_font_data.c xtea.c tea.c)
 
-enable_language(ASM)
+if(CPU_TYPE STREQUAL "arm64" OR CPU_TYPE STREQUAL "arm")
+    set(src ${src} aarch64/cpu.c aarch64/float_dsp_init.c aarch64/float_dsp_neon.S)
+    enable_language(ASM)
+elseif(CPU_TYPE STREQUAL "x86_64")
+    set(src ${src} x86/cpu.c x86/fixed_dsp_init.c x86/float_dsp_init.c x86/imgutils_init.c x86/lls_init.c x86/pixelutils_init.c x86/cpuid.asm x86/fixed_dsp.asm x86/float_dsp.asm x86/imgutils.asm x86/lls.asm x86/pixelutils.asm x86/x86util.asm)
+    enable_language(ASM_NASM)
+    include_directories(x86)
+endif()
 
 include_directories(../)
 
 add_library(avutil SHARED ${src})
 
-# set_target_properties("avutil" PROPERTIES COMPILE_FLAGS "-fno-integrated-as")
+if(CPU_TYPE STREQUAL "arm64" OR CPU_TYPE STREQUAL "arm")
+    set_target_properties("avutil" PROPERTIES COMPILE_FLAGS "-fno-integrated-as")
+endif()
+
+if(TEST_AVUTIL)
+    add_subdirectory(tests)
+endif()
