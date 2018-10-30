@@ -10,9 +10,9 @@ if(ANDROID)
     # set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r17c/)
 
     # for cmake 3.2
-    # set(ANDROID_ABI arm64-v8a)
-    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
     set(ANDROID_ABI arm64-v8a)
+    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
+    # set(ANDROID_ABI "armeabi-v7a with NEON")
     set(ANDROID_PLATFORM android-21)
     # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-to-int-cast -Wstrict-prototypes -Wempty-body -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wno-pointer-sign")
 

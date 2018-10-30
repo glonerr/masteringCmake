@@ -1,0 +1,4149 @@
+-- Check for working C compiler: /home/lonerr/Tools/worktools/android/android-ndk-r17c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+-- Check for working C compiler: /home/lonerr/Tools/worktools/android/android-ndk-r17c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/lonerr/Tools/worktools/android/android-ndk-r17c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++
+-- Check for working CXX compiler: /home/lonerr/Tools/worktools/android/android-ndk-r17c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- *********************************
+-- 32-bit build (arm)
+-- *********************************
+-- The ASM compiler identification is Clang
+-- Found assembler: /home/lonerr/Tools/worktools/android/android-ndk-r17c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lonerr/Documents/workspace/vscode/mastering_cmake/build
+Scanning dependencies of target avutil
+[  1%] Building C object libavutil/CMakeFiles/avutil.dir/audio_fifo.c.o
+[  4%] Building C object libavutil/CMakeFiles/avutil.dir/base64.c.o
+[  4%] Building C object libavutil/CMakeFiles/avutil.dir/camellia.c.o
+[  4%] Building C object libavutil/CMakeFiles/avutil.dir/blowfish.c.o
+[  5%] Building C object libavutil/CMakeFiles/avutil.dir/adler32.c.o
+[  5%] Building C object libavutil/CMakeFiles/avutil.dir/avstring.c.o
+[  5%] Building C object libavutil/CMakeFiles/avutil.dir/fixed_dsp.c.o
+[  5%] Building C object libavutil/CMakeFiles/avutil.dir/aes_ctr.c.o
+[  7%] Building C object libavutil/CMakeFiles/avutil.dir/downmix_info.c.o
+[  8%] Building C object libavutil/CMakeFiles/avutil.dir/buffer.c.o
+[  9%] Building C object libavutil/CMakeFiles/avutil.dir/samplefmt.c.o
+[  6%] Building C object libavutil/CMakeFiles/avutil.dir/hwcontext.c.o
+[ 10%] Building C object libavutil/CMakeFiles/avutil.dir/aes.c.o
+[ 11%] Building C object libavutil/CMakeFiles/avutil.dir/lfg.c.o
+[ 11%] Building C object libavutil/CMakeFiles/avutil.dir/crc.c.o
+[ 11%] Building C object libavutil/CMakeFiles/avutil.dir/bprint.c.o
+[ 13%] Building C object libavutil/CMakeFiles/avutil.dir/time.c.o
+[ 13%] Building C object libavutil/CMakeFiles/avutil.dir/mastering_display_metadata.c.o
+[ 13%] Building C object libavutil/CMakeFiles/avutil.dir/opt.c.o
+[ 14%] Building C object libavutil/CMakeFiles/avutil.dir/random_seed.c.o
+[ 15%] Building C object libavutil/CMakeFiles/avutil.dir/float_dsp.c.o
+[ 16%] Building C object libavutil/CMakeFiles/avutil.dir/pixelutils.c.o
+[ 16%] Building C object libavutil/CMakeFiles/avutil.dir/mathematics.c.o
+[ 16%] Building C object libavutil/CMakeFiles/avutil.dir/rational.c.o
+[ 17%] Building C object libavutil/CMakeFiles/avutil.dir/arm/float_dsp_init_vfp.c.o
+[ 17%] Building C object libavutil/CMakeFiles/avutil.dir/encryption_info.c.o
+[ 18%] Building C object libavutil/CMakeFiles/avutil.dir/file.c.o
+[ 18%] Building C object libavutil/CMakeFiles/avutil.dir/dict.c.o
+[ 19%] Building C object libavutil/CMakeFiles/avutil.dir/xga_font_data.c.o
+[ 19%] Building C object libavutil/CMakeFiles/avutil.dir/eval.c.o
+[ 20%] Building C object libavutil/CMakeFiles/avutil.dir/ripemd.c.o
+[ 20%] Building C object libavutil/CMakeFiles/avutil.dir/intmath.c.o
+[ 20%] Building C object libavutil/CMakeFiles/avutil.dir/pixdesc.c.o
+[ 21%] Building C object libavutil/CMakeFiles/avutil.dir/parseutils.c.o
+[ 22%] Building C object libavutil/CMakeFiles/avutil.dir/utils.c.o
+[ 22%] Building C object libavutil/CMakeFiles/avutil.dir/xtea.c.o
+[ 22%] Building C object libavutil/CMakeFiles/avutil.dir/hash.c.o
+[ 22%] Building C object libavutil/CMakeFiles/avutil.dir/slicethread.c.o
+[ 24%] Building C object libavutil/CMakeFiles/avutil.dir/md5.c.o
+[ 24%] Building C object libavutil/CMakeFiles/avutil.dir/frame.c.o
+[ 24%] Building C object libavutil/CMakeFiles/avutil.dir/sha.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/spherical.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/log2_tab.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/des.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/arm/float_dsp_init_arm.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/sha512.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/lls.c.o
+[ 38%] Building C object libavutil/CMakeFiles/avutil.dir/twofish.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/tea.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/stereo3d.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/cast5.c.o
+[ 31%] Building C object libavutil/CMakeFiles/avutil.dir/file_open.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/tree.c.o
+[ 31%] Building C object libavutil/CMakeFiles/avutil.dir/mem.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/color_utils.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/arm/cpu.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/display.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/channel_layout.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/cpu.c.o
+[ 42%] Building ASM object libavutil/CMakeFiles/avutil.dir/arm/float_dsp_neon.S.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/arm/float_dsp_init_neon.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/reverse.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/threadmessage.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/fifo.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/murmur3.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/error.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/imgutils.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/timecode.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/integer.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/log.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/hmac.c.o
+[ 42%] Building C object libavutil/CMakeFiles/avutil.dir/rc4.c.o
+[ 43%] Building ASM object libavutil/CMakeFiles/avutil.dir/arm/float_dsp_vfp.S.o
+[ 44%] Linking C shared library libavutil.so
+[ 44%] Built target avutil
+Scanning dependencies of target crc
+Scanning dependencies of target md5
+Scanning dependencies of target base64
+Scanning dependencies of target audio_fifo
+Scanning dependencies of target camellia
+Scanning dependencies of target hwdevice
+Scanning dependencies of target parseutils
+Scanning dependencies of target adler32
+Scanning dependencies of target sha
+Scanning dependencies of target bprint
+Scanning dependencies of target softfloat
+Scanning dependencies of target twofish
+Scanning dependencies of target rational
+Scanning dependencies of target cpu
+Scanning dependencies of target lls
+Scanning dependencies of target avstring
+Scanning dependencies of target lfg
+Scanning dependencies of target des
+Scanning dependencies of target aes
+Scanning dependencies of target tree
+Scanning dependencies of target cast5
+Scanning dependencies of target hash
+Scanning dependencies of target murmur3
+Scanning dependencies of target integer
+Scanning dependencies of target hmac
+Scanning dependencies of target utf8
+Scanning dependencies of target random_seed
+Scanning dependencies of target opt
+Scanning dependencies of target xtea
+Scanning dependencies of target dict
+Scanning dependencies of target file
+Scanning dependencies of target eval
+Scanning dependencies of target fifo
+Scanning dependencies of target encryption_info
+Scanning dependencies of target tea
+Scanning dependencies of target ripemd
+Scanning dependencies of target sha512
+Scanning dependencies of target error
+[ 44%] Building C object libavutil/tests/CMakeFiles/cast5.dir/cast5.c.o
+Scanning dependencies of target pixdesc
+Scanning dependencies of target aes_ctr
+Scanning dependencies of target pixfmt_best
+Scanning dependencies of target pixelutils
+Scanning dependencies of target display
+[ 45%] Building C object libavutil/tests/CMakeFiles/audio_fifo.dir/audio_fifo.c.o
+Scanning dependencies of target pca
+Scanning dependencies of target color_utils
+[ 46%] Building C object libavutil/tests/CMakeFiles/camellia.dir/camellia.c.o
+Scanning dependencies of target blowfish
+Scanning dependencies of target log
+[ 47%] Building C object libavutil/tests/CMakeFiles/hwdevice.dir/hwdevice.c.o
+[ 48%] Building C object libavutil/tests/CMakeFiles/base64.dir/base64.c.o
+Scanning dependencies of target imgutils
+[ 50%] Building C object libavutil/tests/CMakeFiles/md5.dir/md5.c.o
+[ 50%] Building C object libavutil/tests/CMakeFiles/crc.dir/crc.c.o
+[ 52%] Building C object libavutil/tests/CMakeFiles/twofish.dir/twofish.c.o
+[ 52%] Building C object libavutil/tests/CMakeFiles/sha.dir/sha.c.o
+[ 53%] Building C object libavutil/tests/CMakeFiles/xtea.dir/xtea.c.o
+[ 54%] Building C object libavutil/tests/CMakeFiles/des.dir/des.c.o
+[ 55%] Building C object libavutil/tests/CMakeFiles/cpu.dir/cpu.c.o
+[ 55%] Building C object libavutil/tests/CMakeFiles/lfg.dir/lfg.c.o
+[ 56%] Building C object libavutil/tests/CMakeFiles/bprint.dir/bprint.c.o
+[ 57%] Building C object libavutil/tests/CMakeFiles/avstring.dir/avstring.c.o
+[ 57%] Building C object libavutil/tests/CMakeFiles/dict.dir/dict.c.o
+[ 58%] Building C object libavutil/tests/CMakeFiles/softfloat.dir/softfloat.c.o
+[ 58%] Building C object libavutil/tests/CMakeFiles/random_seed.dir/random_seed.c.o
+[ 59%] Building C object libavutil/tests/CMakeFiles/integer.dir/integer.c.o
+[ 55%] Building C object libavutil/tests/CMakeFiles/parseutils.dir/parseutils.c.o
+[ 60%] Building C object libavutil/tests/CMakeFiles/fifo.dir/fifo.c.o
+[ 60%] Building C object libavutil/tests/CMakeFiles/aes.dir/aes.c.o
+[ 60%] Building C object libavutil/tests/CMakeFiles/tree.dir/tree.c.o
+[ 60%] Building C object libavutil/tests/CMakeFiles/aes_ctr.dir/aes_ctr.c.o
+[ 60%] Building C object libavutil/tests/CMakeFiles/encryption_info.dir/encryption_info.c.o
+[ 61%] Building C object libavutil/tests/CMakeFiles/utf8.dir/utf8.c.o
+[ 62%] Building C object libavutil/tests/CMakeFiles/sha512.dir/sha512.c.o
+[ 63%] Building C object libavutil/tests/CMakeFiles/pixfmt_best.dir/pixfmt_best.c.o
+[ 64%] Building C object libavutil/tests/CMakeFiles/hmac.dir/hmac.c.o
+[ 65%] Building C object libavutil/tests/CMakeFiles/ripemd.dir/ripemd.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/eval.dir/eval.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/lls.dir/lls.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/adler32.dir/adler32.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/tea.dir/tea.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/rational.dir/rational.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/hash.dir/hash.c.o
+[ 66%] Building C object libavutil/tests/CMakeFiles/opt.dir/opt.c.o
+[ 67%] Building C object libavutil/tests/CMakeFiles/murmur3.dir/murmur3.c.o
+[ 69%] Building C object libavutil/tests/CMakeFiles/error.dir/error.c.o
+[ 69%] Building C object libavutil/tests/CMakeFiles/pixdesc.dir/pixdesc.c.o
+[ 70%] Building C object libavutil/tests/CMakeFiles/blowfish.dir/blowfish.c.o
+[ 71%] Building C object libavutil/tests/CMakeFiles/log.dir/log.c.o
+[ 72%] Building C object libavutil/tests/CMakeFiles/pixelutils.dir/pixelutils.c.o
+[ 72%] Building C object libavutil/tests/CMakeFiles/pca.dir/pca.c.o
+[ 72%] Building C object libavutil/tests/CMakeFiles/display.dir/display.c.o
+[ 72%] Building C object libavutil/tests/CMakeFiles/file.dir/file.c.o
+[ 73%] Building C object libavutil/tests/CMakeFiles/imgutils.dir/imgutils.c.o
+[ 73%] Building C object libavutil/tests/CMakeFiles/color_utils.dir/color_utils.c.o
+[ 74%] Linking C executable aes_ctr
+[ 74%] Linking C executable crc
+[ 74%] Linking C executable md5
+[ 75%] Linking C executable xtea
+[ 76%] Linking C executable fifo
+[ 77%] Linking C executable cast5
+[ 77%] Linking C executable cpu
+[ 77%] Linking C executable hwdevice
+[ 78%] Linking C executable hash
+[ 79%] Linking C executable lls
+[ 80%] Linking C executable murmur3
+[ 81%] Linking C executable camellia
+[ 81%] Linking C executable error
+[ 82%] Linking C executable adler32
+[ 83%] Linking C executable random_seed
+[ 83%] Linking C executable twofish
+[ 84%] Linking C executable lfg
+[ 84%] Linking C executable sha512
+[ 84%] Linking C executable sha
+[ 84%] Linking C executable pixelutils
+[ 85%] Linking C executable aes
+[ 85%] Linking C executable base64
+[ 85%] Linking C executable ripemd
+[ 85%] Linking C executable utf8
+[ 85%] Linking C executable avstring
+[ 85%] Linking C executable eval
+[ 86%] Linking C executable tea
+[ 86%] Built target aes_ctr
+[ 87%] Linking C executable integer
+[ 88%] Linking C executable display
+[ 88%] Built target crc
+[ 89%] Linking C executable pca
+[ 90%] Linking C executable opt
+[ 91%] Linking C executable file
+[ 92%] Linking C executable tree
+[ 92%] Linking C executable blowfish
+[ 92%] Built target md5
+[ 92%] Built target fifo
+[ 92%] Built target xtea
+[ 93%] Linking C executable color_utils
+[ 93%] Built target cast5
+[ 94%] Linking C executable encryption_info
+[ 94%] Linking C executable audio_fifo
+[ 94%] Built target hwdevice
+[ 94%] Linking C executable hmac
+[ 95%] Linking C executable des
+[ 96%] Linking C executable rational
+[ 97%] Linking C executable softfloat
+[ 97%] Linking C executable bprint
+[ 97%] Built target sha
+[ 97%] Built target lfg
+[ 97%] Built target cpu
+[ 98%] Linking C executable dict
+[ 98%] Built target adler32
+[ 98%] Built target utf8
+[ 98%] Built target murmur3
+[ 98%] Built target hash
+[ 98%] Built target sha512
+[ 98%] Built target lls
+[ 98%] Built target twofish
+[ 98%] Built target tea
+[ 98%] Built target error
+[ 98%] Built target random_seed
+[ 98%] Built target eval
+[ 98%] Built target integer
+[ 98%] Built target avstring
+[ 98%] Built target pixelutils
+[ 98%] Linking C executable log
+[ 98%] Built target aes
+[ 98%] Built target base64
+[ 98%] Built target camellia
+[ 98%] Built target opt
+[ 98%] Built target pca
+[ 98%] Built target ripemd
+[ 98%] Built target file
+[ 98%] Built target audio_fifo
+[ 99%] Linking C executable parseutils
+[100%] Linking C executable pixfmt_best
+[100%] Built target display
+[100%] Built target color_utils
+[100%] Built target blowfish
+[100%] Built target rational
+[100%] Linking C executable imgutils
+[100%] Built target des
+[100%] Built target encryption_info
+[100%] Built target softfloat
+[100%] Built target hmac
+[100%] Built target tree
+[100%] Built target bprint
+[100%] Built target dict
+[100%] Built target log
+[100%] Linking C executable pixdesc
+[100%] Built target parseutils
+[100%] Built target imgutils
+[100%] Built target pixfmt_best
+[100%] Built target pixdesc
+[  7%] /data/local/tmp/libavutil.so
+[ 14%] /data/local/tmp/libavutil.so
+[ 22%] /data/local/tmp/libavutil.so
+[ 29%] /data/local/tmp/libavutil.so
+[ 36%] /data/local/tmp/libavutil.so
+[ 44%] /data/local/tmp/libavutil.so
+[ 51%] /data/local/tmp/libavutil.so
+[ 58%] /data/local/tmp/libavutil.so
+[ 66%] /data/local/tmp/libavutil.so
+[ 73%] /data/local/tmp/libavutil.so
+[ 81%] /data/local/tmp/libavutil.so
+[ 88%] /data/local/tmp/libavutil.so
+[ 95%] /data/local/tmp/libavutil.so
+[100%] /data/local/tmp/libavutil.so
+libavutil/libavutil.so: 1 file pushed. 15.0 MB/s (888684 bytes in 0.056s)
+[100%] /data/local/tmp/adler32
+libavutil/tests/adler32: 1 file pushed. 4.8 MB/s (40816 bytes in 0.008s)
+******************************************************************
+*********************** test adler32 *************************
+******************************************************************
+[100%] /data/local/tmp/aes
+libavutil/tests/aes: 1 file pushed. 2.9 MB/s (42428 bytes in 0.014s)
+******************************************************************
+*********************** test aes *************************
+******************************************************************
+[100%] /data/local/tmp/aes_ctr
+libavutil/tests/aes_ctr: 1 file pushed. 4.6 MB/s (41004 bytes in 0.009s)
+******************************************************************
+*********************** test aes_ctr *************************
+******************************************************************
+[100%] /data/local/tmp/audio_fifo
+libavutil/tests/audio_fifo: 1 file pushed. 5.6 MB/s (60504 bytes in 0.010s)
+******************************************************************
+*********************** test audio_fifo *************************
+
+TEST: 1
+
+written: 12
+written: 12
+remaining samples in audio_fifo: 24
+
+read: 12
+00 01 02 03 04 05 06 07 08 09 0a 0b 
+remaining samples in audio_fifo: 12
+
+peek:
+00 01 02 03 04 05 06 07 08 09 0a 0b 
+
+peek_at:
+0:
+00 
+1:
+01 
+2:
+02 
+3:
+03 
+4:
+04 
+5:
+05 
+6:
+06 
+7:
+07 
+8:
+08 
+9:
+09 
+10:
+0a 
+11:
+0b 
+
+
+TEST: 2
+
+written: 6
+written: 6
+remaining samples in audio_fifo: 12
+
+read: 6
+00 01 02 03 04 05 
+06 07 08 09 0a 0b 
+remaining samples in audio_fifo: 6
+
+peek:
+00 01 02 03 04 05 
+06 07 08 09 0a 0b 
+
+peek_at:
+0:
+00 
+06 
+1:
+01 
+07 
+2:
+02 
+08 
+3:
+03 
+09 
+4:
+04 
+0a 
+5:
+05 
+0b 
+
+
+TEST: 3
+
+written: 12
+written: 12
+remaining samples in audio_fifo: 24
+
+read: 12
+0000 0001 0002 0003 0004 0005 0006 0007 0008 0009 000a 000b 
+remaining samples in audio_fifo: 12
+
+peek:
+0000 0001 0002 0003 0004 0005 0006 0007 0008 0009 000a 000b 
+
+peek_at:
+0:
+0000 
+1:
+0001 
+2:
+0002 
+3:
+0003 
+4:
+0004 
+5:
+0005 
+6:
+0006 
+7:
+0007 
+8:
+0008 
+9:
+0009 
+10:
+000a 
+11:
+000b 
+
+
+TEST: 4
+
+written: 6
+written: 6
+remaining samples in audio_fifo: 12
+
+read: 6
+0000 0001 0002 0003 0004 0005 
+0006 0007 0008 0009 000a 000b 
+remaining samples in audio_fifo: 6
+
+peek:
+0000 0001 0002 0003 0004 0005 
+0006 0007 0008 0009 000a 000b 
+
+peek_at:
+0:
+0000 
+0006 
+1:
+0001 
+0007 
+2:
+0002 
+0008 
+3:
+0003 
+0009 
+4:
+0004 
+000a 
+5:
+0005 
+000b 
+
+
+TEST: 5
+
+written: 12
+written: 12
+remaining samples in audio_fifo: 24
+
+read: 12
+00000000 3f800000 40000000 40400000 40800000 40a00000 40c00000 40e00000 41000000 41100000 41200000 41300000 
+remaining samples in audio_fifo: 12
+
+peek:
+00000000 3f800000 40000000 40400000 40800000 40a00000 40c00000 40e00000 41000000 41100000 41200000 41300000 
+
+peek_at:
+0:
+00000000 
+1:
+3f800000 
+2:
+40000000 
+3:
+40400000 
+4:
+40800000 
+5:
+40a00000 
+6:
+40c00000 
+7:
+40e00000 
+8:
+41000000 
+9:
+41100000 
+10:
+41200000 
+11:
+41300000 
+
+
+TEST: 6
+
+written: 6
+written: 6
+remaining samples in audio_fifo: 12
+
+read: 6
+00000000 3f800000 40000000 40400000 40800000 40a00000 
+40c00000 40e00000 41000000 41100000 41200000 41300000 
+remaining samples in audio_fifo: 6
+
+peek:
+00000000 3f800000 40000000 40400000 40800000 40a00000 
+40c00000 40e00000 41000000 41100000 41200000 41300000 
+
+peek_at:
+0:
+00000000 
+40c00000 
+1:
+3f800000 
+40e00000 
+2:
+40000000 
+41000000 
+3:
+40400000 
+41100000 
+4:
+40800000 
+41200000 
+5:
+40a00000 
+41300000 
+
+******************************************************************
+[100%] /data/local/tmp/avstring
+libavutil/tests/avstring: 1 file pushed. 4.8 MB/s (45240 bytes in 0.009s)
+******************************************************************
+*********************** test avstring *************************
+Testing av_get_token()
+|''| -> || + ||
+|| -> || + ||
+|:| -> || + |:|
+|\| -> |\| + ||
+|'| -> || + ||
+|    ''    :| -> || + |:|
+|    ''  ''  :| -> |  | + |:|
+|foo   '' :| -> |foo   | + |:|
+|'foo'| -> |foo| + ||
+|foo     | -> |foo| + ||
+|  '  foo  '  | -> |  foo  | + ||
+|foo\| -> |foo\| + ||
+|foo':  blah:blah| -> |foo:  blah:blah| + ||
+|foo\:  blah:blah| -> |foo:  blah| + |:blah|
+|foo'| -> |foo| + ||
+|'foo :  '  :blahblah| -> |foo :  | + |:blahblah|
+|\ :blah| -> | | + |:blah|
+|     foo| -> |foo| + ||
+|      foo       | -> |foo| + ||
+|      foo     \ | -> |foo      | + ||
+|foo ':blah| -> |foo :blah| + ||
+| foo   bar    :   blahblah| -> |foo   bar| + |:   blahblah|
+|\f\o\o| -> |foo| + ||
+|'foo : \ \  '   : blahblah| -> |foo : \ \  | + |: blahblah|
+|'\fo\o:': blahblah| -> |\fo\o:| + |: blahblah|
+|\'fo\o\:':  foo  '  :blahblah| -> |'foo::  foo  | + |:blahblah|
+Testing av_append_path_component()
+(null) = (null)
+path = path
+comp = comp
+path/comp = path/comp
+path/comp = path/comp
+path/comp = path/comp
+path/comp = path/comp
+path/path2/comp/comp2 = path/path2/comp/comp2
+******************************************************************
+[100%] /data/local/tmp/base64
+libavutil/tests/base64: 1 file pushed. 4.6 MB/s (42048 bytes in 0.009s)
+******************************************************************
+*********************** test base64 *************************
+Encoding/decoding tests
+Passed!
+Passed!
+Passed!
+Passed!
+Passed!
+Passed!
+Passed!
+Passed!
+******************************************************************
+[100%] /data/local/tmp/blowfish
+libavutil/tests/blowfish: 1 file pushed. 4.4 MB/s (47160 bytes in 0.010s)
+******************************************************************
+*********************** test blowfish *************************
+Test encryption/decryption success.
+******************************************************************
+[100%] /data/local/tmp/bprint
+libavutil/tests/bprint: 1 file pushed. 4.6 MB/s (53452 bytes in 0.011s)
+******************************************************************
+*********************** test bprint *************************
+Short text in unlimited buffer: 174/174
+       1
+       1       1
+       1       2       1
+       1       3       3       1
+       1       4       6       4       1
+       1       5      10      10       5       1
+
+Long text in unlimited buffer: 2834/2834
+Long text in limited buffer: 2047/2834
+Short text in automatic buffer: 174/174
+Long text in automatic buffer: 1000/2834
+Long text count only buffer: 0/2834
+Long text count only buffer: 255/2834
+strftime full: 255/10 "2000-12-20"
+strftime truncated: 255/10 "2000-12"
+******************************************************************
+[100%] /data/local/tmp/cast5
+libavutil/tests/cast5: 1 file pushed. 4.4 MB/s (41956 bytes in 0.009s)
+******************************************************************
+*********************** test cast5 *************************
+******************************************************************
+[100%] /data/local/tmp/camellia
+libavutil/tests/camellia: 1 file pushed. 2.9 MB/s (41536 bytes in 0.014s)
+******************************************************************
+*********************** test camellia *************************
+******************************************************************
+[100%] /data/local/tmp/color_utils
+libavutil/tests/color_utils: 1 file pushed. 4.8 MB/s (51044 bytes in 0.010s)
+******************************************************************
+*********************** test color_utils *************************
+AVColorTransferCharacteristic=1 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=1 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=1 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=1 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=1 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=1 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=1 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=1 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=1 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=1 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=1 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=1 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=1 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=1 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=1 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=1 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=1 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=1 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=1 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=4 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=4 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=4 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=4 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=4 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=4 calling func(0.003162) expected=0.073053
+AVColorTransferCharacteristic=4 calling func(0.005000) expected=0.089966
+AVColorTransferCharacteristic=4 calling func(0.009000) expected=0.117520
+AVColorTransferCharacteristic=4 calling func(0.015000) expected=0.148235
+AVColorTransferCharacteristic=4 calling func(0.100000) expected=0.351119
+AVColorTransferCharacteristic=4 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=4 calling func(52.370000) expected=6.045068
+AVColorTransferCharacteristic=4 calling func(125.098765) expected=8.980424
+AVColorTransferCharacteristic=4 calling func(1999.111230) expected=31.650490
+AVColorTransferCharacteristic=4 calling func(6945.443000) expected=55.747738
+AVColorTransferCharacteristic=4 calling func(15123.456700) expected=79.403820
+AVColorTransferCharacteristic=4 calling func(19845.889230) expected=89.843491
+AVColorTransferCharacteristic=4 calling func(98678.423100) expected=186.252024
+AVColorTransferCharacteristic=4 calling func(99999.899998) expected=187.381657
+AVColorTransferCharacteristic=5 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=5 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=5 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=5 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=5 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=5 calling func(0.003162) expected=0.127980
+AVColorTransferCharacteristic=5 calling func(0.005000) expected=0.150731
+AVColorTransferCharacteristic=5 calling func(0.009000) expected=0.185940
+AVColorTransferCharacteristic=5 calling func(0.015000) expected=0.223154
+AVColorTransferCharacteristic=5 calling func(0.100000) expected=0.439397
+AVColorTransferCharacteristic=5 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=5 calling func(52.370000) expected=4.111100
+AVColorTransferCharacteristic=5 calling func(125.098765) expected=5.610724
+AVColorTransferCharacteristic=5 calling func(1999.111230) expected=15.096294
+AVColorTransferCharacteristic=5 calling func(6945.443000) expected=23.552429
+AVColorTransferCharacteristic=5 calling func(15123.456700) expected=31.098005
+AVColorTransferCharacteristic=5 calling func(19845.889230) expected=34.267494
+AVColorTransferCharacteristic=5 calling func(98678.423100) expected=60.764620
+AVColorTransferCharacteristic=5 calling func(99999.899998) expected=61.054001
+AVColorTransferCharacteristic=6 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=6 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=6 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=6 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=6 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=6 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=6 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=6 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=6 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=6 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=6 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=6 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=6 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=6 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=6 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=6 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=6 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=6 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=6 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=7 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=7 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=7 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=7 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=7 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=7 calling func(0.003162) expected=0.012649
+AVColorTransferCharacteristic=7 calling func(0.005000) expected=0.020000
+AVColorTransferCharacteristic=7 calling func(0.009000) expected=0.036000
+AVColorTransferCharacteristic=7 calling func(0.015000) expected=0.060000
+AVColorTransferCharacteristic=7 calling func(0.100000) expected=0.282875
+AVColorTransferCharacteristic=7 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=7 calling func(52.370000) expected=6.487781
+AVColorTransferCharacteristic=7 calling func(125.098765) expected=9.653524
+AVColorTransferCharacteristic=7 calling func(1999.111230) expected=33.873408
+AVColorTransferCharacteristic=7 calling func(6945.443000) expected=59.410079
+AVColorTransferCharacteristic=7 calling func(15123.456700) expected=84.368216
+AVColorTransferCharacteristic=7 calling func(19845.889230) expected=95.357247
+AVColorTransferCharacteristic=7 calling func(98678.423100) expected=196.364477
+AVColorTransferCharacteristic=7 calling func(99999.899998) expected=197.544167
+AVColorTransferCharacteristic=8 calling func(-0.100000) expected=-0.100000
+AVColorTransferCharacteristic=8 calling func(-0.018054) expected=-0.018054
+AVColorTransferCharacteristic=8 calling func(-0.010000) expected=-0.010000
+AVColorTransferCharacteristic=8 calling func(-0.004490) expected=-0.004490
+AVColorTransferCharacteristic=8 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=8 calling func(0.003162) expected=0.003162
+AVColorTransferCharacteristic=8 calling func(0.005000) expected=0.005000
+AVColorTransferCharacteristic=8 calling func(0.009000) expected=0.009000
+AVColorTransferCharacteristic=8 calling func(0.015000) expected=0.015000
+AVColorTransferCharacteristic=8 calling func(0.100000) expected=0.100000
+AVColorTransferCharacteristic=8 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=8 calling func(52.370000) expected=52.370000
+AVColorTransferCharacteristic=8 calling func(125.098765) expected=125.098765
+AVColorTransferCharacteristic=8 calling func(1999.111230) expected=1999.111230
+AVColorTransferCharacteristic=8 calling func(6945.443000) expected=6945.443000
+AVColorTransferCharacteristic=8 calling func(15123.456700) expected=15123.456700
+AVColorTransferCharacteristic=8 calling func(19845.889230) expected=19845.889230
+AVColorTransferCharacteristic=8 calling func(98678.423100) expected=98678.423100
+AVColorTransferCharacteristic=8 calling func(99999.899998) expected=99999.899998
+AVColorTransferCharacteristic=9 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(0.003162) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(0.005000) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(0.009000) expected=0.000000
+AVColorTransferCharacteristic=9 calling func(0.015000) expected=0.088046
+AVColorTransferCharacteristic=9 calling func(0.100000) expected=0.500000
+AVColorTransferCharacteristic=9 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=9 calling func(52.370000) expected=1.859541
+AVColorTransferCharacteristic=9 calling func(125.098765) expected=2.048627
+AVColorTransferCharacteristic=9 calling func(1999.111230) expected=2.650418
+AVColorTransferCharacteristic=9 calling func(6945.443000) expected=2.920850
+AVColorTransferCharacteristic=9 calling func(15123.456700) expected=3.089826
+AVColorTransferCharacteristic=9 calling func(19845.889230) expected=3.148835
+AVColorTransferCharacteristic=9 calling func(98678.423100) expected=3.497111
+AVColorTransferCharacteristic=9 calling func(99999.899998) expected=3.500000
+AVColorTransferCharacteristic=10 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(0.003162) expected=0.000000
+AVColorTransferCharacteristic=10 calling func(0.005000) expected=0.079588
+AVColorTransferCharacteristic=10 calling func(0.009000) expected=0.181697
+AVColorTransferCharacteristic=10 calling func(0.015000) expected=0.270437
+AVColorTransferCharacteristic=10 calling func(0.100000) expected=0.600000
+AVColorTransferCharacteristic=10 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=10 calling func(52.370000) expected=1.687633
+AVColorTransferCharacteristic=10 calling func(125.098765) expected=1.838901
+AVColorTransferCharacteristic=10 calling func(1999.111230) expected=2.320335
+AVColorTransferCharacteristic=10 calling func(6945.443000) expected=2.536680
+AVColorTransferCharacteristic=10 calling func(15123.456700) expected=2.671860
+AVColorTransferCharacteristic=10 calling func(19845.889230) expected=2.719068
+AVColorTransferCharacteristic=10 calling func(98678.423100) expected=2.997689
+AVColorTransferCharacteristic=10 calling func(99999.899998) expected=3.000000
+AVColorTransferCharacteristic=11 calling func(-0.100000) expected=-0.290748
+AVColorTransferCharacteristic=11 calling func(-0.018054) expected=-0.081243
+AVColorTransferCharacteristic=11 calling func(-0.010000) expected=-0.045000
+AVColorTransferCharacteristic=11 calling func(-0.004490) expected=-0.020205
+AVColorTransferCharacteristic=11 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=11 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=11 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=11 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=11 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=11 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=11 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=11 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=11 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=11 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=11 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=11 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=11 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=11 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=11 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=12 calling func(-0.100000) expected=-0.206787
+AVColorTransferCharacteristic=12 calling func(-0.018054) expected=-0.109049
+AVColorTransferCharacteristic=12 calling func(-0.010000) expected=-0.089387
+AVColorTransferCharacteristic=12 calling func(-0.004490) expected=-0.020205
+AVColorTransferCharacteristic=12 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=12 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=12 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=12 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=12 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=12 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=12 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=12 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=12 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=12 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=12 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=12 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=12 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=12 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=12 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=13 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=13 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=13 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=13 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=13 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=13 calling func(0.003162) expected=0.040849
+AVColorTransferCharacteristic=13 calling func(0.005000) expected=0.061009
+AVColorTransferCharacteristic=13 calling func(0.009000) expected=0.093202
+AVColorTransferCharacteristic=13 calling func(0.015000) expected=0.128354
+AVColorTransferCharacteristic=13 calling func(0.100000) expected=0.349190
+AVColorTransferCharacteristic=13 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=13 calling func(52.370000) expected=5.434552
+AVColorTransferCharacteristic=13 calling func(125.098765) expected=7.835561
+AVColorTransferCharacteristic=13 calling func(1999.111230) expected=24.983090
+AVColorTransferCharacteristic=13 calling func(6945.443000) expected=42.013863
+AVColorTransferCharacteristic=13 calling func(15123.456700) expected=58.125003
+AVColorTransferCharacteristic=13 calling func(19845.889230) expected=65.100117
+AVColorTransferCharacteristic=13 calling func(98678.423100) expected=127.054607
+AVColorTransferCharacteristic=13 calling func(99999.899998) expected=127.761115
+AVColorTransferCharacteristic=14 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=14 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=14 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=14 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=14 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=14 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=14 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=14 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=14 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=14 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=14 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=14 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=14 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=14 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=14 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=14 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=14 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=14 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=14 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=15 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=15 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=15 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=15 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=15 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=15 calling func(0.003162) expected=0.014230
+AVColorTransferCharacteristic=15 calling func(0.005000) expected=0.022500
+AVColorTransferCharacteristic=15 calling func(0.009000) expected=0.040500
+AVColorTransferCharacteristic=15 calling func(0.015000) expected=0.067500
+AVColorTransferCharacteristic=15 calling func(0.100000) expected=0.290748
+AVColorTransferCharacteristic=15 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=15 calling func(52.370000) expected=6.427531
+AVColorTransferCharacteristic=15 calling func(125.098765) expected=9.558517
+AVColorTransferCharacteristic=15 calling func(1999.111230) expected=33.512490
+AVColorTransferCharacteristic=15 calling func(6945.443000) expected=58.768794
+AVColorTransferCharacteristic=15 calling func(15123.456700) expected=83.452916
+AVColorTransferCharacteristic=15 calling func(19845.889230) expected=94.321297
+AVColorTransferCharacteristic=15 calling func(98678.423100) expected=194.219568
+AVColorTransferCharacteristic=15 calling func(99999.899998) expected=195.386306
+AVColorTransferCharacteristic=16 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=16 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=16 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=16 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=16 calling func(0.000000) expected=0.000001
+AVColorTransferCharacteristic=16 calling func(0.003162) expected=0.011839
+AVColorTransferCharacteristic=16 calling func(0.005000) expected=0.015076
+AVColorTransferCharacteristic=16 calling func(0.009000) expected=0.020379
+AVColorTransferCharacteristic=16 calling func(0.015000) expected=0.026255
+AVColorTransferCharacteristic=16 calling func(0.100000) expected=0.062337
+AVColorTransferCharacteristic=16 calling func(1.000000) expected=0.149946
+AVColorTransferCharacteristic=16 calling func(52.370000) expected=0.444693
+AVColorTransferCharacteristic=16 calling func(125.098765) expected=0.530719
+AVColorTransferCharacteristic=16 calling func(1999.111230) expected=0.827376
+AVColorTransferCharacteristic=16 calling func(6945.443000) expected=0.961586
+AVColorTransferCharacteristic=16 calling func(15123.456700) expected=1.042921
+AVColorTransferCharacteristic=16 calling func(19845.889230) expected=1.070677
+AVColorTransferCharacteristic=16 calling func(98678.423100) expected=1.225908
+AVColorTransferCharacteristic=16 calling func(99999.899998) expected=1.227127
+AVColorTransferCharacteristic=17 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=17 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=17 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=17 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=17 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=17 calling func(0.003162) expected=0.105659
+AVColorTransferCharacteristic=17 calling func(0.005000) expected=0.126018
+AVColorTransferCharacteristic=17 calling func(0.009000) expected=0.157985
+AVColorTransferCharacteristic=17 calling func(0.015000) expected=0.192284
+AVColorTransferCharacteristic=17 calling func(0.100000) expected=0.398869
+AVColorTransferCharacteristic=17 calling func(1.000000) expected=0.967043
+AVColorTransferCharacteristic=17 calling func(52.370000) expected=4.432321
+AVColorTransferCharacteristic=17 calling func(125.098765) expected=6.195572
+AVColorTransferCharacteristic=17 calling func(1999.111230) expected=17.988639
+AVColorTransferCharacteristic=17 calling func(6945.443000) expected=29.041734
+AVColorTransferCharacteristic=17 calling func(15123.456700) expected=39.174525
+AVColorTransferCharacteristic=17 calling func(19845.889230) expected=43.490646
+AVColorTransferCharacteristic=17 calling func(98678.423100) expected=80.593559
+AVColorTransferCharacteristic=17 calling func(99999.899998) expected=81.006971
+AVColorTransferCharacteristic=18 calling func(-0.100000) expected=0.000000
+AVColorTransferCharacteristic=18 calling func(-0.018054) expected=0.000000
+AVColorTransferCharacteristic=18 calling func(-0.010000) expected=0.000000
+AVColorTransferCharacteristic=18 calling func(-0.004490) expected=0.000000
+AVColorTransferCharacteristic=18 calling func(0.000000) expected=0.000000
+AVColorTransferCharacteristic=18 calling func(0.003162) expected=0.097400
+AVColorTransferCharacteristic=18 calling func(0.005000) expected=0.122474
+AVColorTransferCharacteristic=18 calling func(0.009000) expected=0.164317
+AVColorTransferCharacteristic=18 calling func(0.015000) expected=0.212132
+AVColorTransferCharacteristic=18 calling func(0.100000) expected=0.544089
+AVColorTransferCharacteristic=18 calling func(1.000000) expected=1.000000
+AVColorTransferCharacteristic=18 calling func(52.370000) expected=1.712092
+AVColorTransferCharacteristic=18 calling func(125.098765) expected=1.867862
+AVColorTransferCharacteristic=18 calling func(1999.111230) expected=2.363502
+AVColorTransferCharacteristic=18 calling func(6945.443000) expected=2.586219
+AVColorTransferCharacteristic=18 calling func(15123.456700) expected=2.725380
+AVColorTransferCharacteristic=18 calling func(19845.889230) expected=2.773978
+AVColorTransferCharacteristic=18 calling func(98678.423100) expected=3.060803
+AVColorTransferCharacteristic=18 calling func(99999.899998) expected=3.063182
+******************************************************************
+[100%] /data/local/tmp/cpu
+libavutil/tests/cpu: 1 file pushed. 3.7 MB/s (41736 bytes in 0.011s)
+******************************************************************
+*********************** test cpu *************************
+cpu_flags(raw) = 0x00000000
+cpu_flags_str(raw) =
+cpu_flags(effective) = 0x00000000
+cpu_flags_str(effective) =
+threads = auto (cpu_count = 8)
+******************************************************************
+[100%] /data/local/tmp/crc
+libavutil/tests/crc: 1 file pushed. 4.6 MB/s (40936 bytes in 0.009s)
+******************************************************************
+*********************** test crc *************************
+crc EDB88320 = 3D5CDD04
+crc 04C11DB7 = E0BAF5C0
+crc 00864CFB = 326039
+crc 0000A001 = BFD8
+crc 00008005 = BB1F
+crc 00000007 = E3
+crc 0000001D = D6
+******************************************************************
+[100%] /data/local/tmp/des
+libavutil/tests/des: 1 file pushed. 6.1 MB/s (52184 bytes in 0.008s)
+******************************************************************
+*********************** test des *************************
+******************************************************************
+[ 99%] /data/local/tmp/dict
+[100%] /data/local/tmp/dict
+libavutil/tests/dict: 1 file pushed. 10.7 MB/s (65792 bytes in 0.006s)
+******************************************************************
+*********************** test dict *************************
+Testing av_dict_get_string() and av_dict_parse_string()
+
+aaa aaa   b,b bbb   c=c ccc   ddd d,d   eee e=e   f,f f=f   g=g g,g   
+aaa=aaa,b\,b=bbb,c\=c=ccc,ddd=d\,d,eee=e\=e,f\,f=f\=f,g\=g=g\,g
+ret 0
+aaa aaa   b,b bbb   c=c ccc   ddd d,d   eee e=e   f,f f=f   g=g g,g   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa=aaa"bbb=bbb"ccc=ccc"\\,\=\'\"=\\,\=\'\"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa=aaa'bbb=bbb'ccc=ccc'\\,\=\'"=\\,\=\'"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa"aaa,bbb"bbb,ccc"ccc,\\\,=\'\""\\\,=\'\"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa'aaa,bbb'bbb,ccc'ccc,\\\,=\'"'\\\,=\'"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa"aaa'bbb"bbb'ccc"ccc'\\,=\'\""\\,=\'\"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+aaa'aaa"bbb'bbb"ccc'ccc"\\,=\'\"'\\,=\'\"
+ret 0
+aaa aaa   bbb bbb   ccc ccc   \,='" \,='"   
+
+Testing av_dict_set()
+a a
+b b
+c c
+d d
+e e
+ff ff
+
+Testing av_dict_set_int()
+1 1
+2 2
+3 3
+4 4
+5 5
+12 12
+
+Testing av_dict_set() with existing AVDictionaryEntry.key as key
+new val OK
+new val OK
+******************************************************************
+[100%] /data/local/tmp/display
+libavutil/tests/display: 1 file pushed. 5.3 MB/s (42412 bytes in 0.008s)
+******************************************************************
+*********************** test display *************************
+0 65536 0
+-65536 0 0
+0 0 1073741824
+degrees: -90.000000
+46340 -46340 0
+46340 46340 0
+0 0 1073741824
+degrees: 45.000000
+-46340 -46340 0
+-46340 46340 0
+0 0 1073741824
+degrees: 135.000000
+-46340 46340 0
+-46340 -46340 0
+0 0 1073741824
+degrees: -135.000000
+******************************************************************
+[100%] /data/local/tmp/encryption_info
+libavutil/tests/encryption_info: 1 file pushed. 5.2 MB/s (49832 bytes in 0.009s)
+******************************************************************
+*********************** test encryption_info *************************
+******************************************************************
+[100%] /data/local/tmp/error
+libavutil/tests/error: 1 file pushed. 4.9 MB/s (45964 bytes in 0.009s)
+******************************************************************
+*********************** test error *************************
+-1179861752: Bitstream filter not found [BSF_NOT_FOUND]
+-558323010: Internal bug, should not have happened [BUG]
+-541545794: Internal bug, should not have happened [BUG2]
+-1397118274: Buffer too small [BUFFER_TOO_SMALL]
+-1128613112: Decoder not found [DECODER_NOT_FOUND]
+-1296385272: Demuxer not found [DEMUXER_NOT_FOUND]
+-1129203192: Encoder not found [ENCODER_NOT_FOUND]
+-541478725: End of file [EOF]
+-1414092869: Immediate exit requested [EXIT]
+-542398533: Generic error in an external library [EXTERNAL]
+-1279870712: Filter not found [FILTER_NOT_FOUND]
+-1668179713: Input changed [INPUT_CHANGED]
+-1094995529: Invalid data found when processing input [INVALIDDATA]
+-1481985528: Muxer not found [MUXER_NOT_FOUND]
+-1414549496: Option not found [OPTION_NOT_FOUND]
+-1668179714: Output changed [OUTPUT_CHANGED]
+-1163346256: Not yet implemented in FFmpeg, patches welcome [PATCHWELCOME]
+-1330794744: Protocol not found [PROTOCOL_NOT_FOUND]
+-1381258232: Stream not found [STREAM_NOT_FOUND]
+-1313558101: Unknown error occurred [UNKNOWN]
+-733130664: Experimental feature [EXPERIMENTAL]
+-1668179713: Input changed [INPUT_AND_OUTPUT_CHANGED]
+-808465656: Server returned 400 Bad Request [HTTP_BAD_REQUEST]
+-825242872: Server returned 401 Unauthorized (authorization failed) [HTTP_UNAUTHORIZED]
+-858797304: Server returned 403 Forbidden (access denied) [HTTP_FORBIDDEN]
+-875574520: Server returned 404 Not Found [HTTP_NOT_FOUND]
+-1482175736: Server returned 4XX Client Error, but not one of 40{0,1,3,4} [HTTP_OTHER_4XX]
+-1482175992: Server returned 5XX Server Error reply [HTTP_SERVER_ERROR]
+0: Success
+-1: Operation not permitted
+-2: No such file or directory
+-3: No such process
+-4: Interrupted system call
+-5: I/O error
+-6: No such device or address
+-7: Argument list too long
+-8: Exec format error
+-9: Bad file descriptor
+-10: No child processes
+-11: Try again
+-12: Out of memory
+-13: Permission denied
+-14: Bad address
+-15: Block device required
+-16: Device or resource busy
+-17: File exists
+-18: Cross-device link
+-19: No such device
+-20: Not a directory
+-21: Is a directory
+-22: Invalid argument
+-23: File table overflow
+-24: Too many open files
+-25: Not a typewriter
+-26: Text file busy
+-27: File too large
+-28: No space left on device
+-29: Illegal seek
+-30: Read-only file system
+-31: Too many links
+-32: Broken pipe
+-33: Math argument out of domain of func
+-34: Math result not representable
+-35: Resource deadlock would occur
+-36: File name too long
+-37: No record locks available
+-38: Function not implemented
+-39: Directory not empty
+-40: Too many symbolic links encountered
+-41: Unknown error 41
+-42: No message of desired type
+-43: Identifier removed
+-44: Channel number out of range
+-45: Level 2 not synchronized
+-46: Level 3 halted
+-47: Level 3 reset
+-48: Link number out of range
+-49: Protocol driver not attached
+-50: No CSI structure available
+-51: Level 2 halted
+-52: Invalid exchange
+-53: Invalid request descriptor
+-54: Exchange full
+-55: No anode
+-56: Invalid request code
+-57: Invalid slot
+-58: Unknown error 58
+-59: Bad font file format
+-60: Device not a stream
+-61: No data available
+-62: Timer expired
+-63: Out of streams resources
+-64: Machine is not on the network
+-65: Package not installed
+-66: Object is remote
+-67: Link has been severed
+-68: Advertise error
+-69: Srmount error
+-70: Communication error on send
+-71: Protocol error
+-72: Multihop attempted
+-73: RFS specific error
+-74: Not a data message
+-75: Value too large for defined data type
+-76: Name not unique on network
+-77: File descriptor in bad state
+-78: Remote address changed
+-79: Can not access a needed shared library
+-80: Accessing a corrupted shared library
+-81: .lib section in a.out corrupted
+-82: Attempting to link in too many shared libraries
+-83: Cannot exec a shared library directly
+-84: Illegal byte sequence
+-85: Interrupted system call should be restarted
+-86: Streams pipe error
+-87: Too many users
+-88: Socket operation on non-socket
+-89: Destination address required
+-90: Message too long
+-91: Protocol wrong type for socket
+-92: Protocol not available
+-93: Protocol not supported
+-94: Socket type not supported
+-95: Operation not supported on transport endpoint
+-96: Protocol family not supported
+-97: Address family not supported by protocol
+-98: Address already in use
+-99: Cannot assign requested address
+-100: Network is down
+-101: Network is unreachable
+-102: Network dropped connection because of reset
+-103: Software caused connection abort
+-104: Connection reset by peer
+-105: No buffer space available
+-106: Transport endpoint is already connected
+-107: Transport endpoint is not connected
+-108: Cannot send after transport endpoint shutdown
+-109: Too many references: cannot splice
+-110: Connection timed out
+-111: Connection refused
+-112: Host is down
+-113: No route to host
+-114: Operation already in progress
+-115: Operation now in progress
+-116: Stale NFS file handle
+-117: Structure needs cleaning
+-118: Not a XENIX named type file
+-119: No XENIX semaphores available
+-120: Is a named type file
+-121: Remote I/O error
+-122: Quota exceeded
+-123: No medium found
+-124: Wrong medium type
+-125: Operation Canceled
+-126: Required key not available
+-127: Key has expired
+-128: Key has been revoked
+-129: Key was rejected by service
+-130: Owner died
+-131: State not recoverable
+-132: Unknown error 132
+-133: Unknown error 133
+-134: Unknown error 134
+-135: Unknown error 135
+-136: Unknown error 136
+-137: Unknown error 137
+-138: Unknown error 138
+-139: Unknown error 139
+-140: Unknown error 140
+-141: Unknown error 141
+-142: Unknown error 142
+-143: Unknown error 143
+-144: Unknown error 144
+-145: Unknown error 145
+-146: Unknown error 146
+-147: Unknown error 147
+-148: Unknown error 148
+-149: Unknown error 149
+-150: Unknown error 150
+-151: Unknown error 151
+-152: Unknown error 152
+-153: Unknown error 153
+-154: Unknown error 154
+-155: Unknown error 155
+-156: Unknown error 156
+-157: Unknown error 157
+-158: Unknown error 158
+-159: Unknown error 159
+-160: Unknown error 160
+-161: Unknown error 161
+-162: Unknown error 162
+-163: Unknown error 163
+-164: Unknown error 164
+-165: Unknown error 165
+-166: Unknown error 166
+-167: Unknown error 167
+-168: Unknown error 168
+-169: Unknown error 169
+-170: Unknown error 170
+-171: Unknown error 171
+-172: Unknown error 172
+-173: Unknown error 173
+-174: Unknown error 174
+-175: Unknown error 175
+-176: Unknown error 176
+-177: Unknown error 177
+-178: Unknown error 178
+-179: Unknown error 179
+-180: Unknown error 180
+-181: Unknown error 181
+-182: Unknown error 182
+-183: Unknown error 183
+-184: Unknown error 184
+-185: Unknown error 185
+-186: Unknown error 186
+-187: Unknown error 187
+-188: Unknown error 188
+-189: Unknown error 189
+-190: Unknown error 190
+-191: Unknown error 191
+-192: Unknown error 192
+-193: Unknown error 193
+-194: Unknown error 194
+-195: Unknown error 195
+-196: Unknown error 196
+-197: Unknown error 197
+-198: Unknown error 198
+-199: Unknown error 199
+-200: Unknown error 200
+-201: Unknown error 201
+-202: Unknown error 202
+-203: Unknown error 203
+-204: Unknown error 204
+-205: Unknown error 205
+-206: Unknown error 206
+-207: Unknown error 207
+-208: Unknown error 208
+-209: Unknown error 209
+-210: Unknown error 210
+-211: Unknown error 211
+-212: Unknown error 212
+-213: Unknown error 213
+-214: Unknown error 214
+-215: Unknown error 215
+-216: Unknown error 216
+-217: Unknown error 217
+-218: Unknown error 218
+-219: Unknown error 219
+-220: Unknown error 220
+-221: Unknown error 221
+-222: Unknown error 222
+-223: Unknown error 223
+-224: Unknown error 224
+-225: Unknown error 225
+-226: Unknown error 226
+-227: Unknown error 227
+-228: Unknown error 228
+-229: Unknown error 229
+-230: Unknown error 230
+-231: Unknown error 231
+-232: Unknown error 232
+-233: Unknown error 233
+-234: Unknown error 234
+-235: Unknown error 235
+-236: Unknown error 236
+-237: Unknown error 237
+-238: Unknown error 238
+-239: Unknown error 239
+-240: Unknown error 240
+-241: Unknown error 241
+-242: Unknown error 242
+-243: Unknown error 243
+-244: Unknown error 244
+-245: Unknown error 245
+-246: Unknown error 246
+-247: Unknown error 247
+-248: Unknown error 248
+-249: Unknown error 249
+-250: Unknown error 250
+-251: Unknown error 251
+-252: Unknown error 252
+-253: Unknown error 253
+-254: Unknown error 254
+-255: Unknown error 255
+******************************************************************
+[100%] /data/local/tmp/eval
+libavutil/tests/eval: 1 file pushed. 4.6 MB/s (45120 bytes in 0.009s)
+******************************************************************
+*********************** test eval *************************
+Evaluating ''
+'' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '1;2'
+'1;2' -> 2.000000
+
+Evaluating '-20'
+'-20' -> -20.000000
+
+Evaluating '-PI'
+'-PI' -> -3.141593
+
+Evaluating '+PI'
+'+PI' -> 3.141593
+
+Evaluating '1+(5-2)^(3-1)+1/2+sin(PI)-max(-2.2,-3.1)'
+'1+(5-2)^(3-1)+1/2+sin(PI)-max(-2.2,-3.1)' -> 12.700000
+
+Evaluating '80G/80Gi'
+'80G/80Gi' -> 0.931323
+
+Evaluating '1k'
+'1k' -> 1000.000000
+
+Evaluating '1Gi'
+'1Gi' -> 1073741824.000000
+
+Evaluating '1gi'
+'1gi' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '1GiFoo'
+'1GiFoo' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '1k+1k'
+'1k+1k' -> 2000.000000
+
+Evaluating '1Gi*3foo'
+'1Gi*3foo' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'foo'
+'foo' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'foo('
+'foo(' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'foo()'
+'foo()' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'foo)'
+'foo)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin'
+'sin' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin('
+'sin(' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin()'
+'sin()' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin)'
+'sin)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin 10'
+'sin 10' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin(1,2,3)'
+'sin(1,2,3)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'sin(1 )'
+'sin(1 )' -> 0.841471
+
+Evaluating '1'
+'1' -> 1.000000
+
+Evaluating '1foo'
+'1foo' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'bar + PI + E + 100f*2 + foo'
+'bar + PI + E + 100f*2 + foo' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '13k + 12f - foo(1, 2)'
+'13k + 12f - foo(1, 2)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '1gi'
+'1gi' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating '1Gi'
+'1Gi' -> 1073741824.000000
+
+Evaluating 'st(0, 123)'
+'st(0, 123)' -> 123.000000
+
+Evaluating 'st(1, 123); ld(1)'
+'st(1, 123); ld(1)' -> 123.000000
+
+Evaluating 'lte(0, 1)'
+'lte(0, 1)' -> 1.000000
+
+Evaluating 'lte(1, 1)'
+'lte(1, 1)' -> 1.000000
+
+Evaluating 'lte(1, 0)'
+'lte(1, 0)' -> 0.000000
+
+Evaluating 'lt(0, 1)'
+'lt(0, 1)' -> 1.000000
+
+Evaluating 'lt(1, 1)'
+'lt(1, 1)' -> 0.000000
+
+Evaluating 'gt(1, 0)'
+'gt(1, 0)' -> 1.000000
+
+Evaluating 'gt(2, 7)'
+'gt(2, 7)' -> 0.000000
+
+Evaluating 'gte(122, 122)'
+'gte(122, 122)' -> 1.000000
+
+Evaluating 'st(0, 1); while(lte(ld(0), 100), st(1, ld(1)+ld(0));st(0, ld(0)+1)); ld(1)'
+'st(0, 1); while(lte(ld(0), 100), st(1, ld(1)+ld(0));st(0, ld(0)+1)); ld(1)' -> 5050.000000
+
+Evaluating 'st(1, 1); st(2, 2); st(0, 1); while(lte(ld(0),10), st(3, ld(1)+ld(2)); st(1, ld(2)); st(2, ld(3)); st(0, ld(0)+1)); ld(3)'
+'st(1, 1); st(2, 2); st(0, 1); while(lte(ld(0),10), st(3, ld(1)+ld(2)); st(1, ld(2)); st(2, ld(3)); st(0, ld(0)+1)); ld(3)' -> 233.000000
+
+Evaluating 'while(0, 10)'
+'while(0, 10)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'st(0, 1); while(lte(ld(0),100), st(1, ld(1)+ld(0)); st(0, ld(0)+1))'
+'st(0, 1); while(lte(ld(0),100), st(1, ld(1)+ld(0)); st(0, ld(0)+1))' -> 101.000000
+
+Evaluating 'isnan(1)'
+'isnan(1)' -> 0.000000
+
+Evaluating 'isnan(NAN)'
+'isnan(NAN)' -> 1.000000
+
+Evaluating 'isnan(INF)'
+'isnan(INF)' -> 0.000000
+
+Evaluating 'isinf(1)'
+'isinf(1)' -> 0.000000
+
+Evaluating 'isinf(NAN)'
+'isinf(NAN)' -> 0.000000
+
+Evaluating 'isinf(INF)'
+'isinf(INF)' -> 1.000000
+
+Evaluating 'floor(NAN)'
+'floor(NAN)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'floor(123.123)'
+'floor(123.123)' -> 123.000000
+
+Evaluating 'floor(-123.123)'
+'floor(-123.123)' -> -124.000000
+
+Evaluating 'trunc(123.123)'
+'trunc(123.123)' -> 123.000000
+
+Evaluating 'trunc(-123.123)'
+'trunc(-123.123)' -> -123.000000
+
+Evaluating 'ceil(123.123)'
+'ceil(123.123)' -> 124.000000
+
+Evaluating 'ceil(-123.123)'
+'ceil(-123.123)' -> -123.000000
+
+Evaluating 'sqrt(1764)'
+'sqrt(1764)' -> 42.000000
+
+Evaluating 'isnan(sqrt(-1))'
+'isnan(sqrt(-1))' -> 1.000000
+
+Evaluating 'not(1)'
+'not(1)' -> 0.000000
+
+Evaluating 'not(NAN)'
+'not(NAN)' -> 0.000000
+
+Evaluating 'not(0)'
+'not(0)' -> 1.000000
+
+Evaluating '6.0206dB'
+'6.0206dB' -> 2.000000
+
+Evaluating '-3.0103dB'
+'-3.0103dB' -> 0.707107
+
+Evaluating 'pow(0,1.23)'
+'pow(0,1.23)' -> 0.000000
+
+Evaluating 'pow(PI,1.23)'
+'pow(PI,1.23)' -> 4.087844
+
+Evaluating 'PI^1.23'
+'PI^1.23' -> 4.087844
+
+Evaluating 'pow(-1,1.23)'
+'pow(-1,1.23)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'if(1, 2)'
+'if(1, 2)' -> 2.000000
+
+Evaluating 'if(1, 1, 2)'
+'if(1, 1, 2)' -> 1.000000
+
+Evaluating 'if(0, 1, 2)'
+'if(0, 1, 2)' -> 2.000000
+
+Evaluating 'ifnot(0, 23)'
+'ifnot(0, 23)' -> 23.000000
+
+Evaluating 'ifnot(1, NaN) + if(0, 1)'
+'ifnot(1, NaN) + if(0, 1)' -> 0.000000
+
+Evaluating 'ifnot(1, 1, 2)'
+'ifnot(1, 1, 2)' -> 2.000000
+
+Evaluating 'ifnot(0, 1, 2)'
+'ifnot(0, 1, 2)' -> 1.000000
+
+Evaluating 'taylor(1, 1)'
+'taylor(1, 1)' -> 2.718282
+
+Evaluating 'taylor(eq(mod(ld(1),4),1)-eq(mod(ld(1),4),3), PI/2, 1)'
+'taylor(eq(mod(ld(1),4),1)-eq(mod(ld(1),4),3), PI/2, 1)' -> 1.000000
+
+Evaluating 'root(sin(ld(0))-1, 2)'
+'root(sin(ld(0))-1, 2)' -> 1.570796
+
+Evaluating 'root(sin(ld(0))+6+sin(ld(0)/12)-log(ld(0)), 100)'
+'root(sin(ld(0))+6+sin(ld(0)/12)-log(ld(0)), 100)' -> 60.965601
+
+Evaluating '7000000B*random(0)'
+'7000000B*random(0)' -> 0.003078
+
+Evaluating 'squish(2)'
+'squish(2)' -> 0.000335
+
+Evaluating 'gauss(0.1)'
+'gauss(0.1)' -> 0.396953
+
+Evaluating 'hypot(4,3)'
+'hypot(4,3)' -> 5.000000
+
+Evaluating 'gcd(30,55)*print(min(9,1))'
+'gcd(30,55)*print(min(9,1))' -> 5.000000
+
+Evaluating 'bitor(42, 12)'
+'bitor(42, 12)' -> 46.000000
+
+Evaluating 'bitand(42, 12)'
+'bitand(42, 12)' -> 8.000000
+
+Evaluating 'bitand(NAN, 1)'
+'bitand(NAN, 1)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'between(10, -3, 10)'
+'between(10, -3, 10)' -> 1.000000
+
+Evaluating 'between(-4, -2, -1)'
+'between(-4, -2, -1)' -> 0.000000
+
+Evaluating 'between(1,2)'
+'between(1,2)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'clip(0, 2, 1)'
+'clip(0, 2, 1)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'clip(0/0, 1, 2)'
+'clip(0/0, 1, 2)' -> nan
+
+av_expr_parse_and_eval failed
+Evaluating 'clip(0, 0/0, 1)'
+'clip(0, 0/0, 1)' -> nan
+
+av_expr_parse_and_eval failed
+12.700000 == 12.7
+0.931323 == 0.931322575
+******************************************************************
+[100%] /data/local/tmp/file
+libavutil/tests/file: 1 file pushed. 4.6 MB/s (46624 bytes in 0.010s)
+******************************************************************
+*********************** test file *************************
+******************************************************************
+[100%] /data/local/tmp/fifo
+libavutil/tests/fifo: 1 file pushed. 4.6 MB/s (42500 bytes in 0.009s)
+******************************************************************
+*********************** test fifo *************************
+-12: 1
+-11: 2
+-10: 3
+-9: 4
+-8: 5
+-7: 6
+-6: 7
+-5: 8
+-4: 9
+-3: 10
+-2: 11
+-1: 12
+0: 0
+1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+10: 10
+11: 11
+12: 12
+
+0: 0
+1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+10: 10
+11: 11
+12: 12
+
+0: 0
+1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+10: 10
+11: 11
+12: 12
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 
+0: 0
+1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+10: 10
+11: 11
+12: 12
+
+0: 0
+1: 1
+2: 2
+3: 3
+4: 4
+5: 5
+6: 6
+7: 7
+8: 8
+9: 9
+10: 10
+11: 11
+12: 12
+13: 13
+14: 14
+15: 15
+16: 16
+17: 17
+18: 18
+19: 19
+20: 20
+21: 21
+22: 22
+23: 23
+24: 24
+25: 25
+26: 26
+27: 27
+******************************************************************
+[100%] /data/local/tmp/hash
+libavutil/tests/hash: 1 file pushed. 5.0 MB/s (41208 bytes in 0.008s)
+******************************************************************
+*********************** test hash *************************
+MD5 hex: 3b5d3c7d207e37dceeedd301e35e2e58
+MD5 bin: 0x3b 0x5d 0x3c 0x7d 0x20 0x7e 0x37 0xdc 0xee 0xed 0xd3 0x1 0xe3 0x5e 0x2e 0x58 
+MD5 b64: O108fSB+N9zu7dMB414uWA==
+murmur3 hex: 6e484695e1d7b4e37d838791cc263395
+murmur3 bin: 0x6e 0x48 0x46 0x95 0xe1 0xd7 0xb4 0xe3 0x7d 0x83 0x87 0x91 0xcc 0x26 0x33 0x95 
+murmur3 b64: bkhGleHXtON9g4eRzCYzlQ==
+RIPEMD128 hex: 082bfa9b829ef3a9e220dcc54e4c6383
+RIPEMD128 bin: 0x8 0x2b 0xfa 0x9b 0x82 0x9e 0xf3 0xa9 0xe2 0x20 0xdc 0xc5 0x4e 0x4c 0x63 0x83 
+RIPEMD128 b64: CCv6m4Ke86niINzFTkxjgw==
+RIPEMD160 hex: 9b8ccc2f374ae313a914763cc9cdfb47bfe1c229
+RIPEMD160 bin: 0x9b 0x8c 0xcc 0x2f 0x37 0x4a 0xe3 0x13 0xa9 0x14 0x76 0x3c 0xc9 0xcd 0xfb 0x47 0xbf 0xe1 0xc2 0x29 
+RIPEMD160 b64: m4zMLzdK4xOpFHY8yc37R7/hwik=
+RIPEMD256 hex: 26ba693759787f275f47dd5ab16e78c2fcd763b004fd05fc554e354223d6eab5
+RIPEMD256 bin: 0x26 0xba 0x69 0x37 0x59 0x78 0x7f 0x27 0x5f 0x47 0xdd 0x5a 0xb1 0x6e 0x78 0xc2 0xfc 0xd7 0x63 0xb0 0x4 0xfd 0x5 0xfc 0x55 0x4e 0x35 0x42 0x23 0xd6 0xea 0xb5 
+RIPEMD256 b64: JrppN1l4fydfR91asW54wvzXY7AE/QX8VU41QiPW6rU=
+RIPEMD320 hex: 409a3111ffd3d4c8058ff5c231401c1d47210a5d22e6c90bf95d45c1c95c528463c69ce4bff3b884
+RIPEMD320 bin: 0x40 0x9a 0x31 0x11 0xff 0xd3 0xd4 0xc8 0x5 0x8f 0xf5 0xc2 0x31 0x40 0x1c 0x1d 0x47 0x21 0xa 0x5d 0x22 0xe6 0xc9 0xb 0xf9 0x5d 0x45 0xc1 0xc9 0x5c 0x52 0x84 0x63 0xc6 0x9c 0xe4 0xbf 0xf3 0xb8 0x84 
+RIPEMD320 b64: QJoxEf/T1MgFj/XCMUAcHUchCl0i5skL+V1FwclcUoRjxpzkv/O4hA==
+SHA160 hex: c8d7d0ef0eedfa82d2ea1aa592845b9a6d4b02b7
+SHA160 bin: 0xc8 0xd7 0xd0 0xef 0xe 0xed 0xfa 0x82 0xd2 0xea 0x1a 0xa5 0x92 0x84 0x5b 0x9a 0x6d 0x4b 0x2 0xb7 
+SHA160 b64: yNfQ7w7t+oLS6hqlkoRbmm1LArc=
+SHA224 hex: 750d81a39c18d3ce27ff3e5ece30b0088f12d8fd0450fe435326294b
+SHA224 bin: 0x75 0xd 0x81 0xa3 0x9c 0x18 0xd3 0xce 0x27 0xff 0x3e 0x5e 0xce 0x30 0xb0 0x8 0x8f 0x12 0xd8 0xfd 0x4 0x50 0xfe 0x43 0x53 0x26 0x29 0x4b 
+SHA224 b64: dQ2Bo5wY084n/z5ezjCwCI8S2P0EUP5DUyYpSw==
+SHA256 hex: f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b
+SHA256 bin: 0xf5 0xa5 0xfd 0x42 0xd1 0x6a 0x20 0x30 0x27 0x98 0xef 0x6e 0xd3 0x9 0x97 0x9b 0x43 0 0x3d 0x23 0x20 0xd9 0xf0 0xe8 0xea 0x98 0x31 0xa9 0x27 0x59 0xfb 0x4b 
+SHA256 b64: 9aX9QtFqIDAnmO9u0wmXm0MAPSMg2fDo6pgxqSdZ+0s=
+SHA512/224 hex: 1319d9b322452068e6f43c0ed3da115fbeccc169711dbbaee2846f90
+SHA512/224 bin: 0x13 0x19 0xd9 0xb3 0x22 0x45 0x20 0x68 0xe6 0xf4 0x3c 0xe 0xd3 0xda 0x11 0x5f 0xbe 0xcc 0xc1 0x69 0x71 0x1d 0xbb 0xae 0xe2 0x84 0x6f 0x90 
+SHA512/224 b64: ExnZsyJFIGjm9DwO09oRX77MwWlxHbuu4oRvkA==
+SHA512/256 hex: 8aeecfa0b9f2ac7818863b1362241e4f32d06b100ae9d1c0fbcc4ed61b91b17a
+SHA512/256 bin: 0x8a 0xee 0xcf 0xa0 0xb9 0xf2 0xac 0x78 0x18 0x86 0x3b 0x13 0x62 0x24 0x1e 0x4f 0x32 0xd0 0x6b 0x10 0xa 0xe9 0xd1 0xc0 0xfb 0xcc 0x4e 0xd6 0x1b 0x91 0xb1 0x7a 
+SHA512/256 b64: iu7PoLnyrHgYhjsTYiQeTzLQaxAK6dHA+8xO1huRsXo=
+SHA384 hex: c516aa8d3b457c636c6826937099c0d23a13f2c3701a388b3c8fe4bc2073281b0c4462610369884c4ababa8e97b6debe
+SHA384 bin: 0xc5 0x16 0xaa 0x8d 0x3b 0x45 0x7c 0x63 0x6c 0x68 0x26 0x93 0x70 0x99 0xc0 0xd2 0x3a 0x13 0xf2 0xc3 0x70 0x1a 0x38 0x8b 0x3c 0x8f 0xe4 0xbc 0x20 0x73 0x28 0x1b 0xc 0x44 0x62 0x61 0x3 0x69 0x88 0x4c 0x4a 0xba 0xba 0x8e 0x97 0xb6 0xde 0xbe 
+SHA384 b64: xRaqjTtFfGNsaCaTcJnA0joT8sNwGjiLPI/kvCBzKBsMRGJhA2mITEq6uo6Xtt6+
+SHA512 hex: 7be9fda48f4179e611c698a73cff09faf72869431efee6eaad14de0cb44bbf66503f752b7a8eb17083355f3ce6eb7d2806f236b25af96a24e22b887405c20081
+SHA512 bin: 0x7b 0xe9 0xfd 0xa4 0x8f 0x41 0x79 0xe6 0x11 0xc6 0x98 0xa7 0x3c 0xff 0x9 0xfa 0xf7 0x28 0x69 0x43 0x1e 0xfe 0xe6 0xea 0xad 0x14 0xde 0xc 0xb4 0x4b 0xbf 0x66 0x50 0x3f 0x75 0x2b 0x7a 0x8e 0xb1 0x70 0x83 0x35 0x5f 0x3c 0xe6 0xeb 0x7d 0x28 0x6 0xf2 0x36 0xb2 0x5a 0xf9 0x6a 0x24 0xe2 0x2b 0x88 0x74 0x5 0xc2 0 0x81 
+SHA512 b64: e+n9pI9BeeYRxpinPP8J+vcoaUMe/ubqrRTeDLRLv2ZQP3Ureo6xcIM1Xzzm630oBvI2slr5aiTiK4h0BcIAgQ==
+CRC32 hex: 758d6336
+CRC32 bin: 0x75 0x8d 0x63 0x36 
+CRC32 b64: dY1jNg==
+adler32 hex: 00400001
+adler32 bin: 0 0x40 0 0x1 
+adler32 b64: AEAAAQ==
+******************************************************************
+[100%] /data/local/tmp/hmac
+libavutil/tests/hmac: 1 file pushed. 4.3 MB/s (50940 bytes in 0.011s)
+******************************************************************
+*********************** test hmac *************************
+9294727a3638bb1c13f48ef8158bfc9d
+750c783e6ab0b503eaa86e310a5db738
+56be34521d144c88dbb8c733f0e8b3f6
+6b1ab7fe4bd7bf8f0b62e6ce61b9d0cd
+6f630fad67cda0ee1fb1f562db3aa53e
+b617318655057264e28bc0b6fb378c8ef146be00
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+125d7342b9ac11cd91a39af48aa17b4f63f175d3
+aa4ae5e15272d00e95705637ce8a3b55ed402112
+e8e99d0f45237d786d6bbaa7965c7808bbff1a91
+896fb1128abbdf196832107cd49df33f47b4b1169912ba4f53684b22
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+7fb3cb3588c6c1f6ffa9694d7d6ad2649365b0c1f65d69d1ec8333ea
+95e9a0db962095adaebe9b2d6f0dbce2d499f112f2d2b7273fa6870e
+3a854166ac5d9f023f54d517d0b39dbd946770db9c2b95c9f6f565d1
+b0344c61d8db38535ca8afceaf0bf12b881dc200c9833da726e9376c2e32cff7
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+773ea91e36800e46854db8ebd09181a72959098b3ef8c122d9635514ced565fe
+60e431591ee0b67f0d8a26aacbf5b77f8e0bc6213728c5140546040f0ee37f54
+9b09ffa71b942fcb27635fbcd5b0e944bfdc63644f0713938a7f51535c3a35e2
+afd03944d84895626b0825f4ab46907f15f9dadbe4101ec682aa034c7cebc59cfaea9ea9076ede7f4af152e8b2fa9cb6
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+88062608d3e6ad8a0aa2ace014c8a86f0aa635d947ac9febe83ef4e55966144b2a5ab39dc13814b94e3ab6e101a34f27
+4ece084485813e9088d2c63a041bc5b44f9ef1012a2b588f3cd11f05033ac4c60c2ef6ab4030fe8296248df163f44952
+6617178e941f020d351e2f254e8fd32c602420feb0b8fb9adccebb82461e99c5a678cc31e799176d3860e6110c46523e
+87aa7cdea5ef619d4ff0b4241a1d6cb02379f4e2ce4ec2787ad0b30545e17cdedaa833b7d6b8a702038b274eaea3f4e4be9d914eeb61f1702e696c203a126854
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+fa73b0089d56a284efb0f0756c890be9b1b5dbdd8ee81a3655f83e33b2279d39bf3e848279a722c806b485a47e67c807b946a337bee8942674278859e13292fb
+80b24263c7c1a3ebb71493c1dd7be8b49b46d1f41b4aeec1121b013783f8f3526b56d037e05f2598bd0fd2215d6a1e5295e64f73f63f0aec8b915a985d786598
+e37b6a775dc87dbaa4dfa9f96e5e3ffddebd71f8867289865df5a32d20cdc944b6022cac3c4982b10d5eeb55c3e4de15134676fb6de0446065c97440fa8c6a58
+******************************************************************
+[100%] /data/local/tmp/hwdevice
+libavutil/tests/hwdevice: 1 file pushed. 4.2 MB/s (50568 bytes in 0.011s)
+******************************************************************
+*********************** test hwdevice *************************
+******************************************************************
+[100%] /data/local/tmp/integer
+libavutil/tests/integer: 1 file pushed. 5.3 MB/s (53100 bytes in 0.010s)
+******************************************************************
+*********************** test integer *************************
+******************************************************************
+[ 84%] /data/local/tmp/imgutils
+[100%] /data/local/tmp/imgutils
+libavutil/tests/imgutils: 1 file pushed. 4.3 MB/s (77984 bytes in 0.017s)
+******************************************************************
+*********************** test imgutils *************************
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111110000000000000000000
+0011111111111111111111111111111111100000000000000000000
+0011111111111111111111111111111111100000000000000000000
+0011111111111111111111111111111111000000000000000000000
+0011111111111111111111111111111111000000000000000000000
+0011111111111111111111111111111110000000000000000000000
+0011111111111111111111111111111100000000000000000000000
+0011111111111111111111111111111100000000000000000000000
+0011111111111111111111111111111000000000000000000000000
+0011111111111111111111111111110000000000000000000000000
+0011111111111111111111111111100000000000000000000000000
+0011111111111111111111111111000000000000000000000000000
+0011111111111111111111111110000000000000000000000000000
+0011111111111111111111111100000000000000000000000000000
+0011111111111111111111111000000000000000000000000000000
+0011111111111111111111110000000000000000000000000000000
+0011111111111111111111100000000000000000000000000000000
+0011111111111111111111000000000000000000000000000000000
+0011111111111111111110000000000000000000000000000000000
+0011111111111111111100000000000000000000000000000000000
+0011111111111111111000000000000000000000000000000000000
+0011111111111111110000000000000000000000000000000000000
+0011111111111111100000000000000000000000000000000000000
+0011111111111110000000000000000000000000000000000000000
+0011111111111100000000000000000000000000000000000000000
+0011111111110000000000000000000000000000000000000000000
+0011111111000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000
+******************************************************************
+[100%] /data/local/tmp/lfg
+libavutil/tests/lfg: 1 file pushed. 2.8 MB/s (48584 bytes in 0.017s)
+******************************************************************
+*********************** test lfg *************************
+PRN0 : 993.985459
+PRN1 : 1033.987435
+PRN2 : 1047.662570
+PRN3 : 1063.912250
+PRN4 : 991.171781
+PRN5 : 981.734708
+PRN6 : 970.361179
+PRN7 : 998.599410
+PRN8 : 1001.562108
+PRN9 : 1094.675286
+PRN10 : 1026.730733
+PRN11 : 1001.794662
+PRN12 : 1063.992962
+PRN13 : 1003.176291
+PRN14 : 975.451418
+PRN15 : 963.164272
+PRN16 : 1035.042964
+PRN17 : 936.289221
+PRN18 : 1031.696061
+PRN19 : 1033.960882
+PRN20 : 970.449088
+PRN21 : 910.742009
+PRN22 : 1062.832837
+PRN23 : 972.315035
+PRN24 : 1094.553302
+PRN25 : 1004.366061
+PRN26 : 1067.940967
+PRN27 : 954.763340
+PRN28 : 923.089263
+PRN29 : 1053.286222
+PRN30 : 1012.639887
+PRN31 : 948.568149
+PRN32 : 1027.339362
+PRN33 : 953.080426
+PRN34 : 1035.425106
+PRN35 : 966.976740
+PRN36 : 1064.841657
+PRN37 : 904.714740
+PRN38 : 1054.112231
+PRN39 : 986.084454
+PRN40 : 964.995134
+PRN41 : 1064.898415
+PRN42 : 1049.385860
+PRN43 : 946.010664
+PRN44 : 914.563520
+PRN45 : 1054.057798
+PRN46 : 921.007266
+PRN47 : 1055.600575
+PRN48 : 984.003285
+PRN49 : 1064.479044
+PRN50 : 989.128936
+PRN51 : 972.772486
+PRN52 : 1028.824527
+PRN53 : 948.999392
+PRN54 : 926.982512
+PRN55 : 1028.107269
+PRN56 : 1018.971292
+PRN57 : 979.049159
+PRN58 : 1078.652930
+PRN59 : 1059.268785
+PRN60 : 966.062302
+PRN61 : 952.298249
+PRN62 : 965.484659
+PRN63 : 957.131298
+PRN64 : 1101.631483
+PRN65 : 991.328207
+PRN66 : 947.868071
+PRN67 : 977.329736
+PRN68 : 1039.860026
+PRN69 : 1005.357641
+PRN70 : 926.524754
+PRN71 : 1065.337110
+PRN72 : 1016.266500
+PRN73 : 1005.771115
+PRN74 : 1013.342260
+PRN75 : 1016.421157
+PRN76 : 918.857846
+PRN77 : 1084.126406
+PRN78 : 1013.273197
+PRN79 : 1009.859699
+PRN80 : 953.978276
+PRN81 : 966.195381
+PRN82 : 966.041526
+PRN83 : 1034.313935
+PRN84 : 1028.006502
+PRN85 : 988.667994
+PRN86 : 951.447243
+PRN87 : 950.197401
+PRN88 : 1004.492867
+PRN89 : 1018.726549
+PRN90 : 1002.135383
+PRN91 : 1015.553223
+PRN92 : 968.825638
+PRN93 : 909.251629
+PRN94 : 927.430200
+PRN95 : 1026.839173
+PRN96 : 1001.209732
+PRN97 : 903.997372
+PRN98 : 1029.582853
+PRN99 : 998.221588
+PRN100 : 874.533368
+PRN101 : 1008.158727
+PRN102 : 1064.130097
+PRN103 : 1020.425429
+PRN104 : 914.904591
+PRN105 : 1050.711960
+PRN106 : 1019.491585
+PRN107 : 968.062305
+PRN108 : 946.755388
+PRN109 : 1012.508705
+PRN110 : 997.922624
+PRN111 : 962.447265
+PRN112 : 1065.410496
+PRN113 : 1059.470790
+PRN114 : 1036.427789
+PRN115 : 963.516351
+PRN116 : 970.000982
+PRN117 : 978.030226
+PRN118 : 1041.883687
+PRN119 : 924.311759
+PRN120 : 987.574757
+PRN121 : 1020.188441
+PRN122 : 979.109616
+PRN123 : 1076.652961
+PRN124 : 905.994009
+PRN125 : 999.425282
+PRN126 : 1012.521111
+PRN127 : 893.443447
+PRN128 : 978.578327
+PRN129 : 1068.476732
+PRN130 : 960.687195
+PRN131 : 954.211448
+PRN132 : 1031.587651
+PRN133 : 1069.561334
+PRN134 : 948.293168
+PRN135 : 999.185195
+PRN136 : 967.284970
+PRN137 : 1004.112868
+PRN138 : 989.683149
+PRN139 : 1008.154639
+PRN140 : 1043.953748
+PRN141 : 1082.131379
+PRN142 : 1006.528611
+PRN143 : 942.893040
+PRN144 : 1120.072970
+PRN145 : 908.369273
+PRN146 : 1039.338207
+PRN147 : 1011.429056
+PRN148 : 1058.020374
+PRN149 : 1007.346274
+PRN150 : 916.830032
+PRN151 : 1000.237008
+PRN152 : 977.470622
+PRN153 : 985.066693
+PRN154 : 1020.675449
+PRN155 : 1026.074199
+PRN156 : 1087.961390
+PRN157 : 993.836698
+PRN158 : 1008.510268
+PRN159 : 1013.336576
+PRN160 : 1022.611211
+PRN161 : 996.211550
+PRN162 : 1025.772152
+PRN163 : 1058.268017
+PRN164 : 911.997787
+PRN165 : 1052.556722
+PRN166 : 998.536098
+PRN167 : 915.837410
+PRN168 : 979.313138
+PRN169 : 1045.691152
+PRN170 : 1018.832329
+PRN171 : 1086.959291
+PRN172 : 1065.875576
+PRN173 : 1018.341432
+PRN174 : 1101.511906
+PRN175 : 1130.164468
+PRN176 : 1043.232574
+PRN177 : 1086.907863
+PRN178 : 1025.378136
+PRN179 : 999.601323
+PRN180 : 1036.776794
+PRN181 : 988.653272
+PRN182 : 973.274518
+PRN183 : 1000.807655
+PRN184 : 1057.386211
+PRN185 : 960.735035
+PRN186 : 904.872645
+PRN187 : 889.117280
+PRN188 : 983.809186
+PRN189 : 912.874411
+PRN190 : 975.589269
+PRN191 : 948.421999
+PRN192 : 947.657566
+PRN193 : 950.000738
+PRN194 : 962.922561
+PRN195 : 1026.301488
+PRN196 : 1029.353812
+PRN197 : 1047.303674
+PRN198 : 1028.695557
+PRN199 : 1070.200632
+PRN200 : 947.575145
+PRN201 : 876.904616
+PRN202 : 1017.701430
+PRN203 : 1049.267498
+PRN204 : 958.139948
+PRN205 : 967.417379
+PRN206 : 968.274143
+PRN207 : 1000.864388
+PRN208 : 1066.802181
+PRN209 : 1014.463051
+PRN210 : 1026.799870
+PRN211 : 1018.450824
+PRN212 : 988.633963
+PRN213 : 904.749119
+PRN214 : 937.323052
+PRN215 : 1037.391158
+PRN216 : 1026.099281
+PRN217 : 907.667691
+PRN218 : 1010.454766
+PRN219 : 1019.473463
+PRN220 : 1005.177530
+PRN221 : 997.361757
+PRN222 : 954.628248
+PRN223 : 1061.917463
+PRN224 : 1039.311045
+PRN225 : 983.843948
+PRN226 : 968.679422
+PRN227 : 970.518863
+PRN228 : 963.038929
+PRN229 : 1086.210292
+PRN230 : 1022.961948
+PRN231 : 964.149961
+PRN232 : 949.462428
+PRN233 : 959.221279
+PRN234 : 987.151293
+PRN235 : 959.017697
+PRN236 : 996.893693
+PRN237 : 965.063094
+PRN238 : 1000.468116
+PRN239 : 1004.755878
+PRN240 : 995.674256
+PRN241 : 996.723454
+PRN242 : 966.714381
+PRN243 : 992.601460
+PRN244 : 1041.656776
+PRN245 : 1061.690153
+PRN246 : 1103.650456
+PRN247 : 1055.668922
+PRN248 : 1052.582092
+PRN249 : 953.461917
+PRN250 : 1006.433285
+PRN251 : 955.606772
+PRN252 : 1039.688043
+PRN253 : 1088.653591
+PRN254 : 942.093968
+PRN255 : 1031.071161
+PRN256 : 946.110148
+PRN257 : 932.761874
+PRN258 : 1052.693974
+PRN259 : 1008.479381
+PRN260 : 1063.720881
+PRN261 : 992.478541
+PRN262 : 915.981089
+PRN263 : 992.027282
+PRN264 : 1024.266535
+PRN265 : 919.165065
+PRN266 : 1010.516440
+PRN267 : 997.213969
+PRN268 : 1021.925225
+PRN269 : 978.883278
+PRN270 : 981.515166
+PRN271 : 980.281886
+PRN272 : 1053.161093
+PRN273 : 912.521231
+PRN274 : 953.132131
+PRN275 : 1004.643842
+PRN276 : 1058.794186
+PRN277 : 984.215138
+PRN278 : 1042.304270
+PRN279 : 972.388973
+PRN280 : 1033.185530
+PRN281 : 969.133442
+PRN282 : 1027.169707
+PRN283 : 1061.483306
+PRN284 : 960.680868
+PRN285 : 1001.272929
+PRN286 : 1017.813674
+PRN287 : 983.331085
+PRN288 : 932.052156
+PRN289 : 1004.348693
+PRN290 : 1086.961051
+PRN291 : 1038.181141
+PRN292 : 1050.191404
+PRN293 : 997.767778
+PRN294 : 1080.797673
+PRN295 : 976.782991
+PRN296 : 1031.633723
+PRN297 : 1011.128806
+PRN298 : 1008.380640
+PRN299 : 1087.552272
+PRN300 : 962.484066
+PRN301 : 942.301619
+PRN302 : 983.039469
+PRN303 : 962.689056
+PRN304 : 947.296230
+PRN305 : 1070.666154
+PRN306 : 1032.115321
+PRN307 : 1021.567324
+PRN308 : 953.506490
+PRN309 : 1002.026680
+PRN310 : 1008.181860
+PRN311 : 1025.392684
+PRN312 : 968.955019
+PRN313 : 1049.458891
+PRN314 : 957.676990
+PRN315 : 1035.683512
+PRN316 : 1112.131175
+PRN317 : 1055.138933
+PRN318 : 1078.236814
+PRN319 : 1125.693872
+PRN320 : 1022.131166
+PRN321 : 1116.997957
+PRN322 : 1089.131000
+PRN323 : 1077.159289
+PRN324 : 945.536432
+PRN325 : 1075.404651
+PRN326 : 946.487332
+PRN327 : 1024.258871
+PRN328 : 1031.225842
+PRN329 : 1016.780255
+PRN330 : 1103.910936
+PRN331 : 1000.846691
+PRN332 : 984.532087
+PRN333 : 1005.306673
+PRN334 : 1113.067840
+PRN335 : 964.786705
+PRN336 : 1031.129909
+PRN337 : 1102.032227
+PRN338 : 1032.427500
+PRN339 : 915.287948
+PRN340 : 1069.521468
+PRN341 : 1037.884311
+PRN342 : 1022.783172
+PRN343 : 1010.113843
+PRN344 : 936.663822
+PRN345 : 967.568134
+PRN346 : 998.248532
+PRN347 : 970.595103
+PRN348 : 1059.133013
+PRN349 : 1002.450372
+PRN350 : 1041.569244
+PRN351 : 1071.151467
+PRN352 : 1074.430879
+PRN353 : 1024.192522
+PRN354 : 1027.316098
+PRN355 : 903.837437
+PRN356 : 1025.087981
+PRN357 : 1078.239201
+PRN358 : 947.160744
+PRN359 : 943.791880
+PRN360 : 982.419379
+PRN361 : 1015.326413
+PRN362 : 930.457683
+PRN363 : 1056.989164
+PRN364 : 1048.214411
+PRN365 : 1011.714309
+PRN366 : 973.561885
+PRN367 : 938.897489
+PRN368 : 898.131351
+PRN369 : 1089.422229
+PRN370 : 1000.737285
+PRN371 : 943.187609
+PRN372 : 980.631385
+PRN373 : 1026.612456
+PRN374 : 914.530023
+PRN375 : 989.137431
+PRN376 : 936.013065
+PRN377 : 1037.484721
+PRN378 : 1005.741041
+PRN379 : 1079.121866
+PRN380 : 1055.031055
+PRN381 : 967.647139
+PRN382 : 1073.874913
+PRN383 : 987.676314
+PRN384 : 1064.291410
+PRN385 : 1036.029393
+PRN386 : 1021.885249
+PRN387 : 971.958380
+PRN388 : 1060.807076
+PRN389 : 944.558349
+PRN390 : 936.791120
+PRN391 : 986.203862
+PRN392 : 934.815474
+PRN393 : 950.177863
+PRN394 : 1053.566520
+PRN395 : 955.717211
+PRN396 : 914.562496
+PRN397 : 1021.237741
+PRN398 : 985.669335
+PRN399 : 1049.267052
+PRN400 : 1096.201981
+PRN401 : 871.290446
+PRN402 : 1056.942788
+PRN403 : 991.680777
+PRN404 : 987.094995
+PRN405 : 1030.857572
+PRN406 : 1014.738174
+PRN407 : 1122.789424
+PRN408 : 1057.378717
+PRN409 : 852.638284
+PRN410 : 979.034993
+PRN411 : 1050.776805
+PRN412 : 1013.760119
+PRN413 : 1013.442288
+PRN414 : 1056.335907
+PRN415 : 1003.833582
+PRN416 : 952.287368
+PRN417 : 983.410711
+PRN418 : 981.610215
+PRN419 : 955.751367
+PRN420 : 1026.024405
+PRN421 : 913.215405
+PRN422 : 1039.587952
+PRN423 : 934.420327
+PRN424 : 1048.085188
+PRN425 : 1069.984971
+PRN426 : 1022.569605
+PRN427 : 994.967729
+PRN428 : 978.231174
+PRN429 : 1091.191368
+PRN430 : 1110.565525
+PRN431 : 993.099640
+PRN432 : 943.356916
+PRN433 : 1008.520337
+PRN434 : 1039.057948
+PRN435 : 995.518711
+PRN436 : 923.381630
+PRN437 : 1008.525954
+PRN438 : 1074.725786
+PRN439 : 973.831465
+PRN440 : 992.850511
+PRN441 : 915.574772
+PRN442 : 935.268901
+PRN443 : 1030.668761
+PRN444 : 1006.389624
+PRN445 : 1070.532520
+PRN446 : 1044.161059
+PRN447 : 1009.868970
+PRN448 : 995.488179
+PRN449 : 1003.676963
+PRN450 : 1036.281447
+PRN451 : 1034.663850
+PRN452 : 1016.940948
+PRN453 : 1041.761449
+PRN454 : 1036.179308
+PRN455 : 927.147021
+PRN456 : 1015.267516
+PRN457 : 1025.120602
+PRN458 : 1003.012895
+PRN459 : 1017.405398
+PRN460 : 1084.152015
+PRN461 : 938.100545
+PRN462 : 982.848682
+PRN463 : 971.208439
+PRN464 : 1024.169902
+PRN465 : 984.026162
+PRN466 : 885.734952
+PRN467 : 970.662665
+PRN468 : 966.626383
+PRN469 : 970.630895
+PRN470 : 1065.729526
+PRN471 : 1087.725051
+PRN472 : 934.663676
+PRN473 : 982.326660
+PRN474 : 1028.573796
+PRN475 : 1042.602736
+PRN476 : 919.644128
+PRN477 : 1117.592528
+PRN478 : 973.727786
+PRN479 : 1017.035309
+PRN480 : 985.948508
+PRN481 : 993.332284
+PRN482 : 913.783006
+PRN483 : 1036.292614
+PRN484 : 944.347075
+PRN485 : 993.774520
+PRN486 : 1004.501737
+PRN487 : 975.074516
+PRN488 : 960.381723
+PRN489 : 1032.461979
+PRN490 : 965.849830
+PRN491 : 959.343865
+PRN492 : 998.303510
+PRN493 : 1098.972429
+PRN494 : 978.774732
+PRN495 : 923.587406
+PRN496 : 934.194464
+PRN497 : 1019.233725
+PRN498 : 998.978470
+PRN499 : 969.151090
+PRN500 : 1008.850844
+PRN501 : 1002.711126
+PRN502 : 991.872449
+PRN503 : 948.998513
+PRN504 : 985.482935
+PRN505 : 1064.356664
+PRN506 : 920.085989
+PRN507 : 957.924976
+PRN508 : 1059.586657
+PRN509 : 948.912499
+PRN510 : 969.734926
+PRN511 : 991.121045
+PRN512 : 980.425651
+PRN513 : 1002.105883
+PRN514 : 1044.420229
+PRN515 : 1050.108383
+PRN516 : 1055.666511
+PRN517 : 1050.562993
+PRN518 : 918.954103
+PRN519 : 1031.398881
+PRN520 : 1015.533157
+PRN521 : 982.110348
+PRN522 : 911.625140
+PRN523 : 908.261708
+PRN524 : 892.515101
+PRN525 : 999.272597
+PRN526 : 1063.535795
+PRN527 : 1001.036057
+PRN528 : 1054.891358
+PRN529 : 970.513392
+PRN530 : 1009.957719
+PRN531 : 994.077721
+PRN532 : 1094.151066
+PRN533 : 987.039498
+PRN534 : 973.811047
+PRN535 : 959.839155
+PRN536 : 961.322994
+PRN537 : 1051.549887
+PRN538 : 931.006138
+PRN539 : 1090.452240
+PRN540 : 967.033966
+PRN541 : 991.451211
+PRN542 : 1042.788825
+PRN543 : 1075.910278
+PRN544 : 1009.225010
+PRN545 : 1005.631562
+PRN546 : 972.521547
+PRN547 : 1001.788406
+PRN548 : 1026.096292
+PRN549 : 943.517653
+PRN550 : 1043.297977
+PRN551 : 1068.734900
+PRN552 : 971.528905
+PRN553 : 1101.736300
+PRN554 : 1064.997347
+PRN555 : 1036.258822
+PRN556 : 921.038528
+PRN557 : 1009.332591
+PRN558 : 908.767369
+PRN559 : 950.432316
+PRN560 : 1025.848851
+PRN561 : 1026.275418
+PRN562 : 1027.138158
+PRN563 : 891.008164
+PRN564 : 966.635315
+PRN565 : 1105.694983
+PRN566 : 901.168653
+PRN567 : 1005.085680
+PRN568 : 986.376781
+PRN569 : 1021.988728
+PRN570 : 1032.032304
+PRN571 : 1066.922843
+PRN572 : 978.165759
+PRN573 : 985.471003
+PRN574 : 1018.542739
+PRN575 : 1104.217604
+PRN576 : 993.366411
+PRN577 : 908.428162
+PRN578 : 1030.181215
+PRN579 : 959.654949
+PRN580 : 1001.943741
+PRN581 : 1024.829762
+PRN582 : 912.207242
+PRN583 : 1016.092124
+PRN584 : 944.519752
+PRN585 : 1115.606496
+PRN586 : 884.228571
+PRN587 : 1080.684296
+PRN588 : 1000.544389
+PRN589 : 1018.277531
+PRN590 : 1069.476533
+PRN591 : 972.380515
+PRN592 : 979.162973
+PRN593 : 1040.650719
+PRN594 : 962.376923
+PRN595 : 929.303273
+PRN596 : 977.208942
+PRN597 : 1009.877287
+PRN598 : 946.361825
+PRN599 : 937.358872
+PRN600 : 1045.706701
+PRN601 : 1001.353164
+PRN602 : 1071.691606
+PRN603 : 1020.971714
+PRN604 : 957.623404
+PRN605 : 970.896382
+PRN606 : 941.442249
+PRN607 : 945.406684
+PRN608 : 980.972425
+PRN609 : 969.174424
+PRN610 : 1031.894081
+PRN611 : 1029.095046
+PRN612 : 957.535746
+PRN613 : 943.186463
+PRN614 : 955.065383
+PRN615 : 988.925782
+PRN616 : 969.603025
+PRN617 : 976.321914
+PRN618 : 1081.982260
+PRN619 : 1021.381110
+PRN620 : 978.594813
+PRN621 : 991.522599
+PRN622 : 1056.221346
+PRN623 : 1005.261003
+PRN624 : 938.437253
+PRN625 : 1005.952092
+PRN626 : 1034.131845
+PRN627 : 1026.000397
+PRN628 : 1056.506798
+PRN629 : 1007.883782
+PRN630 : 948.805620
+PRN631 : 926.033432
+PRN632 : 929.683971
+PRN633 : 1084.549770
+PRN634 : 939.995126
+PRN635 : 1017.329087
+PRN636 : 929.734793
+PRN637 : 968.947835
+PRN638 : 992.543787
+PRN639 : 1051.439605
+PRN640 : 962.215123
+PRN641 : 934.669279
+PRN642 : 873.191979
+PRN643 : 978.156276
+PRN644 : 1036.169440
+PRN645 : 1009.123122
+PRN646 : 1042.696787
+PRN647 : 1004.992474
+PRN648 : 985.307029
+PRN649 : 914.993369
+PRN650 : 883.268853
+PRN651 : 978.492871
+PRN652 : 1037.468856
+PRN653 : 903.697832
+PRN654 : 1016.299145
+PRN655 : 1032.662729
+PRN656 : 971.860043
+PRN657 : 876.217640
+PRN658 : 1076.128497
+PRN659 : 967.662496
+PRN660 : 1118.152109
+PRN661 : 959.402400
+PRN662 : 931.127652
+PRN663 : 963.395502
+PRN664 : 985.039373
+PRN665 : 1130.966014
+PRN666 : 1015.222803
+PRN667 : 979.416557
+PRN668 : 1044.451714
+PRN669 : 1013.521435
+PRN670 : 986.434595
+PRN671 : 1081.668437
+PRN672 : 1118.515896
+PRN673 : 989.972971
+PRN674 : 966.293542
+PRN675 : 960.277413
+PRN676 : 1000.049668
+PRN677 : 1082.002407
+PRN678 : 993.898160
+PRN679 : 1026.534251
+PRN680 : 962.202086
+PRN681 : 1004.697585
+PRN682 : 945.449849
+PRN683 : 1036.296061
+PRN684 : 1025.414145
+PRN685 : 1063.165272
+PRN686 : 993.281842
+PRN687 : 1024.850451
+PRN688 : 978.756895
+PRN689 : 1000.348903
+PRN690 : 886.538615
+PRN691 : 1044.053091
+PRN692 : 1011.514352
+PRN693 : 977.162158
+PRN694 : 1040.123413
+PRN695 : 1049.348768
+PRN696 : 1070.281599
+PRN697 : 994.095158
+PRN698 : 998.311277
+PRN699 : 996.305247
+PRN700 : 926.604115
+PRN701 : 1000.046728
+PRN702 : 992.973540
+PRN703 : 1001.014210
+PRN704 : 950.900234
+PRN705 : 1074.602127
+PRN706 : 987.731174
+PRN707 : 946.971275
+PRN708 : 1027.578158
+PRN709 : 1024.011220
+PRN710 : 959.145194
+PRN711 : 1006.423937
+PRN712 : 981.213721
+PRN713 : 1044.065461
+PRN714 : 979.223485
+PRN715 : 1008.857033
+PRN716 : 1043.892450
+PRN717 : 1060.529980
+PRN718 : 933.250802
+PRN719 : 1061.461152
+PRN720 : 961.259637
+PRN721 : 1058.283064
+PRN722 : 1011.319119
+PRN723 : 996.167947
+PRN724 : 1037.665974
+PRN725 : 865.574895
+PRN726 : 1002.911144
+PRN727 : 978.886205
+PRN728 : 1002.302369
+PRN729 : 945.213366
+PRN730 : 1049.330526
+PRN731 : 1011.089995
+PRN732 : 911.273000
+PRN733 : 1030.796132
+PRN734 : 1101.699446
+PRN735 : 868.524288
+PRN736 : 951.807712
+PRN737 : 997.957367
+PRN738 : 953.791979
+PRN739 : 954.430760
+PRN740 : 993.834055
+PRN741 : 1021.300808
+PRN742 : 891.272906
+PRN743 : 879.577939
+PRN744 : 1093.176950
+PRN745 : 961.198091
+PRN746 : 976.086349
+PRN747 : 900.514535
+PRN748 : 911.711376
+PRN749 : 975.997454
+PRN750 : 1007.292432
+PRN751 : 1023.266464
+PRN752 : 1066.723102
+PRN753 : 1060.468262
+PRN754 : 1115.673922
+PRN755 : 1041.290534
+PRN756 : 912.248040
+PRN757 : 1034.518587
+PRN758 : 967.154895
+PRN759 : 1043.478493
+PRN760 : 1026.025257
+PRN761 : 997.795632
+PRN762 : 948.207823
+PRN763 : 970.366980
+PRN764 : 973.390941
+PRN765 : 1008.249734
+PRN766 : 965.810614
+PRN767 : 1034.368743
+PRN768 : 969.130435
+PRN769 : 939.525153
+PRN770 : 939.346863
+PRN771 : 1098.433434
+PRN772 : 973.913623
+PRN773 : 994.629391
+PRN774 : 1019.029751
+PRN775 : 999.068601
+PRN776 : 952.374565
+PRN777 : 1005.413476
+PRN778 : 1008.606450
+PRN779 : 949.586928
+PRN780 : 984.336007
+PRN781 : 966.334220
+PRN782 : 952.353697
+PRN783 : 1081.685083
+PRN784 : 1148.865924
+PRN785 : 1043.881782
+PRN786 : 950.747262
+PRN787 : 1013.342099
+PRN788 : 1021.841738
+PRN789 : 943.202183
+PRN790 : 1018.658753
+PRN791 : 1039.519748
+PRN792 : 1066.745417
+PRN793 : 991.922297
+PRN794 : 989.993508
+PRN795 : 935.256770
+PRN796 : 1049.355101
+PRN797 : 984.271969
+PRN798 : 1046.060384
+PRN799 : 1044.170052
+PRN800 : 920.720627
+PRN801 : 938.453295
+PRN802 : 980.425711
+PRN803 : 974.857425
+PRN804 : 1016.266917
+PRN805 : 1039.658764
+PRN806 : 925.171481
+PRN807 : 982.577139
+PRN808 : 997.552114
+PRN809 : 1063.108389
+PRN810 : 927.965656
+PRN811 : 1049.828313
+PRN812 : 1012.506665
+PRN813 : 962.613627
+PRN814 : 915.580235
+PRN815 : 1003.806599
+PRN816 : 1086.454522
+PRN817 : 968.915000
+PRN818 : 1008.546559
+PRN819 : 856.499306
+PRN820 : 960.536031
+PRN821 : 1025.778766
+PRN822 : 1071.326673
+PRN823 : 993.205599
+PRN824 : 1052.750624
+PRN825 : 1040.987166
+PRN826 : 1034.039072
+PRN827 : 963.048804
+PRN828 : 970.510949
+PRN829 : 1049.829816
+PRN830 : 934.945358
+PRN831 : 980.925084
+PRN832 : 1037.321718
+PRN833 : 1031.532551
+PRN834 : 1049.045828
+PRN835 : 1086.751941
+PRN836 : 1036.770670
+PRN837 : 1032.479988
+PRN838 : 957.264581
+PRN839 : 982.586134
+PRN840 : 1002.144549
+PRN841 : 856.221346
+PRN842 : 1077.732261
+PRN843 : 1023.844204
+PRN844 : 1049.015013
+PRN845 : 1109.868706
+PRN846 : 1032.030843
+PRN847 : 994.431051
+PRN848 : 999.263384
+PRN849 : 1052.311112
+PRN850 : 955.831734
+PRN851 : 958.864423
+PRN852 : 1016.728795
+PRN853 : 1004.874796
+PRN854 : 1004.259084
+PRN855 : 963.819718
+PRN856 : 949.755330
+PRN857 : 987.900168
+PRN858 : 995.226017
+PRN859 : 1098.708859
+PRN860 : 1009.514337
+PRN861 : 948.777253
+PRN862 : 982.680500
+PRN863 : 996.028285
+PRN864 : 1029.124415
+PRN865 : 942.101818
+PRN866 : 1034.222040
+PRN867 : 949.348550
+PRN868 : 965.963597
+PRN869 : 995.021503
+PRN870 : 889.653326
+PRN871 : 951.899055
+PRN872 : 1038.667756
+PRN873 : 1088.885329
+PRN874 : 979.471141
+PRN875 : 1027.647348
+PRN876 : 1054.157446
+PRN877 : 1003.472116
+PRN878 : 914.016815
+PRN879 : 1034.862598
+PRN880 : 936.253104
+PRN881 : 962.254857
+PRN882 : 1042.166034
+PRN883 : 934.618156
+PRN884 : 939.923222
+PRN885 : 998.649324
+PRN886 : 986.753492
+PRN887 : 1095.450118
+PRN888 : 982.660119
+PRN889 : 947.149665
+PRN890 : 893.930985
+PRN891 : 956.589953
+PRN892 : 1067.312301
+PRN893 : 952.406240
+PRN894 : 986.728920
+PRN895 : 1030.999219
+PRN896 : 993.306628
+PRN897 : 972.230094
+PRN898 : 993.227094
+PRN899 : 1008.926188
+PRN900 : 976.391192
+PRN901 : 952.545561
+PRN902 : 1011.157462
+PRN903 : 1056.357455
+PRN904 : 1027.929510
+PRN905 : 986.749151
+PRN906 : 963.462803
+PRN907 : 988.772926
+PRN908 : 1031.930882
+PRN909 : 981.130300
+PRN910 : 1073.463235
+PRN911 : 1081.696380
+PRN912 : 1020.678551
+PRN913 : 906.544270
+PRN914 : 1097.495849
+PRN915 : 1113.146380
+PRN916 : 1058.443029
+PRN917 : 902.487848
+PRN918 : 1009.914281
+PRN919 : 1057.100054
+PRN920 : 940.428079
+PRN921 : 941.473058
+PRN922 : 905.716759
+PRN923 : 997.789107
+PRN924 : 962.306176
+PRN925 : 1072.504216
+PRN926 : 946.554822
+PRN927 : 972.932223
+PRN928 : 1024.961360
+PRN929 : 1080.513692
+PRN930 : 1047.137658
+PRN931 : 1012.824933
+PRN932 : 976.404512
+PRN933 : 895.604509
+PRN934 : 1114.446905
+PRN935 : 1051.342533
+PRN936 : 1027.204609
+PRN937 : 917.811842
+PRN938 : 882.306487
+PRN939 : 1010.444766
+PRN940 : 978.686109
+PRN941 : 1020.585581
+PRN942 : 989.944335
+PRN943 : 1010.484323
+PRN944 : 936.727744
+PRN945 : 1038.631446
+PRN946 : 1012.530572
+PRN947 : 961.577357
+PRN948 : 988.253770
+PRN949 : 1054.353206
+PRN950 : 964.120426
+PRN951 : 943.486864
+PRN952 : 1052.650937
+PRN953 : 980.334313
+PRN954 : 1137.186817
+PRN955 : 1125.255968
+PRN956 : 964.830093
+PRN957 : 930.646626
+PRN958 : 1043.519941
+PRN959 : 1088.829938
+PRN960 : 1024.017051
+PRN961 : 1065.574266
+PRN962 : 1008.740833
+PRN963 : 972.421950
+PRN964 : 1082.991316
+PRN965 : 963.163028
+PRN966 : 1040.184197
+PRN967 : 865.234238
+PRN968 : 1026.703665
+PRN969 : 991.758625
+PRN970 : 1091.021716
+PRN971 : 1079.872892
+PRN972 : 1042.401875
+PRN973 : 1085.624604
+PRN974 : 1055.314437
+PRN975 : 1138.344149
+PRN976 : 906.958400
+PRN977 : 954.641162
+PRN978 : 1014.840472
+PRN979 : 991.906864
+PRN980 : 947.716713
+PRN981 : 1075.346169
+PRN982 : 913.043943
+PRN983 : 1006.107228
+PRN984 : 940.937691
+PRN985 : 925.827770
+PRN986 : 870.001279
+PRN987 : 1093.348026
+PRN988 : 990.938631
+PRN989 : 1067.552107
+PRN990 : 936.441162
+PRN991 : 956.066787
+PRN992 : 1001.705214
+PRN993 : 1007.198453
+PRN994 : 956.883661
+PRN995 : 1033.645356
+PRN996 : 1036.395999
+PRN997 : 954.941658
+PRN998 : 1015.720547
+PRN999 : 1023.147999
+sample mean  : 1000.303825
+true mean    : 1000.000000
+sample stddev: 53.233584
+true stddev  : 53.000000
+z-score      : 0.181279
+p-value      : 0.428600
+QH[normality]: 1.015347
+******************************************************************
+[100%] /data/local/tmp/lls
+libavutil/tests/lls: 1 file pushed. 4.4 MB/s (42152 bytes in 0.009s)
+******************************************************************
+*********************** test lls *************************
+real:-0.828987 order:0 pred:-0.828987 var:0.000000 coeffs:2.166433  0.000000  0.000000
+real:-0.828987 order:1 pred:-0.828987 var:0.000000 coeffs:2.166433  0.000000  0.000000
+real:-0.828987 order:2 pred:-0.828987 var:0.000000 coeffs:2.166433  0.000000  0.000000
+real:-0.326534 order:0 pred:-0.588792 var:0.272632 coeffs:1.427836 -0.385559  0.000000
+real:-0.326534 order:1 pred:-0.326534 var:nan coeffs:3.274787 -1.436430  0.000000
+real:-0.326534 order:2 pred:-0.326534 var:0.000000 coeffs:3.274787 -1.436430  0.000000
+real:-0.496309 order:0 pred:-0.560478 var:0.227332 coeffs:1.343229 -0.128675 -0.372131
+real:-0.496309 order:1 pred:-0.649268 var:0.214850 coeffs:1.541607 -0.245332  0.000000
+real:-0.496309 order:2 pred:-0.496309 var:0.000000 coeffs:1.629421  0.626407 -0.697480
+real: 0.386201 order:0 pred: 0.644642 var:0.263532 coeffs:1.005471 -0.232581 -0.189366
+real: 0.386201 order:1 pred: 0.590550 var:0.236486 coeffs:1.416443 -0.420822  0.000000
+real: 0.386201 order:2 pred: 0.653364 var:0.216704 coeffs:1.417320 -0.084129 -0.312548
+real:-0.193176 order:0 pred:-0.419259 var:0.261372 coeffs:0.886941 -0.255165 -0.256307
+real:-0.193176 order:1 pred:-0.397912 var:0.235146 coeffs:1.347037 -0.459663  0.000000
+real:-0.193176 order:2 pred:-0.320068 var:0.205317 coeffs:1.374542 -0.016455 -0.397716
+real:-0.819346 order:0 pred:-0.817295 var:0.238602 coeffs:0.888617 -0.244921 -0.265042
+real:-0.819346 order:1 pred:-0.767249 var:0.216640 coeffs:1.354697 -0.424767  0.000000
+real:-0.819346 order:2 pred:-0.835666 var:0.187683 coeffs:1.371228 -0.042115 -0.384499
+real:-0.697642 order:0 pred:-0.475989 var:0.238158 coeffs:0.945246 -0.128647 -0.377407
+real:-0.697642 order:1 pred:-0.426975 var:0.233141 coeffs:1.181630 -0.204018  0.000000
+real:-0.697642 order:2 pred:-0.571741 var:0.184410 coeffs:1.295268  0.165694 -0.490134
+real: 0.671639 order:0 pred: 0.851210 var:0.235395 coeffs:0.865894 -0.172820 -0.414246
+real: 0.671639 order:1 pred: 0.819457 var:0.227327 coeffs:1.189691 -0.267353  0.000000
+real: 0.671639 order:2 pred: 0.719424 var:0.173861 coeffs:1.303358  0.163061 -0.513787
+real: 0.505220 order:0 pred: 0.769476 var:0.243622 coeffs:0.784684 -0.091304 -0.508743
+real: 0.505220 order:1 pred: 0.789639 var:0.241713 coeffs:0.944040 -0.136693  0.000000
+real: 0.505220 order:2 pred: 0.630345 var:0.172243 coeffs:1.211361  0.281405 -0.586439
+real: 0.646869 order:0 pred: 0.405190 var:0.244144 coeffs:0.813667 -0.048322 -0.570249
+real: 0.646869 order:1 pred: 0.397323 var:0.243665 coeffs:0.897756 -0.071321  0.000000
+real: 0.646869 order:2 pred: 0.612396 var:0.163872 coeffs:1.213071  0.303110 -0.604217
+real: 0.838898 order:0 pred: 0.953519 var:0.236189 coeffs:0.781903  0.045694 -0.541937
+real: 0.838898 order:1 pred: 0.928701 var:0.235787 coeffs:0.726915  0.052472  0.000000
+real: 0.838898 order:2 pred: 0.986385 var:0.169988 coeffs:0.913062  0.483347 -0.566983
+real: 0.427629 order:0 pred: 0.186681 var:0.236686 coeffs:0.791554  0.057075 -0.413636
+real: 0.427629 order:1 pred: 0.189364 var:0.236112 coeffs:0.722840  0.065468  0.000000
+real: 0.427629 order:2 pred: 0.036153 var:0.203693 coeffs:0.852069  0.379016 -0.401598
+real: 0.630997 order:0 pred: 0.518520 var:0.229679 coeffs:0.803763  0.069837 -0.427707
+real: 0.630997 order:1 pred: 0.526137 var:0.228860 coeffs:0.719394  0.079595  0.000000
+real: 0.630997 order:2 pred: 0.639161 var:0.195717 coeffs:0.851578  0.376072 -0.399236
+real: 0.230755 order:0 pred: 0.412679 var:0.226826 coeffs:0.788797  0.154229 -0.437540
+real: 0.230755 order:1 pred: 0.336289 var:0.223049 coeffs:0.634356  0.151631  0.000000
+real: 0.230755 order:2 pred: 0.301630 var:0.189938 coeffs:0.796911  0.429929 -0.406615
+real: 0.397893 order:0 pred: 0.364459 var:0.219310 coeffs:0.791119  0.146737 -0.436564
+real: 0.397893 order:1 pred: 0.341176 var:0.216013 coeffs:0.647719  0.142379  0.000000
+real: 0.397893 order:2 pred: 0.458829 var:0.184271 coeffs:0.775826  0.428350 -0.389785
+real:-0.524796 order:0 pred:-0.379840 var:0.215516 coeffs:0.801159  0.103667 -0.435614
+real:-0.524796 order:1 pred:-0.353471 var:0.213952 coeffs:0.705119  0.097169  0.000000
+real:-0.524796 order:2 pred:-0.351303 var:0.184162 coeffs:0.833672  0.381942 -0.388931
+real:-0.003007 order:0 pred: 0.252175 var:0.218176 coeffs:0.789632  0.143953 -0.369571
+real:-0.003007 order:1 pred: 0.229010 var:0.215364 coeffs:0.659080  0.133146  0.000000
+real:-0.003007 order:2 pred: 0.312179 var:0.195825 coeffs:0.748724  0.381181 -0.321143
+real:-0.062503 order:0 pred: 0.277550 var:0.226928 coeffs:0.772600  0.011420 -0.329814
+real:-0.062503 order:1 pred: 0.281606 var:0.226912 coeffs:0.762728  0.009861  0.000000
+real:-0.062503 order:2 pred: 0.312656 var:0.213180 coeffs:0.851665  0.218941 -0.285109
+real:-0.928055 order:0 pred:-0.372199 var:0.255970 coeffs:0.807683 -0.148801 -0.299786
+real:-0.928055 order:1 pred:-0.413756 var:0.253684 coeffs:0.928421 -0.123222  0.000000
+real:-0.928055 order:2 pred:-0.398366 var:0.244183 coeffs:1.014101  0.062559 -0.258769
+real:-0.970030 order:0 pred:-1.088345 var:0.251243 coeffs:0.785875 -0.136316 -0.220239
+real:-0.970030 order:1 pred:-1.099254 var:0.249388 coeffs:0.894027 -0.112429  0.000000
+real:-0.970030 order:2 pred:-1.174973 var:0.244477 coeffs:0.931920  0.019760 -0.175312
+real:-0.213946 order:0 pred: 0.022550 var:0.250561 coeffs:0.785155 -0.079985 -0.119158
+real:-0.213946 order:1 pred: 0.040433 var:0.249953 coeffs:0.846953 -0.064299  0.000000
+real:-0.213946 order:2 pred: 0.079653 var:0.248596 coeffs:0.858993  0.010439 -0.089278
+real:-0.901990 order:0 pred:-0.814524 var:0.245589 coeffs:0.794660 -0.075448 -0.089286
+real:-0.901990 order:1 pred:-0.811075 var:0.245061 coeffs:0.853260 -0.060581  0.000000
+real:-0.901990 order:2 pred:-0.788538 var:0.244321 coeffs:0.863519 -0.005681 -0.064479
+real:-0.052210 order:0 pred:-0.170151 var:0.241452 coeffs:0.792244 -0.097536 -0.113901
+real:-0.052210 order:1 pred:-0.150713 var:0.240594 coeffs:0.866871 -0.076738  0.000000
+real:-0.052210 order:2 pred:-0.119568 var:0.239418 coeffs:0.875132 -0.004390 -0.078972
+real: 0.639718 order:0 pred: 0.604742 var:0.236482 coeffs:0.794771 -0.103875 -0.112120
+real: 0.639718 order:1 pred: 0.636286 var:0.235529 coeffs:0.868004 -0.077649  0.000000
+real: 0.639718 order:2 pred: 0.658164 var:0.234414 coeffs:0.868728 -0.002230 -0.075989
+real: 0.833118 order:0 pred: 0.313633 var:0.254216 coeffs:0.812817 -0.113999 -0.263191
+real: 0.833118 order:1 pred: 0.315829 var:0.253192 coeffs:0.893095 -0.085201  0.000000
+real: 0.833118 order:2 pred: 0.394239 var:0.247660 coeffs:0.890912  0.084830 -0.170162
+real:-0.353604 order:0 pred:-0.176128 var:0.251708 coeffs:0.816219 -0.118130 -0.287631
+real:-0.353604 order:1 pred:-0.178888 var:0.250639 coeffs:0.899331 -0.088264  0.000000
+real:-0.353604 order:2 pred:-0.224391 var:0.244209 coeffs:0.895351  0.096002 -0.183610
+real: 0.814291 order:0 pred: 0.574432 var:0.251458 coeffs:0.830889 -0.119747 -0.249363
+real: 0.814291 order:1 pred: 0.575208 var:0.250400 coeffs:0.915090 -0.089470  0.000000
+real: 0.814291 order:2 pred: 0.539932 var:0.245758 coeffs:0.914001  0.068427 -0.157513
+real: 0.682850 order:0 pred: 0.475706 var:0.250094 coeffs:0.840836 -0.149758 -0.204431
+real: 0.682850 order:1 pred: 0.497774 var:0.248487 coeffs:0.943898 -0.110638  0.000000
+real: 0.682850 order:2 pred: 0.456273 var:0.245466 coeffs:0.949485  0.011229 -0.126305
+real:-0.926620 order:0 pred:-0.643276 var:0.251569 coeffs:0.858383 -0.143622 -0.180347
+real:-0.926620 order:1 pred:-0.640320 var:0.250151 coeffs:0.957383 -0.106082  0.000000
+real:-0.926620 order:2 pred:-0.626222 var:0.247899 coeffs:0.962960  0.001308 -0.111068
+real:-0.258917 order:0 pred:-0.309232 var:0.247513 coeffs:0.856949 -0.146436 -0.173184
+real:-0.258917 order:1 pred:-0.300356 var:0.246065 coeffs:0.957955 -0.107959  0.000000
+real:-0.258917 order:2 pred:-0.323259 var:0.244025 coeffs:0.963578 -0.006792 -0.105706
+real: 0.477848 order:0 pred: 0.301952 var:0.245549 coeffs:0.861766 -0.108873 -0.171989
+real: 0.477848 order:1 pred: 0.280671 var:0.244769 coeffs:0.935983 -0.078703  0.000000
+real: 0.477848 order:2 pred: 0.279682 var:0.242812 coeffs:0.941458  0.021912 -0.104975
+real:-0.510115 order:0 pred:-0.398674 var:0.242496 coeffs:0.865740 -0.130960 -0.184497
+real:-0.510115 order:1 pred:-0.427306 var:0.241389 coeffs:0.951796 -0.092341  0.000000
+real:-0.510115 order:2 pred:-0.459140 var:0.239175 coeffs:0.951495  0.019104 -0.110804
+real: 0.748755 order:0 pred: 0.414613 var:0.245893 coeffs:0.877762 -0.058292 -0.134888
+real: 0.748755 order:1 pred: 0.402635 var:0.245683 coeffs:0.915667 -0.040210  0.000000
+real: 0.748755 order:2 pred: 0.385055 var:0.244559 coeffs:0.913614  0.043177 -0.080276
+real: 0.853146 order:0 pred: 0.344285 var:0.257654 coeffs:0.892465 -0.153664 -0.206363
+real: 0.853146 order:1 pred: 0.373079 var:0.256303 coeffs:0.989763 -0.104099  0.000000
+real: 0.853146 order:2 pred: 0.402999 var:0.253848 coeffs:0.982039  0.026043 -0.121452
+real: 0.558712 order:0 pred: 0.835073 var:0.258494 coeffs:0.872881 -0.187788 -0.189840
+real: 0.558712 order:1 pred: 0.812607 var:0.256538 coeffs:0.992466 -0.126241  0.000000
+real: 0.558712 order:2 pred: 0.823735 var:0.254523 coeffs:0.985492 -0.007712 -0.111519
+real: 0.495069 order:0 pred: 0.745996 var:0.258464 coeffs:0.857741 -0.208964 -0.144121
+real: 0.495069 order:1 pred: 0.728704 var:0.256107 coeffs:0.991375 -0.139969  0.000000
+real: 0.495069 order:2 pred: 0.753553 var:0.254978 coeffs:0.986048 -0.052876 -0.083317
+real:-0.847274 order:0 pred:-0.626967 var:0.257595 coeffs:0.868227 -0.252837 -0.123367
+real:-0.847274 order:1 pred:-0.681237 var:0.254219 coeffs:1.023435 -0.165272  0.000000
+real:-0.847274 order:2 pred:-0.667688 var:0.253409 coeffs:1.021521 -0.093274 -0.070851
+real: 0.732250 order:0 pred: 0.723075 var:0.254187 coeffs:0.868714 -0.247558 -0.128723
+real: 0.732250 order:1 pred: 0.781849 var:0.250995 coeffs:1.013024 -0.156987  0.000000
+real: 0.732250 order:2 pred: 0.767256 var:0.250125 coeffs:1.014105 -0.084839 -0.073398
+real: 0.854238 order:0 pred: 0.892120 var:0.250985 coeffs:0.866333 -0.249874 -0.129765
+real: 0.854238 order:1 pred: 0.835958 var:0.247776 coeffs:1.011551 -0.154135  0.000000
+real: 0.854238 order:2 pred: 0.863721 var:0.246903 coeffs:1.014849 -0.087632 -0.072061
+real: 0.128783 order:0 pred: 0.177708 var:0.247949 coeffs:0.865758 -0.253738 -0.131498
+real: 0.128783 order:1 pred: 0.108332 var:0.244682 coeffs:1.008405 -0.150540  0.000000
+real: 0.128783 order:2 pred: 0.129368 var:0.243797 coeffs:1.014937 -0.087788 -0.072004
+real:-0.687176 order:0 pred:-0.724514 var:0.244979 coeffs:0.863967 -0.256417 -0.131282
+real:-0.687176 order:1 pred:-0.696076 var:0.241684 coeffs:1.008559 -0.151153  0.000000
+real:-0.687176 order:2 pred:-0.675786 var:0.240813 coeffs:1.014646 -0.087900 -0.070975
+real:-0.739125 order:0 pred:-0.939293 var:0.244138 coeffs:0.851834 -0.270116 -0.159493
+real:-0.739125 order:1 pred:-0.921187 var:0.240554 coeffs:1.004883 -0.158846  0.000000
+real:-0.739125 order:2 pred:-0.896778 var:0.239292 coeffs:1.012677 -0.081940 -0.085137
+real: 0.507156 order:0 pred: 0.132038 var:0.247980 coeffs:0.854820 -0.324186 -0.129772
+real: 0.507156 order:1 pred: 0.181435 var:0.243002 coeffs:1.035964 -0.188414  0.000000
+real: 0.507156 order:2 pred: 0.170125 var:0.242194 coeffs:1.043360 -0.127110 -0.069002
+real:-0.471621 order:0 pred:-0.781593 var:0.249754 coeffs:0.839977 -0.278769 -0.135313
+real:-0.471621 order:1 pred:-0.818174 var:0.246193 coeffs:0.992584 -0.160555  0.000000
+real:-0.471621 order:2 pred:-0.816134 var:0.245347 coeffs:1.000551 -0.096804 -0.071940
+real:-0.400683 order:0 pred:-0.398789 var:0.246964 coeffs:0.840021 -0.276427 -0.130292
+real:-0.400683 order:1 pred:-0.365041 var:0.243502 coeffs:0.990991 -0.158001  0.000000
+real:-0.400683 order:2 pred:-0.350326 var:0.242726 coeffs:0.997954 -0.095965 -0.068816
+real:-0.771989 order:0 pred:-0.719337 var:0.244393 coeffs:0.842212 -0.280679 -0.121663
+real:-0.771989 order:1 pred:-0.750119 var:0.240863 coeffs:0.993266 -0.159430  0.000000
+real:-0.771989 order:2 pred:-0.722825 var:0.240194 coeffs:1.002433 -0.104835 -0.062539
+real:-0.239982 order:0 pred:-0.517646 var:0.245208 coeffs:0.834104 -0.340736 -0.155665
+real:-0.239982 order:1 pred:-0.434962 var:0.240118 coeffs:1.014311 -0.187652  0.000000
+real:-0.239982 order:2 pred:-0.408481 var:0.239042 coeffs:1.022997 -0.115069 -0.078754
+real:-0.673879 order:0 pred:-0.699182 var:0.242669 coeffs:0.833122 -0.338137 -0.162693
+real:-0.673879 order:1 pred:-0.722229 var:0.237710 coeffs:1.010632 -0.185773  0.000000
+real:-0.673879 order:2 pred:-0.687012 var:0.236547 coeffs:1.022166 -0.113149 -0.080284
+real: 0.303104 order:0 pred: 0.478861 var:0.241508 coeffs:0.828576 -0.352732 -0.157339
+real: 0.303104 order:1 pred: 0.447274 var:0.236193 coeffs:1.013809 -0.193002  0.000000
+real: 0.303104 order:2 pred: 0.452872 var:0.235121 coeffs:1.025080 -0.123093 -0.077591
+real:-0.722316 order:0 pred:-0.498196 var:0.241205 coeffs:0.834477 -0.395507 -0.163294
+real:-0.722316 order:1 pred:-0.589230 var:0.234631 coeffs:1.034111 -0.210503  0.000000
+real:-0.722316 order:2 pred:-0.596214 var:0.233491 coeffs:1.044732 -0.137102 -0.080449
+real: 0.849617 order:0 pred: 0.546192 var:0.242647 coeffs:0.843012 -0.367722 -0.217502
+real: 0.849617 order:1 pred: 0.514865 var:0.237120 coeffs:1.028816 -0.194991  0.000000
+real: 0.849617 order:2 pred: 0.550645 var:0.235156 coeffs:1.043331 -0.100247 -0.105657
+real: 0.428214 order:0 pred: 0.341605 var:0.240604 coeffs:0.844506 -0.369417 -0.197099
+real: 0.428214 order:1 pred: 0.349107 var:0.235087 coeffs:1.030998 -0.195849  0.000000
+real: 0.428214 order:2 pred: 0.309629 var:0.233493 coeffs:1.044971 -0.112173 -0.093792
+real:-0.888929 order:0 pred:-0.396992 var:0.247802 coeffs:0.854188 -0.265236 -0.253082
+real:-0.888929 order:1 pred:-0.345170 var:0.245109 coeffs:0.986502 -0.137882  0.000000
+real:-0.888929 order:2 pred:-0.370454 var:0.242632 coeffs:1.006419 -0.033699 -0.119799
+real: 0.479080 order:0 pred: 0.226084 var:0.247906 coeffs:0.856988 -0.220977 -0.292152
+real: 0.479080 order:1 pred: 0.190553 var:0.246076 coeffs:0.966178 -0.113375  0.000000
+real: 0.479080 order:2 pred: 0.231507 var:0.242843 coeffs:0.991821  0.002189 -0.136887
+real:-0.999723 order:0 pred:-1.166530 var:0.246751 coeffs:0.847381 -0.189276 -0.275134
+real:-0.999723 order:1 pred:-1.196660 var:0.245428 coeffs:0.937883 -0.095773  0.000000
+real:-0.999723 order:2 pred:-1.216971 var:0.242608 coeffs:0.959041  0.014545 -0.128523
+real:-0.449408 order:0 pred:-0.751376 var:0.247948 coeffs:0.836871 -0.240450 -0.303586
+real:-0.449408 order:1 pred:-0.709566 var:0.245857 coeffs:0.951490 -0.119755  0.000000
+real:-0.449408 order:2 pred:-0.676459 var:0.242487 coeffs:0.972956  0.004251 -0.140913
+real:-0.855769 order:0 pred:-0.695050 var:0.246707 coeffs:0.841859 -0.222264 -0.298336
+real:-0.855769 order:1 pred:-0.672279 var:0.244944 coeffs:0.947944 -0.110100  0.000000
+real:-0.855769 order:2 pred:-0.664226 var:0.241736 coeffs:0.968876  0.012139 -0.138424
+real: 0.510468 order:0 pred: 0.220157 var:0.247531 coeffs:0.844632 -0.162354 -0.329557
+real: 0.510468 order:1 pred: 0.189040 var:0.246611 coeffs:0.920980 -0.078929  0.000000
+real: 0.510468 order:2 pred: 0.221261 var:0.242785 coeffs:0.946689  0.052304 -0.152147
+real:-0.037038 order:0 pred:-0.257147 var:0.247097 coeffs:0.842175 -0.169037 -0.290205
+real:-0.037038 order:1 pred:-0.251974 var:0.246115 coeffs:0.921686 -0.082139  0.000000
+real:-0.037038 order:2 pred:-0.298996 var:0.243198 coeffs:0.944179  0.031188 -0.132202
+real:-0.685151 order:0 pred:-0.965214 var:0.247813 coeffs:0.830313 -0.129347 -0.273679
+real:-0.685151 order:1 pred:-0.982022 var:0.247249 coeffs:0.889901 -0.062293  0.000000
+real:-0.685151 order:2 pred:-0.995939 var:0.244712 coeffs:0.909594  0.045362 -0.124501
+real:-0.760963 order:0 pred:-0.870811 var:0.246191 coeffs:0.826292 -0.150866 -0.265666
+real:-0.760963 order:1 pred:-0.838135 var:0.245432 coeffs:0.895276 -0.070865  0.000000
+real:-0.760963 order:2 pred:-0.860156 var:0.243063 coeffs:0.915855  0.030800 -0.120402
+real: 0.219888 order:0 pred: 0.356800 var:0.244819 coeffs:0.824311 -0.130747 -0.287719
+real: 0.219888 order:1 pred: 0.374558 var:0.244256 coeffs:0.883281 -0.060842  0.000000
+real: 0.219888 order:2 pred: 0.328046 var:0.241507 coeffs:0.908874  0.044763 -0.128637
+real: 0.693888 order:0 pred: 0.302142 var:0.247854 coeffs:0.829055 -0.079935 -0.267078
+real: 0.693888 order:1 pred: 0.292034 var:0.247650 coeffs:0.864939 -0.036897  0.000000
+real: 0.693888 order:2 pred: 0.278829 var:0.245353 coeffs:0.888064  0.061796 -0.119260
+real:-0.238932 order:0 pred:-0.433853 var:0.247125 coeffs:0.825667 -0.089630 -0.292470
+real:-0.238932 order:1 pred:-0.429390 var:0.246871 coeffs:0.865930 -0.041320  0.000000
+real:-0.238932 order:2 pred:-0.386389 var:0.244149 coeffs:0.890751  0.066567 -0.129162
+real: 0.559537 order:0 pred: 0.755299 var:0.246450 coeffs:0.819753 -0.102088 -0.297625
+real: 0.559537 order:1 pred: 0.748886 var:0.246124 coeffs:0.865714 -0.046968  0.000000
+real: 0.559537 order:2 pred: 0.740868 var:0.243340 coeffs:0.890972  0.063019 -0.131390
+real: 0.267426 order:0 pred: 0.190705 var:0.244758 coeffs:0.820322 -0.091891 -0.291937
+real: 0.267426 order:1 pred: 0.179436 var:0.244497 coeffs:0.861463 -0.041957  0.000000
+real: 0.267426 order:2 pred: 0.162537 var:0.241841 coeffs:0.885380  0.066706 -0.128659
+real:-0.912624 order:0 pred:-0.873112 var:0.242974 coeffs:0.821659 -0.096275 -0.292511
+real:-0.912624 order:1 pred:-0.885196 var:0.242689 coeffs:0.864001 -0.043599  0.000000
+real:-0.912624 order:2 pred:-0.891796 var:0.240044 coeffs:0.887347  0.065644 -0.128877
+real: 0.789354 order:0 pred: 0.664720 var:0.241664 coeffs:0.824747 -0.102905 -0.268907
+real: 0.789354 order:1 pred: 0.670199 var:0.241341 coeffs:0.869803 -0.046534  0.000000
+real: 0.789354 order:2 pred: 0.626786 var:0.239128 coeffs:0.893091  0.051476 -0.116888
+real: 0.940074 order:0 pred: 0.417138 var:0.248089 coeffs:0.832641 -0.137834 -0.199593
+real: 0.940074 order:1 pred: 0.426336 var:0.247533 coeffs:0.892716 -0.062188  0.000000
+real: 0.940074 order:2 pred: 0.400601 var:0.246364 coeffs:0.911003  0.009160 -0.086025
+real:-0.135795 order:0 pred:-0.193873 var:0.246408 coeffs:0.832236 -0.132965 -0.205141
+real:-0.135795 order:1 pred:-0.204072 var:0.245895 coeffs:0.889947 -0.059814  0.000000
+real:-0.135795 order:2 pred:-0.184905 var:0.244670 coeffs:0.909437  0.012527 -0.088027
+real:-0.380152 order:0 pred:-0.575615 var:0.245780 coeffs:0.828180 -0.170820 -0.219703
+real:-0.380152 order:1 pred:-0.540524 var:0.244943 coeffs:0.901445 -0.075181  0.000000
+real:-0.380152 order:2 pred:-0.520535 var:0.243551 coeffs:0.920794  0.003871 -0.093861
+real: 0.767799 order:0 pred: 0.515128 var:0.245897 coeffs:0.832780 -0.219118 -0.260502
+real: 0.767799 order:1 pred: 0.559634 var:0.244538 coeffs:0.923968 -0.094404  0.000000
+real: 0.767799 order:2 pred: 0.614095 var:0.242603 coeffs:0.940482  0.002169 -0.108694
+real:-0.449221 order:0 pred:-0.127159 var:0.247101 coeffs:0.834209 -0.240424 -0.279751
+real:-0.449221 order:1 pred:-0.143428 var:0.245494 coeffs:0.933963 -0.103346  0.000000
+real:-0.449221 order:2 pred:-0.161440 var:0.243301 coeffs:0.951071  0.000674 -0.116482
+real: 0.834714 order:0 pred: 0.563835 var:0.247464 coeffs:0.839501 -0.188273 -0.330164
+real: 0.834714 order:1 pred: 0.530670 var:0.246494 coeffs:0.917027 -0.079647  0.000000
+real: 0.834714 order:2 pred: 0.587549 var:0.243488 coeffs:0.940071  0.036764 -0.135322
+real:-0.645754 order:0 pred:-0.848549 var:0.246955 coeffs:0.833574 -0.223517 -0.334721
+real:-0.645754 order:1 pred:-0.807251 var:0.245602 coeffs:0.925188 -0.092880  0.000000
+real:-0.645754 order:2 pred:-0.798148 var:0.242542 coeffs:0.948080  0.025837 -0.137136
+real:-0.709879 order:0 pred:-0.512407 var:0.246379 coeffs:0.836945 -0.231150 -0.301903
+real:-0.709879 order:1 pred:-0.521450 var:0.244948 coeffs:0.931459 -0.095977  0.000000
+real:-0.709879 order:2 pred:-0.475690 var:0.242488 coeffs:0.953389  0.009096 -0.122244
+real:-0.039044 order:0 pred: 0.341407 var:0.248602 coeffs:0.832641 -0.251358 -0.331404
+real:-0.039044 order:1 pred: 0.327897 var:0.246946 coeffs:0.935421 -0.104217  0.000000
+real:-0.039044 order:2 pred: 0.300522 var:0.244041 coeffs:0.959116  0.011341 -0.133727
+real:-0.805253 order:0 pred:-0.460031 var:0.250102 coeffs:0.837847 -0.201973 -0.378703
+real:-0.805253 order:1 pred:-0.432726 var:0.249054 coeffs:0.920081 -0.082965  0.000000
+real:-0.805253 order:2 pred:-0.482453 var:0.245335 coeffs:0.948964  0.045074 -0.151454
+real:-0.725547 order:0 pred:-0.681110 var:0.248565 coeffs:0.838830 -0.195719 -0.370417
+real:-0.725547 order:1 pred:-0.659495 var:0.247588 coeffs:0.918499 -0.079896  0.000000
+real:-0.725547 order:2 pred:-0.624121 var:0.244055 coeffs:0.945770  0.046395 -0.147442
+real:-0.235186 order:0 pred:-0.528829 var:0.249202 coeffs:0.833846 -0.196426 -0.410701
+real:-0.235186 order:1 pred:-0.528361 var:0.248233 coeffs:0.913811 -0.080184  0.000000
+real:-0.235186 order:2 pred:-0.466636 var:0.243949 coeffs:0.944688  0.058295 -0.161600
+real: 0.054254 order:0 pred: 0.406221 var:0.250747 coeffs:0.829282 -0.202759 -0.387362
+real: 0.054254 order:1 pred: 0.402578 var:0.249733 coeffs:0.911859 -0.082756  0.000000
+real: 0.054254 order:2 pred: 0.427420 var:0.245996 coeffs:0.940781  0.047400 -0.152101
+real: 0.323351 order:0 pred: 0.639852 var:0.251691 coeffs:0.822807 -0.206646 -0.323421
+real: 0.323351 order:1 pred: 0.637344 var:0.250655 coeffs:0.907012 -0.084336  0.000000
+real: 0.323351 order:2 pred: 0.695630 var:0.248097 coeffs:0.929859  0.022234 -0.124881
+real: 0.082771 order:0 pred:-0.109412 var:0.251059 coeffs:0.822145 -0.208820 -0.346602
+real: 0.082771 order:1 pred:-0.107035 var:0.250010 coeffs:0.907239 -0.085218  0.000000
+real: 0.082771 order:2 pred:-0.059040 var:0.247099 coeffs:0.931429  0.028112 -0.132542
+real: 0.000429 order:0 pred:-0.053163 var:0.249628 coeffs:0.822055 -0.210534 -0.349693
+real: 0.000429 order:1 pred:-0.045949 var:0.248569 coeffs:0.907809 -0.085867  0.000000
+real: 0.000429 order:2 pred:-0.000767 var:0.245623 coeffs:0.931455  0.028146 -0.132601
+real:-0.355315 order:0 pred:-0.321379 var:0.248183 coeffs:0.822398 -0.211249 -0.343417
+real:-0.355315 order:1 pred:-0.326142 var:0.247123 coeffs:0.908373 -0.086137  0.000000
+real:-0.355315 order:2 pred:-0.283881 var:0.244300 coeffs:0.932235  0.024586 -0.129227
+real: 0.466345 order:0 pred: 0.061585 var:0.250567 coeffs:0.823179 -0.198793 -0.362906
+real: 0.466345 order:1 pred: 0.055516 var:0.249649 coeffs:0.904058 -0.081020  0.000000
+real: 0.466345 order:2 pred: 0.073068 var:0.246562 coeffs:0.929429  0.035630 -0.136401
+real:-0.352165 order:0 pred:-0.209196 var:0.249595 coeffs:0.824114 -0.178211 -0.344549
+real:-0.352165 order:1 pred:-0.185739 var:0.248862 coeffs:0.896142 -0.071999  0.000000
+real:-0.352165 order:2 pred:-0.152056 var:0.246106 coeffs:0.918509  0.040036 -0.128869
+real: 0.997183 order:0 pred: 1.107374 var:0.248463 coeffs:0.820286 -0.181364 -0.330040
+real: 0.997183 order:1 pred: 1.102302 var:0.247710 coeffs:0.893734 -0.073242  0.000000
+real: 0.997183 order:2 pred: 1.139052 var:0.245199 coeffs:0.914178  0.032940 -0.122638
+real: 0.338352 order:0 pred: 0.157454 var:0.247807 coeffs:0.821139 -0.147738 -0.342160
+real: 0.338352 order:1 pred: 0.132198 var:0.247312 coeffs:0.880207 -0.058784  0.000000
+real: 0.338352 order:2 pred: 0.152691 var:0.244638 coeffs:0.902707  0.049657 -0.126906
+real:-0.804284 order:0 pred:-1.030523 var:0.247623 coeffs:0.814106 -0.146885 -0.325423
+real:-0.804284 order:1 pred:-1.031056 var:0.247139 coeffs:0.872816 -0.058444  0.000000
+real:-0.804284 order:2 pred:-1.053042 var:0.244747 coeffs:0.893448  0.044480 -0.120412
+real:-0.457167 order:0 pred:-0.702792 var:0.247625 coeffs:0.809065 -0.169147 -0.346438
+real:-0.457167 order:1 pred:-0.687305 var:0.246990 coeffs:0.876702 -0.067014  0.000000
+real:-0.457167 order:2 pred:-0.654256 var:0.244305 coeffs:0.898006  0.043274 -0.127588
+real:-0.021277 order:0 pred:-0.191599 var:0.246916 coeffs:0.808128 -0.173436 -0.346486
+real:-0.021277 order:1 pred:-0.187182 var:0.246253 coeffs:0.877481 -0.068691  0.000000
+real:-0.021277 order:2 pred:-0.187082 var:0.243589 coeffs:0.898787  0.041614 -0.127605
+real: 0.474975 order:0 pred: 0.647991 var:0.246249 coeffs:0.804899 -0.168660 -0.353942
+real: 0.474975 order:1 pred: 0.652517 var:0.245627 coeffs:0.872233 -0.066775  0.000000
+real: 0.474975 order:2 pred: 0.637241 var:0.242870 coeffs:0.894429  0.045632 -0.130228
+real:-0.800855 order:0 pred:-0.767087 var:0.244961 coeffs:0.805633 -0.170547 -0.354244
+real:-0.800855 order:1 pred:-0.778254 var:0.244329 coeffs:0.873329 -0.067374  0.000000
+real:-0.800855 order:2 pred:-0.818120 var:0.241581 coeffs:0.893466  0.045453 -0.129490
+real: 0.209538 order:0 pred: 0.485866 var:0.245326 coeffs:0.801886 -0.146056 -0.392328
+real: 0.209538 order:1 pred: 0.498375 var:0.244867 coeffs:0.859476 -0.057485  0.000000
+real: 0.209538 order:2 pred: 0.442548 var:0.241536 coeffs:0.884225  0.064269 -0.141929
+real:-0.895696 order:0 pred:-0.668009 var:0.245165 coeffs:0.806074 -0.151585 -0.368322
+real:-0.895696 order:1 pred:-0.671663 var:0.244677 coeffs:0.865759 -0.059644  0.000000
+real:-0.895696 order:2 pred:-0.635865 var:0.241772 coeffs:0.889886  0.053766 -0.132604
+real: 0.111128 order:0 pred: 0.138592 var:0.243914 coeffs:0.805971 -0.150357 -0.369829
+real: 0.111128 order:1 pred: 0.144640 var:0.243436 coeffs:0.865102 -0.059113  0.000000
+real: 0.111128 order:2 pred: 0.114828 var:0.240522 coeffs:0.889833  0.053917 -0.132712
+real: 0.848523 order:0 pred: 0.845359 var:0.242667 coeffs:0.806043 -0.150113 -0.366819
+real: 0.848523 order:1 pred: 0.839505 var:0.242192 coeffs:0.865167 -0.058971  0.000000
+real: 0.848523 order:2 pred: 0.801425 var:0.239341 coeffs:0.889835  0.053116 -0.130902
+real:-0.595960 order:0 pred:-0.572420 var:0.241450 coeffs:0.806400 -0.150849 -0.366251
+real:-0.595960 order:1 pred:-0.577667 var:0.240973 coeffs:0.865697 -0.059224  0.000000
+real:-0.595960 order:2 pred:-0.568659 var:0.238145 coeffs:0.890581  0.052531 -0.130660
+real:-0.583917 order:0 pred:-0.129630 var:0.244499 coeffs:0.807938 -0.065007 -0.283182
+real:-0.583917 order:1 pred:-0.117718 var:0.244413 coeffs:0.833099 -0.025089  0.000000
+real:-0.583917 order:2 pred:-0.071912 var:0.242767 coeffs:0.848874  0.063494 -0.099647
+******************************************************************
+[100%] /data/local/tmp/log
+libavutil/tests/log: 1 file pushed. 6.3 MB/s (61892 bytes in 0.009s)
+******************************************************************
+*********************** test log *************************
+******************************************************************
+[100%] /data/local/tmp/md5
+libavutil/tests/md5: 1 file pushed. 4.6 MB/s (40864 bytes in 0.008s)
+******************************************************************
+*********************** test md5 *************************
+0bf1bcc8a1d72e2cf58d42182b637e56
+993a3eb298e52aca83ecfbb6a766b4d0
+07c01ca7c733475fad38c84c56f305c1
+9fc8404827cac26385f48f4f58fd32ce
+a22bfef14302c5ca46e0ae91092bc0e0
+******************************************************************
+[100%] /data/local/tmp/murmur3
+libavutil/tests/murmur3: 1 file pushed. 3.5 MB/s (41544 bytes in 0.011s)
+******************************************************************
+*********************** test murmur3 *************************
+result: 0x63f3de036384ba69 0x7192878ce684ed2d
+******************************************************************
+[ 98%] /data/local/tmp/opt
+[100%] /data/local/tmp/opt
+libavutil/tests/opt: 1 file pushed. 8.3 MB/s (66224 bytes in 0.008s)
+******************************************************************
+*********************** test opt *************************
+Testing default values
+num=0
+toggle=1
+string=default
+escape=\=,
+flags=1
+rational=1/1
+video_rate=25/1
+width=200 height=300
+pix_fmt=0bgr
+sample_fmt=s16
+duration=1000
+color=255 192 203 255
+channel_layout=311=311
+binary=62 69 6e 0
+binary_size=4
+num64=1
+flt=0.333333
+dbl=0.333333
+TestContext AVOptions:
+  -num               <int>        E........ set num (from 0 to 100) (default 0)
+  -toggle            <int>        E........ set toggle (from 0 to 1) (default 1)
+  -rational          <rational>   E........ set rational (from 0 to 10) (default 1/1)
+  -string            <string>     E........ set string (default "default")
+  -escape            <string>     E........ set escape str (default "\=,")
+  -flags             <flags>      E........ set flags (default cool)
+     cool                         E........ set cool flag
+     lame                         E........ set lame flag
+     mu                           E........ set mu flag
+  -size              <image_size> E........ set size (default "200x300")
+  -pix_fmt           <pix_fmt>    E........ set pixfmt (default 0bgr)
+  -sample_fmt        <sample_fmt> E........ set samplefmt (default s16)
+  -video_rate        <video_rate> E........ set videorate (default "25")
+  -duration          <duration>   E........ set duration (default 0.001)
+  -color             <color>      E........ set color (default "pink")
+  -cl                <channel_layout> E........ set channel layout (default 0x137)
+  -bin               <binary>     E........ set binary value
+  -bin1              <binary>     E........ set binary value
+  -bin2              <binary>     E........ set binary value
+  -num64             <int64>      E........ set num 64bit (from 0 to 100) (default 1)
+  -flt               <float>      E........ set float (from 0 to 100) (default 0.333333)
+  -dbl               <double>     E........ set double (from 0 to 100) (default 0.333333)
+  -bool1             <boolean>    E........ set boolean value (default auto)
+  -bool2             <boolean>    E........ set boolean value (default true)
+  -bool3             <boolean>    E........ set boolean value (default false)
+
+Testing av_opt_is_set_to_default()
+name:       num default:1 error:
+name:    toggle default:0 error:
+name:  rational default:0 error:
+name:    string default:0 error:
+name:    escape default:0 error:
+name:     flags default:0 error:
+name:      cool default:1 error:Option not found
+name:      lame default:1 error:Option not found
+name:        mu default:1 error:Option not found
+name:      size default:0 error:
+name:   pix_fmt default:0 error:
+name:sample_fmt default:0 error:
+name:video_rate default:0 error:
+name:  duration default:0 error:
+name:     color default:0 error:
+name:        cl default:0 error:
+name:       bin default:0 error:
+name:      bin1 default:1 error:
+name:      bin2 default:1 error:
+name:     num64 default:0 error:
+name:       flt default:0 error:
+name:       dbl default:0 error:
+name:     bool1 default:0 error:
+name:     bool2 default:0 error:
+name:     bool3 default:1 error:
+name:       num default:1 error:
+name:    toggle default:1 error:
+name:  rational default:1 error:
+name:    string default:1 error:
+name:    escape default:1 error:
+name:     flags default:1 error:
+name:      cool default:1 error:Option not found
+name:      lame default:1 error:Option not found
+name:        mu default:1 error:Option not found
+name:      size default:1 error:
+name:   pix_fmt default:1 error:
+name:sample_fmt default:1 error:
+name:video_rate default:1 error:
+name:  duration default:1 error:
+name:     color default:1 error:
+name:        cl default:1 error:
+name:       bin default:1 error:
+name:      bin1 default:1 error:
+name:      bin2 default:1 error:
+name:     num64 default:1 error:
+name:       flt default:1 error:
+name:       dbl default:1 error:
+name:     bool1 default:1 error:
+name:     bool2 default:1 error:
+name:     bool3 default:1 error:
+
+Test av_opt_serialize()
+num=0,toggle=1,rational=1/1,string=default,escape=\\\=\,,flags=0x00000001,size=200x300,pix_fmt=0bgr,sample_fmt=s16,video_rate=25/1,duration=0.001,color=0xffc0cbff,cl=0x137,bin=62696E00,bin1=,bin2=,num64=1,flt=0.333333,dbl=0.333333,bool1=auto,bool2=true,bool3=false
+Setting entry with key 'num' to value '0'
+Setting entry with key 'toggle' to value '1'
+Setting entry with key 'rational' to value '1/1'
+Setting entry with key 'string' to value 'default'
+Setting entry with key 'escape' to value '\=,'
+Setting entry with key 'flags' to value '0x00000001'
+Setting entry with key 'size' to value '200x300'
+Setting entry with key 'pix_fmt' to value '0bgr'
+Setting entry with key 'sample_fmt' to value 's16'
+Setting entry with key 'video_rate' to value '25/1'
+Setting entry with key 'duration' to value '0.001'
+Setting entry with key 'color' to value '0xffc0cbff'
+Setting entry with key 'cl' to value '0x137'
+Setting entry with key 'bin' to value '62696E00'
+Setting entry with key 'bin1' to value ''
+Setting entry with key 'bin2' to value ''
+Setting entry with key 'num64' to value '1'
+Setting entry with key 'flt' to value '0.333333'
+Setting entry with key 'dbl' to value '0.333333'
+Setting entry with key 'bool1' to value 'auto'
+Setting entry with key 'bool2' to value 'true'
+Setting entry with key 'bool3' to value 'false'
+num=0,toggle=1,rational=1/1,string=default,escape=\\\=\,,flags=0x00000001,size=200x300,pix_fmt=0bgr,sample_fmt=s16,video_rate=25/1,duration=0.001,color=0xffc0cbff,cl=0x137,bin=62696E00,bin1=,bin2=,num64=1,flt=0.333333,dbl=0.333333,bool1=auto,bool2=true,bool3=false
+
+Testing av_set_options_string()
+Setting options string ''
+OK    ''
+Setting options string ':'
+Missing key or no key/value separator found after key ':'
+Error ':'
+Setting options string '='
+Missing key or no key/value separator found after key ''
+Error '='
+Setting options string 'foo=:'
+Setting entry with key 'foo' to value ''
+Key 'foo' not found.
+Error 'foo=:'
+Setting options string ':=foo'
+Setting entry with key ':' to value 'foo'
+Key ':' not found.
+Error ':=foo'
+Setting options string '=foo'
+Missing key or no key/value separator found after key ''
+Error '=foo'
+Setting options string 'foo='
+Setting entry with key 'foo' to value ''
+Key 'foo' not found.
+Error 'foo='
+Setting options string 'foo'
+Missing key or no key/value separator found after key 'foo'
+Error 'foo'
+Setting options string 'foo=val'
+Setting entry with key 'foo' to value 'val'
+Key 'foo' not found.
+Error 'foo=val'
+Setting options string 'foo==val'
+Setting entry with key 'foo' to value '=val'
+Key 'foo' not found.
+Error 'foo==val'
+Setting options string 'toggle=:'
+Setting entry with key 'toggle' to value ''
+Undefined constant or missing '(' in ''
+Unable to parse option value ""
+Error 'toggle=:'
+Setting options string 'string=:'
+Setting entry with key 'string' to value ''
+OK    'string=:'
+Setting options string 'toggle=1 : foo'
+Setting entry with key 'toggle' to value '1'
+Missing key or no key/value separator found after key 'foo'
+Error 'toggle=1 : foo'
+Setting options string 'toggle=100'
+Setting entry with key 'toggle' to value '100'
+Value 100.000000 for parameter 'toggle' out of range [0 - 1]
+Error 'toggle=100'
+Setting options string 'toggle==1'
+Setting entry with key 'toggle' to value '=1'
+Undefined constant or missing '(' in '=1'
+Unable to parse option value "=1"
+Error 'toggle==1'
+Setting options string 'flags=+mu-lame : num=42: toggle=0'
+Setting entry with key 'flags' to value '+mu-lame'
+Setting entry with key 'num' to value '42'
+Setting entry with key 'toggle' to value '0'
+OK    'flags=+mu-lame : num=42: toggle=0'
+Setting options string 'num=42 : string=blahblah'
+Setting entry with key 'num' to value '42'
+Setting entry with key 'string' to value 'blahblah'
+OK    'num=42 : string=blahblah'
+Setting options string 'rational=0 : rational=1/2 : rational=1/-1'
+Setting entry with key 'rational' to value '0'
+Setting entry with key 'rational' to value '1/2'
+Setting entry with key 'rational' to value '1/-1'
+Value -1.000000 for parameter 'rational' out of range [0 - 10]
+Value -1.000000 for parameter 'rational' out of range [0 - 10]
+Error 'rational=0 : rational=1/2 : rational=1/-1'
+Setting options string 'rational=-1/0'
+Error 'rational=-1/0'
+Setting options string 'size=1024x768'
+Setting entry with key 'size' to value '1024x768'
+OK    'size=1024x768'
+Setting options string 'size=pal'
+Setting entry with key 'size' to value 'pal'
+OK    'size=pal'
+Setting options string 'size=bogus'
+Setting entry with key 'size' to value 'bogus'
+Unable to parse option value "bogus" as image size
+Error 'size=bogus'
+Setting options string 'pix_fmt=yuv420p'
+Setting entry with key 'pix_fmt' to value 'yuv420p'
+OK    'pix_fmt=yuv420p'
+Setting options string 'pix_fmt=2'
+Setting entry with key 'pix_fmt' to value '2'
+OK    'pix_fmt=2'
+Setting options string 'pix_fmt=bogus'
+Setting entry with key 'pix_fmt' to value 'bogus'
+Unable to parse option value "bogus" as pixel format
+Error 'pix_fmt=bogus'
+Setting options string 'sample_fmt=s16'
+Setting entry with key 'sample_fmt' to value 's16'
+OK    'sample_fmt=s16'
+Setting options string 'sample_fmt=2'
+Setting entry with key 'sample_fmt' to value '2'
+OK    'sample_fmt=2'
+Setting options string 'sample_fmt=bogus'
+Setting entry with key 'sample_fmt' to value 'bogus'
+Unable to parse option value "bogus" as sample format
+Error 'sample_fmt=bogus'
+Setting options string 'video_rate=pal'
+Setting entry with key 'video_rate' to value 'pal'
+OK    'video_rate=pal'
+Setting options string 'video_rate=25'
+Setting entry with key 'video_rate' to value '25'
+OK    'video_rate=25'
+Setting options string 'video_rate=30000/1001'
+Setting entry with key 'video_rate' to value '30000/1001'
+OK    'video_rate=30000/1001'
+Setting options string 'video_rate=30/1.001'
+Setting entry with key 'video_rate' to value '30/1.001'
+OK    'video_rate=30/1.001'
+Setting options string 'video_rate=bogus'
+Setting entry with key 'video_rate' to value 'bogus'
+Undefined constant or missing '(' in 'bogus'
+Unable to parse option value "bogus" as video rate
+Error 'video_rate=bogus'
+Setting options string 'duration=bogus'
+Setting entry with key 'duration' to value 'bogus'
+Unable to parse option value "bogus" as duration
+Error 'duration=bogus'
+Setting options string 'duration=123.45'
+Setting entry with key 'duration' to value '123.45'
+OK    'duration=123.45'
+Setting options string 'duration=1\:23\:45.67'
+Setting entry with key 'duration' to value '1:23:45.67'
+OK    'duration=1\:23\:45.67'
+Setting options string 'color=blue'
+Setting entry with key 'color' to value 'blue'
+OK    'color=blue'
+Setting options string 'color=0x223300'
+Setting entry with key 'color' to value '0x223300'
+OK    'color=0x223300'
+Setting options string 'color=0x42FF07AA'
+Setting entry with key 'color' to value '0x42FF07AA'
+OK    'color=0x42FF07AA'
+Setting options string 'cl=stereo+downmix'
+Setting entry with key 'cl' to value 'stereo+downmix'
+OK    'cl=stereo+downmix'
+Setting options string 'cl=foo'
+Setting entry with key 'cl' to value 'foo'
+Unable to parse option value "foo" as channel layout
+Error 'cl=foo'
+Setting options string 'bin=boguss'
+Setting entry with key 'bin' to value 'boguss'
+Error 'bin=boguss'
+Setting options string 'bin=111'
+Setting entry with key 'bin' to value '111'
+Error 'bin=111'
+Setting options string 'bin=ffff'
+Setting entry with key 'bin' to value 'ffff'
+OK    'bin=ffff'
+Setting options string 'num64=bogus'
+Setting entry with key 'num64' to value 'bogus'
+Undefined constant or missing '(' in 'bogus'
+Unable to parse option value "bogus"
+Error 'num64=bogus'
+Setting options string 'num64=44'
+Setting entry with key 'num64' to value '44'
+OK    'num64=44'
+Setting options string 'num64=44.4'
+Setting entry with key 'num64' to value '44.4'
+OK    'num64=44.4'
+Setting options string 'num64=-1'
+Setting entry with key 'num64' to value '-1'
+Value -1.000000 for parameter 'num64' out of range [0 - 100]
+Error 'num64=-1'
+Setting options string 'num64=101'
+Setting entry with key 'num64' to value '101'
+Value 101.000000 for parameter 'num64' out of range [0 - 100]
+Error 'num64=101'
+Setting options string 'flt=bogus'
+Setting entry with key 'flt' to value 'bogus'
+Undefined constant or missing '(' in 'bogus'
+Unable to parse option value "bogus"
+Error 'flt=bogus'
+Setting options string 'flt=2'
+Setting entry with key 'flt' to value '2'
+OK    'flt=2'
+Setting options string 'flt=2.2'
+Setting entry with key 'flt' to value '2.2'
+OK    'flt=2.2'
+Setting options string 'flt=-1'
+Setting entry with key 'flt' to value '-1'
+Value -1.000000 for parameter 'flt' out of range [0 - 100]
+Error 'flt=-1'
+Setting options string 'flt=101'
+Setting entry with key 'flt' to value '101'
+Value 101.000000 for parameter 'flt' out of range [0 - 100]
+Error 'flt=101'
+Setting options string 'dbl=bogus'
+Setting entry with key 'dbl' to value 'bogus'
+Undefined constant or missing '(' in 'bogus'
+Unable to parse option value "bogus"
+Error 'dbl=bogus'
+Setting options string 'dbl=2'
+Setting entry with key 'dbl' to value '2'
+OK    'dbl=2'
+Setting options string 'dbl=2.2'
+Setting entry with key 'dbl' to value '2.2'
+OK    'dbl=2.2'
+Setting options string 'dbl=-1'
+Setting entry with key 'dbl' to value '-1'
+Value -1.000000 for parameter 'dbl' out of range [0 - 100]
+Error 'dbl=-1'
+Setting options string 'dbl=101'
+Setting entry with key 'dbl' to value '101'
+Value 101.000000 for parameter 'dbl' out of range [0 - 100]
+Error 'dbl=101'
+Setting options string 'bool1=true'
+Setting entry with key 'bool1' to value 'true'
+OK    'bool1=true'
+Setting options string 'bool2=auto'
+Setting entry with key 'bool2' to value 'auto'
+OK    'bool2=auto'
+
+Testing av_opt_set_from_string()
+Setting options string ''
+OK    ''
+Setting options string '5'
+Setting 'num' to value '5'
+OK    '5'
+Setting options string '5:hello'
+Setting 'num' to value '5'
+Setting 'string' to value 'hello'
+OK    '5:hello'
+Setting options string '5:hello:size=pal'
+Setting 'num' to value '5'
+Setting 'string' to value 'hello'
+Setting 'size' to value 'pal'
+OK    '5:hello:size=pal'
+Setting options string '5:size=pal:hello'
+Setting 'num' to value '5'
+Setting 'size' to value 'pal'
+No option name near 'hello'
+Error '5:size=pal:hello'
+Setting options string ':'
+Setting 'num' to value ''
+Undefined constant or missing '(' in ''
+Unable to parse option value ""
+Error ':'
+Setting options string '='
+Setting '' to value ''
+Option '' not found
+Error '='
+Setting options string ' 5 : hello : size = pal '
+Setting 'num' to value '5'
+Setting 'string' to value 'hello'
+Setting 'size' to value 'pal'
+OK    ' 5 : hello : size = pal '
+Setting options string 'a_very_long_option_name_that_will_need_to_be_ellipsized_around_here=42'
+Setting 'a_very_long_option_name_that_will_need_to_be_ellipsized_around_here' to value '42'
+Option 'a_very_long_option_name_that_will_need_to_be_ellipsized_around_here' not found
+Error 'a_very_long_option_name_that_will_need_to_be_ellipsized_around_here=42'
+******************************************************************
+[100%] /data/local/tmp/pca
+libavutil/tests/pca: 1 file pushed. 4.4 MB/s (49304 bytes in 0.011s)
+******************************************************************
+*********************** test pca *************************
+4611249966251141120.000000 4034902703074406912.000000 3457762796116028928.000000 2881533498240933888.000000 2305213139454615040.000000 1728534745730790144.000000 1152103665155890560.000000 577019872154756352.000000 
+4529501869329546240.000000 3881616039155703296.000000 3234752440705497088.000000 2587786619082601472.000000 1940418874529629184.000000 1293328758820775936.000000 647751081456597760.000000 
+4306052202771038208.000000 3588457161195793408.000000 2870748718835296256.000000 2152594405193499648.000000 1434748077783679744.000000 718579566619420416.000000 
+3941603807759744000.000000 3153264362091291648.000000 2364435166131844096.000000 1575944265894515200.000000 789296298871028992.000000 
+3435824650979172352.000000 2576309404027484160.000000 1717162767077830400.000000 860024206403554944.000000 
+2788315267292233216.000000 1858468999255155456.000000 930796053148947456.000000 
+1999714631112856832.000000 1001537548811696512.000000 
+1072113700964904448.000000 
+0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 
+ 0.412150  0.438523  0.439203  0.414153  0.364834  0.294095  0.206153  0.106364   19483758471979298816.0 1.000000
+-0.473270 -0.376651 -0.156665  0.114151  0.347715  0.467748  0.434879  0.260309   3493967457465436672.0 0.179327
+ 0.452759  0.137734 -0.290597 -0.480485 -0.277206  0.153187  0.458013  0.388124   1394961085632691712.0 0.071596
+-0.406979  0.142085  0.482509  0.112433 -0.423162 -0.335964  0.245707  0.465204   775697909116292992.0 0.039813
+-0.345231  0.371493  0.271297 -0.425106 -0.187004  0.462638  0.094674 -0.480129   519225630053088576.0 0.026649
+-0.270660  0.481204 -0.163537 -0.333024  0.463344 -0.084483 -0.386999  0.431211   393589314659508352.0 0.020201
+ 0.185103 -0.436747  0.463418 -0.251158 -0.091341  0.386813 -0.482340  0.326394   327850423336975552.0 0.016827
+-0.093915  0.257606 -0.387546  0.466090 -0.481747  0.433112 -0.326879  0.175701   295325804217337600.0 0.015158
+******************************************************************
+[ 80%] /data/local/tmp/parseutils
+[100%] /data/local/tmp/parseutils
+libavutil/tests/parseutils: 1 file pushed. 10.6 MB/s (81008 bytes in 0.007s)
+******************************************************************
+*********************** test parseutils *************************
+Testing av_parse_video_rate()
+'-inf' -> -1/0 ERROR
+'inf' -> 1/0 ERROR
+'nan' -> 0/0 ERROR
+'123/0' -> 1/0 ERROR
+'-123 / 0' -> -1/0 ERROR
+'' -> 0/0 ERROR
+'/' -> 0/0 ERROR
+' 123  /  321' -> 41/107 OK
+'foo/foo' -> 0/0 ERROR
+'foo/1' -> 0/0 ERROR
+'1/foo' -> 1/0 ERROR
+'0/0' -> 0/0 ERROR
+'/0' -> 0/0 ERROR
+'1/' -> 1/0 ERROR
+'1' -> 1/1 OK
+'0' -> 0/1 ERROR
+'-123/123' -> -1/1 ERROR
+'-foo' -> 0/0 ERROR
+'123.23' -> 12323/100 OK
+'.23' -> 23/100 OK
+'-.23' -> -23/100 ERROR
+'-0.234' -> -117/500 ERROR
+'-0.0000001' -> -1/10000000 ERROR
+'  21332.2324   ' -> 917286/43 OK
+' -21332.2324   ' -> -917286/43 ERROR
+
+Testing av_parse_color()
+bikeshed -> R(80) G(64) B(140) A(59)
+RaNdOm -> R(185) G(88) B(148) A(94)
+foo -> error
+red -> R(255) G(0) B(0) A(255)
+Red  -> error
+RED -> R(255) G(0) B(0) A(255)
+Violet -> R(238) G(130) B(238) A(255)
+Yellow -> R(255) G(255) B(0) A(255)
+Red -> R(255) G(0) B(0) A(255)
+0x000000 -> R(0) G(0) B(0) A(255)
+0x0000000 -> error
+0xff000000 -> R(255) G(0) B(0) A(0)
+0x3e34ff -> R(62) G(52) B(255) A(255)
+0x3e34ffaa -> R(62) G(52) B(255) A(170)
+0xffXXee -> error
+0xfoobar -> error
+0xffffeeeeeeee -> error
+#ff0000 -> R(255) G(0) B(0) A(255)
+#ffXX00 -> error
+ff0000 -> R(255) G(0) B(0) A(255)
+ffXX00 -> error
+red@foo -> error
+random@10 -> error
+0xff0000@1.0 -> R(255) G(0) B(0) A(255)
+red@ -> error
+red@0xfff -> error
+red@0xf -> R(255) G(0) B(0) A(15)
+red@2 -> error
+red@0.1 -> R(255) G(0) B(0) A(25)
+red@-1 -> error
+red@0.5 -> R(255) G(0) B(0) A(127)
+red@1.0 -> R(255) G(0) B(0) A(255)
+red@256 -> error
+red@10foo -> error
+red@-1.0 -> error
+red@-0.0 -> R(255) G(0) B(0) A(0)
+
+Testing av_small_strptime()
+fmt:'%Y-%m-%d' spec:'2012-12-21' -> 2012-12-21 00:00:00
+fmt:'%Y - %m - %d' spec:'2012-12-21' -> 2012-12-21 00:00:00
+fmt:'%Y-%m-%d %H:%M:%S' spec:'2012-12-21 20:12:21' -> 2012-12-21 20:12:21
+fmt:'  %Y - %m - %d %H : %M : %S' spec:'   2012 - 12 -  21   20 : 12 : 21' -> 2012-12-21 20:12:21
+fmt:'  %Y - %b - %d %H : %M : %S' spec:'   2012 - nOV -  21   20 : 12 : 21' -> 2012-11-21 20:12:21
+fmt:'  %Y - %B - %d %H : %M : %S' spec:'   2012 - nOVemBeR -  21   20 : 12 : 21' -> 2012-11-21 20:12:21
+fmt:'  %Y - %B%d %H : %M : %S' spec:'   2012 - may21   20 : 12 : 21' -> 2012-05-21 20:12:21
+fmt:'  %Y - %B%d %H : %M : %S' spec:'   2012 - mby21   20 : 12 : 21' -> error
+fmt:'  %Y - %B - %d %H : %M : %S' spec:'   2012 - JunE -  21   20 : 12 : 21' -> 2012-06-21 20:12:21
+fmt:'  %Y - %B - %d %H : %M : %S' spec:'   2012 - Jane -  21   20 : 12 : 21' -> error
+fmt:'  %Y - %B - %d %H : %M : %S' spec:'   2012 - January -  21   20 : 12 : 21' -> 2012-01-21 20:12:21
+
+Testing av_parse_time()
+(now is 2012-03-17 09:14:13.2 +0100, local time is UTC+1)
+now                      ->     1331972053.200000 = 2012-03-17T08:14:13Z
+12:35:46                 ->     1331984146.000000 = 2012-03-17T11:35:46Z
+2000-12-20 0:02:47.5z    ->      977270567.500000 = 2000-12-20T00:02:47Z
+2012 - 02-22  17:44:07   ->     1329929047.000000 = 2012-02-22T16:44:07Z
+2000-12-20T010247.6      ->      977270567.600000 = 2000-12-20T00:02:47Z
+2000-12-12 1:35:46+05:30 ->      976565146.000000 = 2000-12-11T20:05:46Z
+2002-12-12 22:30:40-02   ->     1039739440.000000 = 2002-12-13T00:30:40Z
+2:34:56.79               ->           +9296790000
+-1:23:45.67              ->           -5025670000
+42.1729                  ->             +42172900
+-1729.42                 ->           -1729420000
+12:34                    ->            +754000000
+
+Testing av_get_known_color_name()
+AliceBlue -> R(240) G(248) B(255) A(0)
+AntiqueWhite -> R(250) G(235) B(215) A(0)
+Aqua -> R(0) G(255) B(255) A(0)
+Aquamarine -> R(127) G(255) B(212) A(0)
+Azure -> R(240) G(255) B(255) A(0)
+Beige -> R(245) G(245) B(220) A(0)
+Bisque -> R(255) G(228) B(196) A(0)
+Black -> R(0) G(0) B(0) A(0)
+BlanchedAlmond -> R(255) G(235) B(205) A(0)
+Blue -> R(0) G(0) B(255) A(0)
+BlueViolet -> R(138) G(43) B(226) A(0)
+Brown -> R(165) G(42) B(42) A(0)
+BurlyWood -> R(222) G(184) B(135) A(0)
+CadetBlue -> R(95) G(158) B(160) A(0)
+Chartreuse -> R(127) G(255) B(0) A(0)
+Chocolate -> R(210) G(105) B(30) A(0)
+Coral -> R(255) G(127) B(80) A(0)
+CornflowerBlue -> R(100) G(149) B(237) A(0)
+Cornsilk -> R(255) G(248) B(220) A(0)
+Crimson -> R(220) G(20) B(60) A(0)
+Cyan -> R(0) G(255) B(255) A(0)
+DarkBlue -> R(0) G(0) B(139) A(0)
+DarkCyan -> R(0) G(139) B(139) A(0)
+DarkGoldenRod -> R(184) G(134) B(11) A(0)
+DarkGray -> R(169) G(169) B(169) A(0)
+DarkGreen -> R(0) G(100) B(0) A(0)
+DarkKhaki -> R(189) G(183) B(107) A(0)
+DarkMagenta -> R(139) G(0) B(139) A(0)
+DarkOliveGreen -> R(85) G(107) B(47) A(0)
+Darkorange -> R(255) G(140) B(0) A(0)
+DarkOrchid -> R(153) G(50) B(204) A(0)
+DarkRed -> R(139) G(0) B(0) A(0)
+DarkSalmon -> R(233) G(150) B(122) A(0)
+DarkSeaGreen -> R(143) G(188) B(143) A(0)
+DarkSlateBlue -> R(72) G(61) B(139) A(0)
+DarkSlateGray -> R(47) G(79) B(79) A(0)
+DarkTurquoise -> R(0) G(206) B(209) A(0)
+DarkViolet -> R(148) G(0) B(211) A(0)
+DeepPink -> R(255) G(20) B(147) A(0)
+DeepSkyBlue -> R(0) G(191) B(255) A(0)
+DimGray -> R(105) G(105) B(105) A(0)
+DodgerBlue -> R(30) G(144) B(255) A(0)
+FireBrick -> R(178) G(34) B(34) A(0)
+FloralWhite -> R(255) G(250) B(240) A(0)
+ForestGreen -> R(34) G(139) B(34) A(0)
+Fuchsia -> R(255) G(0) B(255) A(0)
+Gainsboro -> R(220) G(220) B(220) A(0)
+GhostWhite -> R(248) G(248) B(255) A(0)
+Gold -> R(255) G(215) B(0) A(0)
+GoldenRod -> R(218) G(165) B(32) A(0)
+Gray -> R(128) G(128) B(128) A(0)
+Green -> R(0) G(128) B(0) A(0)
+GreenYellow -> R(173) G(255) B(47) A(0)
+HoneyDew -> R(240) G(255) B(240) A(0)
+HotPink -> R(255) G(105) B(180) A(0)
+IndianRed -> R(205) G(92) B(92) A(0)
+Indigo -> R(75) G(0) B(130) A(0)
+Ivory -> R(255) G(255) B(240) A(0)
+Khaki -> R(240) G(230) B(140) A(0)
+Lavender -> R(230) G(230) B(250) A(0)
+LavenderBlush -> R(255) G(240) B(245) A(0)
+LawnGreen -> R(124) G(252) B(0) A(0)
+LemonChiffon -> R(255) G(250) B(205) A(0)
+LightBlue -> R(173) G(216) B(230) A(0)
+LightCoral -> R(240) G(128) B(128) A(0)
+LightCyan -> R(224) G(255) B(255) A(0)
+LightGoldenRodYellow -> R(250) G(250) B(210) A(0)
+LightGreen -> R(144) G(238) B(144) A(0)
+LightGrey -> R(211) G(211) B(211) A(0)
+LightPink -> R(255) G(182) B(193) A(0)
+LightSalmon -> R(255) G(160) B(122) A(0)
+LightSeaGreen -> R(32) G(178) B(170) A(0)
+LightSkyBlue -> R(135) G(206) B(250) A(0)
+LightSlateGray -> R(119) G(136) B(153) A(0)
+LightSteelBlue -> R(176) G(196) B(222) A(0)
+LightYellow -> R(255) G(255) B(224) A(0)
+Lime -> R(0) G(255) B(0) A(0)
+LimeGreen -> R(50) G(205) B(50) A(0)
+Linen -> R(250) G(240) B(230) A(0)
+Magenta -> R(255) G(0) B(255) A(0)
+Maroon -> R(128) G(0) B(0) A(0)
+MediumAquaMarine -> R(102) G(205) B(170) A(0)
+MediumBlue -> R(0) G(0) B(205) A(0)
+MediumOrchid -> R(186) G(85) B(211) A(0)
+MediumPurple -> R(147) G(112) B(216) A(0)
+MediumSeaGreen -> R(60) G(179) B(113) A(0)
+MediumSlateBlue -> R(123) G(104) B(238) A(0)
+MediumSpringGreen -> R(0) G(250) B(154) A(0)
+MediumTurquoise -> R(72) G(209) B(204) A(0)
+MediumVioletRed -> R(199) G(21) B(133) A(0)
+MidnightBlue -> R(25) G(25) B(112) A(0)
+MintCream -> R(245) G(255) B(250) A(0)
+MistyRose -> R(255) G(228) B(225) A(0)
+Moccasin -> R(255) G(228) B(181) A(0)
+NavajoWhite -> R(255) G(222) B(173) A(0)
+Navy -> R(0) G(0) B(128) A(0)
+OldLace -> R(253) G(245) B(230) A(0)
+Olive -> R(128) G(128) B(0) A(0)
+OliveDrab -> R(107) G(142) B(35) A(0)
+Orange -> R(255) G(165) B(0) A(0)
+OrangeRed -> R(255) G(69) B(0) A(0)
+Orchid -> R(218) G(112) B(214) A(0)
+PaleGoldenRod -> R(238) G(232) B(170) A(0)
+PaleGreen -> R(152) G(251) B(152) A(0)
+PaleTurquoise -> R(175) G(238) B(238) A(0)
+PaleVioletRed -> R(216) G(112) B(147) A(0)
+PapayaWhip -> R(255) G(239) B(213) A(0)
+PeachPuff -> R(255) G(218) B(185) A(0)
+Peru -> R(205) G(133) B(63) A(0)
+Pink -> R(255) G(192) B(203) A(0)
+Plum -> R(221) G(160) B(221) A(0)
+PowderBlue -> R(176) G(224) B(230) A(0)
+Purple -> R(128) G(0) B(128) A(0)
+Red -> R(255) G(0) B(0) A(0)
+RosyBrown -> R(188) G(143) B(143) A(0)
+RoyalBlue -> R(65) G(105) B(225) A(0)
+SaddleBrown -> R(139) G(69) B(19) A(0)
+Salmon -> R(250) G(128) B(114) A(0)
+SandyBrown -> R(244) G(164) B(96) A(0)
+SeaGreen -> R(46) G(139) B(87) A(0)
+SeaShell -> R(255) G(245) B(238) A(0)
+Sienna -> R(160) G(82) B(45) A(0)
+Silver -> R(192) G(192) B(192) A(0)
+SkyBlue -> R(135) G(206) B(235) A(0)
+SlateBlue -> R(106) G(90) B(205) A(0)
+SlateGray -> R(112) G(128) B(144) A(0)
+Snow -> R(255) G(250) B(250) A(0)
+SpringGreen -> R(0) G(255) B(127) A(0)
+SteelBlue -> R(70) G(130) B(180) A(0)
+Tan -> R(210) G(180) B(140) A(0)
+Teal -> R(0) G(128) B(128) A(0)
+Thistle -> R(216) G(191) B(216) A(0)
+Tomato -> R(255) G(99) B(71) A(0)
+Turquoise -> R(64) G(224) B(208) A(0)
+Violet -> R(238) G(130) B(238) A(0)
+Wheat -> R(245) G(222) B(179) A(0)
+White -> R(255) G(255) B(255) A(0)
+WhiteSmoke -> R(245) G(245) B(245) A(0)
+Yellow -> R(255) G(255) B(0) A(0)
+YellowGreen -> R(154) G(205) B(50) A(0)
+
+Testing av_find_info_tag()
+0. tag1 found: val1
+1. tag2 found: val2
+2. tag3 found: val3
+3. tag4 not found
+4. tag41 found: value 41
+5. 41 not found
+6. random1 not found
+******************************************************************
+[ 58%] /data/local/tmp/pixdesc
+[100%] /data/local/tmp/pixdesc
+libavutil/tests/pixdesc: 1 file pushed. 14.4 MB/s (112272 bytes in 0.007s)
+******************************************************************
+*********************** test pixdesc *************************
+******************************************************************
+[100%] /data/local/tmp/pixelutils
+libavutil/tests/pixelutils: 1 file pushed. 4.3 MB/s (50592 bytes in 0.011s)
+******************************************************************
+*********************** test pixelutils *************************
+[OK] [UU] SAD [random] 2x2=409 ref=409
+[OK] [UU] SAD [random] 4x4=1370 ref=1370
+[OK] [UU] SAD [random] 8x8=5178 ref=5178
+[OK] [UU] SAD [random] 16x16=20946 ref=20946
+[OK] [UU] SAD [random] 32x32=83150 ref=83150
+[OK] [AU] SAD [random] 2x2=320 ref=320
+[OK] [AU] SAD [random] 4x4=1522 ref=1522
+[OK] [AU] SAD [random] 8x8=5821 ref=5821
+[OK] [AU] SAD [random] 16x16=21951 ref=21951
+[OK] [AU] SAD [random] 32x32=86983 ref=86983
+[OK] [AA] SAD [random] 2x2=276 ref=276
+[OK] [AA] SAD [random] 4x4=1521 ref=1521
+[OK] [AA] SAD [random] 8x8=5130 ref=5130
+[OK] [AA] SAD [random] 16x16=20775 ref=20775
+[OK] [AA] SAD [random] 32x32=83402 ref=83402
+[OK] [UU] SAD [max] 2x2=1020 ref=1020
+[OK] [UU] SAD [max] 4x4=4080 ref=4080
+[OK] [UU] SAD [max] 8x8=16320 ref=16320
+[OK] [UU] SAD [max] 16x16=65280 ref=65280
+[OK] [UU] SAD [max] 32x32=261120 ref=261120
+[OK] [AU] SAD [max] 2x2=1020 ref=1020
+[OK] [AU] SAD [max] 4x4=4080 ref=4080
+[OK] [AU] SAD [max] 8x8=16320 ref=16320
+[OK] [AU] SAD [max] 16x16=65280 ref=65280
+[OK] [AU] SAD [max] 32x32=261120 ref=261120
+[OK] [AA] SAD [max] 2x2=1020 ref=1020
+[OK] [AA] SAD [max] 4x4=4080 ref=4080
+[OK] [AA] SAD [max] 8x8=16320 ref=16320
+[OK] [AA] SAD [max] 16x16=65280 ref=65280
+[OK] [AA] SAD [max] 32x32=261120 ref=261120
+[OK] [UU] SAD [min] 2x2=0 ref=0
+[OK] [UU] SAD [min] 4x4=0 ref=0
+[OK] [UU] SAD [min] 8x8=0 ref=0
+[OK] [UU] SAD [min] 16x16=0 ref=0
+[OK] [UU] SAD [min] 32x32=0 ref=0
+[OK] [AU] SAD [min] 2x2=0 ref=0
+[OK] [AU] SAD [min] 4x4=0 ref=0
+[OK] [AU] SAD [min] 8x8=0 ref=0
+[OK] [AU] SAD [min] 16x16=0 ref=0
+[OK] [AU] SAD [min] 32x32=0 ref=0
+[OK] [AA] SAD [min] 2x2=0 ref=0
+[OK] [AA] SAD [min] 4x4=0 ref=0
+[OK] [AA] SAD [min] 8x8=0 ref=0
+[OK] [AA] SAD [min] 16x16=0 ref=0
+[OK] [AA] SAD [min] 32x32=0 ref=0
+[OK] [UU] SAD [small] 2x2=400 ref=400
+[OK] [AU] SAD [small] 2x2=384 ref=384
+[OK] [AA] SAD [small] 2x2=409 ref=409
+[OK] [UU] SAD [small] 4x4=1144 ref=1144
+[OK] [AU] SAD [small] 4x4=1156 ref=1156
+[OK] [AA] SAD [small] 4x4=1086 ref=1086
+[OK] [UU] SAD [small] 8x8=6510 ref=6510
+[OK] [AU] SAD [small] 8x8=5755 ref=5755
+[OK] [AA] SAD [small] 8x8=6156 ref=6156
+[OK] [UU] SAD [small] 16x16=19490 ref=19490
+[OK] [AU] SAD [small] 16x16=21037 ref=21037
+[OK] [AA] SAD [small] 16x16=22986 ref=22986
+[OK] [UU] SAD [small] 32x32=86550 ref=86550
+[OK] [AU] SAD [small] 32x32=83656 ref=83656
+[OK] [AA] SAD [small] 32x32=85164 ref=85164
+******************************************************************
+[ 53%] /data/local/tmp/pixfmt_best
+[100%] /data/local/tmp/pixfmt_best
+libavutil/tests/pixfmt_best: 1 file pushed. 17.1 MB/s (121604 bytes in 0.007s)
+******************************************************************
+*********************** test pixfmt_best *************************
+72 tests passed, 0 tests failed.
+******************************************************************
+[100%] /data/local/tmp/random_seed
+libavutil/tests/random_seed: 1 file pushed. 4.5 MB/s (43604 bytes in 0.009s)
+******************************************************************
+*********************** test random_seed *************************
+seeds OK
+seeds OK
+******************************************************************
+[ 93%] /data/local/tmp/rational
+[100%] /data/local/tmp/rational
+libavutil/tests/rational: 1 file pushed. 10.2 MB/s (69868 bytes in 0.007s)
+******************************************************************
+*********************** test rational *************************
+******************************************************************
+[100%] /data/local/tmp/ripemd
+libavutil/tests/ripemd: 1 file pushed. 4.1 MB/s (40888 bytes in 0.010s)
+******************************************************************
+*********************** test ripemd *************************
+Testing RIPEMD-128
+C14A12199C66E4BA84636B0F69144C77
+A1AA0689D0FAFA2DDC22E88B49133A06
+4A7F5723F954EBA1216C9D8F6320431F
+c14a1219 9c66e4ba 84636b0f 69144c77
+a1aa0689 d0fafa2d dc22e88b 49133a06
+4a7f5723 f954eba1 216c9d8f 6320431f
+Testing RIPEMD-160
+8EB208F7E05D987A9B044A8E98C6B087F15A0BFC
+12A053384A9C0C88E405A06C27DCF49ADA62EB2B
+52783243C1697BDBE16D37F97F68F08325DC1528
+8eb208f7 e05d987a 9b044a8e 98c6b087 f15a0bfc
+12a05338 4a9c0c88 e405a06c 27dcf49a da62eb2b
+52783243 c1697bdb e16d37f9 7f68f083 25dc1528
+Testing RIPEMD-256
+AFBD6E228B9D8CBBCEF5CA2D03E6DBA10AC0BC7DCBE4680E1E42D2E975459B65
+3843045583AAC6C8C8D9128573E7A9809AFB2A0F34CCC36EA9E72F16F6368E3F
+AC953744E10E31514C150D4D8D7B677342E33399788296E43AE4850CE4F97978
+afbd6e22 8b9d8cbb cef5ca2d 03e6dba1 0ac0bc7d cbe4680e 1e42d2e9 75459b65
+38430455 83aac6c8 c8d91285 73e7a980 9afb2a0f 34ccc36e a9e72f16 f6368e3f
+ac953744 e10e3151 4c150d4d 8d7b6773 42e33399 788296e4 3ae4850c e4f97978
+Testing RIPEMD-320
+DE4C01B3054F8930A79D09AE738E92301E5A17085BEFFDC1B8D116713E74F82FA942D64CDBC4682D
+D034A7950CF722021BA4B84DF769A5DE2060E259DF4C9BB4A4268C0E935BBC7470A969C9D072A1AC
+BDEE37F4371E20646B8B0D862DDA16292AE36F40965E8C8509E63D1DBDDECC503E2B63EB9245BB66
+de4c01b3 054f8930 a79d09ae 738e9230 1e5a1708 5beffdc1 b8d11671 3e74f82f a942d64c dbc4682d
+d034a795 0cf72202 1ba4b84d f769a5de 2060e259 df4c9bb4 a4268c0e 935bbc74 70a969c9 d072a1ac
+bdee37f4 371e2064 6b8b0d86 2dda1629 2ae36f40 965e8c85 09e63d1d bddecc50 3e2b63eb 9245bb66
+******************************************************************
+[100%] /data/local/tmp/sha
+libavutil/tests/sha: 1 file pushed. 4.9 MB/s (40816 bytes in 0.008s)
+******************************************************************
+*********************** test sha *************************
+Testing SHA-160
+A9993E364706816ABA3E25717850C26C9CD0D89D
+84983E441C3BD26EBAAE4AA1F95129E5E54670F1
+34AA973CD4C4DAA4F61EEB2BDBAD27316534016F
+A9993E36 4706816A BA3E2571 7850C26C 9CD0D89D
+84983E44 1C3BD26E BAAE4AA1 F95129E5 E54670F1
+34AA973C D4C4DAA4 F61EEB2B DBAD2731 6534016F
+Testing SHA-224
+23097D223405D8228642A477BDA255B32AADBCE4BDA0B3F7E36C9DA7
+75388B16512776CC5DBA5DA1FD890150B0C6455CB4F58B1952522525
+20794655980C91D8BBB4C1EA97618A4BF03F42581948B2EE4EE7AD67
+23097d22 3405d822 8642a477 bda255b3 2aadbce4 bda0b3f7 e36c9da7
+75388b16 512776cc 5dba5da1 fd890150 b0c6455c b4f58b19 52522525
+20794655 980c91d8 bbb4c1ea 97618a4b f03f4258 1948b2ee 4ee7ad67
+Testing SHA-256
+BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
+248D6A61D20638B8E5C026930C3E6039A33CE45964FF2167F6ECEDD419DB06C1
+CDC76E5C9914FB9281A1C7E284D73E67F1809A48A497200E046D39CCC7112CD0
+ba7816bf 8f01cfea 414140de 5dae2223 b00361a3 96177a9c b410ff61 f20015ad
+248d6a61 d20638b8 e5c02693 0c3e6039 a33ce459 64ff2167 f6ecedd4 19db06c1
+cdc76e5c 9914fb92 81a1c7e2 84d73e67 f1809a48 a497200e 046d39cc c7112cd0
+******************************************************************
+[100%] /data/local/tmp/sha512
+libavutil/tests/sha512: 1 file pushed. 5.3 MB/s (40904 bytes in 0.007s)
+******************************************************************
+*********************** test sha512 *************************
+Testing SHA-512/224
+4634270F707B6A54DAAE7530460842E20E37ED265CEEE9A43E8924AA
+23FEC5BB94D60B23308192640B0C453335D664734FE40E7268674AF9
+37AB331D76F0D36DE422BD0EDEB22A28ACCD487B7A8453AE965DD287
+4634270f 707b6a54 daae7530 460842e2 0e37ed26 5ceee9a4 3e8924aa
+23fec5bb 94d60b23 30819264 0b0c4533 35d66473 4fe40e72 68674af9
+37ab331d 76f0d36d e422bd0e deb22a28 accd487b 7a8453ae 965dd287
+Testing SHA-512/256
+53048E2681941EF99B2E29B76B4C7DABE4C2D0C634FC6D46E0E2F13107E7AF23
+3928E184FB8690F840DA3988121D31BE65CB9D3EF83EE6146FEAC861E19B563A
+9A59A052930187A97038CAE692F30708AA6491923EF5194394DC68D56C74FB21
+53048e26 81941ef9 9b2e29b7 6b4c7dab e4c2d0c6 34fc6d46 e0e2f131 07e7af23
+3928e184 fb8690f8 40da3988 121d31be 65cb9d3e f83ee614 6feac861 e19b563a
+9a59a052 930187a9 7038cae6 92f30708 aa649192 3ef51943 94dc68d5 6c74fb21
+Testing SHA-384
+CB00753F45A35E8BB5A03D699AC65007272C32AB0EDED1631A8B605A43FF5BED8086072BA1E7CC2358BAECA134C825A7
+09330C33F71147E83D192FC782CD1B4753111B173B3B05D22FA08086E3B0F712FCC7C71A557E2DB966C3E9FA91746039
+9D0E1809716474CB086E834E310A4A1CED149E9C00F248527972CEC5704C2A5B07B8B3DC38ECC4EBAE97DDD87F3D8985
+cb00753f 45a35e8b b5a03d69 9ac65007 272c32ab 0eded163 1a8b605a 43ff5bed 8086072b a1e7cc23 58baeca1 34c825a7
+09330c33 f71147e8 3d192fc7 82cd1b47 53111b17 3b3b05d2 2fa08086 e3b0f712 fcc7c71a 557e2db9 66c3e9fa 91746039
+9d0e1809 716474cb 086e834e 310a4a1c ed149e9c 00f24852 7972cec5 704c2a5b 07b8b3dc 38ecc4eb ae97ddd8 7f3d8985
+Testing SHA-512
+DDAF35A193617ABACC417349AE20413112E6FA4E89A97EA20A9EEEE64B55D39A2192992A274FC1A836BA3C23A3FEEBBD454D4423643CE80E2A9AC94FA54CA49F
+8E959B75DAE313DA8CF4F72814FC143F8F7779C6EB9F7FA17299AEADB6889018501D289E4900F7E4331B99DEC4B5433AC7D329EEB6DD26545E96E55B874BE909
+E718483D0CE769644E2E42C7BC15B4638E1F98B13B2044285632A803AFA973EBDE0FF244877EA60A4CB0432CE577C31BEB009C5C2C49AA2E4EADB217AD8CC09B
+ddaf35a1 93617aba cc417349 ae204131 12e6fa4e 89a97ea2 0a9eeee6 4b55d39a 2192992a 274fc1a8 36ba3c23 a3feebbd 454d4423 643ce80e 2a9ac94f a54ca49f
+8e959b75 dae313da 8cf4f728 14fc143f 8f7779c6 eb9f7fa1 7299aead b6889018 501d289e 4900f7e4 331b99de c4b5433a c7d329ee b6dd2654 5e96e55b 874be909
+e718483d 0ce76964 4e2e42c7 bc15b463 8e1f98b1 3b204428 5632a803 afa973eb de0ff244 877ea60a 4cb0432c e577c31b eb009c5c 2c49aa2e 4eadb217 ad8cc09b
+******************************************************************
+[100%] /data/local/tmp/softfloat
+libavutil/tests/softfloat: 1 file pushed. 5.4 MB/s (64172 bytes in 0.011s)
+******************************************************************
+*********************** test softfloat *************************
+test1 double=10369251
+test1 sf    =10369251
+test2 double=1660944384
+test2 sf    =1660944264 (7 830472132)
+test3 double: 1374.5489959717
+test3 softfloat: 1374.5312194824 (0x2af43ff0 11)
+test4 softfloat: -16.0000000000 (0xe0000000 5)
+test4 softfloat: 16.0000000000 (0x20000000 5)
+test4 softfloat: 536870911.0000000000 (0x3ffffffe 29)
+test4 softfloat: -536870911.0000000000 (0xc0000002 29)
+test5 softfloat: 0.0000000000 (0x00000000 -149)
+test6 softfloat: 0.0000000000 (0x00000000 -149) -536870912 536870912
+******************************************************************
+[100%] /data/local/tmp/tree
+libavutil/tests/tree: 1 file pushed. 4.4 MB/s (49716 bytes in 0.011s)
+******************************************************************
+*********************** test tree *************************
+******************************************************************
+[100%] /data/local/tmp/twofish
+libavutil/tests/twofish: 1 file pushed. 5.4 MB/s (41632 bytes in 0.007s)
+******************************************************************
+*********************** test twofish *************************
+******************************************************************
+[100%] /data/local/tmp/utf8
+libavutil/tests/utf8: 1 file pushed. 5.4 MB/s (41748 bytes in 0.007s)
+******************************************************************
+*********************** test utf8 *************************
+******************************************************************
+[100%] /data/local/tmp/xtea
+libavutil/tests/xtea: 1 file pushed. 5.2 MB/s (42956 bytes in 0.008s)
+******************************************************************
+*********************** test xtea *************************
+Test encryption/decryption success.
+******************************************************************
+[100%] /data/local/tmp/tea
+libavutil/tests/tea: 1 file pushed. 6.1 MB/s (41932 bytes in 0.007s)
+******************************************************************
+*********************** test tea *************************
+Test encryption/decryption success.
+******************************************************************
