@@ -42,7 +42,7 @@
 #define HAVE_ARMV6 0
 #define HAVE_ARMV6T2 0
 #define HAVE_ARMV8 1
-#define HAVE_NEON 1
+#define HAVE_NEON 0
 #define HAVE_VFP 1
 #define HAVE_VFPV3 0
 #define HAVE_SETEND 0

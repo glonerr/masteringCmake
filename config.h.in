@@ -42,9 +42,9 @@
 #define HAVE_ARMV6 0
 #define HAVE_ARMV6T2 0
 #define HAVE_ARMV8 1
-#define HAVE_NEON 1
-#define HAVE_VFP 1
-#define HAVE_VFPV3 0
+#cmakedefine01 HAVE_NEON
+#cmakedefine01 HAVE_VFP
+#cmakedefine01 HAVE_VFPV3
 #define HAVE_SETEND 0
 #define HAVE_ALTIVEC 0
 #define HAVE_DCBZL 0

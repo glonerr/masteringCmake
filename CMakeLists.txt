@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
+
 set(ANDROID true)
 set(TEST_AVUTIL true)
+
 if(ANDROID)
     message("android build")
     # for cmake 3.7
