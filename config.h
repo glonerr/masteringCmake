@@ -14,7 +14,7 @@
 #define SLIBSUF ".so"
 #define HAVE_MMX2 HAVE_MMXEXT
 #define SWS_MAX_FILTER_SIZE 256
-#define ARCH_AARCH64 1
+#define ARCH_AARCH64 0
 #define ARCH_ALPHA 0
 #define ARCH_ARM  0
 #define ARCH_AVR32 0
@@ -42,7 +42,7 @@
 #define HAVE_ARMV6 0
 #define HAVE_ARMV6T2 0
 #define HAVE_ARMV8 1
-#define HAVE_NEON 0
+#define HAVE_NEON 1
 #define HAVE_VFP 1
 #define HAVE_VFPV3 0
 #define HAVE_SETEND 0

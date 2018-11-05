@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.3)
 
 set(ANDROID true)
 set(TEST_AVUTIL true)
+set(HAVE_NEON true)
+set(HAVE_VFP true)
 
 if(ANDROID)
     message("android build")
@@ -12,10 +14,12 @@ if(ANDROID)
     # set(CMAKE_ANDROID_NDK /home/lonerr/Tools/worktools/android/android-ndk-r17c/)
 
     # for cmake 3.2
-    set(ANDROID_ABI arm64-v8a)
+    # set(ANDROID_TOOLCHAIN clang)
     set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
-    # set(ANDROID_ABI "armeabi-v7a with NEON")
+    # set(ANDROID_ABI arm64-v8a)
+    set(ANDROID_ABI "armeabi-v7a with NEON")
     set(ANDROID_PLATFORM android-21)
+    set(arch arm)
     # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-to-int-cast -Wstrict-prototypes -Wempty-body -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wno-pointer-sign")
 
     # Android 5.0 以上需要在此处设置 PIE
@@ -26,37 +30,33 @@ endif(ANDROID)
 
 project(ffmpeg)
 
-# Detect CPU type and whether we're building 64-bit or 32-bit code
-math(EXPR BITS "${CMAKE_SIZEOF_VOID_P} * 8")
-string(TOLOWER ${CMAKE_SYSTEM_PROCESSOR} CMAKE_SYSTEM_PROCESSOR_LC)
-if(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86_64" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "amd64" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "i[0-9]86" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ia32")
-  if(BITS EQUAL 64)
-    set(CPU_TYPE x86_64)
-  else()
-    set(CPU_TYPE i386)
-  endif()
-  if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL ${CPU_TYPE})
-    set(CMAKE_SYSTEM_PROCESSOR ${CPU_TYPE})
-  endif()
-elseif(CMAKE_SYSTEM_PROCESSOR_LC STREQUAL "aarch64" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*64*")
-  set(CPU_TYPE arm64)
-elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*")
-  set(CPU_TYPE arm)
-elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ppc*" OR
-  CMAKE_SYSTEM_PROCESSOR_LC MATCHES "powerpc*")
-  set(CPU_TYPE powerpc)
-else()
-  set(CPU_TYPE ${CMAKE_SYSTEM_PROCESSOR_LC})
-endif()
-
-message(STATUS *********************************)
-message(STATUS "${BITS}-bit build (${CPU_TYPE})")
-message(STATUS *********************************)
+# # Detect CPU type and whether we're building 64-bit or 32-bit code
+# math(EXPR BITS "${CMAKE_SIZEOF_VOID_P} * 8")
+# string(TOLOWER ${CMAKE_SYSTEM_PROCESSOR} CMAKE_SYSTEM_PROCESSOR_LC)
+# if(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86_64" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "amd64" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "i[0-9]86" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ia32")
+#   if(BITS EQUAL 64)
+#     set(ARCH x86_64)
+#   else()
+#     set(ARCH i386)
+#   endif()
+#   if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL ${ARCH})
+#     set(CMAKE_SYSTEM_PROCESSOR ${ARCH})
+#   endif()
+# elseif(CMAKE_SYSTEM_PROCESSOR_LC STREQUAL "aarch64" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*64*")
+#   set(ARCH arm64)
+# elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*")
+#   set(ARCH arm)
+# elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ppc*" OR
+#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "powerpc*")
+#   set(ARCH powerpc)
+# else()
+#   set(ARCH ${CMAKE_SYSTEM_PROCESSOR_LC})
+# endif()
 
 function(add_suffix suf list rslt_list)
     foreach(item ${list})
@@ -99,6 +99,14 @@ function(print list)
     foreach(item ${list})
         message("${item}:" ${${item}})
     endforeach(item ${list})
+endfunction()
+
+function(add_cppflags args)
+    set(CPPFLAGS ${CPPFLAGS} ${args} PARENT_SCOPE)
+endfunction()
+
+function(add_ldflags args)
+    set(LDFLAGS ${LDFLAGS} ${args} PARENT_SCOPE)
 endfunction()
 
 add_definitions(-DHAVE_AV_CONFIG_H)
@@ -1434,26 +1442,39 @@ set(ldflags_filter echo)
 # message("ARCH_EXT_LIST:" "${ARCH_EXT_LIST}")
 # message("ARCH_FEATURES:" ${ARCH_FEATURES})
 # message("HAVE_LIST:" "${HAVE_LIST}")
-
-# init all arch variables with 0
-foreach(item ${ARCH_LIST})
-    string(TOUPPER "ARCH_${item}" ARCH)
-    set(${ARCH} 0)
-endforeach(item ${list})
-
-# start config
-# set default arch
-if(NOT arch)
-    set(arch ${CMAKE_SYSTEM_PROCESSOR})
-endif(NOT arch)
-
-if(${arch} MATCHES "(x86_64)|(x86_32)")
-    set(ARCH_X86 1)
+message(STATUS "arch:${arch}")
+if(arch STREQUAL "aarch64" OR arch STREQUAL "arm64")
+    set(arch aarch64)
+elseif(arch MATCHES arm|iPad|iPhone.*)
+    set(arch arm)
+elseif(arch MATCHES mips|IP.*)
+    if(arch MATCHES .*el)
+        add_cppflags(-EL)
+        add_ldflags(-EL)
+    elseif(arch MATCHES .*el)
+        add_cppflags(-EB)
+        add_ldflags(-EB)
+    endif()
+elseif(arch MATCHES parisc|hppa.*)
+    set(arch parisc)
+elseif(arch MATCHES Power\ Macintosh|ppc.*|powerpc.*)
+    set(arch ppc)
+elseif(arch MATCHES s390|s390x)
+    set(arch s390)
+elseif(arch MATCHES sh4|sh)
+    set(arch sh4)
+elseif(arch MATCHES sun4|sparc.*)
+    set(arch sparc)
+elseif(arch MATCHES tilegx|tile-gx)
+    set(arch tilegx)
+elseif(arch MATCHES i[3-6]86*|i86pc|BePC|x86pc|x86_64|x86_32|amd64)
+    set(arch x86)
 endif()
 
-# set arch
-string(TOUPPER "ARCH_${arch}" ARCH)
-set(${ARCH} 1)
+message(STATUS "arch:${arch} CPPFLAGS:${CPPFLAGS} LDFLAGS:${LDFLAGS}")
+
+set(ARCH ${arch})
+
 
 # create config.h
 configure_file(config.h.in ../config.h)

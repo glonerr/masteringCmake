@@ -70,7 +70,8 @@
     "stdio.h": "c",
     "math.h": "c",
     "random_seed.h": "c",
-    "aes.h": "c"
+    "aes.h": "c",
+    "cpu_internal.h": "c"
   },
   "C_Cpp.configurationWarnings": "Disabled",
   "code-runner.executorMap": {
