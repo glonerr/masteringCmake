@@ -16,10 +16,10 @@ if(ANDROID)
     # for cmake 3.2
     # set(ANDROID_TOOLCHAIN clang)
     set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
-    # set(ANDROID_ABI arm64-v8a)
-    set(ANDROID_ABI "armeabi-v7a with NEON")
+    set(ANDROID_ABI arm64-v8a)
+    # set(ANDROID_ABI "armeabi-v7a with NEON")
     set(ANDROID_PLATFORM android-21)
-    set(arch arm)
+    set(arch arm64)
     # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-to-int-cast -Wstrict-prototypes -Wempty-body -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wno-pointer-sign")
 
     # Android 5.0 以上需要在此处设置 PIE
@@ -1442,7 +1442,6 @@ set(ldflags_filter echo)
 # message("ARCH_EXT_LIST:" "${ARCH_EXT_LIST}")
 # message("ARCH_FEATURES:" ${ARCH_FEATURES})
 # message("HAVE_LIST:" "${HAVE_LIST}")
-message(STATUS "arch:${arch}")
 if(arch STREQUAL "aarch64" OR arch STREQUAL "arm64")
     set(arch aarch64)
 elseif(arch MATCHES arm|iPad|iPhone.*)
@@ -1471,7 +1470,9 @@ elseif(arch MATCHES i[3-6]86*|i86pc|BePC|x86pc|x86_64|x86_32|amd64)
     set(arch x86)
 endif()
 
-message(STATUS "arch:${arch} CPPFLAGS:${CPPFLAGS} LDFLAGS:${LDFLAGS}")
+if(NOT ${arch} IN_LIST ARCH_LIST)
+    message(WARNING "unknown architecture ${arch}")
+endif()
 
 set(ARCH ${arch})
 
