@@ -4,7 +4,8 @@ set(ANDROID true)
 set(TEST_AVUTIL true)
 set(HAVE_NEON true)
 set(HAVE_VFP true)
-set(arch arm)
+set(arch arm64)
+set(CMAKE_BUILD_TYPE Release)
 
 if(ANDROID)
     message("android build")
@@ -17,8 +18,8 @@ if(ANDROID)
     # for cmake 3.2
     # set(ANDROID_TOOLCHAIN clang)
     set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
-    # set(ANDROID_ABI arm64-v8a)
-    set(ANDROID_ABI "armeabi-v7a with NEON")
+    set(ANDROID_ABI arm64-v8a)
+    # set(ANDROID_ABI "armeabi-v7a with NEON")
     set(ANDROID_PLATFORM android-21)
     # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-pointer-to-int-cast -Wstrict-prototypes -Wempty-body -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wno-pointer-sign")
 
@@ -29,34 +30,6 @@ if(ANDROID)
 endif(ANDROID)
 
 project(ffmpeg)
-
-# # Detect CPU type and whether we're building 64-bit or 32-bit code
-# math(EXPR BITS "${CMAKE_SIZEOF_VOID_P} * 8")
-# string(TOLOWER ${CMAKE_SYSTEM_PROCESSOR} CMAKE_SYSTEM_PROCESSOR_LC)
-# if(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86_64" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "amd64" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "i[0-9]86" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "x86" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ia32")
-#   if(BITS EQUAL 64)
-#     set(ARCH x86_64)
-#   else()
-#     set(ARCH i386)
-#   endif()
-#   if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL ${ARCH})
-#     set(CMAKE_SYSTEM_PROCESSOR ${ARCH})
-#   endif()
-# elseif(CMAKE_SYSTEM_PROCESSOR_LC STREQUAL "aarch64" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*64*")
-#   set(ARCH arm64)
-# elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "arm*")
-#   set(ARCH arm)
-# elseif(CMAKE_SYSTEM_PROCESSOR_LC MATCHES "ppc*" OR
-#   CMAKE_SYSTEM_PROCESSOR_LC MATCHES "powerpc*")
-#   set(ARCH powerpc)
-# else()
-#   set(ARCH ${CMAKE_SYSTEM_PROCESSOR_LC})
-# endif()
 
 function(add_suffix suf list rslt_list)
     foreach(item ${list})

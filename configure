@@ -5760,6 +5760,7 @@ EOF
         disable x86asm
         for program in $x86asmexe nasm yasm; do
             probe_x86asm $program && break
+            echo $program
         done
         disabled x86asm && die "nasm/yasm not found or too old. Use --disable-x86asm for a crippled build."
         X86ASMFLAGS="-f $objformat"

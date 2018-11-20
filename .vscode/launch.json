@@ -1,104 +1,111 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-    
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Debug (Launch)",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopOnEntry": false,
+      "mainClass": "",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "java debug",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopOnEntry": false,
+      "mainClass": "Main",
+      "args": ""
+    },
+    {
+      "name": "gdb remote",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerServerAddress": "localhost:9091",
+      "setupCommands": [
         {
-            "type": "java",
-            "name": "java debug",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopOnEntry": false,
-            "mainClass": "Main",
-            "args": ""
-        },
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build_linux"
+    },
+    {
+      "name": "local-linux",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "MIMode": "lldb",
+      "setupCommands": [
         {
-            "name": "gdb remote",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerServerAddress": "localhost:9091",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build_linux"
-        },
-        {
-            "name": "local-linux",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "MIMode": "lldb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for lldb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true,
-                }
-            ],
-            "preLaunchTask": "build_linux"
-        },
-        {
-            "name": "remote-linux",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main", // Local path.
-            "initCommands": [
-                "platform select remote-linux",
-                "platform connect connect://127.0.0.1:1234"
-            ],
-            "preLaunchTask": "start_lldb_server_remote_linux",
-            "postDebugTask": "stop_lldb_server_remote_linux",
-        },
-        {
-            "name": "remote-android",
-            "type": "lldb",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/main", // Local path.
-            "initCommands": [
-                "platform select remote-android",
-                "platform connect unix-abstract-connect:///data/local/tmp/lldb/tmp/debug.sock",
-            ],
-            "env": {
-                "LD_LIBRARY_PATH":"/data/local/tmp/lldb/tmp"
-            },
-            "exitCommands":[
-                "exit",
-            ],
-            "preLaunchTask": "push_shared_object_android",
-            // "postDebugTask": "stop_lldb_server_remote_android",
-        },
-        {
-            "name": "Bash-Debug",
-            "type": "bashdb",
-            "request": "launch",
-            "program": "${file}",
-            "windows": {
-                "bashPath": "C:\\Windows\\sysnative\\bash.exe"
-            },
-            "linux": {
-                "bashPath": "bash"
-            },
-            "osx": {
-                "bashPath": "bash"
-            }
-        },
-    ]
+          "description": "Enable pretty-printing for lldb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build_linux"
+    },
+    {
+      "name": "remote-linux",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main", // Local path.
+      "initCommands": [
+        "platform select remote-linux",
+        "platform connect connect://127.0.0.1:1234"
+      ],
+      "preLaunchTask": "start_lldb_server_remote_linux",
+      "postDebugTask": "stop_lldb_server_remote_linux"
+    },
+    {
+      "name": "remote-android",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main", // Local path.
+      "initCommands": [
+        "platform select remote-android",
+        "platform connect unix-abstract-connect:///data/local/tmp/lldb/tmp/debug.sock"
+      ],
+      "env": {
+        "LD_LIBRARY_PATH": "/data/local/tmp/lldb/tmp"
+      },
+      "exitCommands": ["exit"],
+      "preLaunchTask": "push_shared_object_android"
+      // "postDebugTask": "stop_lldb_server_remote_android",
+    },
+    {
+      "name": "Bash-Debug",
+      "type": "bashdb",
+      "request": "launch",
+      "program": "${file}",
+      "windows": {
+        "bashPath": "C:\\Windows\\sysnative\\bash.exe"
+      },
+      "linux": {
+        "bashPath": "bash"
+      },
+      "osx": {
+        "bashPath": "bash"
+      }
+    }
+  ]
 }
