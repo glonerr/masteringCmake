@@ -603,8 +603,10 @@ set_weak(){
     value=$1
     shift
     for var; do
+        echo $var
         eval : \${$var:=$value}
     done
+    exit 1
 }
 
 sanitize_var_name(){
