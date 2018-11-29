@@ -17,7 +17,7 @@ if(ANDROID)
 
     # for cmake 3.2
     # set(ANDROID_TOOLCHAIN clang)
-    set(CMAKE_TOOLCHAIN_FILE /home/lonerr/Tools/worktools/android/android-ndk-r17c/build/cmake/android.toolchain.cmake)
+    set(CMAKE_TOOLCHAIN_FILE $ENV{NDK_HOME}/build/cmake/android.toolchain.cmake)
     set(ANDROID_ABI arm64-v8a)
     # set(ANDROID_ABI "armeabi-v7a with NEON")
     set(ANDROID_PLATFORM android-21)
